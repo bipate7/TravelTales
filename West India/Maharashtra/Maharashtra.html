@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtra: The Land of Diversity | Premium Travel Experience</title>
+    <link rel="icon" href="Images/TT4.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2a4d;
+            --primary-light: rgba(26, 42, 77, 0.1);
+            --secondary: #f7971e;
+            --secondary-light: rgba(247, 151, 30, 0.1);
+            --accent: #4e8c45;
+            --accent-light: rgba(78, 140, 69, 0.1);
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --text-light: #6c757d;
+            --fort-orange: #d35400;
+            --hill-green: #27ae60;
+            --beach-blue: #3498db;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Updated Header Styles */
+        .hero-header {
+    position: relative;
+    height: 105vh;
+    min-height: 700px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background: linear-gradient(100deg, #1e3c72 0%, #2a5298 8%);
+}
+
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(26, 42, 77, 0.6) 0%,
+        rgba(26, 42, 77, 0.4) 50%,
+        rgba(26, 42, 77, 0.2) 100%
+    );
+    z-index: 1;
+}
+
+/* For better text readability */
+.header-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 0 20px;
+    text-shadow: 0 px 4px 2rgba(0,0, 0.1, 0.3);
+}
+
+/* Optional: Add a vignette effect to draw focus to center */
+.hero-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.3) 100%
+    );
+    z-index: 1;
+}
+        
+        .header-content {
+            z-index: 2;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+            background: linear-gradient(to right, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header-content h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(to right, #f7971e, #ffd200);
+            border-radius: 2px;
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-weight: 300;
+            padding: 15px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(0px);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #f7971e, #ffd200);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #e74c3c, #f39c12);
+            color: white;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: white;
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Navigation */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(26, 42, 77, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .main-nav.scrolled {
+            background: rgba(15, 28, 58, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5px 10px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-img {
+            height: 90px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-img {
+            transform: rotate(-10deg);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            position: relative;
+            font-size: 2.8rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: var(--secondary);
+            margin: 25px auto;
+            border-radius: 5px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        /* Intro Section */
+        .intro-section {
+            background: white;
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .intro-text {
+            padding-right: 40px;
+        }
+        
+        .intro-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .intro-text p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .intro-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: rotate(2deg);
+            transition: var(--transition);
+        }
+        
+        .intro-image:hover {
+            transform: rotate(0) scale(1.02);
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+        
+        .intro-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Regions Section */
+        .regions-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+        
+        .regions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .region-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .region-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .region-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .region-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .region-card:hover .region-img img {
+            transform: scale(1.1);
+        }
+        
+        .region-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .region-content {
+            padding: 30px;
+        }
+        
+        .region-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .region-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .region-features {
+            margin-top: 20px;
+        }
+        
+        .region-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .region-features i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        /* Places Grid */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
+        }
+        
+        .place-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .place-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+        
+        .place-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .place-content {
+            padding: 30px;
+        }
+        
+        .place-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .place-content .meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .place-content .meta i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .place-content p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .read-more:hover {
+            color: var(--accent);
+        }
+        
+        .read-more i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(8px);
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .packages-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 40px;
+            padding: 40px 0;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .packages-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 auto;
+            width: 360px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .package-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .package-card:hover .package-img img {
+            transform: scale(1.1);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .package-content {
+            padding: 30px;
+        }
+        
+        .package-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .package-content .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .package-content .price span {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-left: 5px;
+            font-weight: 400;
+        }
+        
+        .package-content .rating {
+            color: var(--fort-orange);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .package-content .features {
+            margin-bottom: 30px;
+        }
+        
+        .package-content .features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .package-content .features i {
+            color: var(--accent);
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .package-btn {
+            display: block;
+            text-align: center;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .package-btn:hover {
+            background: var(--fort-orange);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+        }
+        
+        .culture-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .culture-tab {
+            padding: 15px 30px;
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+        
+        .culture-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .culture-tab:hover:not(.active) {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .culture-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .culture-content.active {
+            display: block;
+        }
+        
+        .food-grid, .heritage-grid, .festival-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .food-card, .heritage-card, .festival-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .food-card:hover, .heritage-card:hover, .festival-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .food-img, .heritage-img, .festival-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .food-img img, .heritage-img img, .festival-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .food-card:hover .food-img img,
+        .heritage-card:hover .heritage-img img,
+        .festival-card:hover .festival-img img {
+            transform: scale(1.1);
+        }
+        
+        .food-content, .heritage-content, .festival-content {
+            padding: 25px;
+        }
+        
+        .food-content h3, .heritage-content h3, .festival-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .food-content p, .heritage-content p, .festival-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .food-origin, .festival-time {
+            display: flex;
+            align-items: center;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .food-origin i, .festival-time i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .heritage-type {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        /* Adventure Section */
+        .adventure-section {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f0fa 100%);
+        }
+        
+        .adventure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .adventure-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .adventure-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .adventure-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .adventure-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .adventure-card:hover .adventure-img img {
+            transform: scale(1.1);
+        }
+        
+        .adventure-content {
+            padding: 30px;
+        }
+        
+        .adventure-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .adventure-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .adventure-difficulty {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        .adventure-difficulty i {
+            margin-right: 10px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: white;
+        }
+        
+        .map-container {
+            height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .map-regions, .map-tips {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .map-regions h3, .map-tips h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .map-regions ul, .map-tips ul {
+            list-style-type: none;
+        }
+        
+        .map-regions li, .map-tips li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        .map-regions li:before, .map-tips li:before {
+            content: '•';
+            color: var(--secondary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f0fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern2.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-light);
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--accent-light);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .author-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .testimonial-rating {
+            color: var(--fort-orange);
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2c3e50 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/wave-pattern.png') repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-container p {
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1.1rem;
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .newsletter-form button {
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 0 40px;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--fort-orange);
+            color: white;
+            transform: scale(1.05);
+        }
+            /* Footer */
+    .footer {
+        background: var(--dark);
+        color: white;
+        padding: 80px 0 30px;
+        position: relative;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .footer-logo {
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-logo-img {
+        height: 95px;
+    }
+
+    .footer-logo-text {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: white;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .footer-logo-text span {
+        background: linear-gradient(to right, #f7971e, #ffd200);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .footer-about p {
+        margin-bottom: 25px;
+        opacity: 0.8;
+        line-height: 1.7;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 20px;
+    }
+
+    .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        transition: var(--transition);
+    }
+
+    .footer-social a:hover {
+        background: var(--secondary);
+        color: var(--dark);
+        transform: translateY(-5px);
+    }
+
+    .footer-links h3, .footer-contact h3 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        font-family: 'Playfair Display', serif;
+        position: relative;
+    }
+
+    .footer-links h3:after, .footer-contact h3:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--secondary);
+    }
+
+    .footer-links ul {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 15px;
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .footer-links a:hover {
+        color: var(--secondary);
+        transform: translateX(5px);
+    }
+
+    .footer-contact p {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        opacity: 0.8;
+    }
+
+    .footer-contact i {
+        margin-right: 15px;
+        color: var(--secondary);
+        font-size: 1.2rem;
+        margin-top: 3px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 50px;
+        margin-top: 50px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        opacity: 0.7;
+        font-size: 0.95rem;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--secondary);
+        color: var(--dark);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        box-shadow: var(--shadow-md);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        cursor: pointer;
+    }
+
+    .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background: var(--fort-orange);
+        color: white;
+        transform: translateY(-5px);
+    }
+
+    /* Animations */
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+        .header-content h1 {
+            font-size: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .header-content h1 {
+            font-size: 3.5rem;
+        }
+        
+        .header-content p {
+            font-size: 1.3rem;
+        }
+        
+        .intro-content {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .intro-text {
+            padding-right: 0;
+        }
+        
+        .intro-image {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .map-info {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .header-content h1 {
+            font-size: 3rem;
+        }
+        
+        .header-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-group {
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn-outline {
+            margin-left: 0;
+        }
+        
+        .nav-links {
+            display: none;
+        }
+        
+        .mobile-menu-btn {
+            display: block;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+        
+        .places-grid, .regions-container, .food-grid, 
+        .heritage-grid, .festival-grid, .adventure-grid, 
+        .testimonials-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .newsletter-form {
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form button {
+            border-radius: 50px;
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .header-content h1 {
+            font-size: 2.5rem;
+        }
+        
+        .nav-container {
+            padding: 15px 20px;
+        }
+        
+        .container {
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .intro-stats {
+            grid-template-columns: 1fr;
+        }
+        
+        .footer-container {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(26, 42, 77, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .mobile-menu .nav-links a {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .mobile-menu-close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* AOS Animation Overrides */
+    [data-aos] {
+        transition-delay: 0s !important;
+    }
+
+    [data-aos="fade-up"] {
+        transform: translateY(30px);
+    }
+
+    [data-aos="fade-down"] {
+        transform: translateY(-30px);
+    }
+
+    [data-aos="fade-left"] {
+        transform: translateX(30px);
+    }
+
+    [data-aos="fade-right"] {
+        transform: translateX(-30px);
+    }
+
+    [data-aos="zoom-in"] {
+        transform: scale(0.8);
+    }
+
+    [data-aos="flip-left"] {
+        transform: perspective(1000px) rotateY(90deg);
+    }
+
+    [data-aos="flip-right"] {
+        transform: perspective(1000px) rotateY(-90deg);
+    }
+</style>
+</head> 
+<body> 
+    <!-- Navigation --> 
+    <nav class="main-nav"> 
+        <div class="nav-container"> 
+            <a href="#" class="logo"> 
+                <img src="Images/TT5.png" alt="Travel Tours Logo" class="logo-img">  
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#regions">Regions</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+    <button class="mobile-menu-close">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#regions">Regions</a></li>
+        <li><a href="#places">Places</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</div>
+
+<!-- Hero Header -->
+<header class="hero-header" id="home">
+    <div class="hero-slideshow">
+        <div class="hero-slide active" style="background-image: url('https://cdn.pixabay.com/photo/2021/12/08/11/23/nature-6855404_1280.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('https://cdn.pixabay.com/photo/2020/01/21/11/52/fort-4782737_1280.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('https://cdn.pixabay.com/photo/2021/08/29/06/54/cliff-6582527_1280.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('https://www.gujarattourism.com/content/gujrattourism/en/about-gujarat/_jcr_content/root/responsivegrid/pagebanner.coreimg.jpeg/1643369253714/about1.jpeg')"></div>
+    </div>
+
+    
+    <div class="header-content">
+        <h1 data-aos="fade-down">Discover Maharashtra</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Explore the land of majestic forts, pristine beaches, lush hills, and vibrant culture</p>
+        <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
+            <a href="#packages" class="btn">Tour Packages</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </div>
+    
+    <a href="#about" class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- About Section -->
+    <section class="section intro-section" id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">The Land of Diversity</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Maharashtra offers a perfect blend of history, nature, adventure, and culture</p>
+            
+            <div class="intro-content">
+                <div class="intro-text" data-aos="fade-right">
+                    <h2>Experience the Heart of India</h2>
+                    <p>Maharashtra, located in the western part of India, is a state that boasts an incredible diversity of landscapes, cultures, and experiences. From the bustling metropolis of Mumbai to the serene beaches of Konkan, from the ancient caves of Ajanta and Ellora to the hill stations of the Western Ghats, Maharashtra has something for every traveler.</p>
+                    <p>The state's rich history is evident in its numerous forts, palaces, and UNESCO World Heritage Sites, while its natural beauty shines through in its national parks, waterfalls, and scenic landscapes. Maharashtra's vibrant culture, delicious cuisine, and warm hospitality make it a must-visit destination.</p>
+                    <a href="#regions" class="btn">Explore Regions</a>
+                </div>
+                
+                <div class="intro-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://www.youngisthan.in/wp-content/uploads/2016/10/Mahabaleshwar.jpg" alt="Maharashtra Map">
+                </div>
+            </div>
+            
+            <div class="intro-stats" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">UNESCO Sites</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">350+</div>
+                    <div class="stat-label">Historical Forts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">720km</div>
+                    <div class="stat-label">Coastline</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regions Section -->
+    <section class="section regions-section" id="regions">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Explore the Regions</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Discover the diverse landscapes and unique experiences each region offers</p>
+            
+            <div class="regions-container">
+                <div class="region-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="region-img">
+                        <img src="https://images.pexels.com/photos/28550378/pexels-photo-28550378.jpeg?cs=srgb&dl=pexels-mohit-hambiria-92377455-28550378.jpg&fm=jpg" alt="Konkan Coast">
+                        <span class="region-badge">Beaches</span>
+                    </div>
+                    <div class="region-content">
+                        <h3>Konkan Coast</h3>
+                        <p>The pristine coastline of Maharashtra stretches over 720km, offering beautiful beaches, coconut groves, and delicious seafood. Explore the untouched beaches of Tarkarli, the historic Sindhudurg Fort, and the famous Ganpatipule temple.</p>
+                        <ul class="region-features">
+                            <li><i class="fas fa-check"></i> Pristine beaches</li>
+                            <li><i class="fas fa-check"></i> Fresh seafood cuisine</li>
+                            <li><i class="fas fa-check"></i> Water sports activities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="region-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="region-img">
+                        <img src="https://www.bhavyaholidays.com/blogs/wp-content/uploads/2014/03/The-Western-Ghats-A-UNESCO-World-Heritage-Site.jpg" alt="Western Ghats">
+                        <span class="region-badge">Hills</span>
+                    </div>
+                    <div class="region-content">
+                        <h3>Western Ghats</h3>
+                        <p>A UNESCO World Heritage Site, the Western Ghats are home to lush green hills, waterfalls, and biodiversity hotspots. Visit popular hill stations like Mahabaleshwar, Lonavala, and Matheran, or explore the wildlife sanctuaries.</p>
+                        <ul class="region-features">
+                            <li><i class="fas fa-check"></i> Scenic hill stations</li>
+                            <li><i class="fas fa-check"></i> Trekking trails</li>
+                            <li><i class="fas fa-check"></i> Wildlife sanctuaries</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="region-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="region-img">
+                        <img src="https://www.waghobaecolodge.com/blog/wp-content/uploads/2025/04/DSC_8417-1-scaled.jpg" alt="Vidarbha">
+                        <span class="region-badge">Wildlife</span>
+                    </div>
+                    <div class="region-content">
+                        <h3>Vidarbha</h3>
+                        <p>Known for its tiger reserves, ancient temples, and orange orchards, Vidarbha offers a unique blend of nature and culture. Visit Tadoba-Andhari Tiger Reserve, the Deekshabhoomi in Nagpur, and the Ramtek Temple.</p>
+                        <ul class="region-features">
+                            <li><i class="fas fa-check"></i> Tiger reserves</li>
+                            <li><i class="fas fa-check"></i> Historical temples</li>
+                            <li><i class="fas fa-check"></i> Tribal culture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="section" id="places">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Must-Visit Places</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Discover the iconic destinations that showcase Maharashtra's beauty and heritage</p>
+            
+            <div class="places-grid">
+                <div class="place-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="place-img">
+                        <img src="https://images.pexels.com/photos/29541057/pexels-photo-29541057.jpeg" alt="Ajanta Caves">
+                        <span class="place-badge">UNESCO Site</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ajanta Caves</h3>
+                        <div class="meta">
+                            <i class="fas fa-map-marker-alt"></i> Aurangabad
+                        </div>
+                        <p>The Ajanta Caves are 30 rock-cut Buddhist cave monuments dating from the 2nd century BCE to about 480 CE. The caves include paintings and rock-cut sculptures described as among the finest surviving examples of ancient Indian art.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="place-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="place-img">
+                        <img src="https://media.istockphoto.com/id/1307189136/photo/gateway-of-india-mumbai-maharashtra-monument-landmark-famous-place-magnificent-view-without.jpg?s=612x612&w=0&k=20&c=gGzzkXY5bAVbRbokzrjvkt7Ve-Z3yzSVN04NaMqyBB8=" alt="Mumbai">
+                        <span class="place-badge">Metropolis</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mumbai</h3>
+                        <div class="meta">
+                            <i class="fas fa-map-marker-alt"></i> Mumbai
+                        </div>
+                        <p>India's financial capital, Mumbai is a bustling metropolis that never sleeps. Visit the Gateway of India, Marine Drive, Elephanta Caves, and the many museums and art galleries. Experience the vibrant street food and Bollywood culture.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="place-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="place-img">
+                        <img src="https://www.incredibleindia.gov.in/content/dam/incredible-india/images/trips/maharashtra/amravati/pune-a-fusion-of-history-and-today/shaniwar-wada-pune-maharashtra-tri-iter-day1.jpg" alt="Pune">
+                        <span class="place-badge">Cultural Hub</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Pune</h3>
+                        <div class="meta">
+                            <i class="fas fa-map-marker-alt"></i> Pune
+                        </div>
+                        <p>Known as the cultural capital of Maharashtra, Pune is home to historical landmarks like Shaniwar Wada, Aga Khan Palace, and Sinhagad Fort. The city blends tradition with modernity and is a major educational and IT hub.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="place-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="place-img">
+                        <img src="https://www.incredibleindia.gov.in/content/dam/incredible-india/images/trips/maharashtra/mahabaleshwar/4-days-trip-enchanting-escapades-in-kota/pratapgarh-fort-mahabaleshwar-tri-iter-day3.jpg" alt="Mahabaleshwar">
+                        <span class="place-badge">Hill Station</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mahabaleshwar</h3>
+                        <div class="meta">
+                            <i class="fas fa-map-marker-alt"></i> Satara District
+                        </div>
+                        <p>One of the most popular hill stations in Maharashtra, Mahabaleshwar is known for its strawberry farms, scenic viewpoints, and pleasant climate. Visit Venna Lake, Arthur's Seat, and the many waterfalls in the area.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="place-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="place-img">
+                        <img src="https://paramountclientweb.s3.ap-south-1.amazonaws.com/indian-holiday-trip/PlaceMenuImg/Img_6640_202313192011_Swayambhu_Ganapati_Temple.jpg" alt="Ratnagiri">
+                        <span class="place-badge">Beach Town</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ratnagiri</h3>
+                        <div class="meta">
+                            <i class="fas fa-map-marker-alt"></i> Konkan Coast
+                        </div>
+                        <p>Famous for its Alphonso mangoes, Ratnagiri offers beautiful beaches, historic lighthouses, and the Thibaw Palace. The town is a perfect getaway for those seeking peace by the Arabian Sea.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="place-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="place-img">
+                        <img src="https://www.voicesofruralindia.org/wp-content/uploads/2024/11/04-1024x485.jpg" alt="Chandoli National Park">
+                        <span class="place-badge">Wildlife</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Chandoli National Park</h3>
+                        <div class="meta">
+                            <i class="fas fa-map-marker-alt"></i> Sangli District
+                        </div>
+                        <p>Spread over the Sahyadri range, Chandoli National Park is known for its diverse flora and fauna. The park offers opportunities for wildlife spotting, trekking, and enjoying scenic landscapes.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+<section class="section packages-section" id="packages">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Tour Packages</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Curated experiences for every type of traveler
+    </p>
+
+    <div class="packages-container">
+
+      <!-- Package 1: Mumbai City Tour -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="package-img">
+          <img src="Images/Mumbai City Tour1.jpg" alt="Mumbai City Tour">
+          <span class="package-badge">Top Rated</span>
+        </div>
+        <div class="package-content">
+          <h3>Mumbai City Tour</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+          <div class="price">₹6,000 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+            <li><i class="fas fa-check"></i> Gateway of India</li>
+            <li><i class="fas fa-check"></i> Marine Drive</li>
+            <li><i class="fas fa-check"></i> Juhu Beach</li>
+            <li><i class="fas fa-check"></i> Bollywood Studio Tour</li>
+          </ul>
+          <a href="Mumbai City Tour.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="package-img">
+          <img src="Images/Ajanta and Ellora Caves Tour.avif" alt="Ajanta and Ellora Caves">
+          <span class="package-badge">UNESCO Site</span>
+        </div>
+        <div class="package-content">
+          <h3>Ajanta & Ellora Caves</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+          <div class="price">₹8,000 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 4 Days / 3 Nights</li>
+            <li><i class="fas fa-check"></i> Ajanta Caves</li>
+            <li><i class="fas fa-check"></i> Ellora Caves</li>
+            <li><i class="fas fa-check"></i> Daulatabad Fort</li>
+            <li><i class="fas fa-check"></i> Entry Tickets Included</li>
+          </ul>
+          <a href="Ajanta and Ellora Caves Tour.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 3 -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="package-img">
+          <img src="Images/Mahabaleshwar Getaway.jpg" alt="Mahabaleshwar Getaway">
+          <span class="package-badge">Nature Lover</span>
+        </div>
+        <div class="package-content">
+          <h3>Mahabaleshwar Getaway</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+          <div class="price">₹8,500 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+            <li><i class="fas fa-check"></i> Scenic Viewpoints</li>
+            <li><i class="fas fa-check"></i> Boating & Trekking</li>
+            <li><i class="fas fa-check"></i> Panchgani Tour</li>
+            <li><i class="fas fa-check"></i> Local Food Tour</li>
+          </ul>
+          <a href="Mahabaleshwar Getaway.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 4 -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="250">
+        <div class="package-img">
+          <img src="Images/Lonavala and Khandala Tour.webp" alt="Lonavala and Khandala">
+          <span class="package-badge">Weekend Trip</span>
+        </div>
+        <div class="package-content">
+          <h3>Lonavala & Khandala</h3>
+          <div class="rating">⭐⭐⭐⭐ (4.0)</div>
+          <div class="price">₹6,500 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Bushi Dam</li>
+            <li><i class="fas fa-check"></i> Tiger Point</li>
+            <li><i class="fas fa-check"></i> Wax Museum</li>
+            <li><i class="fas fa-check"></i> Local Market</li>
+          </ul>
+          <a href="Lonavala and Khandala Tour.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 5 -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="package-img">
+          <img src="Images/Nashik Wine Tour.jpg" alt="Nashik Wine Tour">
+          <span class="package-badge">Luxury</span>
+        </div>
+        <div class="package-content">
+          <h3>Nashik Wine Tour</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+          <div class="price">₹7,500 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Vineyard Visit</li>
+            <li><i class="fas fa-check"></i> Wine Tasting</li>
+            <li><i class="fas fa-check"></i> Food Pairing</li>
+            <li><i class="fas fa-check"></i> Boutique Stay</li>
+          </ul>
+          <a href="Nashik Wine Tour.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 6 -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="package-img">
+          <img src="Images/Alibaug Beach Retreat.webp" alt="Alibaug Beach Retreat">
+          <span class="package-badge">Beachside</span>
+        </div>
+        <div class="package-content">
+          <h3>Alibaug Beach Retreat</h3>
+          <div class="rating">⭐⭐⭐⭐ (4.0)</div>
+          <div class="price">₹8,500 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+            <li><i class="fas fa-check"></i> Beach Activities</li>
+            <li><i class="fas fa-check"></i> Fort Visit</li>
+            <li><i class="fas fa-check"></i> Campfire Night</li>
+            <li><i class="fas fa-check"></i> Private Cottage</li>
+          </ul>
+          <a href="Alibaug Beach Retreat.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Package 7 -->
+      <div class="package-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="package-img">
+          <img src="Images/Panchgani1.avif" alt="Panchgani">
+          <span class="package-badge">Family Friendly</span>
+        </div>
+        <div class="package-content">
+          <h3>Panchgani Strawberry Tour</h3>
+          <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+          <div class="price">₹8,500 <span>/ person</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Strawberry Picking</li>
+            <li><i class="fas fa-check"></i> Table Land</li>
+            <li><i class="fas fa-check"></i> Scenic Valley Views</li>
+          </ul>
+          <a href="Panchgani Strawberry Farm Tour.html" class="package-btn">Book Now</a>
+        </div>
+      </div>
+
+      <!-- Remaining 6 packages (Kolhapur, Heritage Explorer, Konkan, Western Ghats, Tiger Trail) will follow the same format... -->
+      
+      <!-- Package 8: Kolhapur Heritage Tour -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="450">
+  <div class="package-img">
+    <img src="Images/Kolhapur1.jpg" alt="Kolhapur Heritage Tour">
+    <span class="package-badge">Spiritual</span>
+  </div>
+  <div class="package-content">
+    <h3>Kolhapur Heritage Tour</h3>
+    <div class="rating">⭐⭐⭐⭐ (4.0)</div>
+    <div class="price">₹9,000 <span>/ person</span></div>
+    <ul class="features">
+      <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+      <li><i class="fas fa-check"></i> Mahalaxmi Temple Visit</li>
+      <li><i class="fas fa-check"></i> Historical Museum</li>
+      <li><i class="fas fa-check"></i> Cultural Walk Tour</li>
+      <li><i class="fas fa-check"></i> Traditional Kolhapuri Meal</li>
+    </ul>
+    <a href="Kolhapur Heritage Tour.html" class="package-btn">Book Now</a>
+  </div>
+</div>
+
+<!-- Package 9: Heritage Explorer -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="500">
+  <div class="package-img">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5acvtxJ_tmCGZQq6K_zdAdSwJySB8QBLu6gODFmXb9wm842duq5mEWfQu4gRDocYxd8Je0W2G5kxxPXEz-d_hNGb7I3Op1JhpWuffGduuPm1Z8NyBN6p_QohyphenhyphenfBykgcJ9T-l0QLnnM9pG/s1600/Ellora+Caves.JPG" alt="Heritage Explorer">
+    <span class="package-badge">Best Seller</span>
+  </div>
+  <div class="package-content">
+    <h3>Heritage Explorer</h3>
+    <div class="rating">⭐⭐⭐⭐✰ (4.7)</div>
+    <div class="price">₹25,999 <span>/ person</span></div>
+    <ul class="features">
+      <li><i class="fas fa-check"></i> 7 Days / 6 Nights</li>
+      <li><i class="fas fa-check"></i> Ajanta & Ellora Caves</li>
+      <li><i class="fas fa-check"></i> Daulatabad Fort</li>
+      <li><i class="fas fa-check"></i> Bibi Ka Maqbara</li>
+      <li><i class="fas fa-check"></i> Guided Cultural Tours</li>
+    </ul>
+    <a href="#" class="package-btn">Book Now</a>
+  </div>
+</div>
+
+<!-- Package 10: Konkan Coastal Retreat -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="550">
+  <div class="package-img">
+    <img src="https://www.saffronstays.com/_next/image?url=https%3A%2F%2Fik.imagekit.io%2F5tgxhsqev%2Fsaffronstays-media%2Fcollections%2Fc2cufnugdvhtv7fm9ljk%3Ftr%3Df-auto%2Cq-62&w=1080&q=75" alt="Konkan Coastal Retreat">
+    <span class="package-badge">Family Favorite</span>
+  </div>
+  <div class="package-content">
+    <h3>Konkan Coastal Retreat</h3>
+    <div class="rating">⭐⭐⭐⭐ (4.2)</div>
+    <div class="price">₹18,500 <span>/ person</span></div>
+    <ul class="features">
+      <li><i class="fas fa-check"></i> 5 Days / 4 Nights</li>
+      <li><i class="fas fa-check"></i> Tarkarli Beach</li>
+      <li><i class="fas fa-check"></i> Sindhudurg Fort Visit</li>
+      <li><i class="fas fa-check"></i> Malvan Cuisine Tasting</li>
+      <li><i class="fas fa-check"></i> Dolphin Watching</li>
+    </ul>
+    <a href="#" class="package-btn">Book Now</a>
+  </div>
+</div>
+
+<!-- Package 11: Western Ghats Adventure -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="600">
+  <div class="package-img">
+    <img src="https://static2.tripoto.com/media/filter/tst/img/7680/TripDocument/1550599399_zunzar_machi_at_torna.jpg" alt="Western Ghats Adventure">
+    <span class="package-badge">Adventure</span>
+  </div>
+  <div class="package-content">
+    <h3>Western Ghats Adventure</h3>
+    <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+    <div class="price">₹32,000 <span>/ person</span></div>
+    <ul class="features">
+      <li><i class="fas fa-check"></i> 8 Days / 7 Nights</li>
+      <li><i class="fas fa-check"></i> Trekking & Rappelling</li>
+      <li><i class="fas fa-check"></i> Mahabaleshwar Visit</li>
+      <li><i class="fas fa-check"></i> Hilltop Camping</li>
+      <li><i class="fas fa-check"></i> Local Jungle Safari</li>
+    </ul>
+    <a href="#" class="package-btn">Book Now</a>
+  </div>
+</div>
+
+<!-- Package 12: Tiger Trail Safari -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="650">
+  <div class="package-img">
+    <img src="https://mytadoba.mahaforest.gov.in/frontend/assets/img/home/landingpages/landing2.jpg" alt="Tiger Trail Safari">
+    <span class="package-badge">Wildlife</span>
+  </div>
+  <div class="package-content">
+    <h3>Tiger Trail Safari</h3>
+    <div class="rating">⭐⭐⭐⭐✰ (4.6)</div>
+    <div class="price">₹28,750 <span>/ person</span></div>
+    <ul class="features">
+      <li><i class="fas fa-check"></i> 6 Days / 5 Nights</li>
+      <li><i class="fas fa-check"></i> Tadoba National Park</li>
+      <li><i class="fas fa-check"></i> Pench Tiger Reserve</li>
+      <li><i class="fas fa-check"></i> 4 Jungle Safaris</li>
+      <li><i class="fas fa-check"></i> Nature Photography Sessions</li>
+    </ul>
+    <a href="#" class="package-btn">Book Now</a>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Culture Section -->
+    <section class="section culture-section" id="culture">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Culture & Heritage</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Experience the rich cultural tapestry of Maharashtra</p>
+            
+            <div class="culture-tabs" data-aos="fade-up" data-aos-delay="200">
+                <div class="culture-tab active" data-tab="food">Cuisine</div>
+                <div class="culture-tab" data-tab="heritage">Heritage</div>
+                <div class="culture-tab" data-tab="festivals">Festivals</div>
+            </div>
+            
+            <div class="culture-content active" id="food-content">
+                <div class="food-grid">
+                    <div class="food-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="food-img">
+                            <img src="https://www.shutterstock.com/image-photo/selective-focus-vada-pav-indias-600nw-2508474945.jpg" alt="Vada Pav">
+                        </div>
+                        <div class="food-content">
+                            <h3>Vada Pav</h3>
+                            <p>The quintessential Mumbai street food, vada pav consists of a deep-fried potato dumpling placed inside a bread bun with chutneys. Often called the "poor man's burger," it's a flavorful and filling snack.</p>
+                            <div class="food-origin">
+                                <i class="fas fa-map-marker-alt"></i> Originated in Mumbai
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="food-img">
+                            <img src="https://static.vecteezy.com/system/resources/previews/015/933/285/large_2x/puran-poli-puran-roti-holige-obbattu-or-bobbattlu-is-indian-sweet-flatbread-from-maharashtra-free-photo.jpg" alt="Puran Poli">
+                        </div>
+                        <div class="food-content">
+                            <h3>Puran Poli</h3>
+                            <p>A sweet flatbread stuffed with a mixture of jaggery and lentils, puran poli is a festive delicacy. It's especially prepared during Gudi Padwa (Maharashtrian New Year) and Holi.</p>
+                            <div class="food-origin">
+                                <i class="fas fa-map-marker-alt"></i> Traditional Maharashtrian sweet
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="food-img">
+                            <img src="https://images.pexels.com/photos/17223836/pexels-photo-17223836.jpeg?cs=srgb&dl=pexels-aditya-mara-425995080-17223836.jpg&fm=jpg" alt="Misal Pav">
+                        </div>
+                        <div class="food-content">
+                            <h3>Misal Pav</h3>
+                            <p>A spicy curry made of sprouted moth beans, topped with farsan, onions, lemon and coriander, served with pav bread. It's a popular breakfast dish with regional variations across Maharashtra.</p>
+                            <div class="food-origin">
+                                <i class="fas fa-map-marker-alt"></i> Specialty of Pune
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content" id="heritage-content">
+                <div class="heritage-grid">
+                    <div class="heritage-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="heritage-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Shivaji_Maharaj_Raigad.jpg" alt="Chhatrapati Shivaji Maharaj">
+                        </div>
+                        <div class="heritage-content">
+                            <span class="heritage-type">Historical Figure</span>
+                            <h3>Chhatrapati Shivaji Maharaj</h3>
+                            <p>The founder of the Maratha Empire, Shivaji Maharaj is revered for his military genius, progressive governance, and establishment of Swarajya. His forts and legacy are integral to Maharashtra's identity.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="heritage-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="heritage-img">
+                            <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/08/16121746/Untitled-design-2022-08-16T121551.697.jpg?tr=w-1200,q-60" alt="Ellora Caves">
+                        </div>
+                        <div class="heritage-content">
+                            <span class="heritage-type">UNESCO Site</span>
+                            <h3>Ellora Caves</h3>
+                            <p>A remarkable complex of 34 rock-cut temples representing Buddhist, Hindu and Jain traditions, dating from 600-1000 CE. The Kailasa Temple, carved from a single rock, is an architectural marvel.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="heritage-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="heritage-img">
+                            <img src="https://i0.wp.com/kolhapuriwala.com/wp-content/uploads/2024/01/Chhatrapati-Shahu-Maharaj-Kolhapuri-Chappal-With-Sound.jpeg?fit=1280%2C960&ssl=1" alt="Kolhapuri Chappal">
+                        </div>
+                        <div class="heritage-content">
+                            <span class="heritage-type">Handicraft</span>
+                            <h3>Kolhapuri Chappal</h3>
+                            <p>Traditional handcrafted leather slippers originating from Kolhapur, known for their durability and intricate designs. These have received Geographical Indication status, protecting their authenticity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content" id="festivals-content">
+                <div class="festival-grid">
+                    <div class="festival-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="festival-img">
+                            <img src="https://thumbs.dreamstime.com/b/gudi-padwa-festival-marathi-new-year-178863299.jpg" alt="Gudi Padwa">
+                        </div>
+                        <div class="festival-content">
+                            <h3>Gudi Padwa</h3>
+                            <p>The Maharashtrian New Year marks the beginning of spring and harvest season. Homes are decorated with rangoli, a gudi (flag) is hoisted, and families enjoy festive meals with puran poli and shrikhand.</p>
+                            <div class="festival-time">
+                                <i class="fas fa-calendar-alt"></i> March/April
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="festival-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="festival-img">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGGUAeazyzvChq1F085khyMrMMqEc1pll1RMI5J_5Hc9KpIng8Y7vF5YjA6Q6yWnLGdWrYRttpahMdPI_rE7dbREfmNzFw3WYFDCpANQRB1CwBkLvwii2RVG3lsQPhjjmG0G_M-lJBnlg/s1600/lalbaugcha-raja-20111.jpg" alt="Ganesh Chaturthi">
+                        </div>
+                        <div class="festival-content">
+                            <h3>Ganesh Chaturthi</h3>
+                            <p>Maharashtra's grandest festival celebrates the birth of Lord Ganesha with elaborate pandals, cultural performances, and processions. The immersion (visarjan) in Mumbai attracts millions of devotees.</p>
+                            <div class="festival-time">
+                                <i class="fas fa-calendar-alt"></i> August/September
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="festival-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="festival-img">
+                            <img src="https://www.jagranimages.com/images/newimg/26082022/26_08_2022-bail-pola-2022_23013941.jpg" alt="Pola Festival">
+                        </div>
+                        <div class="festival-content">
+                            <h3>Pola Festival</h3>
+                            <p>A unique festival where bulls and farm animals are worshipped by farmers. The animals are bathed, decorated with ornaments, and taken out in processions to thank them for their contribution to agriculture.</p>
+                            <div class="festival-time">
+                                <i class="fas fa-calendar-alt"></i> August
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Section -->
+    <section class="section adventure-section" id="adventure">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Adventure Activities</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Thrilling experiences for adventure enthusiasts</p>
+            
+            <div class="adventure-grid">
+                <div class="adventure-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="adventure-img">
+                        <img src="https://assets.cntraveller.in/photos/62e2604e36b7d20c446d3eae/4:3/w_4868,h_3651,c_limit/Torna%20fort.jpg" alt="Trekking">
+                    </div>
+                    <div class="adventure-content">
+                        <h3>Fort Trekking</h3>
+                        <div class="adventure-difficulty">
+                            <i class="fas fa-bolt"></i> Moderate to Difficult
+                        </div>
+                        <p>Maharashtra's Sahyadri range is dotted with historic forts offering challenging treks. Popular routes include Harishchandragad, Rajgad, Sinhagad, and Torna. Experience breathtaking views and explore ancient fortifications.</p>
+                        <a href="#" class="read-more">Explore Treks <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="adventure-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="adventure-img">
+                        <img src="https://media1.thrillophilia.com/filestore/twb48to5jfk0b9xs6ykxoxjp3n58_s7.jpg" alt="Scuba Diving">
+                    </div>
+                    <div class="adventure-content">
+                        <h3>Scuba Diving</h3>
+                        <div class="adventure-difficulty">
+                            <i class="fas fa-bolt"></i> Beginner Friendly
+                        </div>
+                        <p>Discover the underwater world of the Konkan coast with scuba diving at Tarkarli and Malvan. Explore coral reefs, spot colorful fish, and experience the thrill of diving in the Arabian Sea with certified instructors.</p>
+                        <a href="#" class="read-more">Dive Locations <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="adventure-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="adventure-img">
+                        <img src="https://im.whatshot.in/img/2018/Jun/waterfall-rappelling-4-cropped-1529576242.jpg?wp=1" alt="Rappelling">
+                    </div>
+                    <div class="adventure-content">
+                        <h3>Rappelling & Rock Climbing</h3>
+                        <div class="adventure-difficulty">
+                            <i class="fas fa-bolt"></i> Challenging
+                        </div>
+                        <p>Test your limits with rappelling down waterfalls and rock climbing in the Western Ghats. Popular spots include Kalsubai (highest peak in Maharashtra), Bhimashankar, and Thoseghar Waterfalls.</p>
+                        <a href="#" class="read-more">Adventure Camps <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section map-section" id="map">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Explore Maharashtra</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Plan your journey across this diverse state</p>
+            
+            <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1SsSx0RLdbj5iW1YltpI59VWSeYYvr1o&ehbc=2E312F" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="map-info">
+                <div class="map-regions" data-aos="fade-right" data-aos-delay="300">
+                    <h3>Key Regions</h3>
+                    <ul>
+                        <li><strong>Konkan:</strong> Coastal region with beaches and seafood cuisine</li>
+                        <li><strong>Western Maharashtra:</strong> Pune, Satara, Kolhapur - cultural heartland</li>
+                        <li><strong>Marathwada:</strong> Aurangabad region with historical sites</li>
+                        <li><strong>Vidarbha:</strong> Eastern region with tiger reserves and oranges</li>
+                        <li><strong>Khandesh:</strong> Northern region with tribal culture</li>
+                    </ul>
+                </div>
+                
+                <div class="map-tips" data-aos="fade-left" data-aos-delay="300">
+                    <h3>Travel Tips</h3>
+                    <ul>
+                        <li><strong>Best time to visit:</strong> October to March (pleasant weather)</li>
+                        <li><strong>Monsoon (June-Sept)</strong> is great for lush landscapes and waterfalls</li>
+                        <li>Road trips along the Mumbai-Goa highway are spectacular</li>
+                        <li>Try local transport like ST buses for authentic experience</li>
+                        <li>Carry light cotton clothes for summers, jackets for winters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Traveler Stories</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">What our visitors say about their Maharashtra experience</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        "Maharashtra exceeded all my expectations! The Ajanta and Ellora caves left me speechless with their ancient artistry. The beaches of Konkan were pristine, and the hill stations offered perfect respite from the heat. Can't wait to return!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://media.istockphoto.com/id/1135381120/photo/portrait-of-a-young-woman-outdoors-smiling.jpg?s=612x612&w=0&k=20&c=T5dukPD1r-o0BFqeqlIap7xzw07icucetwKaEC2Ms5M=" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>From London, UK</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-content">
+                        "As a history buff, I was amazed by Maharashtra's forts and heritage sites. The local guides were incredibly knowledgeable. The food was another highlight - vada pav and misal pav are now my favorite snacks! The people were warm and welcoming throughout my journey."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgtt3zOq6B9NnqaNv6ApPqWUmxmTf5hxtF_g&s" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>From Toronto, Canada</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-content">
+                        "Our family vacation to Maharashtra was perfect! The kids loved the beaches and wildlife safaris, while we enjoyed the cultural experiences and delicious cuisine. The hill stations were a refreshing break. Excellent hospitality everywhere we went."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQGoM7tEFAu8TQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1690466258472?e=2147483647&v=beta&t=I5mSyVVTpxlBwRfSvjGWU9RCPhRQ7lxiYtqbJZrxCIA" alt="The Rodriguez Family">
+                        </div>
+                        <div class="author-info">
+                            <h4>The Rodriguez Family</h4>
+                            <p>From Madrid, Spain</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h2 data-aos="fade-up">Plan Your Maharashtra Adventure</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Subscribe to our newsletter for exclusive travel tips, offers, and itineraries</p>
+            
+            <form class="newsletter-form" data-aos="fade-up" data-aos-delay="200">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="footer-container">
+        <div class="footer-about">
+            <div class="footer-logo">
+                <img src="Images/TT5.png" alt="Travel Tours Logo" class="footer-logo-img">
+            </div>
+            <p>We are passionate about showcasing the incredible diversity of Maharashtra. Our expert guides and curated experiences ensure you discover the true essence of this magnificent state.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Maharashtra</a></li>
+                <li><a href="#regions">Regions</a></li>
+                <li><a href="#places">Places to Visit</a></li>
+                <li><a href="#packages">Tour Packages</a></li>
+                <li><a href="#culture">Culture</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Travel Tales, Nagpur, Maharashtra 400001</p>
+            <p><i class="fas fa-phone-alt"></i> +91 9876543210</p>
+            <p><i class="fas fa-envelope"></i> Traveltalesngp@gmail.com</p>
+            <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Travel Tales . All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Maharashtra</p>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize AOS Animation
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+    
+    // Mobile Menu Toggle
+    $('.mobile-menu-btn').click(function() {
+        $('.mobile-menu').addClass('active');
+    });
+    
+    $('.mobile-menu-close').click(function() {
+        $('.mobile-menu').removeClass('active');
+    });
+    
+    // Smooth Scrolling
+    $('a[href*="#"]').on('click', function(e) {
+        e.preventDefault();
+        
+        $('html, body').animate(
+            {
+                scrollTop: $($(this).attr('href')).offset().top - 80,
+            },
+            500,
+            'linear'
+        );
+        
+        // Close mobile menu if open
+        $('.mobile-menu').removeClass('active');
+    });
+    
+    // Sticky Navigation
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.main-nav').addClass('scrolled');
+        } else {
+            $('.main-nav').removeClass('scrolled');
+        }
+        
+        // Back to Top Button
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').addClass('active');
+        } else {
+            $('.back-to-top').removeClass('active');
+        }
+    });
+    
+    // Hero Slideshow
+    let currentSlide = 0;
+    const slides = $('.hero-slide');
+    
+    function showSlide(n) {
+        slides.removeClass('active');
+        currentSlide = (n + slides.length) % slides.length;
+        slides.eq(currentSlide).addClass('active');
+    }
+    
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    setInterval(nextSlide, 5000);
+    
+    // Culture Tabs
+    $('.culture-tab').click(function() {
+        const tabId = $(this).data('tab');
+        
+        $('.culture-tab').removeClass('active');
+        $(this).addClass('active');
+        
+        $('.culture-content').removeClass('active');
+        $(`#${tabId}-content`).addClass('active');
+    });
+    
+    // Package Cards Scrolling
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const slider = $('.packages-container');
+    
+    slider.on('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offset().left;
+        scrollLeft = slider.scrollLeft();
+    });
+    
+    slider.on('mouseleave', () => {
+        isDown = false;
+    });
+    
+    slider.on('mouseup', () => {
+        isDown = false;
+    });
+    
+    slider.on('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offset().left;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft(scrollLeft - walk);
+    });
+</script>
+</body>
+</html>

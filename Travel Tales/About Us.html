@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTales Travels</title>
+    <link rel="icon" href="Images/TT4.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #f0f4f7;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items:  end;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            position: relative;
+            margin-right: 30px;
+        }
+        .nav-links li a {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover {
+            color: #ff6600;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Gradient background */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px); /* Slight upward position */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1; 
+            transform: translateY(0); /* Bring into view */
+        }
+        .dropdown-menu li {
+            position: relative;
+        }
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for animation */
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #ff6600; /* Full hover color */
+            color: white; /* Change text color on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        .dropdown-menu li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; 
+            margin-top: -5px; 
+            border-width: 5px; 
+            border-style: solid;
+            border-color: transparent transparent transparent #ff6600; /* Triangle pointing right */
+        }
+        /* Banner */
+        .banner {
+            background-image: url('Images/About Us Banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-text {
+            text-align: center;
+            color: white;
+        }
+        .banner-text h1 {
+            font-size: 72px;
+            font-weight: 600;
+        }
+        .banner-text p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        /* Explore the world Section */
+        .explore-section {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+        }
+        .explore-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+        .explore-section h1 span {
+            color: orange;
+            font-family: 'Cursive', sans-serif;
+        }
+        .explore-section p {
+            font-size: 18px;
+            color: #555;
+        }
+        .successful-years {
+            background-color: #00c04b;
+            color: white;
+            padding: 30px;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            top: 40%;
+            left: -10%;
+            font-size: 24px;
+        }
+        .card-info {
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .icon-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .icon-box img {
+            width: 80px;
+            margin-right: 15px;
+        }
+        .read-more-btn {
+            background-color: #ff4500;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .read-more-btn:hover {
+            background-color: #e63900;
+        }
+        /*basic*/
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+         /* First Section Styles: Simple Stacked Layout */
+        .service-item {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .service-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+        .service-item h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .service-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Second Section: Trusted Travel Partner */
+        .trusted-travel-section {
+            background-color: #f0f0f0; /* Changed background to light grey */
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .trusted-travel-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+        .trusted-travel-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .trusted-travel-layout {
+            display: flex;
+            align-items: flex-start; /* Align at the start */
+            gap:50px; /* Add gap between left and right content */
+        }
+        .trusted-content {
+            flex: 1;
+        }
+        .trusted-services {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .service-box {
+            width: 50%;
+            padding: 1.5rem;
+            text-align: left;
+        }
+        .service-box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        .service-box h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .service-box p {
+            font-size: 1rem;
+            color: #666;
+        }
+        /* Style for the team member container */
+        .team-member {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        /* Style for the image and the container */
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            width: 200px;  /* Increased size */
+            height: 200px; /* Increased size */
+            margin: 0 auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        /* Style for the social media pop-up container (Vertical Layout) */
+        .social-media {
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;  /* Makes the icons vertical */
+            justify-content: center;
+            align-items: center;     /* Center align vertically */
+            gap: 10px;
+            transform: translateY(-50%);
+            transition: left 0.4s ease;
+        }
+
+        .social-media a {
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        /* On hover, show the social media from the left */
+        .image-container:hover .social-media {
+            left: 0;
+        }
+
+        /* Optional: Add hover effects to the icons */
+        .social-media a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Scale the image slightly on hover for extra effect */
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+        /*Testionals Section*/
+        .testimonials-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        .carousel-item {
+    padding: 20px;
+    justify-content: center;
+}
+        .testimonial-item {
+    background-color: white;
+    padding: 30px;
+    margin: 0 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    min-height: 220px; /* Ensures equal height */
+    box-sizing: border-box;
+}
+        .testimonial-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .testimonial-content {
+            flex-grow: 1;
+        }
+
+        .testimonial-content p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .testimonial-content h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .testimonial-content .role {
+            font-size: 1rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        .stars {
+            color: #f39c12;
+        }
+        /* Styling for pagination dots */
+        .carousel-indicators {
+            position: static;
+            margin-top: 20px;
+        }
+        .carousel-indicators li {
+            background-color: #333; /* Change color to make the dots visible */
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+        }
+        .carousel-indicators .active {
+            background-color: #ff5733; /* Different color for active dot */
+        }
+        /*Paartners*/
+        .partners {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f9f9f9; /* Optional background color */
+        }
+        .partners h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between logos */
+            flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+        }
+        .partner-logos img {
+            height: 80px; /* Adjust height as needed */
+            max-width: 100%; /* Ensure logos are responsive */
+            object-fit: contain; /* Maintain aspect ratio */
+            transition: transform 0.3s; /* Smooth hover effect */
+        }
+        .partner-logos img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        
+        /* Footer */
+        .custom-footer {
+  background: linear-gradient(135deg, #1b1f24, #2c3e50);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-top: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -5px;
+}
+.footer-logo img {
+  height: 90px; /* Adjust height as needed */
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 10% 20px;
+  gap: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+  color: #ff8243;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #ff8243;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-links,
+.footer-contact,
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff8243;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #ff8243;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #ff8243;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #ff8243;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #ff8243;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter form {
+    align-items: center;
+  }
+}
+
+        </style>
+</head>
+
+    <body>
+        <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div>
+                <i class="fas fa-envelope"></i><a href="TravelTales@gmail.com">TravelTales@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+            </div>
+            <div>
+                <a href="Sign Up.html">Login / Signup</a>
+                <a href="#">EN <i class="fas fa-chevron-down"></i></a>
+                <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/TT4.png" alt="TravelTales Logo" width="100">
+            </div>
+            <ul class="nav-links">
+                <li><a href="W1.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Tour.html">Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Travel Tales/Tours List.html">Tour List</a></li>
+                        <li><a href="Travel Tales/Tours Packages.html">Tour Packages</a></li>
+                        <li><a href="Travel Tales/Tours Details.html">Tour Details</a></li>
+                        <li><a href="Travel Tales/Activities.html">Activities</a></li>
+                        <li><a href="Travel Tales/Activity Details.html">Activity Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="Destinations/Destinations.html" class="active">Destination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Destinations/Destinations.html">All Destinations</a></li>
+                        <li><a href="Destinations/Destination Single.html">Destination Single</a></li>
+                        <li><a href="Services/Discover Hotel.html">Hotels</a></li>
+                        <li><a href="Services/Hotel Details.html">Hotel Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Travel Tales/About Us.html">About</a></li>
+                <li class="dropdown">
+                    <a href="Travel Tales/News">News</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Blog/Ourblog.html">Our Blog</a></li>
+                        <li><a href="Blog/BlogDetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Services/Contact Us Page.html">Contact</a></li>
+            </ul>
+            <div class="call-us">
+                <i class="fas fa-phone"></i> Call Us <br> +9999999999
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>About Us</h1>
+            <p>Home &#11166; About Us</p>
+        </div>
+    </div>
+    
+    <!-- Explore the Section -->
+    <section class="explore-section">
+        <br><br><br><br>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="position-relative">
+                        <img src="https://cdn.pixabay.com/photo/2019/08/22/14/14/mountains-4423621_1280.jpg" class="img-fluid card-info" alt="Travel Image">
+                        <div class="successful-years">
+                            <strong>12</strong><br>Successful Years
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <img src="Images/Let explore the world.png"><!-- <span>Let's Explore the World</span> -->
+                    <h1>We Make Your Travel More Enjoyable</h1>
+                    <p>Our dedicated team is committed to providing you with exceptional experiences, personalized itineraries, and expert guidance, ensuring your journey is filled with unforgettable moments.</p>
+                    <div class="icon-box">
+                        <img src="Images/TravelWorld.png" alt="Award Icon">
+                        <strong>Award winning tour & travel arranger</strong>
+                    </div>
+                    <div class="icon-box">
+                        <img src="Images/TravelBooking.png" alt="Popular Icon">
+                        <strong>Most popular booking solution provider</strong>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><span style='font-size:25px; color: #ff6600;'>&#11162</span> Inspiring travel experiences</li>
+                        <li><span style='font-size:25px; color: #ff6600;'>&#11162</span> Expertly curated itineraries</li>
+                        <li><span style='font-size:25px; color: #ff6600;'>&#11162</span> Personalized guidance and support</li>
+                    </ul>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- First Section: Our Mission, Destination Insights, Tailored Travel Planning -->
+    <section class="container my-5">
+        <h2 class="text-center section-title">Our Services</h2><br><br><br>
+        <div class="row text-center">
+            <div class="col-md-4 service-item">
+                <img src="Images/Aim.png" alt="Our Mission">
+                <h4>Our Mission</h4>
+                <p>To inspire and empower travelers to explore the world with wonder, creating unforgettable experiences.</p>
+            </div>
+            <div class="col-md-4 service-item">
+                <img src="Images/DestinationInsight.png" alt="Destination Insights">
+                <h4>Destination Insights</h4>
+                <p>Gain valuable insights into captivating destinations through our comprehensive guides and expert recommendations.</p>
+            </div>
+            <div class="col-md-4 service-item">
+                <img src="Images/TravelGlobe.png" alt="Tailored Travel Planning">
+                <h4>Tailored Travel Planning</h4>
+                <p>Our website offers personalized travel planning services tailored to your preferences and interests.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section: Trusted Travel Partner -->
+    <section class="trusted-travel-section">
+        <div class="container">
+            <div class="trusted-travel-layout">
+                <!-- Left Content -->
+                <div class="trusted-content">
+                    <img src="Images/Our Speciality.png" alt="Our Speciality">
+                    <h2>Your Trusted Travel Partner</h2>
+                    <p>At our travel website, our specialty lies in curating unforgettable experiences that cater to the unique preferences of each traveler. From family vacations to solo adventures, romantic getaways to group escapades, we take pride in offering a diverse range of handpicked destinations and carefully crafted itineraries.</p>
+                    <p>Our team of travel experts is dedicated to staying ahead of the curve, ensuring that we bring you the latest travel trends and hidden gems to explore. Whether it's seeking out off-the-beaten-path activities or securing exclusive deals with our trusted partners, our commitment to excellence ensures that every trip planned through our platform is a journey of a lifetime.</p>
+                </div>
+
+                <!-- Right Services Section -->
+                <div class="trusted-services">
+                    <div class="service-box">
+                        <img src="Images/Tour Plans.png" alt="Innovative Tour Plans">
+                        <h4>Innovative Tour Plans</h4>
+                        <p>Experience our innovative tour plans designed to take you off the beaten path and uncover hidden gems.</p>
+                    </div>
+                    <div class="service-box">
+                        <img src="Images/tour-guide.png" alt="Expert Travel Guide">
+                        <h4>Expert Travel Guide</h4>
+                        <p>Embark on your journey with confidence, guided by our expert travel guides who share their local expertise and insider knowledge.</p>
+                    </div>
+                    <div class="service-box">
+                        <img src="Images/salary.png" alt="Flexible Payment Policy">
+                        <h4>Flexible Payment Policy</h4>
+                        <p>Travel stress-free with our flexible payment policy that accommodates your needs and preferences.</p>
+                    </div>
+                    <div class="service-box">
+                        <img src="Images/quality.png" alt="High Quality Management">
+                        <h4>High Quality Management</h4>
+                        <p>Rest assured that your travel experience is in capable hands with our high-quality management and attention to every detail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- comment 
+    <div class="container bg-light text-center py-5">
+    <div class="row">
+        <div class="col-md-3">
+            <h2><span id="destinations">0</span>+</h2>
+            <p>Total Destinations</p>
+        </div>
+        <div class="col-md-3">
+            <h2><span id="packages">0</span>+</h2>
+            <p>Travel Packages</p>
+        </div>
+        <div class="col-md-3">
+            <h2><span id="travelers">0</span>K+</h2>
+            <p>Total Travelers</p>
+        </div>
+        <div class="col-md-3">
+            <h2><span id="reviews">0</span>K+</h2>
+            <p>Positive Reviews</p>
+        </div>
+    </div>
+</div>
+      -->
+
+    
+<!-- Add the JavaScript code to calculate the numbers -->
+<!--
+<script>
+    function animateValue(id, start, end, duration) {
+        let obj = document.getElementById(id);
+        let range = end - start;
+        let current = start;
+        let increment = end > start ? 1 : -1;
+        let stepTime = Math.abs(Math.floor(duration / range));
+        
+        let timer = setInterval(function() {
+            current += increment;
+            obj.textContent = current;
+            if (current == end) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+
+    // Run the animation on page load
+    window.onload = function() {
+        animateValue("destinations", 0, 120, 2000);
+        animateValue("packages", 0, 500, 2000);
+        animateValue("travelers", 0, 12, 2000);  // 12K
+        animateValue("reviews", 0, 7, 2000);   // 7K
+    };
+</script>
+ -->
+
+ <br><br>
+    <!-- Team Member Section -->
+    <div class="container text-center py-5">
+        <img src="Images/Team Members.png" alt="Team Members"><br><br>
+        <h2>Our Amazing Team Players</h2><br>
+    <div class="row">
+        <div class="col-md-3 team-member">
+            <div class="image-container">
+                <img src="Images/Avataar.png" alt="Paul Harrison" class="img-fluid rounded-circle">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <h5>First Member</h5>
+        </div>
+        <div class="col-md-3 team-member">
+            <div class="image-container">
+                <img src="Images/Avataar.png" alt="Richard Parker" class="img-fluid rounded-circle">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <h5>Second Member</h5>
+        </div>
+        <div class="col-md-3 team-member">
+            <div class="image-container">
+                <img src="Images/Avataar.png" alt="Third Member" class="img-fluid rounded-circle">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <h5>Third Member</h5>
+        </div>
+        <div class="col-md-3 team-member">
+            <div class="image-container">
+                <img src="Images/Avataar.png" alt="Fourth Member" class="img-fluid rounded-circle">
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <h5>Fourth Member</h5>
+        </div>
+    </div>
+    </div>
+    <br><br>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+    <div class="container">
+        <div class="container text-center py-5">
+            <img src="Images/Testimonials.png" alt="Testimonials"><br><br>
+        <h2 class="text-center mb-5">What Travelers Say</h2>
+        <div id="testimonialsCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <!-- First slide with three testimonials -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test1.png" alt="Priya K." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"Exploring the majestic beauty of Rajasthan was a mesmerizing experience. Travel Tales ensured everything was perfectly organized."</p>
+                                    <h4>Priya K.</h4>
+                                    <div class="role">Software Engineer</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9734; <!-- 4 out of 5 stars -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test1.png" alt="Rajesh S." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"The enchanting backwaters of Kerala were a dream come true. Travel Tales made the entire journey seamless and memorable!"</p>
+                                    <h4>Rajesh S.</h4>
+                                    <div class="role">Doctor</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9733; <!-- 5 out of 5 stars -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test1.png" alt="Anjali M." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"A trip to Leh-Ladakh was on my bucket list for years. Thanks to Travel Tales, I finally experienced the raw beauty of the Himalayas."</p>
+                                    <h4>Anjali M.</h4>
+                                    <div class="role">Marketing Manager</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9733; <!-- 5 out of 5 stars -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second slide with three testimonials -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test.avif" alt="Amit R." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"I had the best time in Goa! The beaches, the culture, and Travel Tales’ arrangements made it unforgettable."</p>
+                                    <h4>Amit R.</h4>
+                                    <div class="role">Entrepreneur</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test.avif" alt="Sunita J." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"Exploring the ancient temples of Tamil Nadu was a spiritual journey. Travel Tales ensured we had the perfect itinerary."</p>
+                                    <h4>Sunita J.</h4>
+                                    <div class="role">Teacher</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test.avif" alt="Vinay P." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"Visiting the scenic valleys of Himachal Pradesh was a rejuvenating experience. Travel Tales made the entire trip smooth and fun!"</p>
+                                    <h4>Vinay P.</h4>
+                                    <div class="role">Graphic Designer</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third slide with three testimonials -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test.avif" alt="Nisha R." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"The temples of Varanasi and the holy Ganga Aarti left me spellbound. Travel Tales’ arrangements were top-notch!"</p>
+                                    <h4>Nisha R.</h4>
+                                    <div class="role">Photographer</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test.avif" alt="Rahul T." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"Our trip to the tea plantations of Assam was serene. I am so glad I booked it through Travel Tales."</p>
+                                    <h4>Rahul T.</h4>
+                                    <div class="role">Software Developer</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-item">
+                                <img src="Images/Test.avif" alt="Pooja G." class="testimonial-photo">
+                                <div class="testimonial-content">
+                                    <p>"Trekking in Sikkim was an adventure of a lifetime. Travel Tales handled everything with care and precision."</p>
+                                    <h4>Pooja G.</h4>
+                                    <div class="role">Travel Blogger</div>
+                                    <div class="stars">
+                                        &#9733; &#9733; &#9733; &#9733; &#9734;
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination Dots -->
+            <ol class="carousel-indicators">
+                <li data-target="#testimonialsCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#testimonialsCarousel" data-slide-to="1"></li>
+                <li data-target="#testimonialsCarousel" data-slide-to="2"></li>
+            </ol>
+        </div>
+    </div>
+    </div>
+</section>
+
+    <!-- Valuable Partner -->
+    
+    <section class="partners">
+    <h2>Our Valuable Partners</h2>
+    <marquee>
+    <div class="partner-logos">
+        <img src="https://content.presspage.com/clients/o_685.jpg" alt="Partner 1" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrrBrIvkDoT5PHNaamew3GEWQLGpvykStb6g&s" alt="Partner 2" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Interhome_Logo_2021.png" alt="Partner 3" />
+        <img src="Images/logo4.png" alt="Partner 4" />
+        <img src="Images/logo5.png" alt="Partner 5" />
+    </div>
+    </marquee>
+</section>
+    <br><BR>
+    
+    
+<!-- Custom Footer End --><!-- Enhanced Footer Start -->
+<footer class="custom-footer">
+  <!-- Decorative Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 120 28">
+      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="Images/TT7.png" alt="Travel Tales Logo" />
+</div>
+
+      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+</div>
+
+</footer>
+<!-- Enhanced Footer End -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed and Flexible Grid Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFEBEE;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #F44336;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            padding: 20px;
+        }
+        .grid-item {
+            background-color: #F44336;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .grid-item.flex {
+            background-color: #FFCDD2;
+            color: #333;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fixed and Flexible Grid Items</h1>
+    <div class="grid-container">
+        <div class="grid-item">Fixed 200px</div>
+        <div class="grid-item flex">Flexible</div>
+    </div>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            This example uses <code>grid-template-columns: 200px 1fr;</code>. 
+            <ul>
+                <li>The first column is fixed at 200px.</li>
+                <li>The second column (<code>1fr</code>) adjusts based on available space.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

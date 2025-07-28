@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales Tour List</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #f0f4f7;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items:  end;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            position: relative;
+            margin-right: 30px;
+        }
+        .nav-links li a {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover {
+            color: #ff6600;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Gradient background */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px); /* Slight upward position */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1; 
+            transform: translateY(0); /* Bring into view */
+        }
+        .dropdown-menu li {
+            position: relative;
+        }
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for animation */
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #ff6600; /* Full hover color */
+            color: white; /* Change text color on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        .dropdown-menu li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; 
+            margin-top: -5px; 
+            border-width: 5px; 
+            border-style: solid;
+            border-color: transparent transparent transparent #ff6600; /* Triangle pointing right */
+        }
+        /* Banner */
+        .banner {
+            background-image: url('https://cdn.pixabay.com/photo/2021/11/15/02/06/mountains-6796162_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-text {
+            text-align: center;
+            color: white;
+        }
+        .banner-text h1 {
+            font-size: 72px;
+            font-weight: 600;
+        }
+        .banner-text p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        body {
+    background-color: #f7f7f7;
+}
+
+h4, h5, h6 {
+    font-weight: 600;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.badge {
+    font-size: 0.9rem;
+}
+
+.btn-light {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.text-danger {
+    color: #f45b69 !important;
+}
+
+/* Footer */
+        .custom-footer {
+  background: linear-gradient(135deg, #1b1f24, #2c3e50);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-top: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -5px;
+}
+.footer-logo img {
+  height: 100px; /* Adjust height as needed */
+  margin-bottom: 0px;
+  object-fit: contain;
+  top: -50px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 10% 20px;
+  gap: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+  color: #ff8243;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #ff8243;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-links,
+.footer-contact,
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff8243;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #ff8243;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #ff8243;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #ff8243;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #ff8243;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter form {
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .packages-scroll {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .package-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+
+  .package-info h5 {
+    font-size: 1rem;
+  }
+
+  .package-info p {
+    font-size: 0.9rem;
+  }
+
+  .btn-warning {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
+.testimonials-section {
+  background: #f8f9fa;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-content img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #ffc107;
+}
+
+.testimonial-content h5 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.testimonial-content small {
+  color: #888;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.testimonial-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.submit-review-section {
+  background: linear-gradient(to right, #ffe3a3, #ffd6d6);
+  padding: 60px 0;
+  animation: fadeInUp 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-review-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: pulse 6s infinite ease-in-out;
+  z-index: 0;
+}
+
+.submit-review-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #8b0000;
+  position: relative;
+  z-index: 1;
+}
+
+.submit-review-section p {
+  color: #4d4d4d;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.review-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  animation: slideIn 1.2s ease;
+}
+
+.review-form .form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.review-form .form-control,
+.review-form .form-select {
+  border-radius: 10px;
+  padding: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+.review-form .form-control:focus,
+.review-form .form-select:focus {
+  border-color: #ffa500;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
+}
+
+.review-form .btn {
+  background: linear-gradient(to right, #ffa500, #ff6a00);
+  color: white;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.review-form .btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #ffffff40, #ffffff00);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.review-form .btn:hover::before {
+  transform: scale(1);
+}
+
+.review-form .btn:hover {
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {opacity: 0; transform: translateY(50px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideIn {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+}
+
+/*Sidebars*/
+
+/* Entire Sidebar Container */
+.sidebar {
+    width: 380px; /* Increased from 320px */
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Common Box Style in Sidebar */
+.sidebar .p-3 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+/* Headings */
+.sidebar h4 {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* Travel News */
+.sidebar .text-primary {
+    color: #007bff !important;
+}
+
+/* Blog Section with Thumbnails */
+.sidebar .latest-blogs li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sidebar .latest-blogs img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 12px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .latest-blogs img:hover {
+    transform: scale(1.1);
+}
+
+.sidebar .latest-blogs a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar .latest-blogs a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
+
+/* Gallery Styling */
+.sidebar .gallery img {
+    transition: transform 0.3s;
+    border-radius: 8px;
+}
+
+.sidebar .gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Search Button */
+.sidebar .btn-warning {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .btn-warning:hover {
+    background-color: #ffbb33;
+}
+
+
+/* Responsive Sidebar Tweaks */
+@media (max-width: 768px) {
+  .col-md-3 {
+    margin-top: 20px;
+  }
+
+  .col-md-3 > div {
+    padding: 15px;
+  }
+}
+
+/*Sort Option*/
+.dropdown-toggle {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-toggle:hover {
+    background-color: #ffc107;
+    color: #000;
+    border-color: #ffc107;
+}
+
+.dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+    </style>
+</head>
+    <body>
+        <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div>
+                <i class="fas fa-envelope"></i><a href="TravelTales@gmail.com">TravelTales@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+            </div>
+            <div>
+                <a href="Sign Up.html">Login / Signup</a>
+                <a href="#">EN <i class="fas fa-chevron-down"></i></a>
+                <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/login/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/account"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/TT4.png" alt="Travilo Logo" width="100">
+            </div>
+            <ul class="nav-links">
+                <li><a href="W1.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Tour List</a></li>
+                        <li><a href="#">Tour Packages</a></li>
+                        <li><a href="#">Tour Details</a></li>
+                        <li><a href="#">Activities</a></li>
+                        <li><a href="#">Activity Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="Destinations/Destinations.html">Destination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">All Destinations</a></li>
+                        <li><a href="#">Destination Single</a></li>
+                        <li><a href="Services/Discover Hotel.html">Hotels</a></li>
+                        <li><a href="#">Hotel Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Travel Tales/About Us.html" class="active">About</a></li>
+                <li class="dropdown">
+                    <a href="Travel Tales/News.html">News</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Blog/Ourblog.html">Our Blog</a></li>
+                        <li><a href="Blog/BlogDetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Services/Contact.html">Contact</a></li>
+            </ul>
+            <div class="call-us">
+                <i class="fas fa-phone"></i> Call Us <br> +9999999999
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Tour List</h1>
+            <p>Home &#11166; Tour List</p>
+        </div>
+    </div>
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Search Sidebar -->
+        <!-- Sidebar Column (col-md-3) -->
+<div class="col-md-3">
+    <!-- Search Sidebar -->
+    <div class="p-3 mb-4 border rounded shadow-sm">
+        <p>&#11166;</p>
+        <h4 class="mb-3">Search Packages</h4>
+        <form>
+            <div class="mb-3">
+                <label for="tour" class="form-label">Tour</label>
+                <input type="text" class="form-control" id="tour" placeholder="Destination">
+            </div>
+            <div class="mb-3">
+                <label for="checkIn" class="form-label">Check In</label>
+                <input type="date" class="form-control" id="checkIn">
+            </div>
+            <div class="mb-3">
+                <label for="checkOut" class="form-label">Check Out</label>
+                <input type="date" class="form-control" id="checkOut">
+            </div>
+            <div class="mb-3">
+                <label for="guests" class="form-label">Guests</label>
+                <input type="number" class="form-control" id="guests" placeholder="Number of Guests">
+            </div>
+            <button type="submit" class="btn btn-warning w-100">Search</button>
+        </form>
+    </div>
+
+    <!-- Travel News Sidebar -->
+    <div class="p-3 mb-4 border rounded shadow-sm bg-light">
+        <h4 class="mb-3 text-primary">🗞️ Travel News</h4>
+        <ul class="list-unstyled small">
+            <li><strong>Goa</strong>: Beach festival announced for summer 2025</li>
+            <li><strong>Kashmir</strong>: Snowfall attracts record tourists</li>
+            <li><strong>Ladakh</strong>: New bike routes opened</li>
+            <li><strong>Assam</strong>: River cruises gain popularity</li>
+        </ul>
+    </div>
+
+    <!-- Blogs Sidebar -->
+<div class="p-3 mb-4 border rounded shadow-sm bg-white">
+    <h4 class="mb-3 text-success">📝 Latest Blogs</h4>
+    <ul class="list-unstyled small latest-blogs">
+        <li>
+            <img src="https://source.unsplash.com/40x40/?himachal" alt="Himachal">
+            <a href="#">Top 10 Places to Visit in Himachal</a>
+        </li>
+        <li>
+            <img src="https://source.unsplash.com/40x40/?adventure" alt="Adventure">
+            <a href="#">Adventure Activities in North East India</a>
+        </li>
+        <li>
+            <img src="https://source.unsplash.com/40x40/?snow" alt="Kashmir">
+            <a href="#">Winter Wonderland: Kashmir Diaries</a>
+        </li>
+        <li>
+            <img src="https://source.unsplash.com/40x40/?budget,travel" alt="Budget Trip">
+            <a href="#">Planning a Budget Trip?</a>
+        </li>
+    </ul>
+</div>
+
+
+    <!-- Gallery Sidebar -->
+    <div class="p-3 mb-4 border rounded shadow-sm bg-white">
+        <h4 class="mb-3 text-danger">🖼️ Gallery</h4>
+        <div class="row g-2">
+            <div class="col-6"><img src="https://source.unsplash.com/80x80/?mountains" class="img-fluid rounded" alt="Gallery"></div>
+            <div class="col-6"><img src="https://source.unsplash.com/80x80/?beach" class="img-fluid rounded" alt="Gallery"></div>
+            <div class="col-6"><img src="https://source.unsplash.com/80x80/?desert" class="img-fluid rounded" alt="Gallery"></div>
+            <div class="col-6"><img src="https://source.unsplash.com/80x80/?forest" class="img-fluid rounded" alt="Gallery"></div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Packages Section -->
+        <div class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6>Showing results of 1 - 9 of 200 items</h6>
+                <div class="dropdown mb-3">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+    Sort By
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+    <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+    <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+    <li><a class="dropdown-item" href="#">Rating</a></li>
+    <li><a class="dropdown-item" href="#">Newest Packages</a></li>
+  </ul>
+</div>
+
+            </div>
+
+            <!-- Package Cards -->
+            <div class="row gy-4">
+                <!-- Package Card 1 -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://cdn.pixabay.com/photo/2013/07/19/17/38/kerala-165347_1280.jpg" class="card-img-top" alt="Kerala Backwaters">
+                            <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3">FEATURED</span>
+                            <button class="btn btn-light position-absolute top-0 end-0 m-3"><i class="bi bi-heart"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="text-danger">Kerala</h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2">&#9733; 4.8</span>
+                                <small class="text-muted">876 Reviews</small>
+                            </div>
+                            <h5 class="card-title">Explore the Backwaters of Kerala</h5>
+                            <p class="card-text">Discover the tranquil beauty of Kerala's backwaters...</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                                <span>From <strong class="text-danger">$400</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 2 - Rajasthan -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2015/02/17/07/33/architecture-639103_1280.jpg" class="card-img-top" alt="Rajasthan Desert Safari">
+                        <div class="card-body">
+                            <h6 class="text-danger">Rajasthan</h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2">&#9733; 4.7</span>
+                                <small class="text-muted">520 Reviews</small>
+                            </div>
+                            <h5 class="card-title">Desert Safari Adventure</h5>
+                            <p class="card-text">Experience the vibrant culture and vast deserts of Rajasthan...</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span><i class="bi bi-calendar-event"></i> 7 Days 6 Nights</span>
+                                <span>From <strong class="text-danger">$700</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 3 - Goa -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2019/03/31/11/00/india-4092844_1280.jpg" class="card-img-top" alt="Goa Beaches">
+                        <div class="card-body">
+                            <h6 class="text-danger">Goa</h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2">&#9733; 4.9</span>
+                                <small class="text-muted">1200 Reviews</small>
+                            </div>
+                            <h5 class="card-title">Beach Paradise</h5>
+                            <p class="card-text">Enjoy the sunny beaches and vibrant nightlife of Goa...</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span><i class="bi bi-calendar-event"></i> 4 Days 3 Nights</span>
+                                <span>From <strong class="text-danger">$300</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 4 - Ladakh -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2023/07/27/14/49/milky-way-8153503_1280.jpg" class="card-img-top" alt="Ladakh Mountains">
+                        <div class="card-body">
+                            <h6 class="text-danger">Ladakh</h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2">&#9733; 4.9</span>
+                                <small class="text-muted">145 Reviews</small>
+                            </div>
+                            <h5 class="card-title">Mountain Expeditions</h5>
+                            <p class="card-text">Trek through the beautiful mountainous terrains of Ladakh...</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                                <span>From <strong class="text-danger">$800</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Card 5 - Himachal Pradesh -->
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm">
+                        <img src="https://cdn.pixabay.com/photo/2022/06/23/05/02/monk-7279134_1280.jpg" class="card-img-top" alt="Himachal Pradesh Hills">
+                        <div class="card-body">
+                            <h6 class="text-danger">Himachal Pradesh</h6>
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-warning me-2">&#9733; 4.6</span>
+                                <small class="text-muted">400 Reviews</small>
+                            </div>
+                            <h5 class="card-title">Himalayan Adventure</h5>
+                            <p class="card-text">Escape to the picturesque hills and valleys of Himachal Pradesh...</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                                <span>From <strong class="text-danger">$450</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <!-- Package Card 6 - Andaman Islands -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://blog.untravel.com/wp-content/uploads/2018/10/Neil-Island-Andaman-and-Nicobar-DC135.jpg" class="card-img-top" alt="Andaman Islands">
+            <div class="card-body">
+                <h6 class="text-danger">Andaman Islands</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.8</span>
+                    <small class="text-muted">980 Reviews</small>
+                </div>
+                <h5 class="card-title">Island Paradise</h5>
+                <p class="card-text">Snorkel, dive, and explore the beautiful beaches of Andaman...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                    <span>From <strong class="text-danger">$850</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 7 - Kashmir -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://kashmirobserver.net/wp-content/uploads/2024/01/Anticipation-Peaks-In-Kashmir-Winter-Wonderland-Expected-By-Month-End-.jpeg" class="card-img-top" alt="Kashmir Valley">
+            <div class="card-body">
+                <h6 class="text-danger">Kashmir</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.9</span>
+                    <small class="text-muted">780 Reviews</small>
+                </div>
+                <h5 class="card-title">Heaven on Earth</h5>
+                <p class="card-text">A journey through the tranquil beauty of Kashmir’s valleys...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 7 Days 6 Nights</span>
+                    <span>From <strong class="text-danger">$700</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 8 - Sikkim -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://www.tripsavvy.com/thmb/LV9cMvf0PkFRA1hO6-CfTyFBxgs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-606222988-5a823cff1d64040037dfd9a1.jpg" class="card-img-top" alt="Sikkim Mountains">
+            <div class="card-body">
+                <h6 class="text-danger">Sikkim</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.7</span>
+                    <small class="text-muted">650 Reviews</small>
+                </div>
+                <h5 class="card-title">Trekking in the Himalayas</h5>
+                <p class="card-text">Embark on a trek to discover the hidden gems of Sikkim...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                    <span>From <strong class="text-danger">$750</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Card 9 - Manali -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://www.naturetravelagency.com/uploads/1703234831best%20time%20to%20visit%20Manali%20for%20snowfall.jpg" class="card-img-top" alt="Manali Hills">
+            <div class="card-body">
+                <h6 class="text-danger">Manali</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.6</span>
+                    <small class="text-muted">560 Reviews</small>
+                </div>
+                <h5 class="card-title">Snowy Retreat</h5>
+                <p class="card-text">Explore the snow-capped hills and adventure spots in Manali...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 5 Days 4 Nights</span>
+                    <span>From <strong class="text-danger">$500</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more package cards similarly... -->
+    <!-- Package Card 10 - Uttarakhand -->
+    <div class="col-md-6">
+        <div class="card border-0 shadow-sm package-card animate__animated animate__fadeInUp">
+            <img src="https://static.toiimg.com/thumb/msid-105173665,width-1070,height-580,resizemode-75/105173665,pt-32,y_pad-40/105173665.jpg" class="card-img-top" alt="Uttarakhand Trekking">
+            <div class="card-body">
+                <h6 class="text-danger">Uttarakhand</h6>
+                <div class="d-flex align-items-center mb-2">
+                    <span class="text-warning me-2">&#9733; 4.7</span>
+                    <small class="text-muted">600 Reviews</small>
+                </div>
+                <h5 class="card-title">Trekking to the Himalayan Peaks</h5>
+                <p class="card-text">Explore the beautiful hill stations and trekking routes in Uttarakhand...</p>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <span><i class="bi bi-calendar-event"></i> 6 Days 5 Nights</span>
+                    <span>From <strong class="text-danger">$650</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add more package cards similarly... -->
+</div>
+</div>
+</div>
+</div>
+    
+    <!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">What Our Travelers Say</h2>
+    <div class="row justify-content-center">
+
+      <!-- Testimonial Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="https://i.ibb.co/TW5yn1q/user1.png" alt="User1">
+            <h5>Amit Sharma</h5>
+            <small>Delhi to Manali</small>
+            <p>"Amazing experience! The entire tour was very well organized. We had so much fun and made beautiful memories."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="https://i.ibb.co/9YyZDRj/user2.png" alt="User2">
+            <h5>Neha Verma</h5>
+            <small>Goa Beach Tour</small>
+            <p>"Very professional service. Comfortable stay and smooth transportation. Highly recommended for travelers!"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <img src="https://i.ibb.co/gRPJnpC/user3.png" alt="User3">
+            <h5>Rohit Mehra</h5>
+            <small>Kerala Backwaters</small>
+            <p>"I loved every bit of the journey. Beautiful places and friendly guides. I would definitely travel again!"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    <!-- Submit Review Section -->
+<section class="submit-review-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Share Your Experience</h2>
+    <p class="text-center mb-5 text-muted">We'd love to hear how your trip went!</p>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form class="review-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Your Name">
+          </div>
+          <div class="mb-3">
+            <label for="place" class="form-label">Visited Place</label>
+            <input type="text" class="form-control" id="place" placeholder="e.g., Kerala, Goa...">
+          </div>
+          <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <select class="form-select" id="rating">
+              <option selected disabled>Select a rating</option>
+              <option>★ 1</option>
+              <option>★ 2</option>
+              <option>★ 3</option>
+              <option>★ 4</option>
+              <option>★ 5</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="review" class="form-label">Your Review</label>
+            <textarea class="form-control" id="review" rows="4" placeholder="Write about your experience..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning px-4">Submit Review</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+    <!-- Custom Footer End --><!-- Enhanced Footer Start -->
+<footer class="custom-footer">
+  <!-- Decorative Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 120 28">
+      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="Images/TT7.png" alt="Travel Tales Logo" />
+</div>
+
+      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> info@traveltales.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+</div>
+
+</footer>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

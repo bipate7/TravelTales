@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Explore North East India</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="Images/TT4.png">
+        <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Images/Background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+            position: static;
+            z-index: 1000;
+        }
+
+        h1 {
+            font-family: Waldecry;
+            font-size: 40px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d3cce3;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 1em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #about {
+            font-family: Orpheus;
+            font-size: 1.2em;
+        }
+
+        #about h2 {
+            font-family: Orpheus;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 1em;
+            padding: 1em;
+            width: 350px;
+            height: 450px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .card-front {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-back {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            transform: rotateY(180deg);
+            padding: -0.1em;
+            box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .scroll-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .scroll-inner {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            scroll-behavior: smooth;
+        }
+
+        #states .state-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 1em;
+            padding: 1em;
+            width: 300px;
+            height: 370px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #states .state-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #states .state-card h4 {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding: 2em 0;
+            gap: 1em;
+        }
+
+        .gallery img {
+            border-radius: 10px;
+            min-width: 300px;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1s ease-in-out;
+            scroll-snap-align: center;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        /* General Styling for About Section */
+        #about {
+            background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+            line-height: 1.8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Section Title Styling */
+        #about h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            position: relative;
+            color: #2b4b6f;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Animated Underline */
+        #about h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background-color: #00a8e8;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #about h2:hover::after {
+            width: 50%;
+        }
+
+        /* Paragraph Styling */
+        #about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* Highlighted Words */
+        #about p b {
+            color: #00a8e8;
+            font-weight: bold;
+        }
+
+        #about p i {
+            font-style: italic;
+            color: #007ea7;
+        }
+
+        /* Hover Effects on Paragraphs */
+        #about p:hover {
+            transform: translateY(-2px);
+            color: #222;
+            transition: all 0.3s ease;
+        }
+
+        /* Interactive Background Hover */
+        #about:hover {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+        #about {
+            padding: 20px;
+        }
+
+        #about h2 {
+            font-size: 2rem;
+        }
+
+        #about p {
+            font-size: 1rem;
+        }
+        .card-back a {
+            display: inline-block;          /* Makes the link behave like a button */
+            padding: 10px 20px;           /* Adds space inside the button */
+            background-color: #4CAF50;    /* Green background color */
+            color: white;                  /* White text color */
+            text-align: center;            /* Center the text */
+            text-decoration: none;         /* Remove underline from the link */
+            border-radius: 5px;           /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        .card-back a:hover {
+            background-color: #45a049;     /* Darker green on hover */
+        }
+
+
+        /* Gallery Section Styling */
+        #gallery {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+        }
+
+        #gallery h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            opacity: 0.9;
+        }
+        .card-back a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007BFF; /* Blue button */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .card-back a:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slightly larger on hover */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .know-more-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.know-more-btn:hover {
+    background-color: #0056b3;
+}
+
+
+    </style>
+    </head>
+    <body>
+        <header>
+            <h1>"Secrets of the Seven Sisters: Unveiling the Mystique of Northeast India"</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#states">States</a>
+                <a href="#places">Places to Travel</a>
+                <a href="#packages">Travel Packages</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#cuisine-ne">Cuisine</a>
+                <a href="#festivals-ne">Festivals</a>
+                <a href="#adventure-ne">Adventure</a>
+                <a href="#handicrafts-ne">Handicrafts</a>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h2>About Northeast India</h2>
+            <p>Welcome to Northeast India, a land of rich cultural heritage, stunning landscapes, and unique experiences. Discover the beauty and diversity of this enchanting region, known for its vibrant cultures and breathtaking vistas.</p>
+            <p>Northeast India is a mesmerizing part of the country, comprising eight distinctive states: Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, and Tripura. Often referred to as the <i><b>"Seven Sisters"</b></i> and their brother Sikkim, each state offers its own unique charm and attractions.</p>
+            <p>Immerse yourself in lush greenery, majestic mountains, serene valleys, and pristine rivers. Experience the mystical monasteries of Sikkim, the living root bridges of Meghalaya, the tea gardens of Assam, and the colorful festivals of Nagaland. Northeast India promises an array of unforgettable adventures, perfect for nature lovers, adventure enthusiasts, and cultural explorers alike.</p>
+            <p>Despite its natural beauty and cultural richness, Northeast India remains one of the lesser-explored regions, preserving its untouched allure and tranquil environment. Traveling through this region offers a rare opportunity to delve into diverse traditions, languages, and lifestyles. Whether you're trekking through the Himalayas, cruising down the Brahmaputra River, or experiencing the vibrant local festivals, Northeast India is a destination that captivates and inspires at every turn.</p>
+            <p>Join us in exploring this hidden gem of India, where every journey is an adventure, and every moment is a discovery.</p>
+        </section>
+
+        <section id="states">
+            <h2>States of NorthEast India</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Arunachal Pradesh.jpg" alt="Arunachal Pradesh">
+                            <h3>Arunachal Pradesh</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Known as the "Land of the Rising Sun," Arunachal Pradesh is famous for its scenic beauty, ancient monasteries, and diverse tribal cultures.</p>
+                            <a href="Arunachal Pradesh/ArunachalPradesh.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Assam1.jpg" alt="Assam">
+                            <h3>Assam</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Assam is renowned for its tea gardens, wildlife sanctuaries, and the majestic Brahmaputra River. It is a gateway to Northeast India.</p>
+                            <a href="Assam/Assam.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Manipur1.jpg" alt="Manipur">
+                            <h3>Manipur</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Manipur, known as the "Jewel of India," boasts picturesque landscapes, vibrant festivals, and a rich cultural heritage.</p>
+                            <a href="Manipur/Manipur.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Meghalaya1.jpg" alt="Meghalaya">
+                            <h3>Meghalaya</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Meghalaya, the "Abode of Clouds," is famous for its living root bridges, lush green hills, and pristine waterfalls.</p>
+                            <a href="Meghalaya/Meghalaya.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Mizoram.jpg" alt="Mizoram">
+                            <h3>Mizoram</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Mizoram, with its rolling hills, dense bamboo forests, and vibrant cultural festivals, offers a serene and picturesque escape.</p>
+                            <a href="Mizoram/Mizoram.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\Nagaland1.jpg" alt="Nagaland">
+                            <h3>Nagaland</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Nagaland is known for its indigenous tribes, colorful festivals, and the iconic Hornbill Festival, showcasing the state's cultural diversity.</p>
+                            <a href="Nagaland/Nagaland.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Sikkim.jpg" alt="Sikkim">
+                            <h3>Sikkim</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Sikkim, nestled in the Himalayas, offers stunning mountain views, ancient monasteries, and a tranquil environment.</p>
+                            <a href="Sikkim/Sikkim.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images/Tripura1.jpg" alt="Tripura">
+                            <h3>Tripura</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Tripura is known for its rich history, palaces, temples, and diverse cultural heritage, offering a unique travel experience.</p>
+                            <a href="Tripura/Tripura.html" class="know-more-btn">To know more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="places">
+            <h2>Places to Travel</h2>
+            <div class="scroll-container">
+                <div class="scroll-inner">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="https://www.indiantempletour.com/wp-content/uploads/2023/04/Majuli-Island.webp" alt="Majuli">
+                                <h3>Majuli</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Majuli, the world's largest river island, is known for its scenic beauty and rich cultural heritage.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Kaziranga2.jpg" alt="Kaziranga National Park" >
+                                <h3>Kaziranga National Park</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Kaziranga National Park, a UNESCO World Heritage Site, is famous for its population of the endangered one-horned rhinoceros.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Cherrapunji.jpg" alt="Cherrapunji">
+                                <h3>Cherrapunji</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Cherrapunji, one of the wettest places on Earth, is known for its living root bridges and stunning waterfalls.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Tawang.jpg" alt="Tawang">
+                                <h3>Tawang</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Tawang, nestled in the Himalayas, is known for its ancient monasteries and breathtaking mountain views.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Gangtok.jpg" alt="Gangtok">
+                                <h3>Gangtok</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Gangtok, the capital of Sikkim, offers stunning views of the Himalayas, vibrant markets, and a peaceful environment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Loktak Lake1.jpg" alt="Loktak Lake">
+                                <h3>Loktak Lake</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Loktak Lake, the largest freshwater lake in Northeast India, is known for its floating islands and scenic beauty.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Umiam Lake.jpg" alt="Umiam Lake">
+                                <h3>Umiam Lake</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>Umiam Lake, also known as Barapani, is a picturesque man-made reservoir offering a tranquil retreat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages">
+            <h2>Travel Packages</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\Majuli-Island.webp" alt="Majuli Package">
+                            <h3>Majuli Package</h3>
+                            <p>Rating: ⭐⭐⭐⭐</p>
+                            <p>Price: ₹15,000 per person</p>
+                            <p>Duration: 5 Days / 4 Nights</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Explore the serene beauty of Majuli, the world's largest river island. Enjoy traditional Assamese culture, scenic landscapes, and local cuisine.</p>
+                            <a href="https://example.com/book-majuli">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\KaziPAckages.webp" alt="Kaziranga Package">
+                            <h3>Kaziranga Package</h3>
+                            <p>Rating: ⭐⭐⭐⭐⭐</p>
+                            <p>Price: ₹20,000 per person</p>
+                            <p>Duration: 4 Days / 3 Nights</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Experience the thrill of wildlife safaris in Kaziranga National Park. Spot the endangered one-horned rhinoceros and enjoy guided tours.</p>
+                            <a href="https://example.com/book-kaziranga">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\Cherrapunji1.webp" alt="Cherrapunji Package">
+                            <h3>Cherrapunji Package</h3>
+                            <p>Rating: ⭐⭐⭐⭐</p>
+                            <p>Price: ₹18,000 per person</p>
+                            <p>Duration: 3 Days / 2 Nights</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Discover the magic of Cherrapunji, one of the wettest places on Earth. Explore living root bridges, waterfalls, and lush green landscapes.</p>
+                            <a href="https://example.com/book-cherrapunji">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\TawangPackages.avif" alt="Tawang Package">
+                            <h3>Tawang Package</h3>
+                            <p>Rating: ⭐⭐⭐⭐⭐</p>
+                            <p>Price: ₹25,000 per person</p>
+                            <p>Duration: 6 Days / 5 Nights</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Embark on a spiritual journey to Tawang. Visit ancient monasteries, enjoy panoramic mountain views, and immerse yourself in local culture.</p>
+                            <a href="https://example.com/book-tawang">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\Gangtok.jpg" alt="Gangtok Package">
+                            <h3>Gangtok Package</h3>
+                            <p>Rating: ⭐⭐⭐⭐</p>
+                            <p>Price: ₹22,000 per person</p>
+                            <p>Duration: 5 Days / 4 Nights</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Experience the tranquility of Gangtok, the capital of Sikkim. Enjoy stunning Himalayan views, visit monasteries, and explore local markets.</p>
+                            <a href="https://example.com/book-gangtok">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        <section id="cuisine-ne">
+            <h2>Cuisine of Northeast India</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Assamese Thali.jpg" alt="Assamese Thali" >
+                                <h3>Assamese Thali, Assam</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>A wholesome meal featuring rice, fish curry, green leafy vegetables, and regional delicacies.</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\BambooShoot.webp" alt="Bamboo Shoot">
+                                <h3>Bamboo Shoot, Nagaland</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>A popular Naga dish made with bamboo shoots, often prepared with pork or fish.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Eromba.jpg" alt="Eromba" height="435px" width="350px">
+                                <h3>Eromba, Manipur</h3>
+                            </div>
+                        <div class="card-back">
+                            <p>A traditional dish made with boiled vegetables, fermented fish, and fiery chilies.</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Thukpa.jpg" alt="Thukpa">
+                                <h3>Thukpa, Arunachal Pradesh</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>A hearty noodle soup with vegetables and meat, influenced by Tibetan cuisine.</p>
+                            </div>
+                        </div>
+                    </div>       
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="Images\Smoked Pork.jpg" alt="Smoked Pork">
+                                <h3>Smoked Pork, Meghalaya</h3>
+                            </div>
+                            <div class="card-back">
+                                <p>A delectable Khasi dish of smoked pork, cooked with bamboo shoots and spices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+<section id="festivals-ne">
+    <h2>Festivals of Northeast India</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="Images\Bihu.avif" alt="Bihu" >
+            <h3>Bihu, Assam</h3>
+            <p>A vibrant festival celebrating the Assamese New Year, marked by traditional music and dance.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Hornbill Festival.jpg" alt="Hornbill Festival" width="300px" height="350px">
+            <h3>Hornbill Festival, Nagaland</h3>
+            <p>A grand celebration showcasing the culture and heritage of Nagaland's tribes.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Durga Puja.webp" alt="Durga Puja" >
+            <h3>Durga Puja, Tripura</h3>
+            <p>A major festival honoring Goddess Durga, featuring elaborate rituals and festivities.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Ningol Chakouba.jpg" alt="Ningol Chakouba">
+            <h3>Ningol Chakouba, Manipur</h3>
+            <p>A family-oriented festival where married women are invited to a feast at their parental homes.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Wangala Festival.jpeg" alt="Wangala Festival">
+            <h3>Wangala Festival, Meghalaya</h3>
+            <p>A harvest festival celebrated by the Garo tribe, with traditional dances and music.</p>
+        </div>
+    </div>
+</section>
+
+<section id="adventure-ne">
+    <h2>Adventure Activities in Northeast India</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="Images\River Rafting1.jpg" alt="River Rafting">
+            <h3>River Rafting, Arunachal Pradesh</h3>
+            <p>Thrilling river rafting experiences in the Brahmaputra and its tributaries.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Living Root Bridges.jpg" alt="Living Root Bridges">
+            <h3>Living Root Bridges, Meghalaya</h3>
+            <p>Explore the unique living root bridges, a natural marvel found in the dense forests of Meghalaya.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Trekking, Sikkim.jpg" alt="Trekking Sikkim">
+            <h3>Trekking, Sikkim</h3>
+            <p>Embark on scenic treks through the Himalayas, offering breathtaking views and diverse flora.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Mountaineering.jpg" alt="Mountaineering Arunachal Pradesh">
+            <h3>Mountaineering, Arunachal Pradesh</h3>
+            <p>Challenge yourself with mountaineering expeditions in the majestic Eastern Himalayas.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Camping.jpeg" alt="Camping Nagaland">
+            <h3>Camping, Nagaland</h3>
+            <p>Experience the thrill of camping in the pristine wilderness of Nagaland.</p>
+        </div>
+    </div>
+</section>
+
+<section id="handicrafts-ne">
+    <h2>Handicrafts of Northeast India</h2>
+    <div class="cards">
+        <div class="card">
+            <img src="Images\Handwoven Silk.jpeg" alt="Handwoven Silk">
+            <h3>Handwoven Silk, Assam</h3>
+            <p>Admire the exquisite handwoven silk, known for its fine quality and intricate designs.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Naga Shawls.jpeg" alt="Naga Shawls">
+            <h3>Naga Shawls, Nagaland</h3>
+            <p>Discover the beautiful Naga shawls, characterized by their bold patterns and vibrant colors.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Manipur Pottery.jpeg" alt="Manipur Pottery">
+            <h3>Manipur Pottery, Manipur</h3>
+            <p>Explore the unique black pottery of Manipur, made using traditional methods.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Cane and Bamboo Crafts.jpg" alt="Cane and Bamboo Crafts">
+            <h3>Cane and Bamboo Crafts, Mizoram</h3>
+            <p>Admire the finely crafted cane and bamboo items, a testament to the region's skilled artisans.</p>
+        </div>
+        <div class="card">
+            <img src="Images\Wood Carvings.avif" alt="Wood Carvings">
+            <h3>Wood Carvings, Tripura</h3>
+            <p>Marvel at the intricate wood carvings, depicting mythological themes and cultural motifs.</p>
+        </div>
+    </div>
+</section>
+
+        
+        <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="Assam.jpg" alt="Assam">
+        </div>
+        <div class="gallery-item">
+            <img src="Manipur.jpg" alt="Manipur">
+        </div>
+        <div class="gallery-item">
+            <img src="Meghalaya.jpg" alt="Meghalaya">
+        </div>
+        <div class="gallery-item">
+            <img src="Loktak Lake.jpg" alt="Loktak Lake">
+        </div>
+        <div class="gallery-item">
+            <img src="Nagaland.jpg" alt="Nagaland">
+        </div>
+        <div class="gallery-item">
+            <img src="Sikkim.jpg" alt="Sikkim">
+        </div>
+        <div class="gallery-item">
+            <img src="Tripura.jpg" alt="Tripura">
+        </div>
+        <div class="gallery-item">
+            <img src="Shillong.jpg" alt="Shillong">
+        </div>
+    </div>
+</section>
+
+        <footer>
+            <p>© 2024 Northeast India Travel. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

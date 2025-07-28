@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Custom Scrollbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .content {
+            width: 80%;
+            height: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            overflow-y: scroll;
+        }
+        /* Custom Scrollbar */
+        .content::-webkit-scrollbar {
+            width: 10px;
+        }
+        .content::-webkit-scrollbar-thumb {
+            background-color: #2196F3;
+            border-radius: 10px;
+        }
+        .content::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #2196F3;">Basic Custom Scrollbar</h1>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, elit nec fringilla dictum, lectus orci ultrices nisi, sit amet congue risus erat vel justo.</p>
+        <p>Curabitur nec libero id quam tincidunt porttitor id in turpis. Nullam varius metus ac orci interdum, non dictum nisl posuere.</p>
+        <p>Suspendisse potenti. Proin non libero vel lectus faucibus accumsan ut ut tortor.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt lacinia vehicula.</p>
+        <p>Vestibulum dictum velit ut massa tristique fermentum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, elit nec fringilla dictum, lectus orci ultrices nisi, sit amet congue risus erat vel justo.</p>
+        <p>Curabitur nec libero id quam tincidunt porttitor id in turpis. Nullam varius metus ac orci interdum, non dictum nisl posuere.</p>
+        <p>Suspendisse potenti. Proin non libero vel lectus faucibus accumsan ut ut tortor.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tincidunt lacinia vehicula.</p>
+        <p>Vestibulum dictum velit ut massa tristique fermentum.</p>
+    </div>
+    <footer style="text-align: center; margin-top: 20px; color: #555;">
+        <h3>Explanation</h3>
+        <p>
+            In this example, a custom scrollbar is applied using the following properties:
+            <ul>
+                <li><code>::-webkit-scrollbar</code>: Targets the scrollbar.</li>
+                <li><code>::-webkit-scrollbar-thumb</code>: Styles the scroll handle.</li>
+                <li><code>::-webkit-scrollbar-track</code>: Styles the scrollbar background.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

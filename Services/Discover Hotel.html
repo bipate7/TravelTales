@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Tales – India's Most Inspiring Hotels</title>
+  <link rel="icon" href="Images/TT4.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #1a2a6c;
+      --secondary: #fdbb2d;
+      --accent: #ff7e5f;
+      --bg: #f5f7fa;
+      --card-bg: #fff;
+      --shadow: 0 6px 24px rgba(0,0,0,0.09);
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: #222;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 30px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-container img {
+      height: 100px;
+      border-radius: 8px;
+      width: 90px;
+    }
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.08rem;
+      position: relative;
+      padding: 4px 0;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover, nav ul li a.active {
+      color: var(--secondary);
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(35,43,82,0.7),rgba(255,126,95,0.15)), url('https://theasiacollective.com/best-hotels-india/evolve-back-hampi-3/') center/cover no-repeat;
+      color: #fff;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      padding: 90px 8vw 60px 8vw;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--secondary);
+      text-shadow: 2px 2px 16px #2229;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #fffbe7;
+      text-shadow: 1px 1px 8px #00000040;
+      max-width: 500px;
+    }
+    .hero .cta-btn {
+      font-size: 1.15rem;
+      padding: 0.8rem 2.2rem;
+      border-radius: 30px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .hero .cta-btn:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    /* Feature Highlights */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      background: #fff;
+      padding: 40px 0 30px 0;
+      margin-top: -40px;
+      position: relative;
+      z-index: 2;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      width: 220px;
+      text-align: center;
+      padding: 28px 18px;
+      margin-bottom: 18px;
+      transition: transform 0.2s;
+    }
+    .feature:hover { transform: scale(1.06);}
+    .feature i {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .feature h5 { font-size: 1.1rem; margin-bottom: 8px; color: var(--accent); }
+
+    /* Packages Section */
+    .packages-section {
+      background: #f0f8ff;
+      padding: 50px 0 30px 0;
+    }
+    .packages-section h2 {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .packages-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0 10px 0;
+      scrollbar-width: none;
+    }
+    .packages-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+    .package-card {
+      background: #fff;
+      border-radius: 12px;
+      min-width: 320px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      transition: transform 0.3s;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .package-card:hover { transform: scale(1.04);}
+    .package-card img {
+      width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 12px;
+    }
+    .package-card h4 { color: var(--accent); margin-bottom: 10px; }
+    .package-card ul { padding-left: 18px; margin-bottom: 10px; }
+    .package-card .price { color: var(--primary); font-weight: 700; }
+    .package-card .book-btn {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 8px;
+      padding: 8px 22px;
+      font-weight: 600;
+      transition: background 0.2s;
+      border: none;
+      margin-top: 10px;
+    }
+    .package-card .book-btn:hover { background: var(--accent); color: var(--primary); }
+
+    /* Hotels Section */
+    .hotels {
+      padding: 50px 0 30px 0;
+      background-color: #f9f9f9;
+    }
+    .hotels h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hotel-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hotel-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .hotel-card:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .hotel-card img { height: 180px; object-fit: cover; border-radius: 0;}
+    .hotel-info {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hotel-info h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .hotel-info p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    .hotel-info .price {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .hotel-info .book-btn {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      transition: background-color 0.3s;
+      font-weight: 600;
+      border: none;
+      margin-top: 6px;
+    }
+    .hotel-info .book-btn:hover { background-color: var(--accent); color: var(--primary); }
+
+    /* Facilities Grid */
+    .facilities-section {
+      background: #fffbe7;
+      padding: 50px 0 30px 0;
+    }
+    .facilities-section h2 {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .facilities-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+    .facility-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      width: 220px;
+      text-align: center;
+      padding: 30px 18px;
+      margin-bottom: 18px;
+      transition: transform 0.2s;
+    }
+    .facility-card:hover { transform: scale(1.06);}
+    .facility-card i {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .facility-card h5 { font-size: 1.15rem; margin-bottom: 8px; color: var(--accent); }
+
+    /* Gallery Grid */
+    .gallery-section {
+      max-width: 1200px;
+      margin: 60px auto 0 auto;
+      padding: 0 15px;
+    }
+    .gallery-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .gallery-grid img:hover { transform: scale(1.04);}
+    /* Reviews Grid */
+    .reviews-section {
+      background: #fffbe7;
+      padding: 60px 0 40px 0;
+      margin-top: 60px;
+    }
+    .reviews-section h2 {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .reviews-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      min-width: 260px;
+      max-width: 350px;
+      padding: 28px 18px;
+      text-align: left;
+      position: relative;
+    }
+    .review-card .reviewer {
+      display: flex;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .review-card .reviewer img {
+      width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;
+      object-fit: cover;
+    }
+    .review-card .stars { color: #ffd700; margin-bottom: 6px; }
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      font-size: 15px;
+      padding: 40px 20px 20px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .footer-links a {
+      color: var(--accent);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--secondary);}
+    .social-icons a {
+      color: var(--accent);
+      margin-right: 10px;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover { color: var(--secondary);}
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .features { flex-wrap: wrap; gap: 18px;}
+      .hotel-cards { grid-template-columns: 1fr 1fr;}
+      .gallery-section { padding: 0 5px;}
+    }
+    @media (max-width: 800px) {
+      header { flex-direction: column; padding: 16px 6vw;}
+      .logo-container img { height: 42px;}
+      nav ul { flex-direction: column; gap: 8px;}
+      .hero { padding: 38px 10vw 60px 10vw;}
+      .features { flex-direction: column;}
+      .hotel-cards { grid-template-columns: 1fr;}
+    }
+    @media (max-width: 600px) {
+      .hero { min-height: 220px; padding: 28px 4vw 40px 4vw;}
+      .hero h1 { font-size: 1.25rem;}
+      .gallery-grid { grid-template-columns: 1fr; }
+      .facilities-grid { flex-direction: column;}
+      .hotel-cards { grid-template-columns: 1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="Images/TT5.png" alt="Travel Tales Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#hotels">Hotels</a></li>
+        <li><a href="#facilities">Facilities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>India’s Most Inspiring Hotels & Resorts</h1>
+    <p>Experience luxury, comfort, and breathtaking destinations. Book your perfect stay with Travel Tales.</p>
+    <a href="#hotels" class="cta-btn">Explore Hotels</a>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-headset"></i>
+      <h5>24/7 Support</h5>
+      <p>Always ready to assist you at any time.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-gem"></i>
+      <h5>Curated Packages</h5>
+      <p>Handpicked tours and hotels for your perfect vacation.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-tags"></i>
+      <h5>Best Price</h5>
+      <p>Get the most value for your money.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-shield-alt"></i>
+      <h5>Safe & Secure</h5>
+      <p>Your safety and privacy are our top priorities.</p>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section class="packages-section">
+    <h2>Exclusive Travel Packages</h2>
+    <div class="packages-container">
+      <div class="package-card">
+        <img src="https://cdn.pixabay.com/photo/2015/02/17/07/33/architecture-639103_1280.jpg" alt="Royal Rajasthan Tour">
+        <h4>Royal Rajasthan Tour</h4>
+        <ul>
+          <li>7 Nights, 8 Days</li>
+          <li>Jaipur, Udaipur, Jodhpur</li>
+          <li>Luxury Palace Stays</li>
+        </ul>
+        <div class="price">From ₹39,999</div>
+        <button class="book-btn">Book Package</button>
+      </div>
+      <div class="package-card">
+        <img src="https://www.goaprimewheels.com/images/background/goa-resort.png" alt="Goa Beach Escape">
+        <h4>Goa Beach Escape</h4>
+        <ul>
+          <li>5 Nights, 6 Days</li>
+          <li>Beachfront Resort</li>
+          <li>Water Sports Included</li>
+        </ul>
+        <div class="price">From ₹29,999</div>
+        <button class="book-btn">Book Package</button>
+      </div>
+      <div class="package-card">
+        <img src="https://cdn.pixabay.com/photo/2023/02/02/06/58/mountains-7762075_1280.jpg" alt="Himalayan Adventure">
+        <h4>Himalayan Adventure</h4>
+        <ul>
+          <li>6 Nights, 7 Days</li>
+          <li>Shimla, Manali, Ladakh</li>
+          <li>Guided Trekking</li>
+        </ul>
+        <div class="price">From ₹34,999</div>
+        <button class="book-btn">Book Package</button>
+      </div>
+    <!-- New 8 packages -->
+    <div class="package-card">
+      <img src="https://www.tripplannersindia.com/assets/blog/images/placestovisitindehradun/Dehradun.webp" alt="Dehradun Delight">
+      <h4>Dehradun Delight</h4>
+      <ul>
+        <li>3 Nights, 4 Days</li>
+        <li>Robber's Cave, Tapkeshwar</li>
+        <li>Nature Walks & Shopping</li>
+      </ul>
+      <div class="price">From ₹15,999</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+
+    <div class="package-card">
+      <img src="https://www.itchotels.com/content/dam/itchotels/in/umbrella/destinations/images/desktop/mussoorie.jpg" alt="Mussoorie Magic">
+      <h4>Mussoorie Magic</h4>
+      <ul>
+        <li>4 Nights, 5 Days</li>
+        <li>Kempty Falls, Camel's Back</li>
+        <li>Romantic Hill Stay</li>
+      </ul>
+      <div class="price">From ₹18,499</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+
+    <div class="package-card">
+      <img src="https://utsav.gov.in/public/uploads/darshan_picture/darshan_93/16615119891987332780.jpeg" alt="Haridwar Heritage">
+      <h4>Haridwar Heritage</h4>
+      <ul>
+        <li>2 Nights, 3 Days</li>
+        <li>Ganga Aarti & Temples</li>
+        <li>Spiritual Retreat</li>
+      </ul>
+      <div class="price">From ₹12,999</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+
+    <div class="package-card">
+      <img src="https://cdn.pixabay.com/photo/2019/08/13/14/35/nature-4403565_1280.jpg" alt="Nainital Nature Retreat">
+      <h4>Nainital Nature Retreat</h4>
+      <ul>
+        <li>3 Nights, 4 Days</li>
+        <li>Lake Tour & Cable Car</li>
+        <li>Boating & Hill Views</li>
+      </ul>
+      <div class="price">From ₹16,999</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+
+    <div class="package-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr_CC7VhsLAgc7pIkvVSN8RjkKHeEba62PBg&s" alt="Kerala Backwater Bliss">
+      <h4>Kerala Backwater Bliss</h4>
+      <ul>
+        <li>5 Nights, 6 Days</li>
+        <li>Houseboat Stay</li>
+        <li>Alleppey & Munnar</li>
+      </ul>
+      <div class="price">From ₹28,499</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+
+    <div class="package-card">
+      <img src="https://invisit.in/images/destination/kashmir/kashmir-thumbnail2.jpg" alt="Kashmir Paradise">
+      <h4>Kashmir Paradise</h4>
+      <ul>
+        <li>6 Nights, 7 Days</li>
+        <li>Srinagar, Gulmarg, Pahalgam</li>
+        <li>Shikara Ride & Snow Fun</li>
+      </ul>
+      <div class="price">From ₹33,999</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+
+    <div class="package-card">
+      <img src="https://himalayandaredevils.com/storage/uploads/6735a370ec292.jpg" alt="Valley of Flowers Trek">
+      <h4>Valley of Flowers Trek</h4>
+      <ul>
+        <li>5 Nights, 6 Days</li>
+        <li>UNESCO World Heritage</li>
+        <li>Seasonal Bloom Experience</li>
+      </ul>
+      <div class="price">From ₹22,499</div>
+      <button class="book-btn">Book Package</button>
+    </div>
+    </div>
+  </section>
+
+  <!-- Hotels Section -->
+  <section class="hotels" id="hotels">
+    <h2>Top Hotels in India</h2>
+    <div class="hotel-cards">
+      <div class="hotel-card">
+        <img src="https://images.trvl-media.com/lodging/22000000/21420000/21413500/21413414/fe678a12.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill" alt="Leela Palace, Udaipur">
+        <div class="hotel-info">
+          <h3>Leela Palace, Udaipur</h3>
+          <p>Luxury hotel offering splendid lake views in Rajasthan.</p>
+          <div class="price">₹12,999 / Night</div>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <img src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2018/12/15/Pictures/_9f2b6346-ffd3-11e8-9457-b1b429387a4e.jpg" alt="Taj Mahal Palace, Mumbai">
+        <div class="hotel-info">
+          <h3>Taj Mahal Palace, Mumbai</h3>
+          <p>Iconic hotel overlooking the Gateway of India, known for luxury hospitality.</p>
+          <div class="price">₹14,499 / Night</div>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/32151366.jpg?k=f8bdc47f536e57f09c4353611e6efbe1e81e689363e9b552d09ade2c020d63e6&o=&hp=1" alt="Wildflower Hall, Shimla">
+        <div class="hotel-info">
+          <h3>Wildflower Hall, Shimla</h3>
+          <p>Exclusive mountain resort surrounded by cedar forests in Himachal Pradesh.</p>
+          <div class="price">₹10,999 / Night</div>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <img src="https://evaanvacation.com/wp-content/uploads/2024/01/a-6.jpg" alt="Manali Retreat">
+        <div class="hotel-info">
+          <h3>Manali Retreat</h3>
+          <p>Cozy mountain hotel with beautiful valley views.</p>
+          <div class="price">₹4,999 / Night</div>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <img src="https://the-rose-goa-beach.goa-india-hotels-resorts.com/data/Pictures/OriginalPhoto/16233/1623377/1623377761/picture-agonda-89.JPEG" alt="Goa Beach Resort">
+        <div class="hotel-info">
+          <h3>Goa Beach Resort</h3>
+          <p>Seaside luxury with private beaches and nightlife.</p>
+          <div class="price">₹7,999 / Night</div>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="hotel-card">
+        <img src="https://r1imghtlak.mmtcdn.com/adb56534889b11e7a1ae0a97f7471126.jpg" alt="Jaipur Palace Stay">
+        <div class="hotel-info">
+          <h3>Jaipur Palace Stay</h3>
+          <p>Experience royal hospitality in Rajasthan.</p>
+          <div class="price">₹8,999 / Night</div>
+          <a href="#" class="book-btn">Book Now</a>
+        </div>
+      </div>
+        <div class="hotel-card">
+  <img src="https://www.micato.com/wp-content/uploads/2018/09/oberoi-amarvilas-3.jpg" alt="The Oberoi Amarvilas, Agra">
+  <div class="hotel-info">
+    <h3>The Oberoi Amarvilas, Agra</h3>
+    <p>Luxurious retreat offering direct views of the Taj Mahal.</p>
+    <div class="price">₹15,499 / Night</div>
+    <a href="#" class="book-btn">Book Now</a>
+  </div>
+</div>
+
+<div class="hotel-card">
+  <img src="https://r1imghtlak.mmtcdn.com/f953fafaf48e11e79164025f77df004f.jpg" alt="ITC Grand Chola, Chennai">
+  <div class="hotel-info">
+    <h3>ITC Grand Chola, Chennai</h3>
+    <p>Majestic luxury hotel inspired by traditional South Indian architecture.</p>
+    <div class="price">₹11,999 / Night</div>
+    <a href="#" class="book-btn">Book Now</a>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Facilities Grid -->
+  <section class="facilities-section" id="facilities">
+    <h2>Our Facilities & Amenities</h2>
+    <div class="facilities-grid">
+      <div class="facility-card">
+        <i class="fas fa-swimming-pool"></i>
+        <h5>Infinity Pool</h5>
+        <p>World-class pools with breathtaking views.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-spa"></i>
+        <h5>Spa & Wellness</h5>
+        <p>Signature spa therapies and wellness programs.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-utensils"></i>
+        <h5>Fine Dining</h5>
+        <p>Multi-cuisine restaurants serving gourmet delicacies.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-dumbbell"></i>
+        <h5>Fitness Center</h5>
+        <p>Modern gym facilities and personal trainers.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-wifi"></i>
+        <h5>Free Wi-Fi</h5>
+        <p>High-speed internet in all rooms and public areas.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-child"></i>
+        <h5>Kids' Play Area</h5>
+        <p>Fun and safe spaces for children.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-shuttle-van"></i>
+        <h5>Airport Transfers</h5>
+        <p>Seamless pick-up and drop-off services.</p>
+      </div>
+      <div class="facility-card">
+        <i class="fas fa-concierge-bell"></i>
+        <h5>24/7 Concierge</h5>
+        <p>Personalized service for all your needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <h2>Gallery: Ambience & Experiences</h2>
+    <div class="gallery-grid">
+      <img src="https://cdn.pixabay.com/photo/2019/04/07/07/52/taj-mahal-4109110_1280.jpg" alt="Taj Mahal">
+      <img src="https://cdn.pixabay.com/photo/2013/07/19/17/38/kerala-165347_1280.jpg" alt="Kerala Backwaters">
+      <img src="https://cdn.pixabay.com/photo/2014/07/20/16/06/ladakh-397884_1280.jpg" alt="Ladakh Mountains">
+      <img src="https://s7ap1.scene7.com/is/image/incredibleindia/amber-fort-jaipur-rajasthan-1-attr-hero?qlt=82&ts=1742157903972" alt="Jaipur Palace">
+      <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/180814439.jpg?k=170a98c760f500b768829d885854b58b315d717caee6456688ff6b8958706723&o=&hp=1" alt="Hotel Pool">
+      <img src="https://www.theleela.com/prod/content/assets/styles/tl_1920_735/public/aio-banner/dekstop/the-leela-ambience-convention-hotel-delhi_1.jpg?VersionId=zKDkU4jNkTaDhRxi5nrSsJysnI5fVe0v&itok=E371m5yR" alt="Hotel Ambience">
+      <img src="https://www.theraviz.com/wp-content/uploads/2024/08/culinary-journeys-5-start-hotel-resto.jpg" alt="Hotel Restaurant">
+      <img src="https://png.pngtree.com/background/20220718/original/pngtree-five-star-hotel-lounge-picture-image_1662953.jpg" alt="Hotel Lounge">
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <h2>What Our Guests Say</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Travel Tales made our honeymoon in Udaipur unforgettable! The hotel was stunning and the service was flawless."</p>
+        <div class="reviewer">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+          <span>Priya Sharma</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"We loved the curated package for Goa. Everything was perfectly organized and the resort was top-notch."</p>
+        <div class="reviewer">
+          <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Rahul Mehra">
+          <span>Rahul Mehra</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Amazing customer support and the best hotel deals. Highly recommend Travel Tales!"</p>
+        <div class="reviewer">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Neha Patel">
+          <span>Neha Patel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Travel Tales. All Rights Reserved.</p>
+    <p>Discover Hotels | Exclusive Packages | Best Deals</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+    <div class="social-icons mt-2">
+      <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

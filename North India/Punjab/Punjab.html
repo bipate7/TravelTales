@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Punjab: The Land of Five Rivers</title>
+        <link rel="icon" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9933;
+            --secondary: #138808;
+            --accent: #FF5722;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url('https://plus.unsplash.com/premium_photo-1697730324062-c012bc98eb13?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHVuamFifGVufDB8fDB8fHww') no-repeat center center/cover;
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            margin-top: 5rem;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--dark);
+        }
+        
+        .section {
+            padding: 5rem 5%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+        
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .place-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+        
+        .place-info {
+            padding: 1.5rem;
+        }
+        
+        .place-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .place-info .location {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .place-info .location i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .place-info p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .best-time {
+            background-color: rgba(19, 136, 8, 0.1);
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        
+        .rating {
+            color: #FFC107;
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .package-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .package-info {
+            padding: 1.5rem;
+        }
+        
+        .package-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .package-duration {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .package-duration i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .package-info p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .package-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .book-now {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .book-now:hover {
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 500px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .culture-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        
+        .culture-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .culture-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .culture-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+        
+        .culture-feature {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .culture-feature:hover {
+            transform: translateY(-10px);
+        }
+        
+        .culture-feature i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .culture-feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .culture-feature p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        
+        .testimonials {
+            background-color: #f8f9fa;
+        }
+        
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.05);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-column p {
+            color: #adb5bd;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section {
+                padding: 3rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo"><img src="Images/TT5.png" class="logo"></a>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#places">Places</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#culture">Culture</a></li>
+            <li><a href="#map">Map</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="header" id="home">
+        <div class="hero">
+            <h1>Discover the Vibrant Heart of India</h1>
+            <p>Experience the rich culture, delicious cuisine, and warm hospitality of Punjab - the land of five rivers and endless possibilities.</p>
+            <div>
+                <a href="#packages" class="btn">Explore Packages</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Places to Visit Section -->
+    <section class="section" id="places">
+        <div class="section-title">
+            <h2>Must-Visit Places</h2>
+            <p>Discover the most iconic and beautiful destinations in Punjab that showcase its rich heritage and natural beauty</p>
+        </div>
+        <div class="places-container">
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/The_Golden_Temple_of_Amrithsar_7.jpg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         " alt="Golden Temple">
+                </div>
+                <div class="place-info">
+                    <h3>Golden Temple</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Amritsar</span>
+                    </div>
+                    <p>The holiest Gurdwara of Sikhism, known for its stunning golden architecture and serene atmosphere.</p>
+                    <div class="place-meta">
+                        <span class="best-time">Oct-Mar</span>
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Jallianwala_Bagh%2C_Amritsar_01.jpg/1200px-Jallianwala_Bagh%2C_Amritsar_01.jpg" alt="Jallianwala Bagh">
+                </div>
+                <div class="place-info">
+                    <h3>Jallianwala Bagh</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Amritsar</span>
+                    </div>
+                    <p>A memorial of national importance that commemorates the massacre of peaceful celebrants in 1919.</p>
+                    <div class="place-meta">
+                        <span class="best-time">Oct-Mar</span>
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://www.livemint.com/lm-img/img/2023/08/15/optimize/INDIA-PAKISTAN-BORDER-0_1692107859802_1692107861878.jpg" alt="Wagah Border">
+                </div>
+                <div class="place-info">
+                    <h3>Wagah Border</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Amritsar</span>
+                    </div>
+                    <p>Witness the electrifying Beating Retreat Ceremony at the India-Pakistan border.</p>
+                    <div class="place-meta">
+                        <span class="best-time">Oct-Mar</span>
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://media.istockphoto.com/id/1365969500/photo/roads-of-chandigarh-in-the-morning.jpg?s=612x612&w=0&k=20&c=7_i3A2l0QDNUmiJ4zWlZU8gZ862EY6L1mHJrlY36LSA=" alt="Chandigarh">
+                </div>
+                <div class="place-info">
+                    <h3>Chandigarh</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chandigarh</span>
+                    </div>
+                    <p>India's first planned city with beautiful architecture, gardens, and a modern vibe.</p>
+                    <div class="place-meta">
+                        <span class="best-time">Sep-Apr</span>
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://c1.wallpaperflare.com/preview/307/978/549/gurudwara-dukhniwaran-sahib-patiala-sikh-bath.jpg" alt="Patiala">
+                </div>
+                <div class="place-info">
+                    <h3>Patiala</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Patiala</span>
+                    </div>
+                    <p>Known for its royal heritage, magnificent forts, and the famous Patiala peg.</p>
+                    <div class="place-meta">
+                        <span class="best-time">Oct-Mar</span>
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://media.istockphoto.com/id/1252850359/photo/ludhiana-punjab-india-14th-june-2020-view-of-the-colonial-heritage-building-of-the-ludhiana.jpg?s=612x612&w=0&k=20&c=XGmFGj7mRszxjIJlgE_vfxrJbL09o2ZKZS69naLI3xE=" alt="Ludhiana">
+                </div>
+                <div class="place-info">
+                    <h3>Ludhiana</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ludhiana</span>
+                    </div>
+                    <p>Punjab's largest city and industrial hub with a mix of modernity and tradition.</p>
+                    <div class="place-meta">
+                        <span class="best-time">Oct-Mar</span>
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Packages Section -->
+    <section class="section" id="packages" style="background-color: #f8f9fa;">
+        <div class="section-title">
+            <h2>Travel Packages</h2>
+            <p>Explore our carefully curated travel packages that offer the best of Punjab's experiences</p>
+        </div>
+        <div class="packages-container">
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://cdn.britannica.com/13/173813-050-1DCA15F5/Harmandir-Sahib-Amritsar-India-Punjab.jpg" alt="Golden Temple Tour">
+                    <div class="package-price">₹6,000</div>
+                </div>
+                <div class="package-info">
+                    <h3>Golden Temple Tour</h3>
+                    <div class="package-duration">
+                        <i class="far fa-clock"></i>
+                        <span>3 Days, 2 Nights</span>
+                    </div>
+                    <p>Experience the spiritual bliss of the Golden Temple with this comprehensive tour package.</p>
+                    <div class="package-meta">
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <a href="Golden Temple Tour.html" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/jallianwala-bagh-amritsar-punjab-1-attr-hero?qlt=82&ts=1726662275638" alt="Amritsar Heritage Tour">
+                    <div class="package-price">₹8,500</div>
+                </div>
+                <div class="package-info">
+                    <h3>Amritsar Heritage Tour</h3>
+                    <div class="package-duration">
+                        <i class="far fa-clock"></i>
+                        <span>4 Days, 3 Nights</span>
+                    </div>
+                    <p>Explore Amritsar's rich history including Golden Temple, Jallianwala Bagh, and more.</p>
+                    <div class="package-meta">
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                        <a href="Jallianwala Bagh Tour.html" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://m.economictimes.com/thumb/msid-68217133,width-1200,height-900,resizemode-4,imgsize-703119/daily-retreat-ceremony-along-attari-wagah-border-cancelled-bsf.jpg" alt="Border Experience">
+                    <div class="package-price">₹4,500</div>
+                </div>
+                <div class="package-info">
+                    <h3>Wagah Border Experience</h3>
+                    <div class="package-duration">
+                        <i class="far fa-clock"></i>
+                        <span>2 Days, 1 Night</span>
+                    </div>
+                    <p>Witness the Wagah Border ceremony and explore nearby attractions.</p>
+                    <div class="package-meta">
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                        <a href="Wagah Border Tour.html" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/rock-garden-chandigarh-attr-hero-2?qlt=82&ts=1727353657552" alt="Chandigarh Getaway">
+                    <div class="package-price">₹7,200</div>
+                </div>
+                <div class="package-info">
+                    <h3>Chandigarh Getaway</h3>
+                    <div class="package-duration">
+                        <i class="far fa-clock"></i>
+                        <span>3 Days, 2 Nights</span>
+                    </div>
+                    <p>Discover the beauty of Chandigarh with visits to Rock Garden, Sukhna Lake, and more.</p>
+                    <div class="package-meta">
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </span>
+                        <a href="Chandigarh Tour.html" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-img">
+                    <img src="https://www.travelsiteindia.com/img/city/culture-in-amritsar.png" alt="Punjab Cultural Tour">
+                    <div class="package-price">₹12,000</div>
+                </div>
+                <div class="package-info">
+                    <h3>Punjab Cultural Tour</h3>
+                    <div class="package-duration">
+                        <i class="far fa-clock"></i>
+                        <span>7 Days, 6 Nights</span>
+                    </div>
+                    <p>Immerse yourself in Punjab's culture with visits to Amritsar, Chandigarh, Patiala, and more.</p>
+                    <div class="package-meta">
+                        <span class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                        <a href="#" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="package-card">
+    <div class="package-img">
+        <img src="Images/Patiala Tour.jpg" alt="Patiala Tour">
+        <div class="package-price">₹4,000</div>
+    </div>
+    <div class="package-info">
+        <h3>Patiala Tour</h3>
+        <div class="package-duration">
+            <i class="far fa-clock"></i>
+            <span>2 Days, 1 Night</span>
+        </div>
+        <p>Explore the royal heritage and vibrant markets of Patiala.</p>
+        <div class="package-meta">
+            <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </span>
+            <a href="Patiala Tour.html" class="book-now">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Ludhiana Tour.webp" alt="Ludhiana Tour">
+        <div class="package-price">₹6,000</div>
+    </div>
+    <div class="package-info">
+        <h3>Ludhiana Tour</h3>
+        <div class="package-duration">
+            <i class="far fa-clock"></i>
+            <span>3 Days, 2 Nights</span>
+        </div>
+        <p>Discover Ludhiana’s culture, food, and industrial charm.</p>
+        <div class="package-meta">
+            <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </span>
+            <a href="Ludhiana Tour.html" class="book-now">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Jalandhar Tour.jpg" alt="Jalandhar Tour">
+        <div class="package-price">₹4,000</div>
+    </div>
+    <div class="package-info">
+        <h3>Jalandhar Tour</h3>
+        <div class="package-duration">
+            <i class="far fa-clock"></i>
+            <span>2 Days, 1 Night</span>
+        </div>
+        <p>Enjoy a short escape through Jalandhar’s temples and shopping hubs.</p>
+        <div class="package-meta">
+            <span class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </span>
+            <a href="Jalandhar Tour.html" class="book-now">Book Now</a>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section" id="culture">
+        <h2>Punjab's Vibrant Culture</h2>
+        <p>Experience the rich traditions, lively music, delicious cuisine, and warm hospitality that make Punjab unique</p>
+        <div class="culture-features">
+            <div class="culture-feature">
+                <i class="fas fa-utensils"></i>
+                <h3>Cuisine</h3>
+                <p>Indulge in the rich flavors of Punjabi cuisine - from butter chicken to sarson ka saag and makki di roti.</p>
+            </div>
+            <div class="culture-feature">
+                <i class="fas fa-music"></i>
+                <h3>Music & Dance</h3>
+                <p>Feel the energy of Bhangra and Gidda, Punjab's famous folk dances accompanied by dhol beats.</p>
+            </div>
+            <div class="culture-feature">
+                <i class="fas fa-monument"></i>
+                <h3>Heritage</h3>
+                <p>Explore Punjab's rich history through its magnificent forts, palaces, and historical sites.</p>
+            </div>
+            <div class="culture-feature">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Hospitality</h3>
+                <p>Experience the legendary Punjabi hospitality that makes every visitor feel like family.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="section-title">
+            <h2>Traveler Experiences</h2>
+            <p>Hear what our visitors have to say about their unforgettable journeys through Punjab</p>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p class="testimonial-text">The Golden Temple experience was transcendental. The early morning visit with the prayers echoing was something I'll never forget. The food at the langar was delicious and the entire atmosphere was so peaceful.</p>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>From London, UK</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">The Wagah Border ceremony was electrifying! The energy, the patriotism, the synchronized moves of the soldiers - it gave me goosebumps. Our guide was excellent in explaining the history behind it all.</p>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>From Toronto, Canada</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">Punjabi food is out of this world! The butter chicken, dal makhani, and lassi were highlights, but the real surprise was the street food in Amritsar. The kulcha at Kulcha Land was worth the trip alone!</p>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Aisha Rahman">
+                    </div>
+                    <div class="author-info">
+                        <h4>Aisha Rahman</h4>
+                        <p>From Dubai, UAE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="map">
+        <div class="section-title">
+            <h2>Explore Punjab</h2>
+            <p>Discover the geographical diversity and key attractions across Punjab with our interactive map</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1xUeO_0AH6_1fJ15gFVp6VFcPzbssUc4&ehbc=2E312F" width="640" height="480"></iframe> 
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Punjab Tourism</h3>
+                <p>Discover the vibrant culture, rich heritage, and warm hospitality of Punjab - the land of five rivers.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#places">Places to Visit</a></li>
+                    <li><a href="#packages">Tour Packages</a></li>
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#map">Map</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i>Yashoda Nagar. Jaitala Road, Nagpur</li>
+                    <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> travetalesngp@gmail.com</li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                <form>
+                    <input type="email" placeholder="Your Email" style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border-radius: 5px; border: 1px solid #adb5bd;">
+                    <button type="submit" class="book-now" style="width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+        <p>&copy; 2025 Travel Tales . All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Punjab</p>
+    </div>
+    </footer>
+</body>
+</html>

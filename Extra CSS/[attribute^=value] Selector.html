@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[attribute^=value] Selector</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #e3f2fd;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2196F3;
+        }
+        p {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 2px solid #BBDEFB;
+        }
+        p[title^="CSS"] {
+            background-color: #2196F3;
+            color: white;
+            font-style: italic;
+        }
+        footer {
+            margin-top: 30px;
+            background-color: #e1f5fe;
+            padding: 15px;
+            border-top: 3px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Attribute Selector: [attribute^=value]</h1>
+    <p title="HTML Guide">This paragraph's title starts with "HTML".</p>
+    <p title="CSS Basics">This paragraph's title starts with "CSS" and matches the selector.</p>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            The <code>[attribute^=value]</code> selector matches elements whose attribute value starts with a specific string. 
+            <ul>
+                <li>The first paragraph's title starts with "HTML", so it does not match.</li>
+                <li>The second paragraph's title starts with "CSS", so it gets a blue background and italic text.</li>
+                <li>This is useful for targeting elements based on prefixes in their attribute values.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>
+

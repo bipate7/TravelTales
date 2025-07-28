@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS calc() Example</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Card container styling */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+/* Card styling with calc() */
+.card {
+    /* Width is dynamically calculated: 50% of the container width minus 20px for spacing */
+    width: calc(50% - 20px); 
+    
+    /* Max width ensures the card does not become excessively wide on large screens */
+    max-width: 400px; 
+    
+    /* Basic styling for the card */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card body styling */
+.card-body {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Card title styling */
+.card-title {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+/* Card text styling */
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+ 
+    </style>
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">CSS <code>calc()</code> Function Example</h1>
+        
+        <!-- Explanation Section -->
+        <div class="mb-5">
+            <h2>Explanation of <code>calc()</code> Usage</h2>
+            <ul>
+                <li><strong>Dynamic Width:</strong> The card width is calculated using the CSS <code>calc()</code> function.</li>
+                <li><strong>Formula:</strong> <code>calc(50% - 20px)</code>. This means the card takes 50% of the container's width and subtracts 20 pixels to add spacing.</li>
+                <li><strong>Responsive Design:</strong> This ensures the card adapts to different screen sizes while maintaining proper spacing.</li>
+                <li><strong>Max Width:</strong> We also add <code>max-width: 400px</code> to prevent the card from becoming too wide on larger screens.</li>
+            </ul>
+        </div>
+
+        <!-- Card Section -->
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Dynamic Width Card</h5>
+                    <p class="card-text">This card's width is calculated using <code>calc()</code> in CSS.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

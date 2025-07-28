@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Scrollbar</title>
+    <style>
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Content Container */
+        .content {
+            width: 80%;
+            height: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        /* Styling the Text */
+        .content p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Creative Scrollbar */
+        .content::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+
+        .content::-webkit-scrollbar-track {
+            background: linear-gradient(to bottom, #f6d365, #fda085);
+            border-radius: 10px; /* Rounded track corners */
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #a18cd1, #fbc2eb);
+            border-radius: 10px; /* Rounded thumb corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add depth with a shadow */
+        }
+
+        .content::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+        }
+
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Explanation */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Creative Scrollbar Example</h1>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, elit nec fringilla dictum, lectus orci ultrices nisi, sit amet congue risus erat vel justo. Proin faucibus purus sed libero accumsan feugiat. Nam at mi a lorem facilisis accumsan. Suspendisse vel ligula nec nisl vehicula elementum non id est.</p>
+        <p>Aliquam a dictum lorem, id tincidunt nisi. Fusce euismod justo vel arcu venenatis, non ultricies nulla aliquam. Nullam lacinia ligula et purus iaculis tristique. Curabitur vitae vehicula eros, eget posuere felis.</p>
+        <p>Vivamus luctus arcu eu arcu sodales, quis accumsan dolor sagittis. Integer congue, nisi non congue molestie, ipsum odio molestie ligula, et tincidunt nulla erat eu justo. Integer sagittis orci a tincidunt sodales. Pellentesque ac suscipit odio.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia metus vel tellus ultrices convallis. Pellentesque et tristique dolor, ac tincidunt elit.</p>
+        <p>Mauris porttitor ipsum eget vehicula laoreet. Nam condimentum ex id sem faucibus, non vulputate sapien rhoncus. Nulla consectetur nisl non ligula fermentum, ac faucibus odio pellentesque.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, elit nec fringilla dictum, lectus orci ultrices nisi, sit amet congue risus erat vel justo. Proin faucibus purus sed libero accumsan feugiat. Nam at mi a lorem facilisis accumsan. Suspendisse vel ligula nec nisl vehicula elementum non id est.</p>
+        <p>Aliquam a dictum lorem, id tincidunt nisi. Fusce euismod justo vel arcu venenatis, non ultricies nulla aliquam. Nullam lacinia ligula et purus iaculis tristique. Curabitur vitae vehicula eros, eget posuere felis.</p>
+        <p>Vivamus luctus arcu eu arcu sodales, quis accumsan dolor sagittis. Integer congue, nisi non congue molestie, ipsum odio molestie ligula, et tincidunt nulla erat eu justo. Integer sagittis orci a tincidunt sodales. Pellentesque ac suscipit odio.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia metus vel tellus ultrices convallis. Pellentesque et tristique dolor, ac tincidunt elit.</p>
+        <p>Mauris porttitor ipsum eget vehicula laoreet. Nam condimentum ex id sem faucibus, non vulputate sapien rhoncus. Nulla consectetur nisl non ligula fermentum, ac faucibus odio pellentesque.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, elit nec fringilla dictum, lectus orci ultrices nisi, sit amet congue risus erat vel justo. Proin faucibus purus sed libero accumsan feugiat. Nam at mi a lorem facilisis accumsan. Suspendisse vel ligula nec nisl vehicula elementum non id est.</p>
+        <p>Aliquam a dictum lorem, id tincidunt nisi. Fusce euismod justo vel arcu venenatis, non ultricies nulla aliquam. Nullam lacinia ligula et purus iaculis tristique. Curabitur vitae vehicula eros, eget posuere felis.</p>
+        <p>Vivamus luctus arcu eu arcu sodales, quis accumsan dolor sagittis. Integer congue, nisi non congue molestie, ipsum odio molestie ligula, et tincidunt nulla erat eu justo. Integer sagittis orci a tincidunt sodales. Pellentesque ac suscipit odio.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia metus vel tellus ultrices convallis. Pellentesque et tristique dolor, ac tincidunt elit.</p>
+        <p>Mauris porttitor ipsum eget vehicula laoreet. Nam condimentum ex id sem faucibus, non vulputate sapien rhoncus. Nulla consectetur nisl non ligula fermentum, ac faucibus odio pellentesque.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat, elit nec fringilla dictum, lectus orci ultrices nisi, sit amet congue risus erat vel justo. Proin faucibus purus sed libero accumsan feugiat. Nam at mi a lorem facilisis accumsan. Suspendisse vel ligula nec nisl vehicula elementum non id est.</p>
+        <p>Aliquam a dictum lorem, id tincidunt nisi. Fusce euismod justo vel arcu venenatis, non ultricies nulla aliquam. Nullam lacinia ligula et purus iaculis tristique. Curabitur vitae vehicula eros, eget posuere felis.</p>
+        <p>Vivamus luctus arcu eu arcu sodales, quis accumsan dolor sagittis. Integer congue, nisi non congue molestie, ipsum odio molestie ligula, et tincidunt nulla erat eu justo. Integer sagittis orci a tincidunt sodales. Pellentesque ac suscipit odio.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia metus vel tellus ultrices convallis. Pellentesque et tristique dolor, ac tincidunt elit.</p>
+        <p>Mauris porttitor ipsum eget vehicula laoreet. Nam condimentum ex id sem faucibus, non vulputate sapien rhoncus. Nulla consectetur nisl non ligula fermentum, ac faucibus odio pellentesque.</p>
+    </div>
+
+    <footer>
+        <p><strong>Explanation:</strong></p>
+        <p>
+            This creative scrollbar is customized using CSS:
+            <ul>
+                <li><code>::-webkit-scrollbar</code>: Adjusts the size of the scrollbar.</li>
+                <li><code>::-webkit-scrollbar-track</code>: Styles the background of the scrollbar track with a gradient and rounded corners.</li>
+                <li><code>::-webkit-scrollbar-thumb</code>: Styles the scrollbar handle (thumb) with gradients, rounded corners, and a shadow for depth.</li>
+                <li><code>:hover</code>: Adds a hover effect for interactivity.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

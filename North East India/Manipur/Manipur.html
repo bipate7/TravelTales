@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+<head>
+    <title>Manipur: The Jewel of India</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="TT4.png">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'DM Sans', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('himachal_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ffeb3b;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        .places-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .place {
+            width: calc(33.33% - 20px);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+        .place img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .place h2 {
+            margin: 15px 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .place p {
+            margin: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .place {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .place {
+                width: 100%;
+            }
+        }
+        #map {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        #map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.travel-packages {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to create a horizontal scroll */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0; /* Add some vertical padding */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    display: flex;
+            gap: 10px;
+            padding: 20px;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+}
+
+.travel-packages::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+
+.package-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    margin-right: 20px; /* Space between cards */
+    transition: transform 0.3s;
+}
+
+.package-card:last-child {
+    margin-right: 0; /* Remove margin from the last card */
+}
+
+.package-card:hover {
+    transform: scale(1.05);
+}
+
+.package-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.package-card h3 {
+    font-size: 1.5em;
+    margin: 15px;
+    color: #2c3e50;
+}
+
+.rating {
+    margin: 10px 15px;
+    color: #f39c12;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #27ae60;
+    margin: 10px 15px;
+}
+
+.package-card p {
+    margin: 0 15px 15px;
+    color: #7f8c8d;
+}
+
+.book-button {
+    display: block;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 15px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.book-button:hover {
+    background-color: #2980b9;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Best Places to Visit in Manipur</h1>
+        <div class="places-container">
+            <div class="place">
+                <img src="Images\Imphal.jpg" alt="Imphal">
+                <h2>Imphal</h2>
+                <p>Best time to visit: October to February</p>
+                <p>Imphal is the capital of Manipur, known for its rich cultural heritage and scenic beauty. Major attractions include the Kangla Fort, Imphal War Cemetery, and Ima Keithel.</p>
+            </div>
+            <div class="place">
+                <img src="Images\Loktak Lake4.jpg" alt="Loktak Lake">
+                <h2>Loktak Lake</h2>
+                <p>Best time to visit: October to February</p>
+                <p>Loktak Lake is the largest freshwater lake in North East India, known for its scenic beauty and floating islands. Key attractions include the lake's floating islands, Sendra Island, and Keibul Lamjao National Park.</p>
+            </div>
+            <div class="place">
+                <img src="Images\Ukhrul.webp" alt="Ukhrul">
+                <h2>Ukhrul</h2>
+                <p>Best time to visit: March to October</p>
+                <p>Ukhrul is a scenic town known for its natural beauty, traditional Tangkhul culture, and adventure activities. Key attractions include the Ukhrul Town, Shirui Kashung Peak, and Khangkhui Cave.</p>
+            </div>
+            <div class="place">
+                <img src="Images\Keibul Lamjao National Park.jpg" alt="Keibul Lamjao National Park">
+                <h2>Keibul Lamjao National Park</h2>
+                <p>Best time to visit:</p>
+                <p>A unique floating national park with a diverse range of wildlife, Keibul Lamjao National Park is a must-visit destination in Manipur. The park is home to the endangered Manipur brow-antlered deer.</p>
+            </div>
+            <div class="place">
+                <img src="Images\Moreh.webp" alt="Moreh">
+                <h2>Moreh</h2>
+                <p>Best time to visit:</p>
+                <p>A historic town with a rich cultural heritage and scenic beauty, Moreh is a must-visit destination in Manipur. Visit the Moreh Market, Indo-Myanmar Border, and the Tamu Town.</p>
+            </div>
+            <div class="place">
+                <img src="Images\Andro.jpg" alt="Andro">
+                <h2>Andro</h2>
+                <p>Best time to visit:</p>
+                <p>A scenic village with a rich cultural heritage and natural beauty, Andro is a nature lover's paradise. Visit the Andro Village, Andro Museum, and the nearby waterfalls.</p>
+            </div>
+            <div class="place">
+                <img src="Images\Kangla Fort.jpg" alt="Kangla Fort">
+                <h2>Kangla Fort</h2>
+                <p>Best time to visit:</p>
+                <p>A historic fort with a rich cultural heritage and scenic beauty, Kangla Fort is a must-visit destination in Manipur. The fort is home to the Kangla Museum and offers stunning views of the surrounding landscape.</p>
+            </div>
+            <!-- add more places -->
+        </div>
+        
+        <h2>Travel Packages</h2>
+<div class="travel-packages">
+    <div class="package-card">
+        <img src="Images\LoktakLake.jpg" alt="Loktak Lake Package">
+        <h3>Loktak Lake Adventure</h3>
+        <div class="rating">★★★★★</div>
+        <p class="price">₹15,000 per person</p>
+        <p>Experience the stunning beauty of Loktak Lake with boat rides and local culture.</p>
+        <a href="Loktak Lake Adventure.html" class="book-button">Book Now</a>
+    </div>
+    <div class="package-card">
+        <img src="Images\ImphalCity.jpg" alt="Imphal City Package">
+        <h3>Imphal City Exploration</h3>
+        <div class="rating">★★★★★</div>
+        <p class="price">₹18,000 per person</p>
+        <p>Discover the rich history and culture of Imphal with our exclusive tour package.</p>
+        <a href="Imphal City Exploration.html" class="book-button">Book Now</a>
+    </div>
+    <div class="package-card">
+        <img src="Images\KanglaFort.jpg" alt="Kangla Fort Package">
+        <h3>Kangla Fort Experience</h3>
+        <div class="rating">★★★★★</div>
+        <p class="price">₹12,000 per person</p>
+        <p>Explore the historic Kangla Fort and learn about Manipur's heritage.</p>
+        <a href="Kangla Fort Experience.html" class="book-button">Book Now</a>
+    </div>
+    <div class="package-card">
+        <img src="Images\Khonghampat.jpg" alt="Khonghampat Package">
+        <h3>Khonghampat Getaway</h3>
+        <div class="rating">★★★★☆</div>
+        <p class="price">₹10,000 per person</p>
+        <p>Enjoy a serene retreat in Khonghampat, known for its beautiful landscapes.</p>
+        <a href="Khonghampat Getaway.html" class="book-button">Book Now</a>
+    </div>
+    <div class="package-card">
+        <img src="Images\SangaiFestival.jpg" alt="Sangai Festival Package">
+        <h3>Sangai Festival Delight</h3>
+        <div class="rating">★★★★★</div>
+        <p class="price">₹14,000 per person</p>
+        <p>Experience the vibrant Sangai Festival showcasing Manipuri culture and traditions.</p>
+        <a href="Sangai Festival Delight.html" class="book-button">Book Now</a>
+    </div>
+    <div class="package-card">
+        <img src="Images\AndroVillage.jpg" alt="Andro Village Package">
+        <h3>Andro Village Adventure</h3>
+        <div class="rating">★★★★★</div>
+        <p class="price">₹16,000 per person</p>
+        <p>Witness the unique pottery and culture of Andro Village with our exclusive package.</p>
+        <a href="Andro Village Adventure.html" class="book-button">Book Now</a>
+    </div>
+    <div class="package-card">
+        <img src="Images\ShreeGovindajeeTemple.jpg" alt="Shree Govindajee Temple Package">
+        <h3>Shree Govindajee Temple Tour</h3>
+        <div class="rating">★★★★☆</div>
+        <p class="price">₹13,000 per person</p>
+        <p>Explore the beautiful Shree Govindajee Temple with our guided tours.</p>
+        <a href="Shree Govindajee Temple Tour.html" class="book-button">Book Now</a>
+    </div>
+</div>
+        
+        <h2>Map of Destinations</h2>
+        <div id="map">
+            <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1eH_69Md14SH3h2y3Pzn8upHfEvgpOVw&ehbc=2E312F" width="640" height="480"></iframe>
+        </div>
+    </div>
+</body>
+</html>

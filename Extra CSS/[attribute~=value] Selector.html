@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[attribute~=value] Selector</title>
+    <style>
+        /* Select elements where 'class' contains the word 'highlight' */
+        [class~="highlight"] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Attribute Selector: [attribute~=value]</h1>
+    <p class="intro highlight">This paragraph contains the word <code>highlight</code> in its class attribute.</p>
+    <p class="intro">This paragraph does not.</p>
+    <footer>
+        <p><strong>Explanation:</strong> The <code>[class~="highlight"]</code> selector targets elements with a class attribute containing the exact word <code>highlight</code>, separated by spaces.</p>
+    </footer>
+</body>
+</html>

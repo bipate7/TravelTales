@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+# Professional West India Travel Guide Website
+
+Here's a completely redesigned, professional version of your West India travel guide with varied layouts, sophisticated typography, and creative design elements:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover West India | Cultural & Natural Wonders</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Variables */
+        :root {
+            --primary: #2a5f7f;
+            --secondary: #e3b04b;
+            --accent: #d96b43;
+            --dark: #1d3a4f;
+            --light: #f8f5f2;
+            --text: #333;
+            --white: #fff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background-color: var(--light);
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.1), rgba(255, 239, 204, 0.1));
+            animation: backgroundAnimation 15s ease infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(217, 107, 67, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1582972236019-ea9e8c1c87e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 30px;
+        }
+
+        .about-text h3 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--primary);
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* States Section */
+        #states {
+            background-color: var(--light);
+        }
+
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .state-item {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .state-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .state-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .state-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .state-item:hover .state-image img {
+            transform: scale(1.1);
+        }
+
+        .state-info {
+            padding: 20px;
+        }
+
+        .state-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .state-info p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Places Section */
+        #places {
+            background-color: var(--white);
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .place-featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .place-featured-image {
+            height: 300px;
+        }
+
+        .place-featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .place-featured-content {
+            padding: 30px;
+        }
+
+        .place-featured-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .place-featured-content .rating {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .place-regular {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .place-regular-image {
+            height: 180px;
+        }
+
+        .place-regular-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .place-regular-content {
+            padding: 20px;
+        }
+
+        .place-regular-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .place-regular-content .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        /* Packages Section */
+        #packages {
+            background-color: var(--light);
+        }
+
+        .packages-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            color: #666;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .package-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .package-image {
+            height: 200px;
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 25px;
+        }
+
+        .package-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .package-content .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+
+        .package-content .features {
+            margin: 20px 0;
+        }
+
+        .package-content .features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .package-content .features i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        /* Cuisine Section */
+        #cuisine {
+            background-color: var(--white);
+        }
+
+        .cuisine-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .cuisine-card {
+            text-align: center;
+        }
+
+        .cuisine-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .cuisine-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .cuisine-card p {
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(42, 95, 127, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Newsletter Section */
+        #newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .newsletter h2 {
+            color: var(--white);
+        }
+
+        .newsletter h2:after {
+            background: var(--secondary);
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: #f1c44d;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            color: var(--secondary);
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .places-container {
+                grid-template-columns: 1fr;
+            }
+
+            .place-featured {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .cuisine-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .package-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+
+            .cuisine-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Discover <span>West India</span></a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#states">States</a>
+                <a href="#places">Places</a>
+                <a href="#packages">Packages</a>
+                <a href="#cuisine">Cuisine</a>
+                <a href="#testimonials">Reviews</a>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience the Magic of West India</h1>
+            <p>From the golden beaches of Goa to the majestic forts of Rajasthan, discover the diverse landscapes and rich cultural heritage of Western India.</p>
+            <div>
+                <a href="#packages" class="btn">Explore Tours</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About West India</h2>
+                    <p><strong>West India</strong> is known for its <span class="highlight">rich cultural heritage</span>, stunning landscapes, and historical monuments. It includes the states of <span class="highlight">Maharashtra, Gujarat, Chhattisgarh, Goa, Madhya Pradesh</span>, and the <span class="highlight">Union Territories of Daman and Diu, and Dadar and Nagar Haveli</span>.</p>
+                    
+                    <h3>Majestic Mountains and Serene Landscapes</h3>
+                    <p>Embark on an adventure to the breathtaking landscapes of <span class="highlight">Maharashtra and Madhya Pradesh</span>. Witness the serene beaches of <span class="highlight">Goa</span>, tranquil lakes, and lush valleys that offer a perfect escape for nature lovers and adventure enthusiasts alike.</p>
+
+                    <h3>Historical Marvels and Architectural Splendors</h3>
+                    <p>Delve into the historical richness of West India with visits to iconic landmarks such as the <span class="highlight">Gateway of India in Mumbai</span>, the ancient city of <span class="highlight">Ujjain in Madhya Pradesh</span>, and the <span class="highlight">Sabarmati Ashram in Ahmedabad</span>.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="West India Landscape">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- States Section -->
+    <section id="states" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>States of West India</h2>
+                <p>Explore the diverse regions that make up this vibrant part of India</p>
+            </div>
+            <div class="states-grid">
+                <div class="state-item">
+                    <div class="state-image">
+                        <img src="Images/Maharashtra1.jpg" alt="Maharashtra">
+                    </div>
+                    <div class="state-info">
+                        <h3>Maharashtra</h3>
+                        <p>Known for its bustling cities, historical monuments, and beautiful beaches, Maharashtra offers a blend of urban and natural attractions.</p>
+                        <a href="Maharashtra/Maharashtra.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="state-item">
+                    <div class="state-image">
+                        <img src="Images/Gujarat.webp" alt="Gujarat">
+                    </div>
+                    <div class="state-info">
+                        <h3>Gujarat</h3>
+                        <p>Home to the Gir National Park, the Rann of Kutch, and the Sabarmati Ashram, Gujarat is rich in culture and history.</p>
+                        <a href="Gujarat/Gujarat.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="state-item">
+                    <div class="state-image">
+                        <img src="Images/Goa2.jpg" alt="Goa">
+                    </div>
+                    <div class="state-info">
+                        <h3>Goa</h3>
+                        <p>Famous for its golden beaches, vibrant nightlife, and Portuguese heritage, Goa is a popular tourist destination.</p>
+                        <a href="Goa/Goa.html" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section id="places" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Places</h2>
+                <p>Discover the iconic destinations of West India</p>
+            </div>
+            <div class="places-container">
+                <div class="place-featured">
+                    <div class="place-featured-image">
+                        <img src="Images/Gateway of India.jpg" alt="Gateway of India">
+                    </div>
+                    <div class="place-featured-content">
+                        <h3>Gateway of India, Mumbai</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.7/5</span>
+                        </div>
+                        <p>An iconic symbol of Mumbai, this historical monument overlooks the Arabian Sea and is a popular tourist attraction. Built during the British Raj, it has become synonymous with the city of Mumbai.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                <div class="place-regular">
+                    <div class="place-regular-image">
+                        <img src="Images/Ajanta and Ellora Caves.jpg" alt="Ajanta and Ellora Caves">
+                    </div>
+                    <div class="place-regular-content">
+                        <h3>Ajanta and Ellora Caves</h3>
+                        <p>These rock-cut caves are a UNESCO World Heritage site and showcase ancient Indian art and architecture.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Maharashtra</span>
+                            <span><i class="fas fa-clock"></i> Full Day Tour</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="place-regular">
+                    <div class="place-regular-image">
+                        <img src="Images/Gir National Park.jpg" alt="Gir National Park">
+                    </div>
+                    <div class="place-regular-content">
+                        <h3>Gir National Park</h3>
+                        <p>Home to the Asiatic lion, this national park is a major wildlife sanctuary and offers thrilling safaris.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Gujarat</span>
+                            <span><i class="fas fa-clock"></i> 2 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Travel Packages</h2>
+                <p>Curated experiences for every type of traveler</p>
+            </div>
+            <div class="packages-tabs">
+                <button class="tab-btn active">All Packages</button>
+                <button class="tab-btn">Beach</button>
+                <button class="tab-btn">Heritage</button>
+                <button class="tab-btn">Adventure</button>
+            </div>
+            <div class="package-cards">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Mumbai City Tour.jpg" alt="Mumbai Package">
+                    </div>
+                    <div class="package-content">
+                        <h3>Mumbai City Tour</h3>
+                        <p>Explore the bustling city of Mumbai with visits to Gateway of India, Marine Drive, and more.</p>
+                        <div class="price">₹10,000 per person</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> Full day guided tour</li>
+                            <li><i class="fas fa-check"></i> Lunch included</li>
+                            <li><i class="fas fa-check"></i> Hotel pickup & drop</li>
+                        </ul>
+                        <button class="btn" onclick="window.open('Mumbai City Tour.html', '_blank')">Book Now</button>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Goa Beach Holiday.jpg" alt="Goa Package">
+                    </div>
+                    <div class="package-content">
+                        <h3>Goa Beach Holiday</h3>
+                        <p>Enjoy a relaxing beach holiday in Goa with our exclusive package.</p>
+                        <div class="price">₹15,000 per person</div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 5 days accommodation</li>
+                            <li><i class="fas fa-check"></i> All meals included</li>
+                            <li><i class="fas fa-check"></i> Water sports activities</li>
+                        </ul>
+                        <button class="btn" onclick="window.open('Goa Beach Holiday.html', '_blank')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Section -->
+    <section id="cuisine" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>West Indian Cuisine</h2>
+                <p>Savor the flavors of the region</p>
+            </div>
+            <div class="cuisine-grid">
+                <div class="cuisine-card">
+                    <div class="cuisine-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Vada Pav</h3>
+                    <p>Maharashtra's iconic street food - a spicy potato fritter sandwiched in a bun.</p>
+                </div>
+                <div class="cuisine-card">
+                    <div class="cuisine-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3>Dhokla</h3>
+                    <p>A savory steamed cake made from fermented rice and chickpea batter.</p>
+                </div>
+                <div class="cuisine-card">
+                    <div class="cuisine-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Goan Fish Curry</h3>
+                    <p>A flavorful and tangy fish curry made with coconut milk and spices.</p>
+                </div>
+                <div class="cuisine-card">
+                    <div class="cuisine-icon">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <h3>Jalebi</h3>
+                    <p>A sweet, crispy dessert made by deep-frying batter in spiral shapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Reviews</h2>
+                <p>What our visitors say about their experiences</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"West India has so much to offer! From the bustling streets of Mumbai to the serene beaches of Goa, our trip was filled with unforgettable experiences. The food, the people, the culture - everything exceeded our expectations."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>From London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The cultural festivals in Gujarat were amazing. The Navratri celebrations were vibrant and full of energy. The hospitality we received everywhere was exceptional. Can't wait to visit again!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Patel</h4>
+                            <p>From Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="section">
+                <div class="container newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest travel updates, exclusive offers, and insider tips for West India delivered straight to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <div class="footer-about">
+                        <p>Discover West India is your premier guide to exploring the rich cultural heritage, stunning landscapes, and vibrant cities of Western India.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About West India</a></li>
+                        <li><a href="#states">States</a></li>
+                        <li><a href="#places">Popular Places</a></li>
+                        <li><a href="#packages">Tour Packages</a></li>
+                        <li><a href="#cuisine">Local Cuisine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Travel Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Travel Plaza, Mumbai, Maharashtra 400001</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+91 9876543210</p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@discoverwestindia.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Discover West India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // Tab functionality for packages
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // Here you would add code to filter packages based on the tab
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(29, 58, 79, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.section, .state-item, .package-card, .testimonial, .cuisine-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animation
+        document.querySelectorAll('.section, .state-item, .package-card, .testimonial, .cuisine-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

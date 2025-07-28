@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Example</title>
+    <style>
+        /* Grid Container (.grid-container) */
+        .grid-container {
+            display: grid; /* Activates grid layout */
+
+            /* 
+                grid-template-columns: repeat(3, 1fr);
+                - Creates 3 equal-width columns in the grid.
+                - "1fr" means each column takes up 1 fraction of the available space.
+                - "repeat(3, 1fr)" means there are 3 equal-width columns.
+            */
+            grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+            
+            gap: 10px; /* Adds space between grid items */
+            padding: 20px; /* Adds padding inside the grid container */
+        }
+
+        /* Grid Item (.grid-item) */
+        .grid-item {
+            background-color: lightblue; /* Sets the background color of each grid item */
+            padding: 20px; /* Adds space inside each grid item */
+            text-align: center; /* Centers the content inside each grid item */
+            border-radius: 8px; /* Rounds the corners of each grid item */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+        }
+
+        /* Heading (h1) */
+        h1 {
+            text-align: center; /* Centers the heading text */
+            color: #333; /* Sets the color of the heading text to dark gray */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid Layout Example</h1>
+    
+    <!-- The grid container holding all the grid items -->
+    <div class="grid-container">
+        <!-- Individual grid items -->
+        <div class="grid-item">Item 1</div> <!-- First grid item -->
+        <div class="grid-item">Item 2</div> <!-- Second grid item -->
+        <div class="grid-item">Item 3</div> <!-- Third grid item -->
+        <div class="grid-item">Item 4</div> <!-- Fourth grid item -->
+        <div class="grid-item">Item 5</div> <!-- Fifth grid item -->
+        <div class="grid-item">Item 6</div> <!-- Sixth grid item -->
+    </div>
+
+    <!-- Explanation of the code -->
+    <div>
+        <h2>Explanation of the Code</h2>
+        <p><strong>1. Grid Container:</strong></p>
+        <ul>
+            <li><code>display: grid;</code>: This activates the CSS Grid layout for the container, making it a grid container.</li>
+            <li><code>grid-template-columns: repeat(3, 1fr);</code>: This creates 3 equal-width columns. The <code>1fr</code> is a fractional unit that divides the available space equally among the columns. The <code>repeat(3, 1fr)</code> syntax specifies that there will be 3 equal columns.</li>
+            <li><code>gap: 10px;</code>: Adds a 10px gap between each grid item both horizontally and vertically.</li>
+            <li><code>padding: 20px;</code>: Adds 20px padding inside the grid container, creating space between the container’s border and its items.</li>
+        </ul>
+
+        <p><strong>2. Grid Item:</strong></p>
+        <ul>
+            <li><code>background-color: lightblue;</code>: Sets the background color of each grid item to light blue.</li>
+            <li><code>padding: 20px;</code>: Adds 20px of padding inside each grid item, creating space around the text or content inside the grid items.</li>
+            <li><code>text-align: center;</code>: Centers the content (the text) inside each grid item horizontally.</li>
+            <li><code>border-radius: 8px;</code>: Rounds the corners of each grid item by 8px for a smoother, more polished look.</li>
+            <li><code>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</code>: Adds a subtle shadow effect around each grid item. This shadow is offset vertically by 4px and spread by 8px, with a 20% opacity for a soft effect.</li>
+        </ul>
+
+        <p><strong>3. Heading (h1):</strong></p>
+        <ul>
+            <li><code>text-align: center;</code>: Centers the heading text horizontally on the page.</li>
+            <li><code>color: #333;</code>: Sets the color of the heading text to a dark gray (#333), which is easy to read and contrasts well with the background.</li>
+        </ul>
+
+        <h2>Result:</h2>
+        <p>The page will display a 3-column grid with 6 items arranged within the grid. Each item will have a light blue background, centered text, rounded corners, and a subtle shadow effect. The grid will have gaps between items, and padding will be applied inside the grid container to add space around the grid items.</p>
+        <pre>
+            Item 1  Item 2  Item 3
+            Item 4  Item 5  Item 6
+        </pre>
+    </div>
+</body>
+</html>

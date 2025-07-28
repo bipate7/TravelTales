@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Gems of Goa | TravelTales</title>
+    <style>
+        :root {
+            --tt-primary: #2A5C8B;  /* TravelTales blue */
+            --tt-secondary: #F7A325;  /* TravelTales orange */
+            --tt-accent: #4FB477;  /* TravelTales green */
+            --tt-dark: #1A2E40;
+            --tt-light: #F5F9FC;
+            --tt-text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&family=Libre+Baskerville:ital@1&display=swap');
+        
+        body {
+            background-color: var(--tt-light);
+            color: var(--tt-text);
+            line-height: 1.8;
+        }
+        
+        /* TravelTales Header */
+        .tt-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+            position: relative;
+        }
+        
+        .tt-navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+        }
+        
+        .tt-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .tt-logo span {
+            color: var(--tt-secondary);
+        }
+        
+        .tt-nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .tt-nav-links a:hover {
+            color: var(--tt-secondary);
+        }
+        
+        .tt-header-content {
+            max-width: 800px;
+            margin-top: 60px;
+        }
+        
+        .tt-blog-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .tt-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .tt-byline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .tt-author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--tt-secondary);
+        }
+        
+        /* TravelTales Blog Content */
+        .tt-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+        
+        .tt-breadcrumb {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: var(--tt-primary);
+        }
+        
+        .tt-breadcrumb a {
+            color: var(--tt-primary);
+            text-decoration: none;
+        }
+        
+        .tt-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .tt-blog-intro {
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 20px;
+            color: var(--tt-dark);
+        }
+        
+        .tt-blog-intro:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: var(--tt-secondary);
+        }
+        
+        .tt-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin: 60px 0 30px;
+            color: var(--tt-primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .tt-section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, var(--tt-secondary), var(--tt-accent));
+        }
+        
+        /* TravelTales Post Card */
+        .tt-post {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--tt-primary);
+        }
+        
+        .tt-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            border-left: 4px solid var(--tt-secondary);
+        }
+        
+        .tt-post-image {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .tt-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .tt-post:hover .tt-post-image img {
+            transform: scale(1.05);
+        }
+        
+        .tt-image-caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(42, 92, 139, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .tt-post-content {
+            padding: 35px;
+        }
+        
+        .tt-post-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--tt-primary);
+        }
+        
+        .tt-post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--tt-accent);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        
+        .tt-post-meta span {
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .tt-post-meta i {
+            margin-right: 5px;
+        }
+        
+        .tt-post-excerpt {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .tt-read-more {
+            display: inline-block;
+            color: var(--tt-primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid var(--tt-secondary);
+            padding-bottom: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-read-more:hover {
+            color: var(--tt-accent);
+            border-bottom-color: var(--tt-accent);
+        }
+        
+        /* TravelTales Pull Quote */
+        .tt-pull-quote {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--tt-primary);
+            border-left: 4px solid var(--tt-secondary);
+            padding: 20px 30px;
+            margin: 30px 0;
+            background: rgba(247, 163, 37, 0.1);
+            font-style: italic;
+        }
+        
+        /* TravelTales Tips Box */
+        .tt-tip {
+            background: rgba(79, 180, 119, 0.1);
+            border-left: 4px solid var(--tt-accent);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .tt-tip h4 {
+            color: var(--tt-accent);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tt-tip h4:before {
+            content: '✈';
+            margin-right: 10px;
+        }
+        
+        /* TravelTales Gallery Grid */
+        .tt-photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .tt-grid-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-grid-item:hover {
+            transform: scale(0.98);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .tt-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* TravelTales Newsletter */
+        .tt-newsletter {
+            background: linear-gradient(135deg, var(--tt-primary), var(--tt-dark));
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tt-newsletter:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .tt-newsletter h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tt-newsletter p {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tt-newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tt-newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        
+        .tt-newsletter-form button {
+            background: var(--tt-secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .tt-newsletter-form button:hover {
+            background: var(--tt-accent);
+        }
+        
+        /* Footer */
+        .custom-footer {
+  background: linear-gradient(135deg, #1b1f24, #2c3e50);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-top: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -5px;
+}
+.footer-logo img {
+  height: 90px; /* Adjust height as needed */
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 10% 20px;
+  gap: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+  color: #ff8243;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #ff8243;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-links,
+.footer-contact,
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff8243;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #ff8243;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #ff8243;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #ff8243;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #ff8243;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter form {
+    align-items: center;
+  }
+}
+        
+        @media (max-width: 480px) {
+            .tt-blog-title {
+                font-size: 2.2rem;
+            }
+            
+            .tt-photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tt-post-content {
+                padding: 25px;
+            }
+            
+            .tt-footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TravelTales Header -->
+    <header class="tt-header">
+        <nav class="tt-navbar">
+            <a href="#" class="tt-logo">Travel<span>Tales</span></a>
+            <div class="tt-nav-links">
+                <a href="#">Destinations</a>
+                <a href="#">Travel Guides</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+        
+        <div class="tt-header-content">
+            <h1 class="tt-blog-title">Hidden Gems of Goa</h1>
+            <p class="tt-tagline">Discover the secret spots that most tourists never see</p>
+            
+            <div class="tt-byline">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="tt-author-avatar">
+                <div>
+                    <p>By Priya Sharma, TravelTales Explorer</p>
+                    <p>March 15, 2023 • 8 min read</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- TravelTales Blog Content -->
+    <div class="tt-container">
+        <div class="tt-breadcrumb">
+            <a href="#">Home</a> > <a href="#">India</a> > <a href="#">Goa</a> > Hidden Gems
+        </div>
+        
+        <p class="tt-blog-intro">
+            As part of TravelTales' "Off the Beaten Path" series, I spent two months exploring every corner of Goa to uncover its best-kept secrets. Beyond the famous beaches and nightlife, I found a different Goa—one of tranquil coves, forgotten history, and authentic local experiences. Here's my exclusive guide to Goa's hidden wonders.
+        </p>
+        
+        <h2 class="tt-section-title">Secret Beaches</h2>
+        
+        <div class="tt-post">
+            <div class="tt-post-image">
+                <img src="https://travelentice.com/wp-content/uploads/2021/09/Kakolem-beach-in-Goa.jpg" alt="Kakolem Beach">
+                <span class="tt-image-caption">Kakolem Beach - Goa's best kept secret</span>
+            </div>
+            <div class="tt-post-content">
+                <h3 class="tt-post-title">Kakolem: The Tiger Beach</h3>
+                <div class="tt-post-meta">
+                    <span><i>📍</i> South Goa</span>
+                    <span><i>🏖️</i> Secluded Beach</span>
+                    <span><i>🚶</i> Moderate Hike</span>
+                    <span><i>⭐</i> TravelTales Certified</span>
+                </div>
+                <p class="tt-post-excerpt">
+                    Our team at TravelTales rates Kakolem as Goa's most spectacular hidden beach. Known locally as Tiger Beach (though no tigers here!), this secluded cove near Cabo de Rama requires a 15-minute hike down a steep trail. The effort is rewarded with a pristine crescent of golden sand framed by dramatic cliffs, with waters that shift from emerald to sapphire throughout the day.
+                </p>
+                
+                <div class="tt-pull-quote">
+                    "Kakolem feels like discovering a secret paradise. During my weekday visit, I had the entire beach to myself—just the sound of waves and the occasional call of a kingfisher."
+                </div>
+                
+                <p>
+                    What makes Kakolem special is its complete lack of commercialization—no shacks, no vendors, just untouched natural beauty. The southern end has a small freshwater stream during monsoon season, creating a unique bathing spot where fresh and saltwater mix. For the adventurous, there are sea caves to explore at low tide (check tides carefully).
+                </p>
+                
+                <div class="tt-tip">
+                    <h4>TravelTales Tip</h4>
+                    <p>Visit between October-March when the trail is dry. Wear sturdy shoes and bring all supplies (water, snacks, sunscreen). The beach has no facilities. For those who don't want to hike, local fishermen offer boat rides from nearby beaches.</p>
+                </div>
+                
+                <a href="#" class="tt-read-more">Read more beach secrets in our Goa Guide →</a>
+            </div>
+        </div>
+        
+        <div class="tt-photo-grid">
+            <div class="tt-grid-item">
+                <img src="https://media1.thrillophilia.com/filestore/ms2gs4sn5bn7w3rzde4g540zkif9_1442474924holla.jpg?w=400&dpr=2" alt="Hollant Beach">
+            </div>
+            <div class="tt-grid-item">
+                <img src="https://www.onmycanvas.com/wp-content/uploads/2020/08/Butterfly-beach-goa-front-view.jpg" alt="Butterfly Beach">
+            </div>
+            <div class="tt-grid-item">
+                <img src="https://cdn.thegoavilla.com/static/img/articles/goa-agonda-beach.jpg" alt="Agonda Beach">
+            </div>
+        </div>
+        
+        <h2 class="tt-section-title">Historical Treasures</h2>
+        
+        <div class="tt-post">
+            <div class="tt-post-image">
+                <img src="https://www.explorebees.com/uploads/Cabo%20de%20Rama%20Fort%20(9).jpg" alt="Cabo de Rama Fort">
+                <span class="tt-image-caption">Sunset views from Cabo de Rama Fort</span>
+            </div>
+            <div class="tt-post-content">
+                <h3 class="tt-post-title">Cabo de Rama: The Forgotten Fort</h3>
+                <div class="tt-post-meta">
+                    <span><i>📍</i> Canacona</span>
+                    <span><i>🏰</i> Historical Site</span>
+                    <span><i>🌅</i> Sunset Spot</span>
+                    <span><i>⭐</i> TravelTales Certified</span>
+                </div>
+                <p class="tt-post-excerpt">
+                    While tourists flock to Chapora Fort (thanks to Bollywood), our TravelTales team consistently recommends Cabo de Rama for a more authentic experience. This 16th century fort offers panoramic views without the crowds, along with fascinating history spanning Hindu, Muslim, and Portuguese rule.
+                </p>
+                
+                <p>
+                    The fort's name comes from the Ramayana legend—Lord Rama supposedly stayed here during his exile. Today, the ruins include crumbling walls covered in bougainvillea, ancient cannons still pointing seaward, and a charming white chapel that still holds weekly mass. The 360-degree views from the highest point are simply breathtaking, especially at sunset when the golden light bathes the entire structure.
+                </p>
+                
+                <div class="tt-tip">
+                    <h4>Photography Tip</h4>
+                    <p>For unique shots, frame the sea through the fort's arched windows. The golden hour before sunset provides magical lighting. Our pro photographers recommend a polarizing filter to enhance the sky and sea colors.</p>
+                </div>
+                
+                <a href="#" class="tt-read-more">Explore more historical sites in our Cultural Guide →</a>
+            </div>
+        </div>
+        
+        <!-- TravelTales Newsletter -->
+        <div class="tt-newsletter">
+            <h3>Join the TravelTales Community</h3>
+            <p>Get exclusive travel guides, hidden gems, and special offers straight to your inbox</p>
+            <form class="tt-newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <h2 class="tt-section-title">Nature's Wonders</h2>
+        
+        <div class="tt-post">
+            <div class="tt-post-image">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Netravali Bubble Lake">
+                <span class="tt-image-caption">The mysterious bubbling waters of Netravali</span>
+            </div>
+            <div class="tt-post-content">
+                <h3 class="tt-post-title">Netravali: Goa's Mystical Bubble Lake</h3>
+                <div class="tt-post-meta">
+                    <span><i>📍</i> Sanguem Taluka</span>
+                    <span><i>🌿</i> Wildlife Sanctuary</span>
+                    <span><i>🔍</i> Natural Wonder</span>
+                    <span><i>⭐</i> TravelTales Certified</span>
+                </div>
+                <p class="tt-post-excerpt">
+                    One of our most magical discoveries in Goa wasn't on the coast but deep in the Netravali Wildlife Sanctuary. The Bubble Lake is a scientific marvel wrapped in local legend—when you clap, hundreds of bubbles rise mysteriously from the lake bottom. Scientists say it's methane gas from decaying vegetation; locals believe it's the breath of a giant serpent dwelling below.
+                </p>
+                
+                <div class="tt-pull-quote">
+                    "As our claps echoed across the still waters, the lake responded with hundreds of shimmering bubbles—like nature's own magic show just for those willing to venture off the tourist trail."
+                </div>
+                
+                <p>
+                    The sanctuary itself is a biodiversity hotspot where our team spotted Malabar pied hornbills, flying squirrels, and even leopard tracks. The nearby Savari waterfall makes for a refreshing swim after exploring. We recommend visiting with one of our vetted eco-tour operators who can explain the delicate ecosystem while ensuring minimal impact.
+                </p>
+                
+                <div class="tt-tip">
+                    <h4>Conservation Note</h4>
+                    <p>Please respect this fragile ecosystem. Clapping produces bubbles without harming the lake—avoid throwing objects. Carry out all trash and stay on marked trails. Our TravelTales team works with local conservation groups to protect this wonder.</p>
+                </div>
+                
+                <a href="#" class="tt-read-more">Discover more natural wonders in our Eco-Travel Guide →</a>
+            </div>
+        </div>
+    </div>
+    
+<!-- Custom Footer End --><!-- Enhanced Footer Start -->
+<footer class="custom-footer">
+  <!-- Decorative Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 120 28">
+      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="Images/TT5.png" alt="Travel Tales Logo"  />
+</div>
+
+      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+</div>
+
+</footer>
+<!-- Enhanced Footer End -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
+
+  
+    
+<!-- Back to Top Button -->
+<div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+
+<!-- Bootstrap JS, Font Awesome for icons -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+</body>
+</html>

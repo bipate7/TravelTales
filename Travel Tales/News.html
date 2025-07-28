@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTales Travels</title>
+    <link rel="icon" href="TT4.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #f0f4f7;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items:  end;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            position: relative;
+            margin-right: 30px;
+        }
+        .nav-links li a {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover {
+            color: #ff6600;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Gradient background */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px); /* Slight upward position */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1; 
+            transform: translateY(0); /* Bring into view */
+        }
+        .dropdown-menu li {
+            position: relative;
+        }
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for animation */
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #ff6600; /* Full hover color */
+            color: white; /* Change text color on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        .dropdown-menu li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; 
+            margin-top: -5px; 
+            border-width: 5px; 
+            border-style: solid;
+            border-color: transparent transparent transparent #ff6600; /* Triangle pointing right */
+        }
+        /* Banner */
+        .banner {
+            background-image: url('News.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-text {
+            text-align: center;
+            color: white;
+        }
+        .banner-text h1 {
+            font-size: 72px;
+            font-weight: 600;
+        }
+        .banner-text p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .post-card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-card .card-body {
+            padding: 15px;
+        }
+
+        .post-card h5 {
+            margin-bottom: 10px;
+        }
+
+        .post-card p {
+            margin-bottom: 0;
+        }
+
+        .post-card .date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .post-card .icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .post-card .icons i {
+            font-size: 16px;
+            color: #888;
+            margin-right: 5px;
+        }
+
+        .post-card .icons .date {
+            font-size: 14px;
+            color: #888;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .col-lg-6 {
+            margin-top: 50px;
+        }
+        .col-lg-4 {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 10px;
+        }
+        .card-text {
+            font-size: 14px;
+        }
+        
+        /* Footer */
+        .custom-footer {
+  background: linear-gradient(135deg, #1b1f24, #2c3e50);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-top: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -5px;
+}
+.footer-logo img {
+  height: 50px; /* Adjust height as needed */
+  margin-bottom: 15px;
+  object-fit: contain;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 10% 20px;
+  gap: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+  color: #ff8243;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #ff8243;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-links,
+.footer-contact,
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff8243;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #ff8243;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #ff8243;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #ff8243;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #ff8243;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter form {
+    align-items: center;
+  }
+}
+.news-section {
+            padding: 60px 10%;
+        }
+        .post-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .post-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .post-card .card-body {
+            padding: 20px;
+        }
+        .post-card .card-title {
+            font-weight: 600;
+        }
+        .post-card .date {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .sidebar .card {
+            margin-bottom: 30px;
+        }
+</style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div>
+                <i class="fas fa-envelope"></i><a href="TravelTales@gmail.com">TravelTales@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+            </div>
+            <div>
+                <a href="Sign Up.html">Login / Signup</a>
+                <a href="#">EN <i class="fas fa-chevron-down"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/TT4.png" alt="TravelTales Logo" width="100">
+            </div>
+            <ul class="nav-links">
+                <li><a href="W1.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Travel Tales/Tours.html">Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Travel Tales/Tour List.html">Tour List</a></li>
+                        <li><a href="Travel Tales/Tour Packages.html">Tour Packages</a></li>
+                        <li><a href="Travel Tales/Tour Details.html">Tour Details</a></li>
+                        <li><a href="Travel Tales/Activities.html">Activities</a></li>
+                        <li><a href="Travel Tales/Activity Details.html">Activity Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="Destinations/Destinations.html" class="active">Destination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Destinations/Destinations.html">All Destinations</a></li>
+                        <li><a href="Destinations/Destination Single.html">Destination Single</a></li>
+                        <li><a href="Services/Hotel Services.html">Hotels</a></li>
+                        <li><a href="Services/Hotel Details.html">Hotel Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Travel Tales/About Us.html">About</a></li>
+                <li class="dropdown">
+                    <a href="Travel Tales/News">News</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Blog/Ourblog.html">Our Blog</a></li>
+                        <li><a href="Blog/BlogDetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Services/Contact Us Page.html">Contact</a></li>
+            </ul>
+            <div class="call-us">
+                <i class="fas fa-phone"></i> Call Us <br> +9999999999
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Latest News</h1>
+            <p>Home &#11166; Latest News</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-8">
+                <div class="post-card">
+                    <img src="https://jufailitech.com/envatoitems/travilo/html/blog-single.html/images/ 1.jpg" alt="Post Image">
+                    <div class="card-body">
+                        <h5>Soaring High: Riding Balloons in Turkey</h5>
+                        <p class="date">March 12, 2022</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                        <div class="icons">
+                            <i class="fas fa-eye"></i>
+                            <i class="fas fa-comment"></i>
+                            <p class="date">March 12, 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <p>&#11166</p>
+                    <h5 class="card-title">Search</h5>
+                    <form>
+                        <input type="text" list="mylist" placeholder="Where would you like to go?">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+   
+    <!-- Sample Post Content -->
+    <div class="container">
+        <div class="col-lg-6">
+            <div class="card post-card">
+                <img src="sample1.jpg" alt="Sample Post">
+                <div class="card-body">
+                    <h5>Explore the Beauty of Himachal</h5>
+                    <div class="icons">
+                        <span><i class="fas fa-calendar-alt"></i> <span class="date">April 18, 2025</span></span>
+                        <span><i class="fas fa-comments"></i> 3 Comments</span>
+                    </div>
+                    <p>Experience the serenity of mountains and adventure-packed travel across Himachal Pradesh.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card post-card">
+                <img src="sample2.jpg" alt="Sample Post 2">
+                <div class="card-body">
+                    <h5>Best Beaches in South India</h5>
+                    <div class="icons">
+                        <span><i class="fas fa-calendar-alt"></i> <span class="date">April 12, 2025</span></span>
+                        <span><i class="fas fa-comments"></i> 5 Comments</span>
+                    </div>
+                    <p>Enjoy the sun, sand, and sea at the most pristine beaches across South India.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="news-section">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- News Post -->
+                <div class="post-card">
+                    <img src="https://source.unsplash.com/800x400/?himalayas" alt="Himalayas">
+                    <div class="card-body">
+                        <h5 class="card-title">Himalayan Trails Open for Spring Trekking</h5>
+                        <p class="date">Published: April 18, 2025</p>
+                        <p>The trekking routes in Himachal and Uttarakhand are now open for spring. With clear skies and fresh blooms, it's a perfect time for adventurers.</p>
+                    </div>
+                </div>
+                <!-- Another News Post -->
+                <div class="post-card">
+                    <img src="https://source.unsplash.com/800x400/?rajasthan,festival" alt="Desert Festival">
+                    <div class="card-body">
+                        <h5 class="card-title">Rajasthan Desert Festival Lights Up Jaisalmer</h5>
+                        <p class="date">Published: April 16, 2025</p>
+                        <p>The annual Desert Festival in Jaisalmer brings vibrant culture, music, and dance to the golden sands. A must-see for cultural enthusiasts!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <div class="col-lg-4 sidebar">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">
+                        <h6 class="mb-0">Top Stories</h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Kashmir tulip gardens now open</li>
+                        <li class="list-group-item">Budget travel tips for 2025</li>
+                        <li class="list-group-item">Top 10 hill stations in India</li>
+                        <li class="list-group-item">Travel insurance essentials</li>
+                        <li class="list-group-item">Eco-tourism trends rising</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Subscribe to our Newsletter</h5>
+                        <form>
+                            <input type="email" class="form-control mb-2" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-warning btn-block">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    </div>
+    
+    <!-- Custom Footer End --><!-- Enhanced Footer Start -->
+<footer class="custom-footer">
+  <!-- Decorative Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 120 28">
+      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="Images/TT7.png" alt="Travel Tales Logo" />
+</div>
+
+      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Packages</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> info@traveltales.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+</div>
+
+</footer>
+    
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tales News</title>
+    <link rel="icon" href="TT4.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .banner {
+            background-image: url('https://source.unsplash.com/1600x500/?travel,news');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+        .banner h1 {
+            font-size: 3.5rem;
+        }
+        .news-section {
+            padding: 60px 10%;
+        }
+        .post-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .post-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .post-card .card-body {
+            padding: 20px;
+        }
+        .post-card .card-title {
+            font-weight: 600;
+        }
+        .post-card .date {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .sidebar .card {
+            margin-bottom: 30px;
+        }
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 10% 20px;
+        }
+        .footer a {
+            color: #ff8243;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Travel News & Updates</h1>
+    </section>
+
+    <!-- Main Content -->
+    <section class="news-section">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- News Post -->
+                <div class="post-card">
+                    <img src="https://source.unsplash.com/800x400/?himalayas" alt="Himalayas">
+                    <div class="card-body">
+                        <h5 class="card-title">Himalayan Trails Open for Spring Trekking</h5>
+                        <p class="date">Published: April 18, 2025</p>
+                        <p>The trekking routes in Himachal and Uttarakhand are now open for spring. With clear skies and fresh blooms, it's a perfect time for adventurers.</p>
+                    </div>
+                </div>
+                <!-- Another News Post -->
+                <div class="post-card">
+                    <img src="https://source.unsplash.com/800x400/?rajasthan,festival" alt="Desert Festival">
+                    <div class="card-body">
+                        <h5 class="card-title">Rajasthan Desert Festival Lights Up Jaisalmer</h5>
+                        <p class="date">Published: April 16, 2025</p>
+                        <p>The annual Desert Festival in Jaisalmer brings vibrant culture, music, and dance to the golden sands. A must-see for cultural enthusiasts!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sidebar -->
+            <div class="col-lg-4 sidebar">
+                <div class="card">
+                    <div class="card-header bg-warning text-white">
+                        <h6 class="mb-0">Top Stories</h6>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Kashmir tulip gardens now open</li>
+                        <li class="list-group-item">Budget travel tips for 2025</li>
+                        <li class="list-group-item">Top 10 hill stations in India</li>
+                        <li class="list-group-item">Travel insurance essentials</li>
+                        <li class="list-group-item">Eco-tourism trends rising</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Subscribe to our Newsletter</h5>
+                        <form>
+                            <input type="email" class="form-control mb-2" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-warning btn-block">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Travel Tales</h5>
+                <p>Explore the world with us. Bringing you the latest updates, travel packages, and inspiration for your next journey.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <p><i class="fas fa-envelope"></i> info@traveltales.com</p>
+                <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <p>&copy; 2025 Travel Tales. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

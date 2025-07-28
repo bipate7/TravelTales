@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Counter</title>
+    <style>
+        /* Initialize the counter */
+        ol {
+            counter-reset: item-counter; /* Reset counter to start from 1 */
+            list-style: none; /* Remove default list styling */
+            padding-left: 20px; /* Adds padding to the left of the ordered list */
+        }
+
+        /* Increment the counter for each list item */
+        li {
+            counter-increment: item-counter; /* Increments the counter by 1 for each <li> */
+        }
+
+        /* Display the counter value before each list item */
+        li::before {
+            content: counter(item-counter) ". "; /* Display the counter value before the item */
+            font-weight: bold; /* Make the counter value bold */
+        }
+
+        h1 {
+            text-align: center; /* Center the heading */
+            color: #333; /* Dark gray color for the heading */
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Counter Example</h1>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+
+    <!-- Explanation of the code -->
+    <div>
+        <h2>Explanation of the Code</h2>
+        <p><strong>1. Initializing the Counter:</strong></p>
+        <ul>
+            <li><code>counter-reset: item-counter;</code>: This resets the counter to 1 at the beginning of the ordered list. It's like setting a starting point for the numbering.</li>
+            <li><code>list-style: none;</code>: This removes the default numbers or bullets that browsers apply to ordered lists. We will be using a custom counter for this.</li>
+            <li><code>padding-left: 20px;</code>: Adds a little padding to the left side of the list, creating space between the content and the left edge of the page.</li>
+        </ul>
+
+        <p><strong>2. Incrementing the Counter:</strong></p>
+        <ul>
+            <li><code>counter-increment: item-counter;</code>: This property increments the counter by 1 each time a new <code>&lt;li&gt;</code> element is added. So, the first <code>&lt;li&gt;</code> gets the counter 1, the second one gets 2, and so on.</li>
+        </ul>
+
+        <p><strong>3. Displaying the Counter:</strong></p>
+        <ul>
+            <li><code>content: counter(item-counter) ". "; </code>: The <code>::before</code> pseudo-element is used to insert the counter value before the content of each <code>&lt;li&gt;</code>. It will display the counter number followed by a dot (e.g., "1. First item").</li>
+            <li><code>font-weight: bold;</code>: This makes the counter number bold so it stands out more before the list item text.</li>
+        </ul>
+
+        <h2>Result:</h2>
+        <p>The ordered list will display the numbers before each item, with the counter incrementing automatically, and the numbers will appear bold.</p>
+        <pre>
+            1. First item
+            2. Second item
+            3. Third item
+        </pre>
+    </div>
+</body>
+</html>

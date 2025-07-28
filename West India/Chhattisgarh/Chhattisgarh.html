@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chhattisgarh: The Heart of Incredible India</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff9800;
+            --secondary: #ff5722;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #ffeb3b;
+            --text: #333;
+            --text-light: #666;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Header */
+        header {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .header-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            padding: 0 20px;
+            transform: translateY(-50px);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+        
+        .header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background-color: rgba(26, 26, 46, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 95px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Places Section */
+        .places-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .place-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .place-card:nth-child(1) { animation-delay: 0.1s; }
+        .place-card:nth-child(2) { animation-delay: 0.2s; }
+        .place-card:nth-child(3) { animation-delay: 0.3s; }
+        .place-card:nth-child(4) { animation-delay: 0.4s; }
+        .place-card:nth-child(5) { animation-delay: 0.5s; }
+        .place-card:nth-child(6) { animation-delay: 0.6s; }
+        .place-card:nth-child(7) { animation-delay: 0.7s; }
+        .place-card:nth-child(8) { animation-delay: 0.8s; }
+        .place-card:nth-child(9) { animation-delay: 0.9s; }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .place-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .place-card:hover .place-image img {
+            transform: scale(1.1);
+        }
+        
+        .place-rating {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .place-rating i {
+            color: var(--accent);
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .place-details {
+            padding: 20px;
+        }
+        
+        .place-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .place-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .place-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .place-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .packages-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 auto;
+            width: 320px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeInRight 0.5s ease-out forwards;
+        }
+        
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+        .package-card:nth-child(4) { animation-delay: 0.4s; }
+        .package-card:nth-child(5) { animation-delay: 0.5s; }
+        .package-card:nth-child(6) { animation-delay: 0.6s; }
+        .package-card:nth-child(7) { animation-delay: 0.7s; }
+        .package-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        .package-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.1);
+        }
+        
+        .package-price {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(255, 152, 0, 0.9);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-details {
+            padding: 20px;
+        }
+        
+        .package-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .package-duration {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .package-duration i {
+            margin-right: 5px;
+        }
+        
+        .package-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .package-features {
+            margin-bottom: 20px;
+        }
+        
+        .package-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+        
+        .package-feature i {
+            color: var(--primary);
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .package-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .package-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+        
+        .culture-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .culture-tab {
+            padding: 10px 25px;
+            background-color: white;
+            border: none;
+            border-radius: 30px;
+            margin: 0 10px 15px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .culture-tab.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .culture-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .culture-content.active {
+            display: block;
+        }
+        
+        .culture-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .culture-item-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .culture-image {
+            flex: 1;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        
+        .culture-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .culture-item:hover .culture-image img {
+            transform: scale(1.05);
+        }
+        
+        .culture-text {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .culture-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .culture-text p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .testimonials-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 auto;
+            width: 350px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .testimonial-author p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-rating {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-style: italic;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+        
+        .newsletter-section .section-title h2,
+        .newsletter-section .section-title p {
+            color: white;
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .newsletter-btn {
+            padding: 15px 30px;
+            background-color: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #0f0f1a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-col p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-content h1 {
+                font-size: 4rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .culture-item-content {
+                flex-direction: column;
+            }
+            
+            .culture-image {
+                min-height: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-content h1 {
+                font-size: 3rem;
+            }
+            
+            .header-content p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .places-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .places-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Header with Video Background -->
+    <header>
+        <video autoplay muted loop class="header-video">
+            <source src="https://videos.pexels.com/video-files/4440990/4440990-hd_1920_1080_25fps.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-kutaghat-dam-bilaspur-chhattisgarh-khutaghat-attr-hero?qlt=82&ts=1727011181193" alt="Chhattisgarh Landscape">
+        </video>
+        <div class="header-overlay"></div>
+        
+        <!-- Navigation -->
+        <nav>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="Images/TT5.png" alt="Chhattisgarh Tourism Logo">
+                </a>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#places">Places</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Header Content -->
+        <div class="header-content">
+            <h1>Discover Chhattisgarh</h1>
+            <p>Explore the heart of India's natural beauty, rich culture, and ancient heritage</p>
+            <a href="#places" class="place-btn">Explore Now</a>
+        </div>
+        
+        <div class="scroll-down" id="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Chhattisgarh</h2>
+                <p>Known as the "Rice Bowl of India", Chhattisgarh is blessed with stunning waterfalls, dense forests, ancient temples, and vibrant tribal culture.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Soul of Central India</h3>
+                    <p>Chhattisgarh, carved out of Madhya Pradesh in 2000, is one of India's youngest states with one of the oldest cultures. The state is home to over 42 different tribes, each with their unique traditions, art forms, and festivals.</p>
+                    <p>The landscape is dotted with waterfalls, wildlife sanctuaries, and ancient monuments that tell stories of bygone eras. From the majestic Chitrakote Falls to the mystical temples of Sirpur, Chhattisgarh offers a perfect blend of nature, adventure, and spirituality.</p>
+                    <p>With over 44% of its area under forests, Chhattisgarh is a paradise for nature lovers and wildlife enthusiasts. The state's rich mineral resources have earned it the nickname "India's Power Hub".</p>
+                    <a href="#culture" class="place-btn">Explore Culture</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-chitrakote-jagdalpur-city-hero?qlt=82&ts=1726738436494" alt="About Chhattisgarh">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Places Section -->
+    <section class="places-section" id="places">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Places</h2>
+                <p>Discover the breathtaking destinations that make Chhattisgarh a hidden gem of India</p>
+            </div>
+            
+            <div class="places-container">
+                <!-- Place 1 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Chitrakote Falls.jpg" alt="Chitrakote Falls">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.8
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Chitrakote Falls</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Bastar</span>
+                            <span><i class="fas fa-calendar-alt"></i> July - March</span>
+                        </div>
+                        <p class="place-description">Often called the 'Niagara of India', Chitrakote Falls is the widest waterfall in India. The horseshoe-shaped waterfall is most spectacular during monsoon when it's in full flow.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 2 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Kanger Valley National Park.jpeg" alt="Kanger Valley National Park">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.7
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Kanger Valley National Park</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Bastar</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - March</span>
+                        </div>
+                        <p class="place-description">A biodiversity hotspot known for its limestone caves, stunning waterfalls, and rich wildlife including tigers, leopards, and the rare Bastar hill myna.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 3 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Bastar Caves.avif" alt="Bastar Caves">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.5
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Bastar Caves</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Bastar</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - March</span>
+                        </div>
+                        <p class="place-description">Ancient caves with stunning stalactite and stalagmite formations. The Kotumsar Cave is one of the world's few natural underground caves with an ecosystem.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 4 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Raipur.jpg" alt="Raipur">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.3
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Raipur</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Raipur</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - March</span>
+                        </div>
+                        <p class="place-description">The bustling capital city known for its vibrant markets, ancient temples like Mahant Ghasidas Memorial Museum, and proximity to wildlife sanctuaries.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 5 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Sirpur.jpeg" alt="Sirpur">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.6
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Sirpur</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Mahasamund</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - March</span>
+                        </div>
+                        <p class="place-description">An archaeological wonder with ancient Buddhist monasteries, Hindu temples, and Jain viharas dating back to 5th-8th century AD.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 6 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Tirathgarh Falls.jpg" alt="Tirathgarh Falls">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.4
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Tirathgarh Falls</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Bastar</span>
+                            <span><i class="fas fa-calendar-alt"></i> July - March</span>
+                        </div>
+                        <p class="place-description">A multi-tiered waterfall in Kanger Valley National Park that cascades down from a height of 300 feet, creating a milky white appearance.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 7 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Dongargarh.jpg" alt="Dongargarh">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.2
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Dongargarh</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Rajnandgaon</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - March</span>
+                        </div>
+                        <p class="place-description">Famous for the Bambleshwari Temple atop a hill, offering panoramic views. The town comes alive during the Navratri festival.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 8 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Bhoramdeo Temple.jpeg" alt="Bhoramdeo Temple">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.5
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Bhoramdeo Temple</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Kabirdham</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - March</span>
+                        </div>
+                        <p class="place-description">Known as the 'Khajuraho of Chhattisgarh', this 11th-century temple complex features exquisite erotic sculptures and Nagara-style architecture.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Place 9 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Kanha National Park.jpg" alt="Kanha National Park">
+                        <div class="place-rating">
+                            <i class="fas fa-star"></i> 4.9
+                        </div>
+                    </div>
+                    <div class="place-details">
+                        <h3>Kanha National Park</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Mandla (Border)</span>
+                            <span><i class="fas fa-calendar-alt"></i> Oct - June</span>
+                        </div>
+                        <p class="place-description">One of India's largest tiger reserves, inspiration for Rudyard Kipling's Jungle Book, known for its barasingha (swamp deer) population.</p>
+                        <a href="#" class="place-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tour Packages</h2>
+                <p>Handcrafted itineraries to experience the best of Chhattisgarh</p>
+            </div>
+            
+            <div class="packages-container">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Raipur City Tour.jpg" alt="Raipur City Tour">
+                        <div class="package-price">₹2,000</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Raipur City Tour</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 1 Day
+                        </div>
+                        <p class="package-description">Explore the vibrant capital city with its ancient temples, bustling markets, and cultural landmarks.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Mahant Ghasidas Museum
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Vivekanand Sarovar
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Local Market Visit
+                            </div>
+                        </div>
+                        <a href="Raipur City Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Chitrakote Falls Adventure.jpg" alt="Chitrakote Falls Adventure">
+                        <div class="package-price">₹2,500</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Chitrakote Falls Adventure</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 2 Days
+                        </div>
+                        <p class="package-description">Experience the majestic 'Niagara of India' with boating and nature walks in the surrounding forests.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Chitrakote Falls Visit
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Boat Ride
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Tribal Village Tour
+                            </div>
+                        </div>
+                        <a href="Chitrakote Falls Adventure.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Kanha National Park.jpg" alt="Kanha National Park Safari">
+                        <div class="package-price">₹3,000</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Kanha National Park Safari</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 3 Days
+                        </div>
+                        <p class="package-description">Wildlife adventure in one of India's most famous tiger reserves, home to diverse flora and fauna.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> 3 Jungle Safaris
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Nature Walks
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Tribal Dance Show
+                            </div>
+                        </div>
+                        <a href="Kanha National Park Safari.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Bastar Heritage Tour.jpg" alt="Bastar Heritage Tour">
+                        <div class="package-price">₹2,800</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Bastar Heritage Tour</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 3 Days
+                        </div>
+                        <p class="package-description">Immerse yourself in the rich tribal culture and heritage of Bastar region.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Tribal Museum Visit
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Handicraft Workshops
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Danteshwari Temple
+                            </div>
+                        </div>
+                        <a href="Bastar Heritage Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Sirpur Archaeological Tour.jpg" alt="Sirpur Archaeological Tour">
+                        <div class="package-price">₹3,200</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Sirpur Archaeological Tour</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 2 Days
+                        </div>
+                        <p class="package-description">Step back in time exploring the ancient Buddhist, Hindu and Jain monuments of Sirpur.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Laxman Temple
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Buddhist Monasteries
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Archaeological Museum
+                            </div>
+                        </div>
+                        <a href="Sirpur Archaeological Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 6 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Kanger Valley National Park Getaway.jpg" alt="Kanger Valley National Park Getaway">
+                        <div class="package-price">₹3,500</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Kanger Valley Getaway</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 3 Days
+                        </div>
+                        <p class="package-description">Explore the biodiversity hotspot with its caves, waterfalls and rich wildlife.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Kotumsar Cave
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Tirathgarh Falls
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Wildlife Safari
+                            </div>
+                        </div>
+                        <a href="Kanger Valley National Park Getaway.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Dongargarh Temple Tour.jpg" alt="Dongargarh Temple Tour">
+                        <div class="package-price">₹2,400</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Dongargarh Temple Tour</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 1 Day
+                        </div>
+                        <p class="package-description">Pilgrimage to the sacred Bambleshwari Temple with panoramic hill views.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Bambleshwari Temple
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Ropeway Ride
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Local Market Visit
+                            </div>
+                        </div>
+                        <a href="Dongargarh Temple Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Package 8 -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Tirathgarh Falls Picnic.jpg" alt="Tirathgarh Falls Picnic">
+                        <div class="package-price">₹2,200</div>
+                    </div>
+                    <div class="package-details">
+                        <h3>Tirathgarh Falls Picnic</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 1 Day
+                        </div>
+                        <p class="package-description">Relaxing day trip to the stunning multi-tiered waterfall in Kanger Valley.</p>
+                        <div class="package-features">
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Waterfall Visit
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Nature Walk
+                            </div>
+                            <div class="package-feature">
+                                <i class="fas fa-check"></i> Picnic Lunch
+                            </div>
+                        </div>
+                        <a href="Tirathgarh Falls Picnic.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Culture Section -->
+    <section class="culture-section" id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Culture & Heritage</h2>
+                <p>Discover the vibrant traditions and rich heritage of Chhattisgarh</p>
+            </div>
+            
+            <div class="culture-tabs">
+                <button class="culture-tab active" data-tab="tribal">Tribal Culture</button>
+                <button class="culture-tab" data-tab="art">Art & Craft</button>
+                <button class="culture-tab" data-tab="festivals">Festivals</button>
+                <button class="culture-tab" data-tab="cuisine">Cuisine</button>
+            </div>
+            
+            <div class="culture-content active" id="tribal">
+                <div class="culture-item">
+                    <div class="culture-item-content">
+                        <div class="culture-image">
+                            <img src="https://www.ercotravels.com/blog/wp-content/uploads/2024/12/Chhatisgarh-tribal-culture-and-heritage.jpg" alt="Tribal Culture">
+                        </div>
+                        <div class="culture-text">
+                            <h3>Rich Tribal Heritage</h3>
+                            <p>Chhattisgarh is home to over 42 different tribes, each with their unique customs, traditions, and way of life. The major tribes include Gond, Baiga, Bison Horn Maria, Abhuj Maria, Muria, Halba, and Dhurvaa.</p>
+                            <p>The tribal communities have preserved their ancient traditions, rituals, and art forms despite modernization. Their close connection with nature is reflected in their worship of natural elements and forest deities.</p>
+                            <p>Traditional tribal dances like the Panthi, Raut Nacha, Karma, and Saila are performed during festivals and special occasions, showcasing their vibrant culture.</p>
+                            <a href="#" class="place-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content" id="art">
+                <div class="culture-item">
+                    <div class="culture-item-content">
+                        <div class="culture-image">
+                            <img src="https://shop.gaatha.com/image/catalog/1-Category%20images/blog/jan-25/wrote-iron.jpg" alt="Art & Craft">
+                        </div>
+                        <div class="culture-text">
+                            <h3>Exquisite Art & Craft</h3>
+                            <p>Chhattisgarh is renowned for its traditional handicrafts that reflect the skill and creativity of its artisans. The state is particularly famous for its bell metal craft, wrought iron work, terracotta items, and bamboo products.</p>
+                            <p>The tribal art of Chhattisgarh includes beautiful paintings, wood carvings, and metal figurines. The Dhokra art (metal casting using the lost-wax technique) is particularly noteworthy and has gained international recognition.</p>
+                            <p>Other notable crafts include Kosa silk weaving, stone carving, and tribal jewelry making using beads, cowries, and metals.</p>
+                            <a href="#" class="place-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content" id="festivals">
+                <div class="culture-item">
+                    <div class="culture-item-content">
+                        <div class="culture-image">
+                            <img src="https://im.hunt.in/cg/Chhatis/About/Profile/Culture/fgfd.jpg" alt="Festivals">
+                        </div>
+                        <div class="culture-text">
+                            <h3>Vibrant Festivals</h3>
+                            <p>Chhattisgarh celebrates a mix of traditional tribal festivals along with major Hindu festivals. The Bastar Dussehra is the most famous, lasting for 75 days and involving the entire tribal community in unique rituals.</p>
+                            <p>Other important festivals include Madai Festival, Goncha Festival, Hareli (celebrating agriculture), and Pola (bull worship festival). These festivals showcase colorful costumes, traditional music, and dance performances.</p>
+                            <p>The state also hosts several cultural events and fairs throughout the year, providing a platform for local artists and craftsmen to display their talents.</p>
+                            <a href="#" class="place-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content" id="cuisine">
+                <div class="culture-item">
+                    <div class="culture-item-content">
+                        <div class="culture-image">
+                            <img src="https://blog.swiggy.com/wp-content/uploads/2024/04/Muthia-1024x538.jpg" alt="Cuisine">
+                        </div>
+                        <div class="culture-text">
+                            <h3>Unique Cuisine</h3>
+                            <p>Chhattisgarhi cuisine is simple yet flavorful, with rice being the staple food. The state is known as the "Rice Bowl of India" and offers a variety of rice-based dishes.</p>
+                            <p>Popular dishes include Chila (rice pancakes), Faraa (rice dumplings), Aamat (bamboo shoot curry), and Bafauri (steamed lentil dumplings). The tribal communities have their unique culinary traditions using local ingredients.</p>
+                            <p>Traditional beverages include Landa (rice beer) and Sulphi (extracted from palm trees). Sweets like Dehrori and Khurmi are popular during festivals.</p>
+                            <a href="#" class="place-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+                <p>What our visitors say about their Chhattisgarh adventure</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid&w=740" alt="Sarah Johnson">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Sarah Johnson</h4>
+                            <p>From USA</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Chhattisgarh was an absolute revelation! The Chitrakote Falls took my breath away, and the tribal villages gave me insights into cultures I never knew existed. The warmth of the people made the experience even more special."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-male-user-profile-vector-illustration-isolated-background-man-profile-sign-business-concept_157943-38764.jpg?semt=ais_items_boosted&w=740" alt="Rajiv Mehta">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Rajiv Mehta</h4>
+                            <p>From Mumbai</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"As a wildlife enthusiast, Kanha National Park was the highlight for me. But I was equally impressed by the ancient temples of Sirpur. Chhattisgarh offers the perfect mix of nature and culture."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1557315360-6a350ab4eccd?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTF8OTQ1MjQ5NHx8ZW58MHx8fHx8" alt="Priya Sharma">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Priya Sharma</h4>
+                            <p>From Delhi</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Bastar Dussehra festival was unlike anything I've ever seen. The tribal dances, the vibrant costumes, and the energy of the celebrations were simply unforgettable. Chhattisgarh's culture is truly unique!"</p>
+                </div>
+                
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://ccm-production.s3.amazonaws.com/images/people/images/EHnGHwghs4ceCbisVGjdvQ/medium/testimonial_4_round.png?1678141259" alt="Michael Chen">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Michael Chen</h4>
+                            <p>From Singapore</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Kanger Valley National Park's caves were spectacular, and the waterfalls were so refreshing. The tour guides were knowledgeable about the local flora and fauna. A great destination for nature lovers!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Chhattisgarh</h2>
+                <p>Discover the geographical diversity and key attractions across the state</p>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1rY4rKiKlFZerv1QVFl7MpzFuNgom7j0&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for travel tips, special offers, and updates about Chhattisgarh tourism</p>
+            </div>
+            
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>About Chhattisgarh</h3>
+                <p>Chhattisgarh, the heart of India, is a land of ancient temples, stunning waterfalls, rich tribal culture, and abundant natural resources.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                    <li><a href="#places"><i class="fas fa-chevron-right"></i> Places</a></li>
+                    <li><a href="#packages"><i class="fas fa-chevron-right"></i> Packages</a></li>
+                    <li><a href="#culture"><i class="fas fa-chevron-right"></i> Culture</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Travel Tales, Nagpur, Maharashtra</a></li>
+                    <li><a href="tel:+917772123456"><i class="fas fa-phone"></i> +91 777 212 3456</a></li>
+                    <li><a href="mailto:info@chhattisgarhtourism.com"><i class="fas fa-envelope"></i> Traveltalesngp@gmail.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Helpful Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> How to Reach</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Travel Tips</a></li>
+                </ul>
+            </div>
+        </div>
+        
+<div class="footer-bottom">
+            <p>&copy; 2025 Travel Tales. All Rights Reserved.| Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Chhattisgarh</p>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            this.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Scroll Down Button
+        document.getElementById('scroll-down').addEventListener('click', function() {
+            window.scrollBy({
+                top: window.innerHeight - 80,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Culture Tabs
+        const cultureTabs = document.querySelectorAll('.culture-tab');
+        const cultureContents = document.querySelectorAll('.culture-content');
+        
+        cultureTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                cultureTabs.forEach(t => t.classList.remove('active'));
+                cultureContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.place-card, .package-card, .section-title, .about-image, .culture-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translate(0)';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        // Initial check in case elements are already in view
+        animateOnScroll();
+    </script>
+</body>
+</html>

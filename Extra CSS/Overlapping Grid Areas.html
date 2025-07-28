@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlapping Grid Areas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FAFAFA;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #673AB7;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            grid-gap: 10px;
+            background-color: #EDE7F6;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .header {
+            grid-area: header;
+            background-color: #673AB7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #9575CD;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .main {
+            grid-area: main;
+            background-color: #D1C4E9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer {
+            grid-area: footer;
+            background-color: #B39DDB;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Overlapping Grid Areas</h1>
+    <div class="grid-container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main Content</div>
+        <div class="footer">Footer</div>
+    </div>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            The <code>grid-template-areas</code> property allows naming and defining specific grid areas. 
+            Each area can span multiple columns or rows:
+            <ul>
+                <li><code>"header header"</code>: Header spans two columns.</li>
+                <li><code>"sidebar main"</code>: Sidebar and main occupy one column each.</li>
+                <li><code>"footer footer"</code>: Footer spans two columns.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

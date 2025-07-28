@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Page</title>
+    <link rel="icon" type="image/logo" href="Images/TT4.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Images/Ladhak4.avif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
+        }
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #0E46A3;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+            width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(20px);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            transition: transform 0.3s, background 0.3s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .container:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+            font-family: 'Pacifico', cursive;
+        }
+        h5 {
+            margin-bottom: 20px;
+            color: #f5ebeb;
+        }
+        h5 a {
+            color: #f5ebeb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        h5 a:hover {
+            color: #007BFF;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form img {
+            margin-bottom: 20px;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        form img:hover {
+            transform: scale(1.1);
+        }
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        form input[type="text"], form input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        form input[type="text"]:focus, form input[type="password"]:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+        form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        form .psw a {
+            color: #f5ebeb;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        form .psw a:hover {
+            color: #007BFF;
+        }
+        form button {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3);
+        }
+        form button:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-buttons a {
+            display: inline-block;
+            position: relative;
+        }
+        .social-buttons a::before {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+        .social-buttons a:hover::before {
+            opacity: 1;
+        }
+        .social-buttons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+        .social-buttons img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            width: 100%;
+            color: whitesmoke;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0);
+            padding: 20px 0;
+            font-size: 10px;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 30px;
+            }
+            form input[type="text"], form input[type="password"], form button {
+                width: 100%;
+            }
+            .social-buttons img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <h5>Not a member? <a href="Sign up Page.html">Register now</a></h5>
+        <form action="/action_page.php" method="post"> 
+            <img src="Images/TravelTales3.png" height="120px" width="120px" alt="User Image">
+            <label for="uname">Username</label>
+            <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            <label>
+                <input type="checkbox" checked="checked" name="remember">Remember me
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+                <span class="psw"><a href="Reset Password.html">Forgot Password?</a></span>
+            </label>
+            <button type="submit">Login</button>
+            <div>
+                <p>Or</p>
+                <p>Sign in with</p>
+                <div class="social-buttons">
+                    <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><img src="Images/facebook.png" alt="Facebook Logo"></a>
+                    <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1812573153%3A1655944654029516&flowEntry=ServiceLogin&flowName=WebLiteSignIn&ifkv=AX3vH39E0iYVTmn-NoMNM_C35EPrno8LWsRx2Qhr0HApkVLZ-Zc_Vql8ouaSQOiXzEmthrpOPAV5" aria-label="Google"><img src="Images/googleplus.png" alt="Google Logo"></a>
+                    <a href="https://x.com/i/flow/login?lang=en" aria-label="Twitter"><img src="Images/twitter.png" alt="Twitter Logo"></a>
+                </div>
+                <p>&copy; 2023 TravelTales. All Rights Reserved.</p>
+            </div>
+        </form>
+    </div>
+    <footer>
+
+</body>
+</html>

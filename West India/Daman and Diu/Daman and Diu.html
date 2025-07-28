@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daman and Diu: The Coastal Paradise of India</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #ffa500;
+            --accent: #57c5b6;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #222; /* Soft dark gray for text */
+            background: linear-gradient(135deg, #f9f9f9 0%, #e6f7ff 50%, #fdf2f8 100%);
+            line-height: 1.6;
+        }  
+        /* Header Styles */
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+        }
+        
+        /* Main Header */
+        .main-header {
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 80px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .main-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: var(--primary);
+        }
+        
+        .main-nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb-list {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-item:not(:last-child):after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--text-light);
+        }
+        
+        .breadcrumb-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb-link:hover {
+            color: var(--primary);
+        }
+        
+        .breadcrumb-link.active {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/6d/5e/50/sea-in-front.jpg?w=1200&h=700&s=1');
+            background-size: cover;
+            background-position: center;
+            height: 105vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: -82px; /* Adjust for fixed header */
+        }
+        
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .place-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+        
+        .place-content {
+            padding: 20px;
+        }
+        
+        .place-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .place-content .meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+        
+        .place-content .meta i {
+            margin-right: 5px;
+        }
+        
+        .place-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--accent);
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .packages-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 auto;
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-img {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .package-content {
+            padding: 20px;
+        }
+        
+        .package-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .package-content .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 10px 0;
+        }
+        
+        .package-content .rating {
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .package-content .features {
+            margin-bottom: 20px;
+        }
+        
+        .package-content .features li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-content .features i {
+            color: var(--primary);
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+        
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .testimonials {
+            background: linear-gradient(rgba(26, 95, 122, 0.9), rgba(26, 95, 122, 0.9)), url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .testimonial-text:before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            opacity: 0.2;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(rgba(255, 165, 0, 0.9), rgba(255, 165, 0, 0.9)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--dark);
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .payment-methods img {
+            height: 30px;
+        }
+        
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .main-nav ul {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                height: 70vh;
+                margin-top: -72px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 82px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 82px);
+                background: white;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s ease;
+                z-index: 99;
+            }
+            
+            .main-nav.active {
+                left: 0;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .main-nav a {
+                padding: 10px 0;
+                display: block;
+            }
+            
+            .top-bar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header {
+                height: 60vh;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar with Contact Info -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <a href="tel:+911234567890"><i class="fas fa-phone"></i> +91 1234567890</a>
+                <a href="mailto:Traveltalesnpg@gmail.com"><i class="fas fa-envelope"></i> TravelTales@gmail.com</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header with Logo and Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="Images/TT4.png" alt="Travel Tales Logo" class="logo-img">
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="index.html" class="breadcrumb-link">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="destinations.html" class="breadcrumb-link">Destinations</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link active">Daman and Diu</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="header">
+        <h1>Discover Daman and Diu</h1>
+        <p>Experience the perfect blend of sun, sand, and Portuguese heritage in this coastal paradise</p>
+        <a href="#packages" class="btn">View Tour Packages</a>
+    </section>
+
+    <!-- Places to Visit Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Top Attractions</h2>
+            <div class="places-grid">
+                <!-- Daman Beaches -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/jampore-beach-daman-daman-&-diu-attr-about?qlt=82&ts=1726737768842" alt="Daman Beaches">
+                    </div>
+                    <div class="place-content">
+                        <h3>Daman Beaches</h3>
+                        <div class="meta">
+                            <i class="fas fa-calendar-alt"></i> Best time: Oct-Mar
+                        </div>
+                        <p>Jampore and Devka beaches offer golden sands, water sports, and stunning sunsets along the Arabian Sea.</p>
+                        <a href="#" class="read-more">Explore more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Diu Fort -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://makeithappen.co.in/wp-content/uploads/2021/12/Diu-Fort-G1-5.jpg" alt="Diu Fort">
+                    </div>
+                    <div class="place-content">
+                        <h3>Diu Fort</h3>
+                        <div class="meta">
+                            <i class="fas fa-calendar-alt"></i> Best time: Oct-Mar
+                        </div>
+                        <p>A magnificent Portuguese fort with panoramic sea views, ancient cannons, and fascinating history.</p>
+                        <a href="#" class="read-more">Explore more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Nagoa Beach -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://images.wanderon.in/blogs/new/2024/04/nagoa-beach.jpg" alt="Nagoa Beach">
+                    </div>
+                    <div class="place-content">
+                        <h3>Nagoa Beach</h3>
+                        <div class="meta">
+                            <i class="fas fa-calendar-alt"></i> Best time: Oct-Mar
+                        </div>
+                        <p>Horseshoe-shaped beach known for its palm-fringed coastline and water sports activities.</p>
+                        <a href="#" class="read-more">Explore more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- St. Paul's Church -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://www.shutterstock.com/image-photo/diu-gujrat-2-apr-2024-600nw-2450541907.jpg" alt="St. Paul's Church">
+                    </div>
+                    <div class="place-content">
+                        <h3>St. Paul's Church</h3>
+                        <div class="meta">
+                            <i class="fas fa-calendar-alt"></i> Best time: Oct-Mar
+                        </div>
+                        <p>A beautiful 17th-century Portuguese church with exquisite wood carvings and Baroque architecture.</p>
+                        <a href="#" class="read-more">Explore more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Gangeshwar Temple -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://www.seawatersports.com/images/places/gangeshwar-mahadev-temple.png" alt="Gangeshwar Temple">
+                    </div>
+                    <div class="place-content">
+                        <h3>Gangeshwar Temple</h3>
+                        <div class="meta">
+                            <i class="fas fa-calendar-alt"></i> Best time: Oct-Mar
+                        </div>
+                        <p>Ancient Shiva temple with five lingams naturally carved by sea waves, located near the sea.</p>
+                        <a href="#" class="read-more">Explore more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Naida Caves -->
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://indiano.travel/wp-content/uploads/2022/09/Naida-Caves-picture.jpg" alt="Naida Caves">
+                    </div>
+                    <div class="place-content">
+                        <h3>Naida Caves</h3>
+                        <div class="meta">
+                            <i class="fas fa-calendar-alt"></i> Best time: Oct-Mar
+                        </div>
+                        <p>Network of caves with fascinating rock formations and natural skylights created by erosion.</p>
+                        <a href="#" class="read-more">Explore more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Packages Section -->
+    <section id="packages" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Tour Packages</h2>
+            <div class="packages-container">
+                
+                <!-- Package 1: Diu Fort Tour -->
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Diu Fort Tour.webp" alt="Diu Fort Package">
+    </div>
+    <div class="package-content">
+        <h3>Diu Fort Tour</h3>
+        <div class="price">₹3,000</div>
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> 1 Day Tour</li>
+            <li><i class="fas fa-check"></i> Explore Historic Fort</li>
+            <li><i class="fas fa-check"></i> Guide Included</li>
+            <li><i class="fas fa-check"></i> Entry Tickets Covered</li>
+        </ul>
+        <a href="Diu Fort Tour.html" class="btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 2: Nagoa Beach Adventure -->
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Nagoa Beach Adventure.jpg" alt="Nagoa Beach Package">
+    </div>
+    <div class="package-content">
+        <h3>Nagoa Beach Adventure</h3>
+        <div class="price">₹3,500</div>
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Water Sports</li>
+            <li><i class="fas fa-check"></i> Beach Resort Stay</li>
+            <li><i class="fas fa-check"></i> Meals Included</li>
+        </ul>
+        <a href="Nagoa Beach Adventure.html" class="btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 3: Jampore Beach Relaxation -->
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Jampore Beach Relaxation.jpeg" alt="Jampore Beach Package">
+    </div>
+    <div class="package-content">
+        <h3>Jampore Beach Relaxation</h3>
+        <div class="price">₹2,500</div>
+        <div class="rating">
+            ⭐⭐⭐⭐
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Beach Picnic Spot</li>
+            <li><i class="fas fa-check"></i> Peaceful Surroundings</li>
+            <li><i class="fas fa-check"></i> Accommodation Included</li>
+        </ul>
+        <a href="Jampore Beach Relaxation.html" class="btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 4: Daman Fort Exploration -->
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Daman Fort Exploration.jpg" alt="Daman Fort Package">
+    </div>
+    <div class="package-content">
+        <h3>Daman Fort Exploration</h3>
+        <div class="price">₹3,000</div>
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days Tour</li>
+            <li><i class="fas fa-check"></i> Heritage Walk</li>
+            <li><i class="fas fa-check"></i> Guided Experience</li>
+            <li><i class="fas fa-check"></i> Historic Sites</li>
+        </ul>
+        <a href="Daman Fort Exploration.html" class="btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 5: Church of St. Jerome Tour -->
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Church of St. Jerome Tour.jpg" alt="Church of St. Jerome Package">
+    </div>
+    <div class="package-content">
+        <h3>Church of St. Jerome Tour</h3>
+        <div class="price">₹2,000</div>
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Historical Church Visit</li>
+            <li><i class="fas fa-check"></i> Cultural Insights</li>
+            <li><i class="fas fa-check"></i> Guide Available</li>
+            <li><i class="fas fa-check"></i> Entry Pass Included</li>
+        </ul>
+        <a href="Church of St. Jerome Tour.html" class="btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 6: Moti Daman Heritage Tour -->
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Moti Daman Heritage Tour.jpeg" alt="Moti Daman Package">
+    </div>
+    <div class="package-content">
+        <h3>Moti Daman Heritage Tour</h3>
+        <div class="price">₹2,800</div>
+        <div class="rating">
+            ⭐⭐⭐⭐
+        </div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+            <li><i class="fas fa-check"></i> Colonial Architecture</li>
+            <li><i class="fas fa-check"></i> Fort & Church Visits</li>
+            <li><i class="fas fa-check"></i> Meal Included</li>
+        </ul>
+        <a href="Moti Daman Heritage Tour.html" class="btn">Book Now</a>
+    </div>
+</div>
+
+                <!-- Daman Beach Getaway -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://www.holidify.com/images/bgImages/DAMAN.jpg" alt="Daman Beach Getaway">
+                    </div>
+                    <div class="package-content">
+                        <h3>Daman Beach Getaway</h3>
+                        <div class="price">₹3,500</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+                            <li><i class="fas fa-check"></i> Jampore & Devka Beaches</li>
+                            <li><i class="fas fa-check"></i> Portuguese Fort Visit</li>
+                            <li><i class="fas fa-check"></i> Breakfast & Dinner</li>
+                        </ul>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Diu Island Explorer -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-light-house-beach-moti-daman-city-hero?qlt=82&ts=1726737796110" alt="Diu Island Explorer">
+                    </div>
+                    <div class="package-content">
+                        <h3>Diu Island Explorer</h3>
+                        <div class="price">₹4,200</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+                            <li><i class="fas fa-check"></i> Diu Fort & Naida Caves</li>
+                            <li><i class="fas fa-check"></i> Nagoa Beach Activities</li>
+                            <li><i class="fas fa-check"></i> All Meals Included</li>
+                        </ul>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Heritage Tour -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/diu-fort-diu-daman-&-diu-tri-hero?qlt=82&ts=1727163082035" alt="Heritage Tour">
+                    </div>
+                    <div class="package-content">
+                        <h3>Portuguese Heritage</h3>
+                        <div class="price">₹3,800</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 2 Days / 1 Night</li>
+                            <li><i class="fas fa-check"></i> Churches & Forts Tour</li>
+                            <li><i class="fas fa-check"></i> Cultural Performances</li>
+                            <li><i class="fas fa-check"></i> Seafood Dinner</li>
+                        </ul>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Romantic Escape -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2020/02/og-for-Resorts-Near-Diu_5th-Feb.jpg" alt="Romantic Escape">
+                    </div>
+                    <div class="package-content">
+                        <h3>Romantic Escape</h3>
+                        <div class="price">₹5,500</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+                            <li><i class="fas fa-check"></i> Private Beach Dinner</li>
+                            <li><i class="fas fa-check"></i> Sunset Cruise</li>
+                            <li><i class="fas fa-check"></i> Luxury Accommodation</li>
+                        </ul>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Family Fun -->
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/nagao-beach-diu-daman-diu-1-attr-hero?qlt=82&ts=1726737837425" alt="Family Fun">
+                    </div>
+                    <div class="package-content">
+                        <h3>Family Fun</h3>
+                        <div class="price">₹4,800</div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 4 Days / 3 Nights</li>
+                            <li><i class="fas fa-check"></i> Water Sports Activities</li>
+                            <li><i class="fas fa-check"></i> Kids' Adventure Zone</li>
+                            <li><i class="fas fa-check"></i> All Meals Included</li>
+                        </ul>
+                        <a href="#" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Location Map</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1N1NeNgF64iifZxGPaaz9rHkQHYdFGOw&ehbc=2E312F" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">What Visitors Say</h2>
+            <div class="testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Daman and Diu is a perfect weekend getaway! The beaches are clean, the seafood is delicious, and the Portuguese architecture is fascinating.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Meera Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Meera Patel</h4>
+                            <p>Ahmedabad, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The blend of Indian and Portuguese cultures makes Daman and Diu unique. The churches and forts are incredibly well-preserved.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rahul Sharma</h4>
+                            <p>Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Nagoa Beach is paradise! We enjoyed parasailing and banana boat rides. The sunset views from Diu Fort are unforgettable.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Joshi">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Joshi</h4>
+                            <p>Pune, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Explore Daman and Diu?</h2>
+            <p>Plan your perfect coastal getaway with our curated packages and expert guides.</p>
+            <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-col">
+                    <h3>About Daman & Diu</h3>
+                    <p>Daman and Diu is a union territory on India's west coast known for its beaches, Portuguese heritage, and relaxed atmosphere.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="packages.html">Tour Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Column -->
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Travel Tales, Nagpur, Maharashtra</p>
+                    <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                    <p><i class="fas fa-envelope"></i> TravelTalesngp@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                </div>
+                
+                <!-- Newsletter Column -->
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest travel updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Travel Tales. All Rights Reserved.| Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> for Daman and Diu</p>
+                </div>
+                <div class="payment-methods">
+                    <img src="https://1000logos.net/wp-content/uploads/2017/06/VISA-Logo-2006.png" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                    <img src="https://1000logos.net/wp-content/uploads/2023/03/Paytm-logo.png" alt="Paytm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/UPI_logo.svg/640px-UPI_logo.svg.png" alt="UPI">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>

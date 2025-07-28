@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes and Their Functions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .example-box {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .example-box h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Understanding HTML Attributes</h1>
+
+        <!-- Global Attributes -->
+        <div class="example-box">
+            <h2>Global Attributes</h2>
+            <p>
+                These attributes can be used on any HTML element. Examples include <code>id</code>, <code>class</code>, <code>style</code>, and <code>data-*</code>.
+            </p>
+            <div id="globalExample" class="text-center" style="color: blue;" data-example="This is a data attribute">
+                This is an example of global attributes.
+            </div>
+            <p>
+                Explanation:
+                <ul>
+                    <li>The <code>id</code> attribute assigns a unique identifier to the element.</li>
+                    <li>The <code>class</code> attribute assigns the element to a class, enabling CSS styling.</li>
+                    <li>The <code>style</code> attribute applies inline CSS.</li>
+                    <li>The <code>data-*</code> attribute stores custom data.</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Event Attributes -->
+        <div class="example-box">
+            <h2>Event Attributes</h2>
+            <p>
+                These attributes trigger JavaScript functions based on user interactions, such as <code>onclick</code>, <code>onmouseover</code>, and <code>onchange</code>.
+            </p>
+            <button onclick="alert('Button clicked!')" class="btn btn-primary">Click Me</button>
+            <p>
+                Explanation:
+                <ul>
+                    <li>The <code>onclick</code> attribute triggers an alert when the button is clicked.</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Form Attributes -->
+        <div class="example-box">
+            <h2>Form Attributes</h2>
+            <p>
+                These attributes define form behavior, such as <code>action</code>, <code>method</code>, <code>required</code>, and <code>placeholder</code>.
+            </p>
+            <form action="/submit" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+            <p>
+                Explanation:
+                <ul>
+                    <li>The <code>action</code> attribute specifies the form submission URL.</li>
+                    <li>The <code>method</code> attribute specifies the HTTP method (GET or POST).</li>
+                    <li>The <code>required</code> attribute makes the field mandatory.</li>
+                    <li>The <code>placeholder</code> attribute provides a hint to the user.</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- ARIA Attributes -->
+        <div class="example-box">
+            <h2>ARIA (Accessible Rich Internet Applications) Attributes</h2>
+            <p>
+                These attributes improve accessibility for users with disabilities. Examples include <code>aria-label</code>, <code>aria-hidden</code>, and <code>role</code>.
+            </p>
+            <div role="button" aria-label="Close dialog" tabindex="0" class="btn btn-danger">
+                Close
+            </div>
+            <p>
+                Explanation:
+                <ul>
+                    <li>The <code>role</code> attribute defines the element's role (e.g., button).</li>
+                    <li>The <code>aria-label</code> provides a label for assistive technologies.</li>
+                    <li>The <code>tabindex</code> attribute makes the element focusable.</li>
+                </ul>
+            </p>
+        </div>
+
+        <!-- Bootstrap Attributes -->
+        <div class="example-box">
+            <h2>Bootstrap-Specific Attributes</h2>
+            <p>
+                These attributes add predefined Bootstrap styling and functionality, such as <code>data-bs-toggle</code> for modals or collapses.
+            </p>
+            <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                Toggle Collapse
+            </button>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    This is a collapsible section powered by Bootstrap.
+                </div>
+            </div>
+            <p>
+                Explanation:
+                <ul>
+                    <li>The <code>data-bs-toggle</code> attribute activates Bootstrap's JavaScript components (e.g., collapse).</li>
+                    <li>The <code>data-bs-target</code> attribute specifies the target element.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

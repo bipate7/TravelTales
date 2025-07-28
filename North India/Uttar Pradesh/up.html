@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttar Pradesh: The Heart of India | Travel Tales</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --accent: #ffe66d;
+            --dark: #2f3542;
+            --light: #f1f2f6;
+            --text-dark: #333;
+            --text-light: #fff;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+        }
+        
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .btn-explore {
+            background: var(--accent);
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-explore:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: var(--gold);
+        }
+        
+        .btn-explore::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-explore:hover::after {
+            left: 100%;
+        }
+        
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            display: block;
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.1);
+            animation: float 15s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+        
+        .floating-element:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+        
+        .floating-element:nth-child(2) {
+            left: 10%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        
+        .floating-element:nth-child(3) {
+            left: 70%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+        
+        .floating-element:nth-child(4) {
+            left: 40%;
+            width: 50px;
+            height: 50px;
+            animation-delay: 0s;
+            animation-duration: 20s;
+        }
+        
+        .floating-element:nth-child(5) {
+            left: 65%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 0s;
+            animation-duration: 14s;
+        }
+        
+        .floating-element:nth-child(6) {
+            left: 75%;
+            width: 90px;
+            height: 90px;
+            animation-delay: 3s;
+            animation-duration: 16s;
+        }
+        
+        .floating-element:nth-child(7) {
+            left: 35%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 7s;
+            animation-duration: 22s;
+        }
+        
+        .floating-element:nth-child(8) {
+            left: 50%;
+            width: 45px;
+            height: 45px;
+            animation-delay: 15s;
+            animation-duration: 25s;
+        }
+        
+        /* Section Styling */
+        .section-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            position: relative;
+            display: inline-block;
+            color: var(--dark);
+            text-align: center;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        /* Places Section */
+        .places-section {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .place-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 30px;
+            background: white;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-img-container {
+            overflow: hidden;
+            height: 280px;
+            position: relative;
+        }
+        
+        .place-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .place-card:hover .place-img {
+            transform: scale(1.1) rotate(1deg);
+        }
+        
+        .place-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-body {
+            padding: 25px;
+            position: relative;
+        }
+        
+        .place-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+        
+        .place-card:hover .place-title {
+            color: var(--primary);
+        }
+        
+        .place-time {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .place-time i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .place-desc {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .btn-more {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-more:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-more::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-more:hover::before {
+            left: 100%;
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        .package-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 30px;
+            background: white;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-img-container {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .package-card:hover .package-img {
+            transform: scale(1.1);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .badge-gold {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        
+        .badge-silver {
+            background: var(--silver);
+        }
+        
+        .badge-bronze {
+            background: var(--bronze);
+        }
+        
+        .badge-popular {
+            background: var(--primary);
+        }
+        
+        .package-body {
+            padding: 25px;
+        }
+        
+        .package-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+            transition: color 0.3s ease;
+        }
+        
+        .package-card:hover .package-title {
+            color: var(--primary);
+        }
+        
+        .package-details {
+            margin-bottom: 20px;
+        }
+        
+        .package-detail {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+        
+        .package-detail i {
+            color: var(--primary);
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .btn-book {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 600;
+            padding: 12px 0;
+            border-radius: 8px;
+            width: 100%;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-book:hover {
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-book::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-book:hover::after {
+            left: 100%;
+        }
+        
+        /* Map Section */
+        .map-section {
+            background: white;
+            position: relative;
+        }
+        
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            height: 550px;
+            transition: all 0.5s ease;
+        }
+        
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px 30px;
+            margin: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 6rem;
+            color: rgba(255,255,255,0.1);
+            font-family: serif;
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            position: relative;
+        }
+        
+        .testimonial-author::before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            top: -10px;
+            left: 0;
+        }
+        
+        .testimonial-rating {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .newsletter-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .newsletter-input {
+            border: none;
+            border-radius: 50px;
+            padding: 18px 25px;
+            width: 100%;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-newsletter {
+            background: var(--accent);
+            color: var(--text-dark);
+            border: none;
+            border-radius: 50px;
+            padding: 18px 40px;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-newsletter:hover {
+            background: var(--gold);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 100px 0 30px;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: inline-block;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-logo:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-desc {
+            margin-bottom: 25px;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+        
+        .footer-links h5 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -12px;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            margin-top: 25px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 12px;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin-bottom: 0;
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes slideInLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-up {
+            animation: fadeInUp 1s ease both;
+        }
+        
+        .animate-down {
+            animation: fadeInDown 1s ease both;
+        }
+        
+        .animate-left {
+            animation: slideInLeft 1s ease both;
+        }
+        
+        .animate-right {
+            animation: slideInRight 1s ease both;
+        }
+        
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        .animate-delay-4 {
+            animation-delay: 0.8s;
+        }
+        
+        .animate-delay-5 {
+            animation-delay: 1s;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .place-img-container, .package-img-container {
+                height: 220px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-section {
+                height: auto;
+                padding: 120px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+            
+            .place-img-container, .package-img-container {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn-explore {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .place-title, .package-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-down">Uttar Pradesh</h1>
+            <p class="hero-subtitle">Where Culture, Heritage and Spirituality Come Alive</p>
+            <button class="btn btn-explore pulse-animation">Explore Destinations</button>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="places-section section-padding">
+        <div class="container">
+            <h2 class="section-title animate-up">Must-Visit Places</h2>
+            <div class="row">
+                <!-- Agra -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-1">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Taj Mahal">
+                            <div class="place-badge">Top Rated</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Taj Mahal, Agra</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">The iconic white marble mausoleum and one of the Seven Wonders of the World, built by Shah Jahan in memory of his wife Mumtaz Mahal. Don't miss the sunrise view.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Varanasi -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-2">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Varanasi">
+                            <div class="place-badge">Spiritual</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Varanasi Ghats</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">The spiritual capital of India, famous for its ghats along the Ganges River where pilgrims perform rituals. Experience the mesmerizing Ganga Aarti at Dashashwamedh Ghat.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lucknow -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-3">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1600712242809-6a1a220e4b8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Lucknow">
+                            <div class="place-badge">Cultural</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Bara Imambara, Lucknow</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">An architectural marvel known for its maze called Bhool Bhulaiya and the large vaulted central chamber. Don't forget to try the famous Lucknowi kebabs!</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mathura -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-1">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1600861195091-690c92f1d2cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Mathura">
+                            <div class="place-badge">Pilgrimage</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Krishna Janmabhoomi, Mathura</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">The birthplace of Lord Krishna, featuring temples and shrines dedicated to his life and teachings. Visit during Janmashtami for special celebrations.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Allahabad -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-2">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1581852017103-68e8115e1e51?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Allahabad">
+                            <div class="place-badge">Sacred</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Triveni Sangam, Allahabad</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">The sacred confluence of three rivers - Ganga, Yamuna and Saraswati, site of the Kumbh Mela. Take a boat ride to experience the spiritual significance.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ayodhya -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-3">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Ayodhya">
+                            <div class="place-badge">Historic</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Ram Janmabhoomi, Ayodhya</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">The birthplace of Lord Rama, featuring temples and ghats along the Sarayu River. Visit the newly constructed Ram Temple and Hanuman Garhi.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Jhansi -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-1">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Jhansi">
+                            <div class="place-badge">Historic</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Jhansi Fort</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">A historic fort known for its association with Rani Lakshmibai and the 1857 rebellion. The light and sound show in the evening is a must-see.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vrindavan -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-2">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1601823984263-b87b59798b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Vrindavan">
+                            <div class="place-badge">Pilgrimage</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Banke Bihari Temple, Vrindavan</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">One of the most famous temples dedicated to Lord Krishna, known for its unique deity and devotional atmosphere. Visit during Holi for special celebrations.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sarnath -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-3">
+                    <div class="place-card">
+                        <div class="place-img-container">
+                            <img src="https://images.unsplash.com/photo-1587135991058-881a7982c0bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="place-img" alt="Sarnath">
+                            <div class="place-badge">Buddhist</div>
+                        </div>
+                        <div class="place-body">
+                            <h3 class="place-title">Dhamek Stupa, Sarnath</h3>
+                            <div class="place-time">
+                                <i class="fas fa-calendar-alt"></i> Best time: October to March
+                            </div>
+                            <p class="place-desc">Where Buddha delivered his first sermon after enlightenment. The archaeological museum houses important Buddhist artifacts and the Ashoka Pillar.</p>
+                            <button class="btn btn-more">Explore More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section section-padding">
+        <div class="container">
+            <h2 class="section-title animate-up">Popular Tour Packages</h2>
+            <div class="row">
+                <!-- Golden Triangle -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-1">
+                    <div class="package-card">
+                        <div class="package-img-container">
+                            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="package-img" alt="Golden Triangle">
+                            <div class="package-badge badge-gold">Bestseller</div>
+                        </div>
+                        <div class="package-body">
+                            <h3 class="package-title">Golden Triangle Tour</h3>
+                            <div class="package-details">
+                                <div class="package-detail">
+                                    <i class="fas fa-clock"></i> 5 Days / 4 Nights
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-rupee-sign"></i> ₹25,000 per person
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-map-marker-alt"></i> Delhi - Agra - Jaipur
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-star"></i> ★★★★☆ (124 Reviews)
+                                </div>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Spiritual Varanasi -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-2">
+                    <div class="package-card">
+                        <div class="package-img-container">
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="package-img" alt="Varanasi">
+                            <div class="package-badge badge-silver">Popular</div>
+                        </div>
+                        <div class="package-body">
+                            <h3 class="package-title">Spiritual Varanasi Tour</h3>
+                            <div class="package-details">
+                                <div class="package-detail">
+                                    <i class="fas fa-clock"></i> 3 Days / 2 Nights
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-rupee-sign"></i> ₹15,000 per person
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-map-marker-alt"></i> Varanasi - Sarnath
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-star"></i> ★★★★★ (98 Reviews)
+                                </div>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Historical Agra -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-3">
+                    <div class="package-card">
+                        <div class="package-img-container">
+                            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="package-img" alt="Agra">
+                            <div class="package-badge badge-bronze">Value</div>
+                        </div>
+                        <div class="package-body">
+                            <h3 class="package-title">Historical Agra Tour</h3>
+                            <div class="package-details">
+                                <div class="package-detail">
+                                    <i class="fas fa-clock"></i> 2 Days / 1 Night
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-rupee-sign"></i> ₹10,000 per person
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-map-marker-alt"></i> Taj Mahal - Agra Fort - Fatehpur Sikri
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-star"></i> ★★★★☆ (87 Reviews)
+                                </div>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lucknow Heritage -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-1">
+                    <div class="package-card">
+                        <div class="package-img-container">
+                            <img src="https://images.unsplash.com/photo-1600712242809-6a1a220e4b8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="package-img" alt="Lucknow">
+                            <div class="package-badge badge-popular">Food Tour</div>
+                        </div>
+                        <div class="package-body">
+                            <h3 class="package-title">Lucknow Heritage & Food Tour</h3>
+                            <div class="package-details">
+                                <div class="package-detail">
+                                    <i class="fas fa-clock"></i> 3 Days / 2 Nights
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-rupee-sign"></i> ₹20,000 per person
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-map-marker-alt"></i> Bara Imambara - Chota Imambara - Rumi Darwaza
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-star"></i> ★★★★☆ (76 Reviews)
+                                </div>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mathura Vrindavan -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-2">
+                    <div class="package-card">
+                        <div class="package-img-container">
+                            <img src="https://images.unsplash.com/photo-1601823984263-b87b59798b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="package-img" alt="Mathura Vrindavan">
+                            <div class="package-badge badge-gold">Pilgrimage</div>
+                        </div>
+                        <div class="package-body">
+                            <h3 class="package-title">Mathura Vrindavan Pilgrimage</h3>
+                            <div class="package-details">
+                                <div class="package-detail">
+                                    <i class="fas fa-clock"></i> 3 Days / 2 Nights
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-rupee-sign"></i> ₹18,000 per person
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-map-marker-alt"></i> Krishna Janmabhoomi - Banke Bihari - ISKCON
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-star"></i> ★★★★★ (112 Reviews)
+                                </div>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Buddhist Circuit -->
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-3">
+                    <div class="package-card">
+                        <div class="package-img-container">
+                            <img src="https://images.unsplash.com/photo-1587135991058-881a7982c0bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="package-img" alt="Buddhist Circuit">
+                            <div class="package-badge badge-silver">Spiritual</div>
+                        </div>
+                        <div class="package-body">
+                            <h3 class="package-title">Buddhist Circuit Tour</h3>
+                            <div class="package-details">
+                                <div class="package-detail">
+                                    <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-rupee-sign"></i> ₹22,000 per person
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-map-marker-alt"></i> Sarnath - Kushinagar - Shravasti
+                                </div>
+                                <div class="package-detail">
+                                    <i class="fas fa-star"></i> ★★★★☆ (64 Reviews)
+                                </div>
+                            </div>
+                            <button class="btn btn-book">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 animate-up animate-delay-4">
+                <button class="btn btn-explore">View All Packages</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section section-padding">
+        <div class="container">
+            <h2 class="section-title animate-up">Explore Uttar Pradesh</h2>
+            <div class="map-container animate-up animate-delay-1">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1S9P0_lqkLmflf1z4GiTis1aB5VJyqGs&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section-padding">
+        <div class="container">
+            <h2 class="section-title animate-up" style="color: white;">Traveler Experiences</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-1">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The Golden Triangle tour was exceptional! Our guide was knowledgeable and the hotels were top-notch. The Taj Mahal at sunrise was breathtaking - a moment I'll never forget."</p>
+                        <p class="testimonial-author">- Sarah Johnson, USA</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-2">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Varanasi was a spiritual awakening. The evening Ganga Aarti was mesmerizing. Travel Tales arranged everything perfectly - from boat rides to guided temple tours."</p>
+                        <p class="testimonial-author">- Michael Chen, Australia</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 animate-up animate-delay-3">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"The food tour in Lucknow was incredible! The kebabs and biryanis were out of this world. Our guide took us to hidden gems we would never have found on our own."</p>
+                        <p class="testimonial-author">- Priya Sharma, UK</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2 class="newsletter-title animate-up">Get Travel Updates</h2>
+            <p class="newsletter-subtitle animate-up animate-delay-1">Subscribe to our newsletter for exclusive offers and travel inspiration</p>
+            <form class="newsletter-form animate-up animate-delay-2">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control newsletter-input" placeholder="Your email address">
+                </div>
+                <button class="btn btn-newsletter" type="submit">Subscribe Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a href="#" class="footer-logo"><i class="fas fa-map-marked-alt"></i> Travel Tales</a>
+                    <p class="footer-desc">Your trusted partner for exploring the rich cultural heritage and spiritual sites of Uttar Pradesh. We create unforgettable travel experiences.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Destinations</h5>
+                        <ul>
+                            <li><a href="#">Agra</a></li>
+                            <li><a href="#">Varanasi</a></li>
+                            <li><a href="#">Lucknow</a></li>
+                            <li><a href="#">Mathura</a></li>
+                            <li><a href="#">Allahabad</a></li>
+                            <li><a href="#">Ayodhya</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Packages</h5>
+                        <ul>
+                            <li><a href="#">Golden Triangle</a></li>
+                            <li><a href="#">Spiritual Tours</a></li>
+                            <li><a href="#">Heritage Walks</a></li>
+                            <li><a href="#">Food Trails</a></li>
+                            <li><a href="#">Pilgrimage Tours</a></li>
+                            <li><a href="#">Custom Tours</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-links">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Travel Advisory</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Travel Tales. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> in Uttar Pradesh</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-up, .animate-down, .animate-left, .animate-right');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated');
+                        if (entry.target.classList.contains('animate-up')) {
+                            entry.target.classList.add('animate__fadeInUp');
+                        } else if (entry.target.classList.contains('animate-down')) {
+                            entry.target.classList.add('animate__fadeInDown');
+                        } else if (entry.target.classList.contains('animate-left')) {
+                            entry.target.classList.add('animate__fadeInLeft');
+                        } else if (entry.target.classList.contains('animate-right')) {
+                            entry.target.classList.add('animate__fadeInRight');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.place-card, .package-card, .testimonial-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = this.style.transform + ' scale(1.02)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+                });
+            });
+        });
+
+        // Floating elements animation
+        function createFloatingElements() {
+            const container = document.querySelector('.floating-elements');
+            for (let i = 0; i < 15; i++) {
+                const element = document.createElement('span');
+                element.classList.add('floating-element');
+                
+                // Random size
+                const size = Math.random() * 60 + 20;
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                
+                // Random position
+                element.style.left = `${Math.random() * 100}%`;
+                
+                // Random animation duration
+                const duration = Math.random() * 10 + 10;
+                element.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                element.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(element);
+            }
+        }
+
+        createFloatingElements();
+    </script>
+</body>
+</html>

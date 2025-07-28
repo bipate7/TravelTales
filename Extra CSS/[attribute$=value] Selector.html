@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[attribute$=value] Selector</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #fce4ec;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #E91E63;
+        }
+        p {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border: 2px solid #F8BBD0;
+        }
+        p[href$=".pdf"] {
+            background-color: #E91E63;
+            color: white;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 30px;
+            background-color: #f8bbd0;
+            padding: 15px;
+            border-top: 3px solid #E91E63;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Attribute Selector: [attribute$=value]</h1>
+    <p href="document.txt">This paragraph has an <code>href</code> ending with ".txt".</p>
+    <p href="guide.pdf">This paragraph has an <code>href</code> ending with ".pdf".</p>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            The <code>[attribute$=value]</code> selector matches elements whose attribute value ends with a specific string. 
+            <ul>
+                <li>The first paragraph's <code>href</code> ends with ".txt", so it does not match.</li>
+                <li>The second paragraph's <code>href</code> ends with ".pdf", so it gets a pink background and bold text.</li>
+                <li>This selector is commonly used for targeting file types in links, like PDFs or images.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

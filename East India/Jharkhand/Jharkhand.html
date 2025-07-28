@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jharkhand: The Land of Forests | Tribal Heritage & Natural Wonders</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFD166;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --text: #333;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --jharkhand-green: #27AE60;
+            --jharkhand-brown: #A04000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, rgba(41, 47, 54, 0.9) 0%, rgba(39, 174, 96, 0.8) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 0.5rem 0;
+            background: rgba(41, 47, 54, 0.95);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            background-color: rgba(245, 245, 245, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://www.asiainglobalaffairs.in/wp-content/uploads/2022/09/reflection.png') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 230, 109, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 230, 109, 0.4);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--jharkhand-green);
+            margin: 0.5rem auto 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* History Section */
+        .history-section {
+            background-color: var(--jharkhand-brown);
+            color: white;
+        }
+        
+        .history-section .section-title h2 {
+            color: white;
+        }
+        
+        .history-section .section-title h2:after {
+            background-color: var(--accent);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--jharkhand-green);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -16px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            color: var(--dark);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--jharkhand-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Places Grid */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .place-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .place-card:nth-child(1) { animation-delay: 0.1s; }
+        .place-card:nth-child(2) { animation-delay: 0.2s; }
+        .place-card:nth-child(3) { animation-delay: 0.3s; }
+        .place-card:nth-child(4) { animation-delay: 0.4s; }
+        .place-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .place-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .place-card:hover .place-img img {
+            transform: scale(1.05);
+        }
+        
+        .place-content {
+            padding: 1.5rem;
+        }
+        
+        .place-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .place-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .place-meta i {
+            margin-right: 0.5rem;
+            color: var(--jharkhand-green);
+        }
+        
+        .place-meta span {
+            margin-right: 1rem;
+        }
+        
+        .place-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--jharkhand-green);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: var(--jharkhand-brown);
+        }
+        
+        /* Packages Carousel */
+        .packages-section {
+            background-color: #f0f8ff;
+            position: relative;
+        }
+        
+        .packages-container {
+            position: relative;
+            padding: 1rem 0;
+        }
+        
+        .packages-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding: 1rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .packages-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 350px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+        .package-card:nth-child(4) { animation-delay: 0.4s; }
+        .package-card:nth-child(5) { animation-delay: 0.5s; }
+        .package-card:nth-child(6) { animation-delay: 0.6s; }
+        .package-card:nth-child(7) { animation-delay: 0.7s; }
+        .package-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .package-card:hover .package-img img {
+            transform: scale(1.05);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--jharkhand-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .package-content {
+            padding: 1.5rem;
+        }
+        
+        .package-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-duration {
+            display: flex;
+            align-items: center;
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .package-duration i {
+            margin-right: 0.5rem;
+            color: var(--jharkhand-brown);
+        }
+        
+        .package-rating {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--jharkhand-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .package-price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .book-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--jharkhand-brown);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .book-btn:hover {
+            background-color: var(--jharkhand-green);
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .carousel-dot.active {
+            background-color: var(--jharkhand-green);
+            transform: scale(1.2);
+        }
+        
+        /* Tribal Culture Section */
+        .culture-section {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .culture-section .section-title h2 {
+            color: white;
+        }
+        
+        .culture-section .section-title h2:after {
+            background-color: var(--accent);
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .culture-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .culture-card:nth-child(1) { animation-delay: 0.1s; }
+        .culture-card:nth-child(2) { animation-delay: 0.2s; }
+        .culture-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .culture-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .culture-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .culture-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .culture-card:hover .culture-img img {
+            transform: scale(1.05);
+        }
+        
+        .culture-content {
+            padding: 1.5rem;
+        }
+        
+        .culture-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .culture-content p {
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://www.toptal.com/designers/subtlepatterns/uploads/gggrain.png');
+        }
+        
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Wildlife Section */
+        .wildlife-section {
+            background-color: #f9f9f9;
+        }
+        
+        .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .wildlife-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .wildlife-card:nth-child(1) { animation-delay: 0.1s; }
+        .wildlife-card:nth-child(2) { animation-delay: 0.2s; }
+        .wildlife-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .wildlife-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .wildlife-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .wildlife-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .wildlife-card:hover .wildlife-img img {
+            transform: scale(1.05);
+        }
+        
+        .wildlife-content {
+            padding: 1.5rem;
+        }
+        
+        .wildlife-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .wildlife-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            background-color: #f9f9f9;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: rgba(78, 205, 196, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--jharkhand-green) 0%, var(--jharkhand-brown) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .newsletter-section .section-title h2 {
+            color: white;
+        }
+        
+        .newsletter-section .section-title h2:after {
+            background-color: var(--accent);
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--jharkhand-green);
+        }
+        
+        .footer-col p {
+            margin-bottom: 1rem;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--jharkhand-green);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::before, .right::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .package-card {
+                flex: 0 0 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="Images/TT5.png" alt="TravelTales Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#culture">Tribal Culture</a></li>
+                <li><a href="#wildlife">Wildlife</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Land of Forests</h1>
+            <p>Explore the tribal heritage, lush forests, and stunning waterfalls of Jharkhand - India's hidden gem</p>
+            <a href="#packages" class="cta-btn">View Tour Packages</a>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section" id="history">
+        <div class="section-title">
+            <h2>Jharkhand's Rich History</h2>
+        </div>
+        <div class="section-intro">
+            <p>From ancient tribal kingdoms to modern statehood, Jharkhand has a fascinating history.</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">Prehistoric Era</div>
+                    <h3>Early Tribal Settlements</h3>
+                    <p>Evidence of human habitation dating back to the Mesolithic period. The region was home to various tribal communities including the Santhal, Munda, and Ho tribes.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">5th Century BCE</div>
+                    <h3>Magadha Empire</h3>
+                    <p>The region became part of the powerful Magadha Empire, with evidence of early iron smelting and metallurgy in the area.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">13th-18th Century</div>
+                    <h3>Tribal Kingdoms</h3>
+                    <p>Various tribal kingdoms flourished, resisting outside domination. The region became known for its rich mineral resources and dense forests.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">2000</div>
+                    <h3>State Formation</h3>
+                    <p>Jharkhand was carved out of Bihar to become India's 28th state on November 15, 2000, fulfilling the long-standing demand of tribal communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section id="places">
+        <div class="section-title">
+            <h2>Must-Visit Destinations</h2>
+        </div>
+        <div class="section-intro">
+            <p>From waterfalls to wildlife sanctuaries, Jharkhand offers diverse experiences for every traveler.</p>
+        </div>
+        <div class="places-grid">
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://indiano.travel/wp-content/uploads/2022/03/Patratu-valley-located-in-Ranchi-Jharkhand..jpg" alt="Ranchi">
+                </div>
+                <div class="place-content">
+                    <h3>Ranchi</h3>
+                    <div class="place-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Oct-Feb</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Central Jharkhand</span>
+                    </div>
+                    <p>The capital city known as the "City of Waterfalls" with attractions like Hundru Falls, Jonha Falls, and Ranchi Hill offering panoramic views.</p>
+                    <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/jubilee%20Park-jamshedpur-jharkhand-hero?qlt=82&ts=1726724218264" alt="Jamshedpur">
+                </div>
+                <div class="place-content">
+                    <h3>Jamshedpur</h3>
+                    <div class="place-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                        <span><i class="fas fa-map-marker-alt"></i> East Jharkhand</span>
+                    </div>
+                    <p>India's first planned industrial city with attractions like Jubilee Park, Tata Steel Zoological Park, and Dimna Lake.</p>
+                    <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/India_Tiger_cubs_20170423133624.jpg" alt="Hazaribagh">
+                </div>
+                <div class="place-content">
+                    <h3>Hazaribagh</h3>
+                    <div class="place-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                        <span><i class="fas fa-map-marker-alt"></i> North Jharkhand</span>
+                    </div>
+                    <p>Known for its national park, Canary Hill, and numerous waterfalls. A perfect destination for nature lovers and wildlife enthusiasts.</p>
+                    <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Baba_Baidyanath_Jyotirlinga_Temple.jpg" alt="Deoghar">
+                </div>
+                <div class="place-content">
+                    <h3>Deoghar</h3>
+                    <div class="place-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Oct-Mar (Jul-Aug for Shravani Mela)</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Northeast Jharkhand</span>
+                    </div>
+                    <p>A major pilgrimage center with the sacred Baba Baidyanath Temple and nearby attractions like Trikut Hills and Naulakha Temple.</p>
+                    <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-img">
+                    <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/08/9ffc869f0419cc62a4e18896dc9b388b_1000x1000.jpg" alt="Netarhat">
+                </div>
+                <div class="place-content">
+                    <h3>Netarhat</h3>
+                    <div class="place-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Mar-Jun, Sep-Nov</span>
+                        <span><i class="fas fa-map-marker-alt"></i> West Jharkhand</span>
+                    </div>
+                    <p>Known as the "Queen of Chotanagpur," this hill station offers breathtaking sunrises/sunsets and dense forests with diverse flora and fauna.</p>
+                    <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="section-title">
+            <h2>Popular Travel Packages</h2>
+        </div>
+        <div class="section-intro">
+            <p>Carefully curated experiences that showcase the best of Jharkhand. All packages include accommodations, guided tours, and local transportation.</p>
+        </div>
+        <div class="packages-container">
+            <div class="packages-carousel">
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://captureatrip-cms-storage.s3.ap-south-1.amazonaws.com/Hundru_Falls_in_Ranchi_de9e76c1de.webp" alt="Ranchi Adventure">
+                        <span class="package-badge">Best Seller</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Ranchi Adventure</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>Explore Ranchi's waterfalls, hills and lakes with adventure activities like trekking and rock climbing.</p>
+                        <div class="package-price">
+                            ₹15,000 <span>per person</span>
+                        </div>
+                        <a href="Ranchi Adventure.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/jrd-tata-sports-complex-jamshedpur-jharkhand-1-blog-ent-hero?qlt=82&ts=1726724121109" alt="Jamshedpur Exploration">
+                        <span class="package-badge">Industrial</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Jamshedpur Exploration</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 5 Days / 4 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p>Discover India's steel city with industrial tours, parks, and nearby natural attractions.</p>
+                        <div class="package-price">
+                            ₹18,000 <span>per person</span>
+                        </div>
+                        <a href="Jamshedpur Exploration.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://www.dalmawildlife.in/hazaribagh/images/customs/deer.jpg" alt="Hazaribagh Wildlife">
+                        <span class="package-badge">Wildlife</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Hazaribagh Wildlife</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 3 Days / 2 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Jungle safaris in Hazaribagh National Park to spot tigers, leopards and other wildlife.</p>
+                        <div class="package-price">
+                            ₹12,000 <span>per person</span>
+                        </div>
+                        <a href="Hazaribagh Wildlife.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Images/Deoghar Temple Tour.jpg" alt="Deoghar Temple Tour">
+                        <span class="package-badge">Spiritual</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Deoghar Temple Tour</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Pilgrimage to Baba Baidyanath Temple and other sacred sites in Deoghar.</p>
+                        <div class="package-price">
+                            ₹20,000 <span>per person</span>
+                        </div>
+                        <a href="Deoghar Temple Tour.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Images/Ranchi and Surroundings.jpg" alt="Ranchi and Surroundings">
+                        <span class="package-badge">Best Value</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Ranchi and Surroundings</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 6 Days / 5 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p>Comprehensive tour covering Ranchi's waterfalls, nearby tribal villages and wildlife.</p>
+                        <div class="package-price">
+                            ₹22,000 <span>per person</span>
+                        </div>
+                        <a href="Ranchi and Surroundings.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Images/Jamshedpur Nature Escape.webp" alt="Jamshedpur Nature Escape">
+                        <span class="package-badge">Nature</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Jamshedpur Nature Escape</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Relax in Jamshedpur's parks and lakes with nature walks and birdwatching.</p>
+                        <div class="package-price">
+                            ₹14,000 <span>per person</span>
+                        </div>
+                        <a href="Jamshedpur Nature Escape.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Images/Hazaribagh Trekking.avif" alt="Hazaribagh Trekking">
+                        <span class="package-badge">Adventure</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Hazaribagh Trekking</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Trek through the forests and hills of Hazaribagh with experienced guides.</p>
+                        <div class="package-price">
+                            ₹16,000 <span>per person</span>
+                        </div>
+                        <a href="Hazaribagh Trekking.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="Images/Deoghar Spiritual Journey.jpg" alt="Deoghar Spiritual Journey">
+                        <span class="package-badge">Premium</span>
+                    </div>
+                    <div class="package-content">
+                        <h3>Deoghar Spiritual Journey</h3>
+                        <div class="package-duration">
+                            <i class="fas fa-clock"></i> 5 Days / 4 Nights
+                        </div>
+                        <div class="package-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Luxury pilgrimage experience with VIP darshan and guided tours of sacred sites.</p>
+                        <div class="package-price">
+                            ₹24,000 <span>per person</span>
+                        </div>
+                        <a href="Deoghar Spiritual Journey.html" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <div class="carousel-dot active"></div>
+                <div class="carousel-dot"></div>
+                <div class="carousel-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribal Culture Section -->
+    <section class="culture-section" id="culture">
+        <div class="section-title">
+            <h2>Rich Tribal Culture</h2>
+        </div>
+        <div class="section-intro">
+            <p>Jharkhand is home to numerous indigenous tribes, each with unique traditions and art forms.</p>
+        </div>
+        <div class="culture-grid">
+            <div class="culture-card">
+                <div class="culture-img">
+                    <img src="https://d18x2uyjeekruj.cloudfront.net/wp-content/uploads/2022/06/sntl.jpg" alt="Santhal Tribe">
+                </div>
+                <div class="culture-content">
+                    <h3>Santhal Tribe</h3>
+                    <p>The largest tribal group known for their vibrant dance forms like Chhau and traditional music using indigenous instruments.</p>
+                </div>
+            </div>
+            <div class="culture-card">
+                <div class="culture-img">
+                    <img src="https://static.wixstatic.com/media/9dd462_9259ff4a55994eadace4e709eb97a38f~mv2.jpg/v1/fill/w_480,h_330,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9dd462_9259ff4a55994eadace4e709eb97a38f~mv2.jpg" alt="Sohrai Art">
+                </div>
+                <div class="culture-content">
+                    <h3>Sohrai Art</h3>
+                    <p>Traditional mural painting done by tribal women during harvest festivals, depicting nature and animals.</p>
+                </div>
+            </div>
+            <div class="culture-card">
+                <div class="culture-img">
+                    <img src="https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2022/04/07080859/Sarhul-Festival-04-1-1568x1045.jpg" alt="Sarhul Festival">
+                </div>
+                <div class="culture-content">
+                    <h3>Sarhul Festival</h3>
+                    <p>The spring festival celebrated by tribal communities to worship nature and pray for good harvests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wildlife Section -->
+    <section class="wildlife-section" id="wildlife">
+        <div class="section-title">
+            <h2>Wildlife Sanctuaries</h2>
+        </div>
+        <div class="section-intro">
+            <p>Jharkhand's forests are home to diverse flora and fauna, with several protected areas.</p>
+        </div>
+        <div class="wildlife-grid">
+            <div class="wildlife-card">
+                <div class="wildlife-img">
+                    <img src="https://www.prabhatkhabar.com/wp-content/uploads/2024/01/Betla-national-park-Entry-gate.jpg" alt="Betla National Park">
+                </div>
+                <div class="wildlife-content">
+                    <h3>Betla National Park</h3>
+                    <p>Home to tigers, elephants, leopards and various deer species. Offers jungle safaris and elephant rides.</p>
+                </div>
+            </div>
+            <div class="wildlife-card">
+                <div class="wildlife-img">
+                    <img src="https://www.nativeplanet.com/img/2017/10/calsocover-24-1508827104.jpg" alt="Hazaribagh Wildlife Sanctuary">
+                </div>
+                <div class="wildlife-content">
+                    <h3>Hazaribagh Wildlife Sanctuary</h3>
+                    <p>Spread over 184 sq km, it's known for its rich biodiversity including tigers, leopards and sloth bears.</p>
+                </div>
+            </div>
+            <div class="wildlife-card">
+                <div class="wildlife-img">
+                    <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/08/5023f8101919b30225b521745ab3436a_1000x1000.jpg" alt>Dalma Wildlife Sanctuary">
+                </div>
+                <div class="wildlife-content">
+                    <h3>Dalma Wildlife Sanctuary</h3>
+                    <p>Famous for its elephant population and located near Jamshedpur, making it easily accessible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="section-title">
+            <h2>Explore Jharkhand</h2>
+        </div>
+        <div class="section-intro">
+            <p>Discover the geographical diversity of Jharkhand, from the Chota Nagpur Plateau to dense forests.</p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/d/u/8/embed?mid=14u0xXRJX5sS_RB35z8-oKpedjhgBYLU&ehbc=2E312F" width="640" height="480"></iframe>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-title">
+            <h2>Traveler Experiences</h2>
+        </div>
+        <div class="section-intro">
+            <p>Hear what our travelers have to say about their journeys through Jharkhand.</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Ranchi's waterfalls are absolutely breathtaking! The cool mist from Hundru Falls on a hot day was unforgettable. Our guide was extremely knowledgeable about the local flora and fauna.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>London, UK</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>The tribal village visit was the highlight of our trip. Seeing the Sohrai art being created and learning about tribal traditions gave us a deep appreciation for Jharkhand's cultural heritage.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    </div>
+                    <div class="author-info">
+                        <h4>Michael Chen</h4>
+                        <p>Toronto, Canada</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Betla National Park exceeded all expectations. We were lucky to spot a tiger during our safari! The forest lodges provided an authentic jungle experience while being comfortable.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elena Rodriguez">
+                    </div>
+                    <div class="author-info">
+                        <h4>Elena Rodriguez</h4>
+                        <p>Madrid, Spain</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="section-title">
+            <h2>Stay Updated</h2>
+        </div>
+        <p>Subscribe to our newsletter for exclusive travel offers and Jharkhand travel inspiration.</p>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Jharkhand Explorer</h3>
+                <p>Your trusted guide to experiencing the tribal culture, forests, and natural beauty of Jharkhand.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#places">Destinations</a></li>
+                    <li><a href="#packages">Tour Packages</a></li>
+                    <li><a href="#culture">Tribal Culture</a></li>
+                    <li><a href="#wildlife">Wildlife</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> TravelTales, Nagpur, Maharashtra</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Tour Packages</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Adventure Tours</a></li>
+                    <li><a href="#">Wildlife Safaris</a></li>
+                    <li><a href="#">Cultural Experiences</a></li>
+                    <li><a href="#">Pilgrimage Tours</a></li>
+                    <li><a href="#">Custom Itineraries</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+                      <p>&copy; 2025 Travel Tales Explorer. All rights reserved.| Designed with ❤️ for Jharkhand  <a href="#" style="color: var(--gold);"><br>Privacy Policy</a> | <a href="#" style="color: var(--gold);">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Carousel navigation
+        const carousel = document.querySelector('.packages-carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Update active dot
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                
+                // Scroll carousel
+                const scrollPosition = index * (350 + 32); // card width + gap
+                carousel.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.place-card, .package-card, .culture-card, .timeline-item, .wildlife-card, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

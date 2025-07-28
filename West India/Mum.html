@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore West India | Land of Diversity</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Color Variables */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e67e22;
+            --dark: #1a252f;
+            --light: #ecf0f1;
+            --text: #333;
+            --white: #fff;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.8), rgba(255, 239, 204, 0.8)), url('west-india-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            animation: backgroundAnimation 15s ease infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:before {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1582972236019-ea9e8c1c87e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+            background: #d35400;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 1rem;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* About Section */
+        #about {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+        }
+
+        #about:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%232c3e50" opacity="0.1"><path d="M30,10 Q50,5 70,30 T90,70 Q95,50 70,30 T10,30 Q5,50 30,70 T30,10"/></svg>') no-repeat;
+            background-size: contain;
+            z-index: 0;
+        }
+
+        #about:after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23e67e22" opacity="0.1"><path d="M30,10 Q50,5 70,30 T90,70 Q95,50 70,30 T10,30 Q5,50 30,70 T30,10"/></svg>') no-repeat;
+            background-size: contain;
+            z-index: 0;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-text {
+            animation: fadeInLeft 1s ease;
+        }
+
+        /* States Section */
+        #states {
+            background: linear-gradient(135deg, rgba(255, 204, 204, 0.8), rgba(255, 178, 102, 0.8), rgba(255, 224, 204, 0.8));
+        }
+
+        .states-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .state-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            perspective: 1000px;
+            height: 400px;
+        }
+
+        .state-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .state-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .state-card:hover .state-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .state-card-front, .state-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+
+        .state-card-front {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .state-card-back {
+            background: var(--white);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 1.5rem;
+            box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .state-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .state-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .state-card:hover .state-image img {
+            transform: scale(1.1);
+        }
+
+        .state-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .state-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .state-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-top: auto;
+        }
+
+        .explore-btn:hover {
+            background: var(--dark);
+        }
+
+        /* Places Section */
+        #places {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .place-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .place-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .place-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .place-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .place-card:hover .place-image img {
+            transform: scale(1.1);
+        }
+
+        .place-rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .place-rating i {
+            color: var(--accent);
+        }
+
+        .place-info {
+            padding: 1.5rem;
+        }
+
+        .place-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .place-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Packages Section */
+        #packages {
+            background: linear-gradient(135deg, rgba(255, 239, 204, 0.8), rgba(255, 204, 102, 0.8), rgba(255, 224, 189, 0.8));
+        }
+
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .package-card:hover .package-image img {
+            transform: scale(1.1);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .package-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .package-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .package-details {
+            margin-top: auto;
+        }
+
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .package-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .package-btn {
+            display: block;
+            text-align: center;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .package-btn:hover {
+            background: var(--dark);
+        }
+
+        /* Cuisine Section */
+        #cuisine {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .cuisine-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cuisine-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .cuisine-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cuisine-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .cuisine-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .cuisine-card:hover .cuisine-image img {
+            transform: scale(1.1);
+        }
+
+        .cuisine-info {
+            padding: 1.5rem;
+        }
+
+        .cuisine-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .cuisine-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Festivals Section */
+        #festivals {
+            background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(241, 196, 15, 0.1));
+        }
+
+        /* Handicrafts Section */
+        #handicrafts {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
+        }
+
+        /* Adventure Section */
+        #adventure {
+            background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(46, 204, 113, 0.1));
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(44, 62, 80, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+            color: var(--dark);
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+
+        /* Newsletter Section */
+        #newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .newsletter h2:after {
+            background: var(--accent);
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+
+        .newsletter-btn {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: #d35400;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo i {
+            color: var(--accent);
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .footer-links h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-contact {
+            text-align: center;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-contact i {
+            color: var(--accent);
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content {
+                padding-top: 80px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .package-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-umbrella-beach"></i>
+                <span>West India</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#states">States</a>
+                <a href="#places">Places</a>
+                <a href="#packages">Packages</a>
+                <a href="#cuisine">Cuisine</a>
+                <a href="#festivals">Festivals</a>
+                <a href="#handicrafts">Handicrafts</a>
+                <a href="#adventure">Adventure</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Reviews</a>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🌊 West India Awaits: Uncover the Magic of the Western Coast 🌴</h1>
+            <p>From the golden beaches of Goa to the majestic forts of Rajasthan, explore the diverse landscapes and rich cultural heritage of Western India.</p>
+            <div class="hero-buttons">
+                <a href="#packages" class="btn">Explore Tours</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <div class="section-title">
+                <h2>About West India</h2>
+            </div>
+            <div class="about-text">
+                <p><strong>West India</strong> is known for its <span class="highlight">rich cultural heritage</span>, stunning landscapes, and historical monuments. It includes the states of <span class="highlight">Maharashtra, Gujarat, Chhattisgarh, Goa, Madhya Pradesh</span>, and the <span class="highlight">Union Territories of Daman and Diu, and Dadar and Nagar Haveli</span>.</p>
+                <p>West India, a region rich in history, culture, and natural beauty, offers an unparalleled travel experience. From the vibrant cities to the serene beaches and lush forests, this region is a treasure trove of wonders waiting to be explored.</p>
+            
+                <h3>Majestic Mountains and Serene Landscapes</h3>
+                <p>Embark on an adventure to the breathtaking landscapes of <span class="highlight">Maharashtra and Madhya Pradesh</span>. Witness the serene beaches of <span class="highlight">Goa</span>, tranquil lakes, and lush valleys that offer a perfect escape for nature lovers and adventure enthusiasts alike.</p>
+
+                <h3>Historical Marvels and Architectural Splendors</h3>
+                <p>Delve into the historical richness of West India with visits to iconic landmarks such as the <span class="highlight">Gateway of India in Mumbai</span>, the ancient city of <span class="highlight">Ujjain in Madhya Pradesh</span>, and the <span class="highlight">Sabarmati Ashram in Ahmedabad</span>. Each monument tells a story of a bygone era, reflecting the grandeur of India's royal past.</p>
+
+                <h3>Spiritual Sanctuaries and Sacred Sites</h3>
+                <p>West India is a haven for spiritual seekers, with numerous sacred sites that offer a glimpse into the region's deep-rooted religious traditions. Pay homage at the <span class="highlight">Siddhivinayak Temple in Mumbai</span> or the <span class="highlight">Somnath Temple in Gujarat</span>, one of the twelve Jyotirlinga shrines of Shiva.</p>
+
+                <h3>Cultural Extravaganza and Festivals</h3>
+                <p>Immerse yourself in the vibrant culture of West India through its colorful festivals and cultural events. Experience the grandeur of <span class="highlight">Ganesh Chaturthi in Maharashtra</span>, the <span class="highlight">Navratri in Gujarat</span>, and the lively celebrations of <span class="highlight">Goa Carnival</span>. These festivals showcase the region's deep-rooted traditions and communal harmony.</p>
+
+                <h3>Warm Hospitality and Culinary Delights</h3>
+                <p>The people of West India are known for their warm hospitality and welcoming nature. Indulge in the delectable cuisine, from <span class="highlight">Goan seafood</span> to <span class="highlight">Gujarati thalis</span>, and savor the flavors that make West India a food lover's paradise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- States Section -->
+    <section id="states">
+        <div class="section-title">
+            <h2>States of West India</h2>
+        </div>
+        <div class="states-container">
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Maharashtra1.jpg" alt="Maharashtra">
+                        </div>
+                        <div class="state-info">
+                            <h3>Maharashtra</h3>
+                            <p>Known for its bustling cities, historical monuments, and beautiful beaches, Maharashtra offers a blend of urban and natural attractions.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Maharashtra</h3>
+                        <p>From the financial capital Mumbai to the cultural capital Pune, Maharashtra is a state of contrasts with hill stations, ancient caves, and vibrant festivals.</p>
+                        <a href="Maharashtra/Maharashtra.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Gujarat.webp" alt="Gujarat">
+                        </div>
+                        <div class="state-info">
+                            <h3>Gujarat</h3>
+                            <p>Home to the Gir National Park, the Rann of Kutch, and the Sabarmati Ashram, Gujarat is rich in culture and history.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Gujarat</h3>
+                        <p>Explore the white desert of Rann of Kutch, witness Asiatic lions in Gir, and experience the vibrant Navratri festival in this culturally rich state.</p>
+                        <a href="Gujarat/Gujarat.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Chhattisgarh.jpg" alt="Chhattisgarh">
+                        </div>
+                        <div class="state-info">
+                            <h3>Chhattisgarh</h3>
+                            <p>Known for its ancient temples, waterfalls, and rich tribal culture, Chhattisgarh is a state of natural beauty and heritage.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Chhattisgarh</h3>
+                        <p>Discover the tribal heritage, lush forests, and stunning waterfalls of Chhattisgarh, a state with rich cultural traditions.</p>
+                        <a href="Chhattisgarh/Chhattisgarh.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Goa2.jpg" alt="Goa">
+                        </div>
+                        <div class="state-info">
+                            <h3>Goa</h3>
+                            <p>Famous for its golden beaches, vibrant nightlife, and Portuguese heritage, Goa is a popular tourist destination.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Goa</h3>
+                        <p>Relax on pristine beaches, enjoy water sports, and experience the unique blend of Indian and Portuguese cultures in Goa.</p>
+                        <a href="Goa/Goa.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Madhya Pradesh1.jpg" alt="Madhya Pradesh">
+                        </div>
+                        <div class="state-info">
+                            <h3>Madhya Pradesh</h3>
+                            <p>Known as the "Heart of India," Madhya Pradesh boasts ancient temples, wildlife sanctuaries, and historical cities.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Madhya Pradesh</h3>
+                        <p>Explore the Khajuraho temples, Bandhavgarh National Park, and the marble rocks of Bhedaghat in this central Indian state.</p>
+                        <a href="Madhya Pradesh/MadhyaPradesh.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Daman and Diu.jpg" alt="Daman and Diu">
+                        </div>
+                        <div class="state-info">
+                            <h3>Daman and Diu</h3>
+                            <p>These Union Territories offer pristine beaches, colonial architecture, and a tranquil environment.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Daman and Diu</h3>
+                        <p>Enjoy the peaceful beaches and Portuguese-era architecture in these small but beautiful coastal territories.</p>
+                        <a href="Daman and Diu/Daman and Diu.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="state-card-inner">
+                    <div class="state-card-front">
+                        <div class="state-image">
+                            <img src="Images/Dadar and Nagar Haveli.jpg" alt="Dadra and Nagar Haveli">
+                        </div>
+                        <div class="state-info">
+                            <h3>Dadra and Nagar Haveli</h3>
+                            <p>Known for its natural beauty, tribal culture, and scenic landscapes, this Union Territory is a hidden gem.</p>
+                        </div>
+                    </div>
+                    <div class="state-card-back">
+                        <h3>Dadra and Nagar Haveli</h3>
+                        <p>Discover the tribal culture, lush greenery, and peaceful atmosphere of this lesser-known Union Territory.</p>
+                        <a href="Dadra and Nagar Haveli/Dadra and Nagar Haveli.html" class="explore-btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section id="places">
+        <div class="section-title">
+            <h2>Must-Visit Places</h2>
+            <p>Top destinations that showcase the beauty of West India</p>
+        </div>
+        <div class="places-container">
+            <div class="place-card">
+                <div class="place-image">
+                    <img src="Images/Gateway of India.jpg" alt="Gateway of India">
+                    <div class="place-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.8</span>
+                    </div>
+                </div>
+                <div class="place-info">
+                    <h3>Gateway of India, Mumbai</h3>
+                    <p>An iconic symbol of Mumbai, this historical monument overlooks the Arabian Sea and is a popular tourist attraction.</p>
+                    <div class="place-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Maharashtra</span>
+                        <span><i class="fas fa-clock"></i> Full Day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-image">
+                    <img src="Images/Ajanta and Ellora Caves.jpg" alt="Ajanta and Ellora Caves">
+                    <div class="place-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                </div>
+                <div class="place-info">
+                    <h3>Ajanta and Ellora Caves, Maharashtra</h3>
+                    <p>These rock-cut caves are a UNESCO World Heritage site and showcase ancient Indian art and architecture.</p>
+                    <div class="place-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Maharashtra</span>
+                        <span><i class="fas fa-clock"></i> Full Day</span>
+                    </div>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-image">
+                    <img src="Images/Gir National Park.jpg" alt="Gir National Park">
+                    <div class="place-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.7</span>
+                    </div>
+                </div>
+                <div class="place-info">
+                    <h3>Gir National Park, Gujarat</h3>
+                    <p>Home to the Asiatic lion, this national park is a major wildlife sanctuary and offers thrilling safaris.</p>
+                    <div class="place-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Gujarat</span>
+                        <span><i class="fas fa-clock"></i> 2 Days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-image">
+                    <img src="Images/Rann of Kutch.jpg" alt="Rann of Kutch">
+                    <div class="place-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.9</span>
+                    </div>
+                </div>
+                <div class="place-info">
+                    <h3>Rann of Kutch, Gujarat</h3>
+                    <p>A salt marsh in the Thar Desert that transforms into a white wonder during winters, hosting the famous Rann Utsav festival.</p>
+                    <div class="place-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Gujarat</span>
+                        <span><i class="fas fa-clock"></i> 2 Days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="place-card">
+                <div class="place-image">
+                    <img src="Images/Bhedaghat.jpg" alt="Bhedaghat">
+                    <div class="place-rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.6</span>
+                    </div>
+                </div>
+                <div class="place-info">
+                    <h3>Bhedaghat, Madhya Pradesh</h3>
+                    <p>Famous for its marble rocks and waterfalls, Bhedaghat offers a picturesque and serene environment.</p>
+                    <div class="place-meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Madhya Pradesh</span>
+                        <span><i class="fas fa-clock"></i> Half Day</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <div class="section-title">
+            <h2>Travel Packages</h2>
+            <p>Curated experiences for every type of traveler</p>
+        </div>
+        <div class="packages-container">
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="Images/Mumbai City Tour.jpg" alt="Mumbai Package">
+                    <div class="package-badge">Popular</div>
+                </div>
+                <div class="package-info">
+                    <h3>Mumbai City Tour</h3>
+                    <p>Explore the bustling city of Mumbai with a comprehensive city tour package. Includes visits to Gateway of India, Marine Drive, and more.</p>
+                    <div class="package-details">
+                        <div class="package-price">₹10,000 per person</div>
+                        <div class="package-features">
+                            <span class="feature">1 Day</span>
+                            <span class="feature">City Tour</span>
+                            <span class="feature">Guided</span>
+                        </div>
+                        <button class="package-btn" onclick="window.open('Mumbai City Tour.html', '_blank')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="Images/Goa Beach Holiday.jpg" alt="Goa Package">
+                    <div class="package-badge">Best Seller</div>
+                </div>
+                <div class="package-info">
+                    <h3>Goa Beach Holiday</h3>
+                    <p>Enjoy a relaxing beach holiday in Goa with our exclusive package. Includes accommodation, meals, and guided tours.</p>
+                    <div class="package-details">
+                        <div class="package-price">₹15,000 per person</div>
+                        <div class="package-features">
+                            <span class="feature">5 Days</span>
+                            <span class="feature">Beach Resorts</span>
+                            <span class="feature">All Meals</span>
+                        </div>
+                        <button class="package-btn" onclick="window.open('Goa Beach Holiday.html', '_blank')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="Images/Gujarat Heritage Tour.jpg" alt="Gujarat Package">
+                </div>
+                <div class="package-info">
+                    <h3>Gujarat Heritage Tour</h3>
+                    <p>Discover the rich heritage of Gujarat with our specially curated tour. Includes visits to temples, historical sites, and cultural experiences.</p>
+                    <div class="package-details">
+                        <div class="package-price">₹12,000 per person</div>
+                        <div class="package-features">
+                            <span class="feature">7 Days</span>
+                            <span class="feature">Heritage Sites</span>
+                            <span class="feature">Cultural Shows</span>
+                        </div>
+                        <button class="package-btn" onclick="window.open('Gujarat Heritage Tour.html', '_blank')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-image">
+                    <img src="Images/Adventure Activities.jpg" alt="Adventure Package">
+                    <div class="package-badge">Adventure</div>
+                </div>
+                <div class="package-info">
+                    <h3>Adventure Activities</h3>
+                    <p>Experience thrilling adventure activities like trekking, paragliding, and water sports in the stunning landscapes of West India.</p>
+                    <div class="package-details">
+                        <div class="package-price">₹8,000 per person</div>
+                        <div class="package-features">
+                            <span class="feature">3 Days</span>
+                            <span class="feature">Multiple Activities</span>
+                            <span class="feature">Equipment Included</span>
+                        </div>
+                        <button class="package-btn" onclick="window.open('Adventure Activities.html', '_blank')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Section -->
+    <section id="cuisine">
+        <div class="section-title">
+            <h2>West Indian Cuisines</h2>
+            <p>Taste the flavors of West India</p>
+        </div>
+        <div class="cuisine-container">
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Vada Pav, Maharashtra.webp" alt="Vada Pav">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Vada Pav</h3>
+                    <p>A popular street food in Maharashtra, Vada Pav is a spicy potato fritter sandwiched in a bun, served with chutneys.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Dhokla, Gujarat.jpg" alt="Dhokla">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Dhokla</h3>
+                    <p>A savory steamed cake made from fermented rice and chickpea batter, Dhokla is a staple snack in Gujarat.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Goan Fish Curry, Goa.jpg" alt="Goan Fish Curry">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Goan Fish Curry</h3>
+                    <p>A flavorful and tangy fish curry made with coconut milk, spices, and fresh fish, served with rice.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Jalebi, Madhya Pradesh.jpg" alt="Jalebi">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Jalebi</h3>
+                    <p>A sweet, crispy dessert made by deep-frying batter in spiral shapes and soaking them in sugar syrup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section id="festivals">
+        <div class="section-title">
+            <h2>Festivals of West India</h2>
+            <p>Celebrate the vibrant culture of West India</p>
+        </div>
+        <div class="cuisine-container">
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Ganesh Chaturthi1.png" alt="Ganesh Chaturthi">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Ganesh Chaturthi</h3>
+                    <p>A grand festival celebrating the birth of Lord Ganesha, marked by elaborate idol processions and cultural events.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Navratri, Gujarat.jpg" alt="Navratri">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Navratri</h3>
+                    <p>A nine-night festival dedicated to Goddess Durga, celebrated with traditional dance forms like Garba and Dandiya.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Goa Carnival1.jpg" alt="Goa Carnival">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Goa Carnival</h3>
+                    <p>A vibrant and lively carnival featuring parades, music, dance, and colorful costumes, held annually in Goa.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Bhilai Mahotsav, Chhattisgarh.jpg" alt="Bhilai Mahotsav">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Bhilai Mahotsav</h3>
+                    <p>A cultural festival showcasing the art, music, dance, and crafts of Chhattisgarh, celebrated with great enthusiasm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Handicrafts Section -->
+    <section id="handicrafts">
+        <div class="section-title">
+            <h2>Handicrafts of West India</h2>
+            <p>Traditional crafts and art forms</p>
+        </div>
+        <div class="cuisine-container">
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Kolhapuri Chappals.jpg" alt="Kolhapuri Chappals">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Kolhapuri Chappals</h3>
+                    <p>Handcrafted leather sandals from Kolhapur, known for their durability and unique design.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Bandhani.jpg" alt="Bandhani">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Bandhani</h3>
+                    <p>A traditional tie-dye technique used to create colorful patterns on fabric, popular in Gujarat.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Goan Pottery.jpg" alt="Goan Pottery">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Goan Pottery</h3>
+                    <p>Exquisite pottery items made by local artisans in Goa, featuring intricate designs and vibrant colors.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Bastar Art.jpg" alt="Bastar Art">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Bastar Art</h3>
+                    <p>Tribal handicrafts from Bastar, including metalwork, wood carvings, and terracotta figurines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Section -->
+    <section id="adventure">
+        <div class="section-title">
+            <h2>Adventure Activities</h2>
+            <p>Thrilling experiences for adventure seekers</p>
+        </div>
+        <div class="cuisine-container">
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Trekking in the Western Ghats.jpg" alt="Trekking">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Trekking in Western Ghats</h3>
+                    <p>Explore the stunning landscapes of the Western Ghats through various trekking routes.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Paragliding in Kamshet.jpg" alt="Paragliding">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Paragliding in Kamshet</h3>
+                    <p>Experience the thrill of paragliding in Kamshet, Maharashtra with scenic vistas.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/Scuba Diving1.jpeg" alt="Scuba Diving">
+                </div>
+                <div class="cuisine-info">
+                    <h3>Scuba Diving in Goa</h3>
+                    <p>Dive into the clear waters of Goa and explore the vibrant marine life and coral reefs.</p>
+                </div>
+            </div>
+            <div class="cuisine-card">
+                <div class="cuisine-image">
+                    <img src="Images/White Water.jpg" alt="White Water Rafting">
+                </div>
+                <div class="cuisine-info">
+                    <h3>White Water Rafting</h3>
+                    <p>Navigate through the rapids of the Kali River in Dandeli for an exhilarating experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Photo Gallery</h2>
+            <p>Visual journey through West India</p>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="mumbai.jpg" alt="Mumbai">
+                <div class="gallery-caption">Mumbai Skyline</div>
+            </div>
+            <div class="gallery-item">
+                <img src="goa.jpg" alt="Goa">
+                <div class="gallery-caption">Goa Beaches</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gujarat.jpg" alt="Gujarat">
+                <div class="gallery-caption">Gujarat Heritage</div>
+            </div>
+            <div class="gallery-item">
+                <img src="chhattisgarh.jpg" alt="Chhattisgarh">
+                <div class="gallery-caption">Chhattisgarh Waterfalls</div>
+            </div>
+            <div class="gallery-item">
+                <img src="madhya-pradesh.jpg" alt="Madhya Pradesh">
+                <div class="gallery-caption">Madhya Pradesh Temples</div>
+            </div>
+            <div class="gallery-item">
+                <img src="mumbai.jpg" alt="Mumbai">
+                <div class="gallery-caption">Mumbai Street Life</div>
+            </div>
+            <div class="gallery-item">
+                <img src="goa.jpg" alt="Goa">
+                <div class="gallery-caption">Goa Sunset</div>
+            </div>
+            <div class="gallery-item">
+                <img src="gujarat.jpg" alt="Gujarat">
+                <div class="gallery-caption">Gujarat Culture</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="section-title">
+            <h2>Traveler Reviews</h2>
+            <p>What our visitors say about West India</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"West India has so much to offer! From the bustling streets of Mumbai to the serene beaches of Goa, our trip was filled with unforgettable experiences."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>From London, UK</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"The cultural festivals in Gujarat were amazing. The Navratri celebrations were vibrant and full of energy. Can't wait to visit again!"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Patel">
+                    </div>
+                    <div class="author-info">
+                        <h4>Rajesh Patel</h4>
+                        <p>From Mumbai, India</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Goa's beaches are paradise on earth. The seafood was delicious, and the water sports were a blast. Highly recommend visiting Goa for a relaxing vacation."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Emily Brown">
+                    </div>
+                    <div class="author-info">
+                        <h4>Emily Brown</h4>
+                        <p>From New York, USA</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter">
+        <div class="newsletter-container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest travel deals and West India travel tips.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <span>West India</span>
+                </a>
+                <p>Discover the diverse beauty, rich culture, and unforgettable experiences that West India has to offer.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#about">About West India</a></li>
+                    <li><a href="#states">States & Regions</a></li>
+                    <li><a href="#places">Popular Destinations</a></li>
+                    <li><a href="#packages">Tour Packages</a></li>
+                    <li><a href="#cuisine">Local Cuisine</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Travel Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Mumbai, Maharashtra 400001</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> info@westindiatravel.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 West India Travel Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.about-text, .state-card, .place-card, .package-card, .cuisine-card, .gallery-item, .testimonial');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.about-text, .state-card, .place-card, .package-card, .cuisine-card, .gallery-item, .testimonial').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

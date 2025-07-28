@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTales Travels</title>
+    <link rel="icon" href="Images/TT4.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #f0f4f7;
+            padding: 10px 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .top-bar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            padding: 15px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items:  end;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            position: relative;
+            margin-right: 30px;
+        }
+        .nav-links li a {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-links li a:hover {
+            color: #ff6600;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Gradient background */
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px); /* Slight upward position */
+            transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1; 
+            transform: translateY(0); /* Bring into view */
+        }
+        .dropdown-menu li {
+            position: relative;
+        }
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Added transform for animation */
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #ff6600; /* Full hover color */
+            color: white; /* Change text color on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        .dropdown-menu li::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%; 
+            margin-top: -5px; 
+            border-width: 5px; 
+            border-style: solid;
+            border-color: transparent transparent transparent #ff6600; /* Triangle pointing right */
+        }
+        /* Banner */
+        .banner {
+            background-image: url('Images/City1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .banner-text {
+            text-align: center;
+            color: white;
+        }
+        .banner-text h1 {
+            font-size: 72px;
+            font-weight: 600;
+        }
+        .banner-text p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        body {
+            background-color: #f0f0f0;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            margin-bottom: 20px; /* Add this line for vertical spacing */
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.5s ease;
+            height: 150px;
+        }
+        .card:hover img {
+            transform: scale(1.1);
+        }
+        .card-body {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            text-decoration: none;
+        }
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .card-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            height: 350px; /* Adjust height as needed */
+            width: 250px;
+        }
+        .card img {
+            height: 200px; /* Set height for images */
+            object-fit: cover; /* Ensures the image covers the area */
+        }
+        /* Footer */
+        .custom-footer {
+  background: linear-gradient(135deg, #1b1f24, #2c3e50);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  padding-top: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -5px;
+}
+.footer-logo img {
+  height: 100px; /* Adjust height as needed */
+  margin-bottom: 0px;
+  object-fit: contain;
+  top: -50px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 60px 10% 20px;
+  gap: 40px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.footer-brand {
+  flex: 1 1 250px;
+}
+
+.footer-brand h2 {
+  color: #ff8243;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: #ff8243;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.footer-links,
+.footer-contact,
+.newsletter {
+  flex: 1 1 200px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.newsletter h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff8243;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.footer-contact i {
+  margin-right: 8px;
+  color: #ff8243;
+}
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter input {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #ff8243;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #fff;
+  color: #ff8243;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 25px 10%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.footer-bottom span {
+  color: #ff8243;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div>
+                <i class="fas fa-envelope"></i><a href="TravelTales@gmail.com">TravelTales@gmail.com</a>
+                <i class="fas fa-map-marker-alt"></i> Nagpur, Maharashtra
+            </div>
+            <div>
+                <a href="Services/Sign Up Page.html">Login / Signup</a>
+                <a href="#">EN<i class="fas fa-chevron-down"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="Images/TT4.png" alt="TravelTales Logo" width="100">
+            </div>
+            <ul class="nav-links">
+                <li><a href="W1.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="Travel Tales/Tours.html">Tours</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Travel Tales/Tour List.html">Tour List</a></li>
+                        <li><a href="Travel Tales/Tour Packages.html">Tour Packages</a></li>
+                        <li><a href="Travel Tales/Tour Details.html">Tour Details</a></li>
+                        <li><a href="Travel Tales/Activities.html">Activities</a></li>
+                        <li><a href="Travel Tales/Activity Details.html">Activity Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="Destinations/Destinations.html" class="active">Destination</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Destinations/Destinations.html">All Destinations</a></li>
+                        <li><a href="Destinations/Destination Single.html">Destination Single</a></li>
+                        <li><a href="Services/Hotel Services.html">Hotels</a></li>
+                        <li><a href="Services/Hotel Details.html">Hotel Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Travel Tales/About Us.html">About</a></li>
+                <li class="dropdown">
+                    <a href="Travel Tales/News">News</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Blog/Ourblog.html">Our Blog</a></li>
+                        <li><a href="Blog/BlogDetails.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="Services/Contact Us Page.html">Contact</a></li>
+            </ul>
+            <div class="call-us">
+                <i class="fas fa-phone"></i> Call Us <br> +9999999999
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-text">
+            <h1>Destinations</h1>
+            <p>Home &#11166; Destinations</p>
+        </div>
+    </div>
+    
+    <!-- Tour Cards  Section -->
+    <!-- Additional 20 Unique Tour Cards Section -->
+<div class="container my-5">
+    <div class="row">
+
+        <!-- Postcard 1 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/9b/6a/b8/caption.jpg?w=1200&h=-1&s=1" class="card-img-top" alt="Ajanta & Ellora Caves">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Ajanta & Ellora, Maharashtra</a></h5>
+                    <p class="card-text">50 Hotels | 35 Tours | 10 Cars | 22 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 2 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://institute.careerguide.com/wp-content/uploads/2024/02/careerguide.com-5-1024x576.png" class="card-img-top" alt="Poonch Valley">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Poonch Valley, Jammu & Kashmir</a></h5>
+                    <p class="card-text">25 Hotels | 20 Tours | 6 Cars | 14 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 3 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://cdn1.tripoto.com/media/filter/tst/img/2470943/Image/1694584906_explore_digha_the_most_popular_sea_beach_in_west_bengal_india_5.png" class="card-img-top" alt="Digha Beach">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Digha, West Bengal</a></h5>
+                    <p class="card-text">40 Hotels | 30 Tours | 8 Cars | 16 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 4 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://www.tamilnadutourism.tn.gov.in/img/pages/mobile/mamallapuram-shore-temple-1653384265_2ee80b097acb596596e0.webp" class="card-img-top" alt="Mahabalipuram">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Mahabalipuram, Tamil Nadu</a></h5>
+                    <p class="card-text">55 Hotels | 45 Tours | 12 Cars | 24 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 5 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://img.staticmb.com/mbcontent/images/crop/uploads/2022/5/hiranandi-estate_0_1200.jpg" class="card-img-top" alt="Thane">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Thane, Maharashtra</a></h5>
+                    <p class="card-text">60 Hotels | 50 Tours | 14 Cars | 28 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 6 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://indiaforbeginners.com/wp-content/uploads/2020/02/Adobe-tigers-Bandhavgarh.jpg" class="card-img-top" alt="Kanha National Park">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Kanha, Madhya Pradesh</a></h5>
+                    <p class="card-text">35 Hotels | 40 Tours | 10 Cars | 20 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 7 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://image.kesari.in/upload/NM/nubra-3.jpg" class="card-img-top" alt="Kargil">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Kargil, Ladakh</a></h5>
+                    <p class="card-text">20 Hotels | 15 Tours | 5 Cars | 12 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 8 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-om-beach-gokarna-karnataka-city-hero?qlt=82&ts=1726720866389" class="card-img-top" alt="Gokarna">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Gokarna, Karnataka</a></h5>
+                    <p class="card-text">45 Hotels | 40 Tours | 10 Cars | 22 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 9 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://bl-i.thgim.com/public/migration_catalog/article18173517.ece/alternates/FREE_1200/BL24_AMARAVATI" class="card-img-top" alt="Amaravati">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Amaravati, Andhra Pradesh</a></h5>
+                    <p class="card-text">50 Hotels | 30 Tours | 12 Cars | 20 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 10 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://miro.medium.com/v2/resize:fit:940/0*IEwrTqlET0NjTsgE.jpg" class="card-img-top" alt="Chandigarh">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Chandigarh, Punjab/Haryana</a></h5>
+                    <p class="card-text">70 Hotels | 60 Tours | 15 Cars | 30 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 11 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/27/0d/50/meghalaya-s-mawlynnong.jpg?w=1200&h=-1&s=1" class="card-img-top" alt="Mawlynnong">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Mawlynnong, Meghalaya</a></h5>
+                    <p class="card-text">30 Hotels | 20 Tours | 5 Cars | 10 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 12 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://www.naturetravelagency.com/uploads/1738156133Ranikhet%20weather.jpg" class="card-img-top" alt="Ranikhet">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Ranikhet, Uttarakhand</a></h5>
+                    <p class="card-text">40 Hotels | 25 Tours | 8 Cars | 16 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 13 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://static.toiimg.com/img/97153427/Master.jpg" class="card-img-top" alt="Mandu">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Mandu, Madhya Pradesh</a></h5>
+                    <p class="card-text">35 Hotels | 28 Tours | 6 Cars | 15 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 14 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://s3.india.com/wp-content/uploads/2024/06/Feature-Image-_-Daman-and-diu.jpg?impolicy=Medium_Widthonly&w=330" class="card-img-top" alt="Diu">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Diu, Daman & Diu</a></h5>
+                    <p class="card-text">45 Hotels | 32 Tours | 10 Cars | 18 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 15 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXNsXSbXZ0O6IMoNF8SHPWH3WwXsdIauti5w&s" class="card-img-top" alt="Kurseong">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Kurseong, West Bengal</a></h5>
+                    <p class="card-text">20 Hotels | 15 Tours | 4 Cars | 12 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 16 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://mediaim.expedia.com/destination/2/b32f90dd8fb5838e8910cff912b08ac0.jpg" class="card-img-top" alt="Pachmarhi">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Pachmarhi, Madhya Pradesh</a></h5>
+                    <p class="card-text">28 Hotels | 22 Tours | 6 Cars | 14 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 17 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://www.tamilnadutourism.tn.gov.in/img/pages/large-desktop/yercaud-1655195956_933bcf09b795c911c7ed.webp" class="card-img-top" alt="Yercaud">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Yercaud, Tamil Nadu</a></h5>
+                    <p class="card-text">32 Hotels | 25 Tours | 7 Cars | 15 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 18 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://melangeoftales.com/wp-content/uploads/2020/01/IMG_20191214_111806-01-01-scaled.jpeg" class="card-img-top" alt="Gandikota">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Gandikota, Andhra Pradesh</a></h5>
+                    <p class="card-text">15 Hotels | 10 Tours | 4 Cars | 8 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 19 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://lp-cms-production.imgix.net/2025-01/GettyImages-2099208947-cropped.jpg?auto=format,compress&q=72&w=1440&h=810&fit=crop" class="card-img-top" alt="Jaisalmer">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Jaisalmer, Rajasthan</a></h5>
+                    <p class="card-text">60 Hotels | 50 Tours | 14 Cars | 26 Flights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Postcard 20 -->
+        <div class="col-md-3">
+            <div class="card postcard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Sundarban_Tiger.jpg/1200px-Sundarban_Tiger.jpg" class="card-img-top" alt="Sundarbans">
+                <div class="card-body">
+                    <h5><a href="#" class="card-title">Sundarbans, West Bengal</a></h5>
+                    <p class="card-text">30 Hotels | 20 Tours | 5 Cars | 12 Flights</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    
+     <!-- Pagination Section -->
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center my-4">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item "><a class="page-link" href="Destinations.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="Destinations2.html">2</a></li>
+                <li class="page-item active"><a class="page-link" href="Destinations3.html">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+<!-- Custom Footer End --><!-- Enhanced Footer Start -->
+<footer class="custom-footer">
+  <!-- Decorative Wave -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 120 28">
+      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">
+  <img src="Images/TT5.png" alt="Travel Tales Logo" />
+</div>
+
+      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="Destinations/Destinations.html">Destinations</a></li>
+        <li><a href="Travel Tales/Tours Packages.html">Packages</a></li>
+        <li><a href="Services/Offers.html">Offers</a></li>
+        <li><a href="Services/Gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+      <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+    </div>
+
+    <div class="newsletter">
+      <h4>Subscribe to Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+  <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+</div>
+</footer>
+  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

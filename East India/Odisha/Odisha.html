@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisha Explorer - Discover the Soul of Eastern India</title>
+    <link rel="icon" href="Images\TT4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFD166;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --text: #333;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --odisha-orange: #E67E22;
+            --odisha-blue: #3498DB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation - Full Width */
+        header {
+            background: linear-gradient(135deg, rgba(41, 47, 54, 0.9) 0%, rgba(230, 126, 34, 0.8) 100%);
+            color: white;
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 0.5rem 0;
+            background: rgba(41, 47, 54, 0.95);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            background-color: rgba(245, 245, 245, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - Full Screen */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://static2.tripoto.com/media/filter/tst/img/10401/TripDocument/1448387483_lalitgiri_buddhist_site_odisha_india.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            margin-top: 0;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 230, 109, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 230, 109, 0.4);
+        }
+        
+        /* Section Styling - Full Width Content */
+        .full-width-section {
+            width: 100%;
+            padding: 5rem 0;
+        }
+        
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--odisha-orange);
+            margin: 0.5rem auto 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* History Section */
+        .history-section {
+            background-color: var(--odisha-blue);
+            color: white;
+        }
+        
+        .history-section .section-title h2 {
+            color: white;
+        }
+        
+        .history-section .section-title h2:after {
+            background-color: var(--accent);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--odisha-orange);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -16px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            color: var(--dark);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--odisha-orange);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Places Grid - Full Width */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .place-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .place-card:nth-child(1) { animation-delay: 0.1s; }
+        .place-card:nth-child(2) { animation-delay: 0.2s; }
+        .place-card:nth-child(3) { animation-delay: 0.3s; }
+        .place-card:nth-child(4) { animation-delay: 0.4s; }
+        .place-card:nth-child(5) { animation-delay: 0.5s; }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .place-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+        
+        .place-content {
+            padding: 1.5rem;
+        }
+        
+        .place-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .place-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .place-meta i {
+            margin-right: 0.5rem;
+            color: var(--odisha-orange);
+        }
+        
+        .place-meta span {
+            margin-right: 1rem;
+        }
+        
+        .place-content p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: var(--odisha-orange);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: var(--odisha-blue);
+        }
+        
+        /* Packages Carousel - Full Width */
+        .packages-section {
+            background-color: #f0f8ff;
+            position: relative;
+        }
+        
+        .packages-container {
+            position: relative;
+            padding: 1rem 0;
+        }
+        
+        .packages-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding: 1rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .packages-carousel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 350px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+        .package-card:nth-child(4) { animation-delay: 0.4s; }
+        .package-card:nth-child(5) { animation-delay: 0.5s; }
+        .package-card:nth-child(6) { animation-delay: 0.6s; }
+        .package-card:nth-child(7) { animation-delay: 0.7s; }
+        .package-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .package-card:hover .package-img img {
+            transform: scale(1.05);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--odisha-orange);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .package-content {
+            padding: 1.5rem;
+        }
+        
+        .package-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-duration {
+            display: flex;
+            align-items: center;
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .package-duration i {
+            margin-right: 0.5rem;
+            color: var(--odisha-blue);
+        }
+        
+        .package-rating {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--odisha-orange);
+            margin-bottom: 1.5rem;
+        }
+        
+        .package-price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .book-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--odisha-blue);
+            color: white;
+            padding: 0.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .book-btn:hover {
+            background-color: var(--odisha-orange);
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .carousel-dot.active {
+            background-color: var(--odisha-orange);
+            transform: scale(1.2);
+        }
+        
+        /* Map Section - Full Width */
+        .map-section {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://www.toptal.com/designers/subtlepatterns/uploads/gggrain.png');
+        }
+        
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Food Section - Full Width */
+        .food-section {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .food-section .section-title h2 {
+            color: white;
+        }
+        
+        .food-section .section-title h2:after {
+            background-color: var(--accent);
+        }
+        
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .food-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .food-card:nth-child(1) { animation-delay: 0.1s; }
+        .food-card:nth-child(2) { animation-delay: 0.2s; }
+        .food-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .food-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .food-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .food-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .food-card:hover .food-img img {
+            transform: scale(1.05);
+        }
+        
+        .food-content {
+            padding: 1.5rem;
+        }
+        
+        .food-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .food-content p {
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        
+        /* Culture Section - Full Width */
+        .culture-section {
+            background-color: #f9f9f9;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .culture-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .culture-card:nth-child(1) { animation-delay: 0.1s; }
+        .culture-card:nth-child(2) { animation-delay: 0.2s; }
+        .culture-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .culture-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .culture-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .culture-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .culture-card:hover .culture-img img {
+            transform: scale(1.05);
+        }
+        
+        .culture-content {
+            padding: 1.5rem;
+        }
+        
+        .culture-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .culture-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials - Full Width */
+        .testimonials-section {
+            background-color: #f9f9f9;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: rgba(78, 205, 196, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Newsletter - Full Width */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--odisha-orange) 0%, var(--odisha-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .newsletter-section .section-title h2 {
+            color: white;
+        }
+        
+        .newsletter-section .section-title h2:after {
+            background-color: var(--accent);
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            padding: 1rem 2rem;
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .newsletter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer - Full Width */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--odisha-orange);
+        }
+        
+        .footer-col p {
+            margin-bottom: 1rem;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--odisha-orange);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::before, .right::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--dark);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .package-card {
+                flex: 0 0 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-input {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="Images/TT5.png" alt="TravelTales Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#food">Cuisine</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Soul of Odisha</h1>
+            <p>Explore the ancient temples, pristine beaches, and rich cultural heritage of India's best kept secret</p>
+            <a href="#packages" class="cta-btn">View Tour Packages</a>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="full-width-section history-section" id="history">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Odisha's Glorious History</h2>
+            </div>
+            <div class="section-intro">
+                <p>From ancient kingdoms to colonial rule, Odisha has a fascinating history spanning over 2,000 years.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">261 BCE</div>
+                        <h3>Kalinga War</h3>
+                        <p>The famous war between Emperor Ashoka and the Kalinga kingdom that transformed Ashoka from a conqueror to a Buddhist pacifist. The bloodshed led to his adoption of Buddhism.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1st Century BCE</div>
+                        <h3>Golden Age of Kharavela</h3>
+                        <p>King Kharavela of the Mahameghavahana dynasty ruled Odisha, known for his military conquests and patronage of Jainism. The Hathigumpha inscriptions document his reign.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-year">7th-13th Century</div>
+                        <h3>Temple Architecture Flourishes</h3>
+                        <p>The construction of magnificent temples including Lingaraj Temple, Konark Sun Temple, and Jagannath Temple. Odisha's unique Kalinga style of architecture reached its peak.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-year">1936</div>
+                        <h3>Formation of Odisha State</h3>
+                        <p>Odisha became a separate province on linguistic basis, the first Indian state formed on this principle. Cuttack was the initial capital before moving to Bhubaneswar in 1948.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="full-width-section" id="places">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Must-Visit Destinations</h2>
+            </div>
+            <div class="section-intro">
+                <p>From ancient temples to pristine beaches and wildlife sanctuaries, Odisha offers diverse experiences.</p>
+            </div>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-lingaraj-temple-bhubaneshwar-odisha-city-hero?qlt=82&ts=1726663559461" alt="Bhubaneswar">
+                    </div>
+                    <div class="place-content">
+                        <h3>Bhubaneswar</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Feb</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Odisha</span>
+                        </div>
+                        <p>The "Temple City of India" with over 500 ancient temples. Highlights include Lingaraj Temple, Udayagiri & Khandagiri caves, and Nandankanan Zoological Park.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://tadharrma.com/wp-content/uploads/2024/04/puri-jagannath-prabhu.jpg" alt="Puri">
+                    </div>
+                    <div class="place-content">
+                        <h3>Puri</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Feb (Jul for Rath Yatra)</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Coastal Odisha</span>
+                        </div>
+                        <p>Sacred Hindu city famous for Jagannath Temple and golden beaches. The annual Rath Yatra festival attracts millions of devotees worldwide.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://t3.ftcdn.net/jpg/04/34/93/68/360_F_434936878_yp0ciikcw0jjax0mTFclNwugUgik8vlx.jpg" alt="Konark">
+                    </div>
+                    <div class="place-content">
+                        <h3>Konark</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Feb</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Coastal Odisha</span>
+                        </div>
+                        <p>UNESCO World Heritage Site famous for the 13th-century Sun Temple, designed as a gigantic chariot with intricate stone carvings.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://recipeoftravel.com/wp-content/uploads/2021/11/Chilika-Lake.jpg" alt="Chilika Lake">
+                    </div>
+                    <div class="place-content">
+                        <h3>Chilika Lake</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov-Feb (Bird Season)</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Odisha</span>
+                        </div>
+                        <p>Asia's largest brackish water lagoon and winter home to migratory birds. Spot Irrawaddy dolphins and enjoy seafood at Satapada.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvR6_7K9FTZ3JGLNpA1Yw-wxBZluQQAW5cniLGq7O8Who0KIR-8rmjZPAV3U_ccvvSH2kJGvj0IOnU0aND0WXTlFe9QMorLvUqd6bs1DsuRggUYycWWM2dUj7f6ZaINUrPyvA6KdjZHOc/s1600/IMG_20190928_170222.jpg" alt="Simlipal National Park">
+                    </div>
+                    <div class="place-content">
+                        <h3>Simlipal National Park</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov-Jun</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Mayurbhanj District</span>
+                        </div>
+                        <p>Odisha's premier tiger reserve with dense forests, waterfalls, and rich biodiversity including tigers, elephants, and rare orchids.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/1c/9b/ca/shanti-stupa-dhauli-giri.jpg?w=1200&h=-1&s=1" alt="Dhauli Hills">
+                    </div>
+                    <div class="place-content">
+                        <h3>Dhauli Hills</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Near Bhubaneswar</span>
+                        </div>
+                        <p>A peaceful site known for the Shanti Stupa and ancient rock edicts of Emperor Ashoka, symbolizing the transformation to Buddhism after the Kalinga War.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="full-width-section packages-section" id="packages">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Popular Travel Packages</h2>
+            </div>
+            <div class="section-intro">
+                <p>Carefully curated experiences that showcase the best of Odisha. All packages include accommodations, guided tours, and local transportation.</p>
+            </div>
+            <div class="packages-container">
+                <div class="packages-carousel">
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Bhubaneswar Temple Tour.jpg" alt="Bhubaneswar Temple Tour">
+                            <span class="package-badge">Best Seller</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Bhubaneswar Temple Tour</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>Explore the ancient temples of Bhubaneswar including Lingaraj, Mukteshwar, and Rajarani temples with expert guides.</p>
+                            <div class="package-price">
+                                ₹5,000 <span>per person</span>
+                            </div>
+                            <a href="Bhubaneswar Temple Tour.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Puri Beach & Temple Tour.jpg" alt="Puri Beach & Temple Tour">
+                            <span class="package-badge">Spiritual</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Puri Beach & Temple Tour</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 3 Days / 2 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>Visit the sacred Jagannath Temple and relax on Puri's golden beaches. Includes guided temple tour and beachside accommodation.</p>
+                            <div class="package-price">
+                                ₹4,000 <span>per person</span>
+                            </div>
+                            <a href="Puri Beach & Temple Tour.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Konark Sun Temple Tour.webp" alt="Konark Sun Temple Tour">
+                            <span class="package-badge">Heritage</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Konark Sun Temple Tour</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 3 Days / 2 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Discover the architectural marvel of the Sun Temple with expert historians. Includes Chandrabhaga beach visit.</p>
+                            <div class="package-price">
+                                ₹3,500 <span>per person</span>
+                            </div>
+                            <a href="Konark Sun Temple Tour.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Chilika Lake Adventure.jpg" alt="Chilika Lake Adventure">
+                            <span class="package-badge">Adventure</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Chilika Lake Adventure</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Boat safaris to spot dolphins and migratory birds. Includes seafood dining and island visits.</p>
+                            <div class="package-price">
+                                ₹6,000 <span>per person</span>
+                            </div>
+                            <a href="Chilika Lake Adventure.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Simlipal National Park Safari.webp" alt="Simlipal National Park Safari">
+                            <span class="package-badge">Wildlife</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Simlipal National Park Safari</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 5 Days / 4 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>Jungle safaris to spot tigers, elephants and other wildlife. Includes stays in forest lodges.</p>
+                            <div class="package-price">
+                                ₹7,000 <span>per person</span>
+                            </div>
+                            <a href="Simlipal National Park Safari.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Odisha Cultural Tour.jpg" alt="Odisha Cultural Tour">
+                            <span class="package-badge">Cultural</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Odisha Cultural Tour</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 6 Days / 5 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Explore Bhubaneswar, Puri, and Konark with cultural performances and artisan visits.</p>
+                            <div class="package-price">
+                                ₹8,000 <span>per person</span>
+                            </div>
+                            <a href="Odisha Cultural Tour.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Jagannath Rath Yatra Special.avif" alt="Jagannath Rath Yatra Special">
+                            <span class="package-badge">Festival</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Jagannath Rath Yatra Special</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 4 Days / 3 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Witness the grand Rath Yatra festival in Puri with special access and guided experiences.</p>
+                            <div class="package-price">
+                                ₹10,000 <span>per person</span>
+                            </div>
+                            <a href="Jagannath Rath Yatra Special.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="Images\Odisha Wildlife Expedition.webp" alt="Odisha Wildlife Expedition">
+                            <span class="package-badge">Premium</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Odisha Wildlife Expedition</h3>
+                            <div class="package-duration">
+                                <i class="fas fa-clock"></i> 5 Days / 4 Nights
+                            </div>
+                            <div class="package-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>Visit Simlipal, Bhitarkanika and Chilika for comprehensive wildlife experiences with expert guides.</p>
+                            <div class="package-price">
+                                ₹9,000 <span>per person</span>
+                            </div>
+                            <a href="Odisha Wildlife Expedition.html" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="full-width-section culture-section" id="culture">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Odisha's Rich Culture</h2>
+            </div>
+            <div class="section-intro">
+                <p>Odisha boasts a vibrant cultural heritage with unique art forms, festivals, and traditions.</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-img">
+                        <img src="https://thumbs.dreamstime.com/b/group-classical-odissi-dancers-performing-odissi-dance-stage-konark-temple-odisha-india-odissi-dance-also-known-as-155047464.jpg" alt="Odissi Dance">
+                    </div>
+                    <div class="culture-content">
+                        <h3>Odissi Dance</h3>
+                        <p>One of India's classical dance forms originating from Odisha's temples, characterized by fluid movements and sculpturesque poses.</p>
+                    </div>
+                </div>
+                <div class="culture-card">
+                    <div class="culture-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Odisha_Pattachitra_DSCN1052_09.jpg" alt="Pattachitra">
+                    </div>
+                    <div class="culture-content">
+                        <h3>Pattachitra</h3>
+                        <p>Traditional cloth-based scroll painting with mythological narratives, using natural colors and intricate details.</p>
+                    </div>
+                </div>
+                <div class="culture-card">
+                    <div class="culture-img">
+                        <img src="https://c.ndtvimg.com/2024-07/qrfq0ui_rath-yatra_625x300_07_July_24.jpeg?downsize=545:307" alt="Rath Yatra">
+                    </div>
+                    <div class="culture-content">
+                        <h3>Rath Yatra Festival</h3>
+                        <p>The grand chariot festival of Lord Jagannath in Puri, attracting millions of devotees annually since ancient times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="full-width-section map-section" id="map">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Explore Odisha</h2>
+            </div>
+            <div class="section-intro">
+                <p>Discover the geographical diversity of Odisha, from the Eastern Ghats to the Bay of Bengal coastline.</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1vdP5bRws59a-neEIUd_ViBL4iNqsem8&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section class="full-width-section food-section" id="food">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Culinary Delights</h2>
+            </div>
+            <div class="section-intro">
+                <p>Odisha's cuisine is a feast for the senses, blending flavors from land and sea with unique spices and cooking techniques.</p>
+            </div>
+            <div class="food-grid">
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2020/07/Feature-image-Odisha-Pakhala-.jpg" alt="Pakhala">
+                    </div>
+                    <div class="food-content">
+                        <h3>Pakhala</h3>
+                        <p>Fermented rice dish served with curd, lemon, and fried fish - Odisha's traditional comfort food, especially popular during summers.</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://en-media.thebetterindia.com/uploads/2017/01/rasgulla_625x350_61440575963.jpg" alt="Rasagola">
+                    </div>
+                    <div class="food-content">
+                        <h3>Rasagola</h3>
+                        <p>Odisha's famous sweet - soft cottage cheese balls soaked in light sugar syrup, with historical roots in the state's temple traditions.</p>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-img">
+                        <img src="https://i0.wp.com/onewholesomemeal.com/wp-content/uploads/2017/10/IMG_4701MAIN.jpg?ssl=1" alt="Chhena Poda">
+                    </div>
+                    <div class="food-content">
+                        <h3>Chhena Poda</h3>
+                        <p>Literally "burnt cheese," this caramelized cheesecake-like dessert is Odisha's gift to the culinary world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="full-width-section testimonials-section">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+            </div>
+            <div class="section-intro">
+                <p>Hear what our travelers have to say about their journeys through Odisha.</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The Konark Sun Temple took my breath away! Our guide's knowledge about the temple's architecture and history made the experience unforgettable. The intricate carvings are like nothing I've seen before.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Witnessing the Rath Yatra in Puri was a spiritual experience like no other. The energy, devotion, and scale of the festival is something every traveler should experience at least once in their lifetime.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Chilika Lake's beauty and biodiversity amazed me. Spotting dolphins in their natural habitat and seeing thousands of migratory birds was the highlight of our Odisha trip. The seafood was incredible too!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elena Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Elena Rodriguez</h4>
+                            <p>Madrid, Spain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="full-width-section newsletter-section">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>Stay Updated</h2>
+            </div>
+            <p>Subscribe to our newsletter for exclusive travel offers and Odisha travel inspiration.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="section-container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Odisha Explorer</h3>
+                    <p>Your trusted guide to experiencing the rich culture, heritage, and natural beauty of Odisha.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#places">Destinations</a></li>
+                        <li><a href="#packages">Tour Packages</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#food">Cuisine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Travel Tales Tourism, Nagpur, Maharahstra</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> TravelTalesngp@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Tour Packages</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Temple Tours</a></li>
+                        <li><a href="#">Beach Getaways</a></li>
+                        <li><a href="#">Wildlife Safaris</a></li>
+                        <li><a href="#">Cultural Experiences</a></li>
+                        <li><a href="#">Festival Specials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Travel Tales Explorer. All rights reserved.| Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for Odisha </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Carousel navigation
+        const carousel = document.querySelector('.packages-carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Update active dot
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                
+                // Scroll carousel
+                const scrollPosition = index * (350 + 32); // card width + gap
+                carousel.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.place-card, .package-card, .food-card, .testimonial-card, .timeline-item, .culture-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.animation = 'fadeInUp 0.5s ease-out forwards';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

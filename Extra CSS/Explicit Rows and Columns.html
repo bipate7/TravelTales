@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid: Explicit Rows and Columns</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3f2fd;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #0288D1;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 150px 150px 150px;
+            grid-template-rows: 100px 100px;
+            gap: 15px;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: #0288D1;
+            color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid: Explicit Rows and Columns</h1>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+    </div>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            This grid explicitly defines both rows and columns using <code>grid-template-columns</code> and <code>grid-template-rows</code>. Here, 3 columns of 150px width and 2 rows of 100px height are defined.
+        </p>
+    </footer>
+</body>
+</html>
+

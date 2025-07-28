@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Travel Tales</title>
+    <link rel="icon" href="TT4.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Body and background styling */
+        body{
+                margin: 0;
+                font-family: 'Poppins', sans-serif;
+                height: 100vh; /* Sets the height of the body to 100% of the viewport height */
+                overflow: hidden; /* Prevents overflow of content */
+            }
+        .container {
+                display: flex;
+                height: 100vh;
+                width:auto;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+            }
+            /* Video container that covers the entire screen */
+            .video-container {
+                position: absolute;
+                z-index: 1; /* Keeps video behind the form */
+            }
+            /* Glassmorphism form container on the right side */
+            .form-container {
+                position:  relative;
+                z-index: 2; /* Keeps form above video */
+                width: 35%;
+                margin-left: auto; /* Positions the form to the right */
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 20px 0 0 20px; /* Rounded edges on the left */
+                backdrop-filter: blur(0px);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        .video-container video {
+                width: 100%;
+                height: 100%;
+                transform: rotate(-90deg); /* Rotates the video by -90 degrees */
+                object-fit: cover;
+            }
+        .form-container h1 {
+                font-family: 'Roboto', sans-serif;
+                font-size: 2.5rem;
+                color: #007bff;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        .form-container p {
+                font-size: 1rem;
+                color: #333;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        .form-control {
+                border-radius: 10px;
+                margin-bottom: 15px;
+                font-size: 1rem;
+            }
+        .submit-btn {
+                background-color: #007bff;
+                color: white;
+                font-weight: 600;
+                font-size: 1.2rem;
+                padding: 10px;
+                border-radius: 10px;
+                width: 100%;
+        }
+        .submit-btn:hover {
+                background-color: #0056b3;
+        }
+
+        .company-info {
+                text-align: center;
+                margin-top: 30px;
+        }
+        .company-info p {
+                color: #333;
+                font-size: 14px;
+        }
+        .company-info .phone, .company-info .email {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        /* Background particles */
+        .particles {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.03);
+                z-index: 0;
+        }
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .form-container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Rotating video background -->
+    <div class="video-container">
+        <video autoplay loop muted preload="auto">
+            <source src="LADHAKVideo.mp4" type="video/mp4"> <!-- Replace with your video URL -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Contact form with glassmorphism -->
+    <div class="form-container">
+        <h1>Contact Us</h1>
+        <p>We are here to assist you with any travel inquiries you may have.</p>
+
+        <form action="#" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-control" id="inquiry-type" name="inquiry-type" required>
+                        <option value="" disabled selected>Select Inquiry Type</option>
+                        <option value="booking">Booking</option>
+                        <option value="cancellation">Cancellation</option>
+                        <option value="pricing">Pricing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn submit-btn">Submit</button>
+        </form>
+
+        <div class="company-info">
+            <p class="phone">Phone: +91 9876543210</p>
+            <p class="email">Email: support@traveltales.com</p>
+            <p>Address: 123, Travel Street, Wanderlust City, India</p>
+        </div>
+    </div>
+</div>
+
+<!-- Particle effect background (optional) -->
+<div class="particles"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa: The Ultimate Beach Paradise | Premium Travel Experience</title>
+    <link rel="icon" href="Images/TT4.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-light: rgba(0, 102, 204, 0.1);
+            --secondary: #ff9933;
+            --secondary-light: rgba(255, 153, 51, 0.1);
+            --accent: #00cc99;
+            --accent-light: rgba(0, 204, 153, 0.1);
+            --light: #f8f9fa;
+            --dark: #212529;
+            --text: #333;
+            --text-light: #6c757d;
+            --beach-gold: #ffd700;
+            --ocean-blue: #0077be;
+            --sand: #f5deb3;
+            --wave: #00b4d8;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1), 0 5px 10px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Styles */
+        .video-header {
+            position: relative;
+            height: 150vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .video-header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 0;
+        }
+        
+        .header-content {
+            z-index: 1;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            line-height: 1.1;
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            background: var(--beach-gold);
+            color: var(--dark);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Navigation */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .main-nav.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0px 10px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-img {
+            height: 95px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-img {
+            transform: rotate(-10deg);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            position: relative;
+            font-size: 2.8rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 5px;
+            background: var(--secondary);
+            margin: 25px auto;
+            border-radius: 5px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        /* Intro Section */
+        .intro-section {
+            background: white;
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .intro-text {
+            padding-right: 40px;
+        }
+        
+        .intro-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .intro-text p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .intro-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transform: rotate(2deg);
+            transition: var(--transition);
+        }
+        
+        .intro-image:hover {
+            transform: rotate(0) scale(1.02);
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+        
+        .intro-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        /* Places Grid */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
+        }
+        
+        .place-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .place-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+        
+        .place-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .place-content {
+            padding: 30px;
+        }
+        
+        .place-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .place-content .meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .place-content .meta i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .place-content p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .read-more:hover {
+            color: var(--accent);
+        }
+        
+        .read-more i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(8px);
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .packages-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 40px;
+            padding: 40px 0;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .packages-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 auto;
+            width: 360px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .package-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .package-card:hover .package-img img {
+            transform: scale(1.1);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .package-content {
+            padding: 30px;
+        }
+        
+        .package-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .package-content .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .package-content .price span {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-left: 5px;
+            font-weight: 400;
+        }
+        
+        .package-content .rating {
+            color: var(--beach-gold);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .package-content .features {
+            margin-bottom: 30px;
+        }
+        
+        .package-content .features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .package-content .features i {
+            color: var(--accent);
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+        
+        .package-btn {
+            display: block;
+            text-align: center;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+        
+        .package-btn:hover {
+            background: var(--beach-gold);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Section base */
+.section {
+    padding: 80px 20px;
+    background-color: #f0f8ff; /* Light blue background for a fresh look */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Title & Subtitle */
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #004d40;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+/* Map iframe container */
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Info Section */
+.map-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Region and Tips Cards */
+.map-regions, .map-tips {
+    flex: 1 1 300px;
+    background: #f9f9f9;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-regions:hover, .map-tips:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.map-regions h3, .map-tips h3 {
+    font-size: 22px;
+    color: #00695c;
+    margin-bottom: 15px;
+    border-left: 5px solid #00a86b;
+    padding-left: 12px;
+    font-weight: 600;
+}
+
+/* List Styling */
+.map-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.map-info li {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 28px;
+    }
+
+    .map-info {
+        flex-direction: column;
+        padding: 30px 15px;
+    }
+
+    .map-regions, .map-tips {
+        padding: 20px;
+    }
+}
+
+        
+        /* Culture & Food Section */
+        .culture-section {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+        }
+        
+        .culture-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .culture-tab {
+            padding: 15px 30px;
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+        }
+        
+        .culture-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .culture-tab:hover:not(.active) {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .culture-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .culture-content.active {
+            display: block;
+        }
+        
+        .food-grid, .religious-grid, .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .food-card, .religious-card, .activity-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .food-card:hover, .religious-card:hover, .activity-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .food-img, .religious-img, .activity-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .food-img img, .religious-img img, .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .food-card:hover .food-img img,
+        .religious-card:hover .religious-img img,
+        .activity-card:hover .activity-img img {
+            transform: scale(1.1);
+        }
+        
+        .food-content, .religious-content, .activity-content {
+            padding: 25px;
+        }
+        
+        .food-content h3, .religious-content h3, .activity-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .food-content p, .religious-content p, .activity-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .food-origin, .activity-location {
+            display: flex;
+            align-items: center;
+            color: var(--accent);
+            font-size: 1rem;
+        }
+        
+        .food-origin i, .activity-location i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .religious-type {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f0fa 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/pattern2.png') repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-light);
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--accent-light);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .author-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .testimonial-rating {
+            color: var(--beach-gold);
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--ocean-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/wave-pattern.png') repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .newsletter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-container p {
+            margin-bottom: 50px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1.1rem;
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .newsletter-form button {
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 0 40px;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--beach-gold);
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 100px 0 40px;
+            position: relative;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 25px;
+            opacity: 0.8;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            transform: translateX(10px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.3rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px) scale(1.1);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 70px;
+            margin-top: 70px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-bottom p {
+            opacity: 0.6;
+            font-size: 0.95rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .header-content h1 {
+                font-size: 4rem;
+            }
+            
+            .header-content p {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .intro-text {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .intro-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-content h1 {
+                font-size: 3.5rem;
+            }
+            
+            .nav-links {
+                gap: 25px;
+            }
+            
+            .section {
+                padding: 100px 0;
+            }
+            
+            .places-grid, .food-grid, .religious-grid, .activity-grid, .testimonials-container {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .header-content p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: all 0.5s ease;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 50px;
+            }
+            
+            .section-title:after {
+                width: 80px;
+                height: 4px;
+                margin: 15px auto;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .intro-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 50px;
+                margin-bottom: 15px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 50px;
+                padding: 15px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .footer-col {
+                text-align: center;
+            }
+            
+            .footer-col h3:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-links a:hover {
+                transform: none;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .places-grid, .food-grid, .religious-grid, .activity-grid, .testimonials-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                padding: 0 20px;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="Images/TT5.png" alt="Travel Tours Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Goa</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header with Video Background -->
+    <header class="video-header" id="home">
+        <video autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/4440990/4440990-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1 data-aos="fade-down" data-aos-duration="1000">Discover Goa's Paradise</h1>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Experience the perfect blend of sun, sand, and culture in India's most vibrant beach destination. From pristine beaches to Portuguese heritage, Goa offers unforgettable memories.</p>
+            <div class="btn-group" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                <a href="#packages" class="btn">Explore Packages</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Goa Section -->
+        <section class="section intro-section" id="about">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">About Goa</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Discover the magic of India's beach paradise, where golden sands meet azure waters and Portuguese heritage blends with vibrant Indian culture.</p>
+                
+                <div class="intro-content">
+                    <div class="intro-text" data-aos="fade-right">
+                        <h2>Goa - Pearl of the Orient</h2>
+                        <p>Nestled along the western coast of India, Goa is a tropical paradise that offers much more than just stunning beaches. This former Portuguese colony boasts a unique blend of Indian and European cultures, evident in its architecture, cuisine, and way of life.</p>
+                        <p>With over 100 kilometers of coastline, Goa is divided into North and South regions, each offering distinct experiences. The North is known for its vibrant nightlife and water sports, while the South offers serene beaches and luxury resorts.</p>
+                        <p>Beyond the beaches, Goa's rich history is visible in its UNESCO-listed churches, Portuguese-era mansions, and ancient temples. The state's biodiversity includes lush Western Ghats forests, exotic wildlife, and breathtaking waterfalls.</p>
+                    </div>
+                    <div class="intro-image" data-aos="fade-left" data-aos-delay="200">
+                        <img src="https://media1.thrillophilia.com/filestore/8asovra9hft5e4vfhl54o9hg0gha_arambol_beach.jpg?w=400&dpr=2" alt="Goa Panorama">
+                    </div>
+                </div>
+                
+                <div class="intro-stats" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Stat 1 -->
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Kilometers of Beaches</div>
+                    </div>
+                    
+                    <!-- Stat 2 -->
+                    <div class="stat-item">
+                        <div class="stat-number">450+</div>
+                        <div class="stat-label">Years of Portuguese Heritage</div>
+                    </div>
+                    
+                    <!-- Stat 3 -->
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">UNESCO World Heritage Sites</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Places Section -->
+        <section class="section" id="places">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Must-Visit Places in Goa</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">From sun-kissed beaches to historic landmarks, discover Goa's most iconic destinations</p>
+                
+                <div class="places-grid">
+                    <!-- Place Card 1 -->
+                    <div class="place-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="place-img">
+                            <img src="https://miro.medium.com/v2/resize:fit:1017/1*7HBBbZd1uc5GBeHJQ0Z2pA.jpeg" alt="Calangute Beach">
+                            <span class="place-badge">Most Popular</span>
+                        </div>
+                        <div class="place-content">
+                            <h3>Calangute Beach</h3>
+                            <div class="meta">
+                                <i class="fas fa-map-marker-alt"></i> North Goa
+                            </div>
+                            <p>Known as the "Queen of Beaches," Calangute is Goa's largest beach stretching over 7 kilometers. Enjoy thrilling water sports, beach shacks serving fresh seafood, and vibrant nightlife at nearby clubs.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Card 2 -->
+                    <div class="place-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="place-img">
+                            <img src="https://media.istockphoto.com/id/1215072617/photo/basilica-de-bom-jesus-old-goa-india.jpg?s=612x612&w=0&k=20&c=PRdLWUCVscFY1PEnNGDuk2ebaCcuma6EQn5cT92hsdQ=" alt="Old Goa Churches">
+                            <span class="place-badge">UNESCO Site</span>
+                        </div>
+                        <div class="place-content">
+                            <h3>Old Goa Churches</h3>
+                            <div class="meta">
+                                <i class="fas fa-map-marker-alt"></i> Old Goa
+                            </div>
+                            <p>Explore the magnificent churches from the Portuguese era, including the famous Basilica of Bom Jesus housing St. Francis Xavier's remains, and Se Cathedral, one of Asia's largest churches.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Card 3 -->
+                    <div class="place-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="place-img">
+                            <img src="https://i.pinimg.com/736x/cb/b0/93/cbb0932c7e9829997c2ce238b66305cf.jpg" alt="Dudhsagar Falls">
+                            <span class="place-badge">Natural Wonder</span>
+                        </div>
+                        <div class="place-content">
+                            <h3>Dudhsagar Falls</h3>
+                            <div class="meta">
+                                <i class="fas fa-map-marker-alt"></i> Mollem National Park
+                            </div>
+                            <p>Marvel at this majestic four-tiered waterfall cascading from 310 meters, resembling a sea of milk. Located in the Bhagwan Mahavir Wildlife Sanctuary, it's accessible via jeep safari or trekking.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Card 4 -->
+                    <div class="place-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="place-img">
+                            <img src="https://cdn.abhibus.com/2024/06/Anjuna-Flea-Market-North-Goa.jpg" alt="Anjuna Flea Market">
+                            <span class="place-badge">Shopping</span>
+                        </div>
+                        <div class="place-content">
+                            <h3>Anjuna Flea Market</h3>
+                            <div class="meta">
+                                <i class="fas fa-map-marker-alt"></i> Anjuna
+                            </div>
+                            <p>Every Wednesday, this vibrant market comes alive with handicrafts, clothes, jewelry from around the world. Experience live music, delicious food, and the bohemian spirit of Goa's hippie culture.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Card 5 -->
+                    <div class="place-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="place-img">
+                            <img src="https://s7ap1.scene7.com/is/image/incredibleindia/fort-aguada-goa-11-musthead-hero?qlt=82&ts=1726735121980" alt="Fort Aguada">
+                            <span class="place-badge">Historical</span>
+                        </div>
+                        <div class="place-content">
+                            <h3>Fort Aguada</h3>
+                            <div class="meta">
+                                <i class="fas fa-map-marker-alt"></i> Sinquerim
+                            </div>
+                            <p>This well-preserved 17th-century Portuguese fort offers panoramic views of the Arabian Sea. The lighthouse and freshwater spring within the fort are major attractions, along with the adjacent Taj Fort Aguada Hotel.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Card 6 -->
+                    <div class="place-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="place-img">
+                            <img src="https://t3.ftcdn.net/jpg/00/77/00/26/360_F_77002615_Gl1Hk6qZpi2xCAlX8EUTRLBqC4ei6QfC.jpg" alt="Palolem Beach">
+                            <span class="place-badge">Serene</span>
+                        </div>
+                        <div class="place-content">
+                            <h3>Palolem Beach</h3>
+                            <div class="meta">
+                                <i class="fas fa-map-marker-alt"></i> South Goa
+                            </div>
+                            <p>This crescent-shaped beach with its calm waters is perfect for relaxation. Stay in beach huts, enjoy yoga sessions, spot dolphins at sunrise, or visit nearby Butterfly and Honeymoon beaches.</p>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section class="section packages-section" id="packages">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Exclusive Goa Packages</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Tailored experiences for every type of traveler</p>
+                
+                <div class="packages-container">
+                    <!-- Package 1: Goa Beach Tour -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="package-img">
+        <img src="Images/Goa Beach Tour.webp" alt="Goa Beach Tour">
+        <span class="package-badge">Top Rated</span>
+    </div>
+    <div class="package-content">
+        <h3>Goa Beach Tour</h3>
+        <div class="price">₹3,000 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Visit Calangute, Baga & Anjuna beaches</li>
+            <li><i class="fas fa-check"></i> Beachside shacks & sunbathing</li>
+            <li><i class="fas fa-check"></i> Scenic coastal drive</li>
+        </ul>
+        <a href="Goa Beach Tour.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 2: Dudhsagar Waterfall Adventure -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="150">
+    <div class="package-img">
+        <img src="Images/Dudhsagar Waterfall Adventure.jpg" alt="Dudhsagar Waterfall Adventure">
+        <span class="package-badge">Adventure</span>
+    </div>
+    <div class="package-content">
+        <h3>Dudhsagar Waterfall Adventure</h3>
+        <div class="price">₹2,500 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Trek to Dudhsagar Falls</li>
+            <li><i class="fas fa-check"></i> Jeep safari through forest</li>
+            <li><i class="fas fa-check"></i> Spice plantation visit</li>
+        </ul>
+        <a href="Dudhsagar Waterfall Adventure.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 3: Old Goa Heritage Tour -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="package-img">
+        <img src="Images/Old Goa Heritage Tour.webp" alt="Old Goa Heritage Tour">
+        <span class="package-badge">Heritage</span>
+    </div>
+    <div class="package-content">
+        <h3>Old Goa Heritage Tour</h3>
+        <div class="price">₹2,200 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Visit Basilica of Bom Jesus</li>
+            <li><i class="fas fa-check"></i> Explore Portuguese landmarks</li>
+            <li><i class="fas fa-check"></i> Cultural walking tour</li>
+        </ul>
+        <a href="Old Goa Heritage Tour.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 4: Spice Plantation Tour -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="250">
+    <div class="package-img">
+        <img src="Images/Spice Plantation Tour.jpg" alt="Spice Plantation Tour">
+        <span class="package-badge">Nature</span>
+    </div>
+    <div class="package-content">
+        <h3>Spice Plantation Tour</h3>
+        <div class="price">₹1,800 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Guided tour of plantations</li>
+            <li><i class="fas fa-check"></i> Learn about exotic spices</li>
+            <li><i class="fas fa-check"></i> Traditional Goan lunch</li>
+        </ul>
+        <a href="Spice Plantation Tour.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 5: Adventure Water Sports -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="package-img">
+        <img src="Images/Adventure Water Sports.jpg" alt="Adventure Water Sports">
+        <span class="package-badge">Thrill</span>
+    </div>
+    <div class="package-content">
+        <h3>Adventure Water Sports</h3>
+        <div class="price">₹3,500 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Jet skiing, banana ride & parasailing</li>
+            <li><i class="fas fa-check"></i> Certified instructors</li>
+            <li><i class="fas fa-check"></i> All safety gear provided</li>
+        </ul>
+        <a href="Adventure Water Sports.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 6: Goa Nightlife Experience -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="350">
+    <div class="package-img">
+        <img src="Images/Goa Nightlife Experience.webp" alt="Goa Nightlife Experience">
+        <span class="package-badge">Nightlife</span>
+    </div>
+    <div class="package-content">
+        <h3>Goa Nightlife Experience</h3>
+        <div class="price">₹2,500 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Visit top nightclubs and lounges</li>
+            <li><i class="fas fa-check"></i> Beach parties & DJ nights</li>
+            <li><i class="fas fa-check"></i> Includes transfers & drinks</li>
+        </ul>
+        <a href="Goa Nightlife Experience.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 7: Chapora Fort Sunset Tour -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="400">
+    <div class="package-img">
+        <img src="Images/Chapora Fort Sunset Tour.avif" alt="Chapora Fort Sunset Tour">
+        <span class="package-badge">Sunset</span>
+    </div>
+    <div class="package-content">
+        <h3>Chapora Fort Sunset Tour</h3>
+        <div class="price">₹2,000 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Scenic sunset view at the fort</li>
+            <li><i class="fas fa-check"></i> Bollywood filming spot</li>
+            <li><i class="fas fa-check"></i> Optional beach visit</li>
+        </ul>
+        <a href="Chapora Fort Sunset Tour.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<!-- Package 8: Anjuna Beach Party -->
+<div class="package-card" data-aos="fade-up" data-aos-delay="450">
+    <div class="package-img">
+        <img src="Images/Anjuna Beach Party.jpg" alt="Anjuna Beach Party">
+        <span class="package-badge">Party</span>
+    </div>
+    <div class="package-content">
+        <h3>Anjuna Beach Party</h3>
+        <div class="price">₹1,500 <span>/ per person</span></div>
+        <div class="rating">⭐⭐⭐⭐⭐ (5/5)</div>
+        <ul class="features">
+            <li><i class="fas fa-check"></i> Beachside rave parties</li>
+            <li><i class="fas fa-check"></i> Live music & DJs</li>
+            <li><i class="fas fa-check"></i> Bonfire and beach games</li>
+        </ul>
+        <a href="Anjuna Beach Party.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+                    <!-- Beach Bliss Package -->
+                    <div class="package-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="package-img">
+                            <img src="https://ik.imagekit.io/getsetyo/Itinerary/Sagar___Smitha_s_Goa_Signature_Trip_-_6_Nights_7_Days_Plan_for_2_-_itinerary_COdJ-wTv0" alt="Beach Bliss Package">
+                            <span class="package-badge">Best Seller</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Beach Bliss Package</h3>
+                            <div class="price">₹15,999 <span>/ per person</span></div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                (4.9/5)
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 4 Days /3 Nights at luxury beach resort</li>
+                                <li><i class="fas fa-check"></i> Daily breakfast with ocean views</li>
+                                <li><i class="fas fa-check"></i> Guided North Goa sightseeing tour</li>
+                                <li><i class="fas fa-check"></i> Romantic sunset cruise with cocktails</li>
+                                <li><i class="fas fa-check"></i> 1 complimentary spa treatment</li>
+                            </ul>
+                            <a href="#" class="package-btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Heritage Explorer -->
+                    <div class="package-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="package-img">
+                            <img src="https://t3.ftcdn.net/jpg/01/00/61/74/360_F_100617477_kJgJImjwYdnUTHqhfTc5MHu4gMcKKxHv.jpg" alt="Heritage Explorer">
+                            <span class="package-badge">Cultural</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Heritage Explorer</h3>
+                            <div class="price">₹12,499 <span>/ per person</span></div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                (4.5/5)
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 5 Days / 4 Nights in heritage hotel</li>
+                                <li><i class="fas fa-check"></i> All meals featuring Goan cuisine</li>
+                                <li><i class="fas fa-check"></i> Expert-guided heritage walks</li>
+                                <li><i class="fas fa-check"></i> Spice plantation tour & lunch</li>
+                                <li><i class="fas fa-check"></i> Traditional Goan dance performance</li>
+                            </ul>
+                            <a href="#" class="package-btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Luxury Retreat Goa -->
+                    <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="package-img">
+                            <img src="https://www.flamingotravels.co.in/blog/wp-content/uploads/2021/06/goa-tour-packages.jpg" alt="Luxury Retreat">
+                            <span class="package-badge">Premium</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Luxury Retreat</h3>
+                            <div class="price">₹29,999 <span>/ per person</span></div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                (4.8/5)
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 7 Days / 6 Nights in 5-star resort</li>
+                                <li><i class="fas fa-check"></i> All-inclusive gourmet dining</li>
+                                <li><i class="fas fa-check"></i> Private beach access & pool villa</li>
+                                <li><i class="fas fa-check"></i> Daily spa & wellness treatments</li>
+                                <li><i class="fas fa-check"></i> Private yacht excursion</li>
+                            </ul>
+                            <a href="#" class="package-btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Adventure Seeker Goa -->
+                    <div class="package-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="package-img">
+                            <img src="https://goadarling.com/wp-content/uploads/2024/10/water-sports-in-Goa.jpg" alt="Adventure Seeker">
+                            <span class="package-badge">Adventure</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Adventure Seeker</h3>
+                            <div class="price">₹18,500 <span>/ per person</span></div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                (4.7/5)
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 6 Days / 5 Nights in boutique hotel</li>
+                                <li><i class="fas fa-check"></i> Breakfast & dinner included</li>
+                                <li><i class="fas fa-check"></i> Water sports package (jet ski, parasailing)</li>
+                                <li><i class="fas fa-check"></i> Dudhsagar waterfall trek</li>
+                                <li><i class="fas fa-check"></i> White water rafting experience</li>
+                            </ul>
+                            <a href="#" class="package-btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Family Fun Goa -->
+                    <div class="package-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="package-img">
+                            <img src="https://img.freepik.com/free-photo/asian-young-happy-family-enjoy-vacation-beach-evening-dad-mom-kid-relax-running-together-near-sea-while-silhouette-sunset-lifestyle-travel-holiday-vacation-summer-concept_7861-2447.jpg?semt=ais_hybrid&w=740" alt="Family Fun">
+                            <span class="package-badge">Family</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Family Fun</h3>
+                            <div class="price">₹22,999 <span>/ per person</span></div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                (4.6/5)
+                            </div>
+                            <ul class="features">
+                                <li><i class="fas fa-check"></i> 5 Days / 4 Nights family suite</li>
+                                <li><i class="fas fa-check"></i> Kids club & activities included</li>
+                                <li><i class="fas fa-check"></i> Visit to Goa Science Center</li>
+                                <li><i class="fas fa-check"></i> Dolphin spotting cruise</li>
+                                <li><i class="fas fa-check"></i> Water park day pass</li>
+                            </ul>
+                            <a href="#" class="package-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Culture & Food Section -->
+        <section class="section culture-section" id="culture">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Goan Culture & Cuisine</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">A vibrant fusion of Indian and Portuguese influences</p>
+                
+                <div class="culture-tabs" data-aos="fade-up" data-aos-delay="300">
+                    <div class="culture-tab active" data-tab="food">Food & Drink</div>
+                    <div class="culture-tab" data-tab="religious">Religious Sites</div>
+                    <div class="culture-tab" data-tab="activities">Cultural Activities</div>
+                </div>
+                
+                <!-- Food Content -->
+                <div class="culture-content active" id="food-content">
+                    <div class="food-grid">
+                        <!-- Food Item 1 -->
+                        <div class="food-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="food-img">
+                                <img src="https://cdn.shopify.com/s/files/1/2264/6159/files/MBS_Blog_Post_Headers_9_600x600.png?v=1635156471" alt="Goan Vindaloo">
+                            </div>
+                            <div class="food-content">
+                                <h3>Goan Vindaloo</h3>
+                                <p>This fiery curry has Portuguese origins (from "vinho e alho" - wine and garlic). The Goan version uses palm vinegar, Kashmiri chilies, and spices to create a complex flavor profile, traditionally made with pork.</p>
+                                <div class="food-origin">
+                                    <i class="fas fa-history"></i> Portuguese-Goan Fusion
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Item 2 -->
+                        <div class="food-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="food-img">
+                                <img src="https://img.freepik.com/premium-photo/goan-fish-curry-rice-thali_1048944-18826700.jpg" alt="Fish Curry Rice">
+                            </div>
+                            <div class="food-content">
+                                <h3>Fish Curry Rice</h3>
+                                <p>Goa's staple meal features fresh seafood in a coconut-based curry with a perfect balance of spicy, sour and sweet flavors. The tang comes from kokum or tamarind, and it's always served with steamed rice.</p>
+                                <div class="food-origin">
+                                    <i class="fas fa-history"></i> Traditional Goan
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Item 3 -->
+                        <div class="food-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="food-img">
+                                <img src="https://itsgoa.com/wp-content/uploads/2025/02/feni.webp" alt="Feni">
+                            </div>
+                            <div class="food-content">
+                                <h3>Feni</h3>
+                                <p>Goa's signature spirit is distilled from cashew apples or coconut palm. This potent drink has a distinctive aroma and strong flavor, best enjoyed as a "feni cocktail" with lime, soda, and spices.</p>
+                                <div class="food-origin">
+                                    <i class="fas fa-history"></i> Indigenous Goan Spirit
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Item 4 -->
+                        <div class="food-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="food-img">
+                                <img src="https://www.shutterstock.com/image-photo/bebinka-on-iron-platter-blurred-600nw-2310571557.jpg" alt="Bebinca">
+                            </div>
+                            <div class="food-content">
+                                <h3>Bebinca</h3>
+                                <p>This traditional Goan layered dessert has Portuguese roots. Made with coconut milk, eggs, sugar, and ghee, each layer is baked separately, resulting in a rich, caramelized cake with 7-16 layers.</p>
+                                <div class="food-origin">
+                                    <i class="fas fa-history"></i> Portuguese-Goan Dessert
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Item 5 -->
+                        <div class="food-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="food-img">
+                                <img src="https://www.thespruceeats.com/thmb/IWveLrjAPqPfYTM0_lwiaEv4Df0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/goan-prawn-balchao-1957451-hero-01-91d750c35f6545269350a483ef61b90f.jpg" alt="Prawn Balchão">
+                            </div>
+                            <div class="food-content">
+                                <h3>Prawn Balchão</h3>
+                                <p>A fiery pickle-like dish influenced by Portuguese "balichão," made with prawns in a tangy, spicy sauce of red chilies, vinegar, and spices. Traditionally preserved, now commonly served as a main course.</p>
+                                <div class="food-origin">
+                                    <i class="fas fa-history"></i> Indo-Portuguese Fusion
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Food Item 6 -->
+                        <div class="food-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="food-img">
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2Wg93FqeTv9ws1yP_h0NYJ0bAf34x8dPzYafWCS_3B6dthP2QUfCZH2H9RfFcbnVy2d-Vr3KPDZtiEvQ1oYatqCV_6zGOTwY4SNRnW-fDdgRLf82sQAi9sZKfWsjjM7bzkoTvdNb-Bv78/s1600/SAN-Main.jpg" alt="Sannas">
+                            </div>
+                            <div class="food-content">
+                                <h3>Sannas</h3>
+                                <p>These fluffy, slightly sweet rice cakes are a Goan staple, similar to idlis but with toddy or yeast for fermentation. Perfect accompaniment to spicy curries like sorpotel or vindaloo.</p>
+                                <div class="food-origin">
+                                    <i class="fas fa-history"></i> Traditional Goan Bread
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Religious Content -->
+                <div class="culture-content" id="religious-content">
+                    <div class="religious-grid">
+                        <!-- Religious Site 1 -->
+                        <div class="religious-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="religious-img">
+                                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/basilica-of-bom-jesus-goa-2-musthead-hero?qlt=82&ts=1726735448817" alt="Basilica of Bom Jesus">
+                            </div>
+                            <div class="religious-content">
+                                <span class="religious-type">Christian</span>
+                                <h3>Basilica of Bom Jesus</h3>
+                                <p>A UNESCO World Heritage Site built in 1605, this Baroque church houses the mortal remains of St. Francis Xavier. The intricate gilded altars and marble floor inlaid with precious stones are breathtaking.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Religious Site 2 -->
+                        <div class="religious-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="religious-img">
+                                <img src="https://www.explorebees.com/uploads/Mangueshi%20Temple%20(1).jpg" alt="Shri Mangeshi Temple">
+                            </div>
+                            <div class="religious-content">
+                                <span class="religious-type">Hindu</span>
+                                <h3>Shri Mangeshi Temple</h3>
+                                <p>One of Goa's largest and most visited temples dedicated to Lord Shiva (as Mangesh). The 450-year-old temple features a beautiful water tank, seven-story deepstambh, and exquisite architecture.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Religious Site 3 -->
+                        <div class="religious-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="religious-img">
+                                <img src="https://itsgoa.com/wp-content/uploads/2024/08/ksp_9227-1024x683.jpg" alt="Safa Masjid">
+                            </div>
+                            <div class="religious-content">
+                                <span class="religious-type">Islamic</span>
+                                <h3>Safa Masjid</h3>
+                                <p>Built in 1560 during the Adil Shahi rule, this historic mosque in Ponda showcases simple yet elegant Islamic architecture. The complex includes a bathing tank and stands amidst lush paddy fields.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Religious Site 4 -->
+                        <div class="religious-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="religious-img">
+                                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/84/ea/47/se-cathedral.jpg?w=1200&h=-1&s=1" alt="Se Cathedral">
+                            </div>
+                            <div class="religious-content">
+                                <span class="religious-type">Christian</span>
+                                <h3>Se Cathedral</h3>
+                                <p>One of Asia's largest churches, built to commemorate Portugal's victory over Muslim rulers. The Golden Bell in its tower is renowned for its rich tone. The main altar is dedicated to St. Catherine.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Religious Site 5 -->
+                        <div class="religious-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="religious-img">
+                                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/mahalasa-temple-goa-1-attr-hero?qlt=82&ts=1726735475030" alt="Mahalsa Temple">
+                            </div>
+                            <div class="religious-content">
+                                <span class="religious-type">Hindu</span>
+                                <h3>Mahalsa Temple</h3>
+                                <p>Dedicated to Mohini incarnation of Vishnu, this temple features unique octagonal shape and exquisite carvings. The temple chariot is used during the vibrant Zatra festival in March/April.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Religious Site 6 -->
+                        <div class="religious-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="religious-img">
+                                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/church-of-our-lady-of-rosary-goa-musthead-hero?qlt=82&ts=1726735414538" alt="Our Lady of the Rosary">
+                            </div>
+                            <div class="religious-content">
+                                <span class="religious-type">Christian</span>
+                                <h3>Our Lady of the Rosary</h3>
+                                <p>One of Goa's oldest churches (1543) with Manueline architecture. Located on Chapora hill, it offers panoramic views. The church was featured in the Bollywood movie "Dil Chahta Hai."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activities Content -->
+                <div class="culture-content" id="activities-content">
+                    <div class="activity-grid">
+                        <!-- Activity 1 -->
+                        <div class="activity-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="activity-img">
+                                <img src="https://www.fabhotels.com/blog/wp-content/uploads/2020/02/image-1.jpg" alt="Goa Carnival">
+                            </div>
+                            <div class="activity-content">
+                                <h3>Goa Carnival</h3>
+                                <p>Experience Goa's most famous pre-Lent festival with colorful parades, elaborate floats, music, and dance performances. The three-day celebration features King Momo declaring "Eat, drink and be merry."</p>
+                                <div class="activity-location">
+                                    <i class="fas fa-calendar-alt"></i> February/March (Pre-Lent)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 2 -->
+                        <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="activity-img">
+                                <img src="https://static.toiimg.com/thumb/msid-112596024,width-1280,height-720,resizemode-72/112596024.jpg" alt="Konkani Theatre">
+                            </div>
+                            <div class="activity-content">
+                                <h3>Konkani Theatre</h3>
+                                <p>Witness traditional Goan tiatr (theatre) performances in Konkani language, known for their music, drama and social commentary. These vibrant shows often include songs that advance the plot.</p>
+                                <div class="activity-location">
+                                    <i class="fas fa-map-marker-alt"></i> Various cultural centers
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 3 -->
+                        <div class="activity-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="activity-img">
+                                <img src="https://www.namasteindiatrip.org/wp-content/uploads/2022/10/Dashavatara-Dance.jpg" alt="Folk Dances">
+                            </div>
+                            <div class="activity-content">
+                                <h3>Folk Dances</h3>
+                                <p>Enjoy traditional dances like Dekhnni (Portuguese influence), Fugdi (women's circle dance), and Corredinho that showcase Goa's multicultural heritage through movement and music.</p>
+                                <div class="activity-location">
+                                    <i class="fas fa-map-marker-alt"></i> Cultural events & festivals
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 4 -->
+                        <div class="activity-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="activity-img">
+                                <img src="https://images.mid-day.com/images/images/2024/jul/kygo-stage-sunburn_d.jpg" alt="Sunburn Festival">
+                            </div>
+                            <div class="activity-content">
+                                <h3>Sunburn Festival</h3>
+                                <p>Asia's largest electronic dance music festival held annually in December. International DJs, stunning stage productions, and beachside parties attract music lovers from across the globe.</p>
+                                <div class="activity-location">
+                                    <i class="fas fa-calendar-alt"></i> December
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 5 -->
+                        <div class="activity-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="activity-img">
+                                <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/07/69/0e/54.jpg" alt="Spice Plantation Tour">
+                            </div>
+                            <div class="activity-content">
+                                <h3>Spice Plantation Tour</h3>
+                                <p>Explore lush spice farms in Goa's hinterlands. Learn about cultivation of cardamom, vanilla, pepper, and more. Includes traditional Goan lunch and elephant rides at some plantations.</p>
+                                <div class="activity-location">
+                                    <i class="fas fa-map-marker-alt"></i> Ponda, Sahakari Spice Farm
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity 6 -->
+                        <div class="activity-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="activity-img">
+                                <img src="https://www.treebo.com/blog/wp-content/uploads/2018/04/Best-Beach-Shacks-in-North-Goa.jpg" alt="Beach Shacks">
+                            </div>
+                            <div class="activity-content">
+                                <h3>Beach Shacks</h3>
+                                <p>Experience Goa's iconic beach shacks - temporary restaurants serving fresh seafood and cocktails right on the sand. Each December-April season brings new creative designs and menus.</p>
+                                <div class="activity-location">
+                                    <i class="fas fa-map-marker-alt"></i> All major beaches
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="section" id="map">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Explore Goa</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Discover the geography and regions of this beautiful coastal state</p>
+                
+                <div class="map-container" data-aos="fade-up" data-aos-delay="300">
+                    <iframe src="https://www.google.com/maps/d/u/8/embed?mid=13z3BWeydtsb1DqUiDn5cg3bHdDbJQd4&ehbc=2E312F" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="map-info" data-aos="fade-up" data-aos-delay="400">
+                    <div class="map-regions">
+                        <h3>Goa's Key Regions</h3>
+                        <ul>
+                            <li><strong>North Goa:</strong> Vibrant beaches, nightlife, water sports (Calangute, Baga, Anjuna)</li>
+                            <li><strong>South Goa:</strong> Serene beaches, luxury resorts (Palolem, Colva, Benaulim)</li>
+                            <li><strong>Old Goa:</strong> Historic churches and Portuguese heritage sites</li>
+                            <li><strong>Ponda Taluka:</strong> Spice plantations, temples, and wildlife sanctuaries</li>
+                            <li><strong>Western Ghats:</strong> Lush forests, waterfalls (Dudhsagar), and biodiversity</li>
+                        </ul>
+                    </div>
+                    <div class="map-tips">
+                        <h3>Travel Tips</h3>
+                        <ul>
+                            <li>Best time to visit: November to February (cooler weather)</li>
+                            <li>Monsoon season (June-September) offers lush greenery but limited beach activities</li>
+                            <li>Rent a scooter or bike to explore at your own pace</li>
+                            <li>North and South Goa are about 1.5 hours apart by road</li>
+                            <li>Domestic airport in Dabolim, international connections via Mumbai</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials-section" id="testimonials">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">What Our Travelers Say</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Hear from visitors who've experienced the magic of Goa</p>
+                
+                <div class="testimonials-container">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <p>"Our Goa trip was absolutely magical! The beaches were pristine, the food was incredible, and the heritage walks gave us such insight into Goan culture. The Luxury Retreat package exceeded all expectations with its private beach access and spa treatments. Can't wait to return!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Hb5xzFZJCTW4cMqmPwsgfw-gILUV7QevvQ&s" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>London, UK</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <p>"The Heritage Explorer package was perfect for us. We loved the guided tours of Old Goa's churches and the spice plantation visit. Our heritage hotel had so much character, and the food was amazing - especially the seafood vindaloo! The team at TravelTours made everything so easy."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQksR3Lt2Iy2rlmUKvJmc27GcXpe297gINhTA&s" alt="Michael & Priya">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael & Priya</h4>
+                                <p>New York, USA</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-content">
+                            <p>"As a solo female traveler, I felt completely safe exploring Goa. The locals were friendly, the food was amazing, and the beaches were breathtaking. The Adventure Seeker package was perfect - I especially loved the Dudhsagar trek and water sports. Already planning my next trip!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwgu1A5zgPSvfE83nurkuzNEoXs9DMNr8Ww&s" alt="Emma Rodriguez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Emma Rodriguez</h4>
+                                <p>Barcelona, Spain</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <p>"Our family of five had the best vacation in Goa thanks to the Family Fun package. The kids loved the water park and dolphin cruise, while we appreciated the comfortable family suite and kids' club. The beach was perfect for building sandcastles, and we all enjoyed trying Goan cuisine."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzIq-QqTj00t9RxAnn_cR7sEGkwkVCKKfibw&s" alt="The Chen Family">
+                            </div>
+                            <div class="author-info">
+                                <h4>The Chen Family</h4>
+                                <p>Singapore</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <p>"We chose Goa for our honeymoon and couldn't have been happier. The sunset cruise with cocktails was so romantic, and our beachfront villa was stunning. The staff helped arrange a private dinner on the beach with traditional Goan music - absolutely magical!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIe7dk_BOKcE9CBzegqtP9uMtgbMx9wWcDOQ&s" alt="Amit & Priya">
+                            </div>
+                            <div class="author-info">
+                                <h4>Amit & Priya</h4>
+                                <p>Mumbai, India</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-content">
+                            <p>"As a photography enthusiast, Goa was paradise. From the colorful houses in Fontainhas to the golden sunsets at Chapora Fort, every corner was photogenic. The photography tour organized by TravelTours took me to hidden gems I would've never found on my own."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQksR3Lt2Iy2rlmUKvJmc27GcXpe297gINhTA&s" alt="David Müller">
+                            </div>
+                            <div class="author-info">
+                                <h4>David Müller</h4>
+                                <p>Berlin, Germany</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section" id="contact">
+            <div class="newsletter-container">
+                <h2 data-aos="fade-up">Ready for Your Goan Adventure?</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Subscribe to our newsletter for exclusive deals, travel tips, and the latest updates on Goa's hottest destinations. Get 10% off your first booking when you sign up!</p>
+                <form class="newsletter-form" data-aos="fade-up" data-aos-delay="300">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
+                <h3>About TravelTours</h3>
+                <p>We specialize in creating unforgettable travel experiences in Goa, blending luxury, culture, and adventure for discerning travelers since 2005. Our local experts craft personalized itineraries to showcase the real Goa.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Goa</a></li>
+                    <li><a href="#places">Places to Visit</a></li>
+                    <li><a href="#packages">Tour Packages</a></li>
+                    <li><a href="#culture">Goan Culture</a></li>
+                    <li><a href="#map">Map</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 8, Yashoda Nagar, Nagpur, Maharashtra 403516, India</p>
+                <p><i class="fas fa-phone-alt"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope"></i> Traveltalesngp@gmail.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                
+                <h3 style="margin-top: 30px;">Awards & Recognition</h3>
+                <div class="awards">
+                    <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/3/2025/06/12124131/TL-Luxury-Awards-2025-1024x269.png" alt="Best Tour Operator 2023" style="height: 100px;">
+                    <img src="https://gteawards.com/wp-content/uploads/2025/04/Award-2025-450x450.png" alt="Sustainable Tourism Award" style="height: 100px;">
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelTales Goa. All Rights Reserved. | Designed with <i class="fas fa-heart"></i> for Goa</p>
+            <p style="margin-top: 10px;"><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Cancellation Policy</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Sticky Navigation on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.main-nav');
+            if(window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        
+        // Culture Tabs
+        const cultureTabs = document.querySelectorAll('.culture-tab');
+        const cultureContents = document.querySelectorAll('.culture-content');
+        
+        cultureTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                cultureTabs.forEach(t => t.classList.remove('active'));
+                cultureContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const contentId = tab.getAttribute('data-tab') + '-content';
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add floating animation to elements
+        const floatingElements = document.querySelectorAll('.floating');
+        floatingElements.forEach(el => {
+            el.style.animationDelay = Math.random() * 2 + 's';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+<head>
+    <title>Explore East India</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images\TT4.png">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('west-india-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+            position: static;
+            z-index: 1000;
+        }
+
+        h1 {
+            font-family: Waldecry;
+            font-size: 40px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d3cce3;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 1em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-family: Orpheus;
+            font-size: 1.8em;
+        }
+
+        .highlight {
+            color: #d3cce3;
+            font-weight: bold;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin: 1em;
+                padding: 1em;
+                width: 300px;
+                height: 400px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                position: relative;
+                overflow: hidden;
+                perspective: 1000px;
+                overflow-x: auto;
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            .card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+            }
+
+            .card:hover .card-inner {
+                transform: rotateY(180deg);
+            }
+
+            .card-front, .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 10px;
+            }
+
+            .card-front {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card-back {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                transform: rotateY(180deg);
+                padding: -0.1em;
+                box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .card img {
+                border-radius: 10px;
+                max-width: 100%;
+                max-height:100%;
+            }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #555;
+        }
+        .review {
+    background-color: #f1f1f1;
+    border-left: 4px solid #333;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.review h3 {
+    margin-top: 10px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #333;
+}
+
+.gallery img {
+    width: calc(20% - 10px);
+    margin: 5px;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+        .scroll-container {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .scroll-inner {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            scroll-behavior: smooth;
+        }
+
+        #states .state-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 1em;
+            padding: 1em;
+            width: 300px;
+            height: 370px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #states .state-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #states .state-card h4 {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            padding: 2em 0;
+            gap: 1em;
+        }
+
+        .gallery img {
+            border-radius: 10px;
+            min-width: 300px;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeIn 1s ease-in-out;
+            scroll-snap-align: center;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        /* General Section Styling */
+        #states {
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #fffacd, #f0e68c);
+            text-align: center;
+        }
+
+        #states h2 {
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }   
+
+        /* Scrollable Container */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-inner {
+            display: flex;
+        }
+
+        /* Individual State Cards */
+        .state-card {
+            width: 280px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .state-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card Anchor and Text */
+        .state-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .state-card h4 {
+            font-size: 1.5rem;
+            color: #8b0000;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .state-card p {
+            font-size: 0.95rem;
+            color: #333;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Card Images */
+        .state-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+        .scroll-container {
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        .state-card {
+            width: 240px;
+        }
+
+        #states h2 {
+            font-size: 2rem;
+        }
+    }
+
+        @media (max-width: 480px) {
+        .state-card {
+            width: 200px;
+        }
+
+        .state-card h4 {
+            font-size: 1.2rem;
+        }
+
+        .state-card p {
+            font-size: 0.85rem;
+        }
+
+        #states h2 {
+            font-size: 1.8rem;
+        }
+    }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF; /* Bootstrap primary color */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
+            transform: scale(1.05); /* Slightly enlarge the button on hover */
+        }
+
+        .button:active {
+            transform: scale(0.95); /* Slightly shrink the button on click */
+        }
+        #packages {
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #fffacd, #f0e68c);
+            text-align: center;
+        }
+        #packages h2 {
+            font-size: 2.5rem;
+            color: #8b4513;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        #handicrafts {
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #fffacd, #f0e68c);
+            text-align: center;
+        }
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff; /* Light background color */
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    padding: 20px; /* Padding for the grid */
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Gallery Item Styles */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for scaling and shadow */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    aspect-ratio: 16 / 9; /* Fixed aspect ratio for uniformity */
+}
+
+/* Image Styles */
+.gallery-item img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Fill the container */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+    display: block;
+    transition: transform 0.3s; /* Smooth image scaling */
+}
+
+/* Overlay Styles */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition for overlay */
+}
+
+/* Text Overlay */
+.gallery-item .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    font-size: 1.5em; /* Font size */
+    text-align: center; /* Center text */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition for text */
+}
+
+/* Hover Effects */
+.gallery-item:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Scale image on hover */
+}
+
+.gallery-item:hover::after {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.gallery-item:hover .overlay-text {
+    opacity: 1; /* Show text on hover */
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox:target {
+    display: flex;
+}
+/* General Styling for About Section */
+            #about {
+                background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+                border-radius: 20px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                max-width: 1000px;
+                margin: 50px auto;
+                line-height: 1.8;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #333;
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Section Title Styling */
+            #about h2 {
+                font-size: 2.0rem;
+                text-align: center;
+                position: relative;
+                color: #2b4b6f;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+        /* Animated Underline */
+        #about h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background-color: #00a8e8;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #about h2:hover::after {
+            width: 50%;
+        }
+
+        /* Paragraph Styling */
+        #about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* Highlighted Words */
+        #about p b {
+            color: #00a8e8;
+            font-weight: bold;
+        }
+
+        #about p i {
+            font-style: italic;
+            color: #007ea7;
+        }
+
+        /* Hover Effects on Paragraphs */
+        #about p:hover {
+            transform: translateY(-2px);
+            color: #222;
+            transition: all 0.3s ease;
+        }
+
+        /* Interactive Background Hover */
+        #about:hover {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        
+        /*Places*/
+        #places {
+    padding: 50px 20px;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4); /* Warm peach colors */
+    text-align: center;
+    color: #004d40; /* Dark teal color for text */
+}
+
+#places h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#places p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>"Eastern Odyssey: Discovering the Charms of East India"</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#states">States</a>
+            <a href="#places">Places to Travel</a>
+            <a href="#packages">Travel Packages</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#cuisine">Cuisine</a>
+            <a href="#festivals">Festivals</a>
+            <a href="#adventure">Adventure</a>
+            <a href="#handicrafts">Handicrafts</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About East India</h2>
+            <p><strong>East India</strong> is known for its <span class="highlight">rich cultural heritage</span>, stunning landscapes, and historical monuments. It includes the states of <span class="highlight">Odisha, Bihar, Jharkhand, West Bengal,</span> and the <span class="highlight">Union Territory of Andaman and Nicobar Islands</span>.</p>
+            <p>East India, a region rich in history, culture, and natural beauty, offers an unparalleled travel experience. From the vibrant cities to the serene beaches and lush forests, this region is a treasure trove of wonders waiting to be explored.</p>
+        
+            <h2>Majestic Mountains and Serene Landscapes</h2>
+            <p>Embark on an adventure to the breathtaking landscapes of <span class="highlight">Odisha and Jharkhand</span>. Witness the serene beaches of <span class="highlight">Andaman and Nicobar Islands</span>, tranquil lakes, and lush valleys that offer a perfect escape for nature lovers and adventure enthusiasts alike.</p>
+
+            <h2>Historical Marvels and Architectural Splendors</h2>
+            <p>Delve into the historical richness of East India with visits to iconic landmarks such as the <span class="highlight">Sun Temple in Konark</span>, the ancient city of <span class="highlight">Pataliputra in Bihar</span>, and the <span class="highlight">Victoria Memorial in Kolkata</span>. Each monument tells a story of a bygone era, reflecting the grandeur of India's royal past.</p>
+
+            <h2>Spiritual Sanctuaries and Sacred Sites</h2>
+            <p>East India is a spiritual haven with an abundance of revered temples and pilgrimage sites. Explore the holy city of <span class="highlight">Puri</span>, home to the famous <span class="highlight">Jagannath Temple</span>, and experience the spiritual energy that draws millions of pilgrims and seekers from around the world.</p>
+
+            <h2>Vibrant Culture and Festivals</h2>
+            <p>Immerse yourself in the vibrant cultural tapestry of East India, where traditional music, dance, and art forms come alive. Join in the festivities of <span class="highlight">Durga Puja, Chhath Puja,</span> and other colorful celebrations that showcase the region's rich cultural heritage.</p>
+
+            <h2>Exquisite Cuisine and Culinary Delights</h2>
+            <p>Savor the diverse and delectable cuisine of East India, from the mouthwatering sweets of <span class="highlight">Bengal</span> to the spicy curries of <span class="highlight">Odisha</span>. Each dish is a culinary masterpiece, reflecting the region's unique flavors and culinary traditions.</p>
+
+            <h2>Thriving Wildlife and Nature Reserves</h2>
+            <p>For wildlife enthusiasts, East India offers thrilling experiences in its national parks and wildlife sanctuaries. Encounter majestic elephants, tigers, and exotic bird species in the <span class="highlight">Sundarbans, Simlipal National Park,</span> and <span class="highlight">Betla National Park</span>.</p>
+
+            <h2>Warm Hospitality and Welcoming Locals</h2>
+            <p>One of the highlights of traveling in East India is the warm hospitality of its people. Experience the genuine warmth and friendliness of the locals, who will make your journey even more memorable with their hospitality and stories of the region's rich heritage.</p>
+        </section>
+    </div>
+
+    <section id="states">
+        <h2>States in East India</h2>
+        <div class="scroll-container">
+            <div class="scroll-inner">
+                <div class="state-card">
+                    <a href="Odisha\Odisha.html">
+                    <h4>Odisha</h4>
+                    <img src="Images\Odisha.jpg" alt="Odisha"><!-- //// > --> 
+                    </a>
+                    <p>Known for its ancient temples, stunning beaches, and rich cultural heritage.</p>
+                </div>
+                <div class="state-card">
+                    <a href="Bihar\Bihar.html">
+                    <h4>Bihar</h4>
+                    <img src="Images\Bihar.jpg" alt="Bihar">
+                    </a>
+                    <p>Home to historical sites, ancient monuments, and a vibrant cultural scene.</p>
+                </div>
+                <div class="state-card">
+                    <a href="Jharkhand\Jharkhand.html">
+                    <h4>Jharkhand</h4>
+                    <img src="Images\Jharkhand.jpg" alt="Jharkhand" >
+                    </a>
+                    <p>Known for its picturesque landscapes, tribal culture, and natural beauty.</p>
+                </div>
+                <div class="state-card">
+                    <a href="West Bengal\WestBengal.html">
+                    <h4>West Bengal</h4>
+                    <img src="Images\West Bengal.jpg" alt="West Bengal">
+                    </a>
+                    <p>Famous for its literary heritage, art, music, and scenic beauty.</p>
+                </div>
+                <div class="state-card">
+                    <a href="Andaman and Nicobar Islands\Andaman&Nicobar.html">
+                    <h4>Andaman and Nicobar Islands</h4>
+                    <img src="Images\andaman.jpg" alt="Andaman and Nicobar Islands">
+                    </a>
+                    <p>A tropical paradise with pristine beaches, coral reefs, and marine life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="places">
+        <h2>Places to Travel in East India</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Konark Sun Temple.jpg" alt="Konark Sun Temple">
+                        <h3>Konark Sun Temple, Odisha</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Konark Sun Temple</h3>
+                        <p>Explore the magnificent 13th-century Sun Temple, a UNESCO World Heritage Site known for its stunning architecture.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Nalanda.jpg" alt="Nalanda University">
+                        <h3>Nalanda University, Bihar</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Nalanda University</h3>
+                        <p>Visit the ancient ruins of Nalanda University, one of the oldest universities in the world and a center of learning in ancient India.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Victoria Memorial.jpg" alt="Victoria Memorial">
+                        <h3>Victoria Memorial, Kolkata</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Victoria Memorial</h3>
+                        <p>Marvel at the grandeur of the Victoria Memorial, a symbol of Kolkata's rich colonial history and architectural splendor.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Sundarbans.jpg" alt="Sundarbans">
+                        <h3>Sundarbans, West Bengal</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Sundarbans</h3>
+                        <p>Explore the Sundarbans, the largest mangrove forest in the world and home to the majestic Royal Bengal Tiger.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Havelock Island.webp" alt="Havelock Island">
+                        <h3>Havelock Island, Andaman</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Havelock Island</h3>
+                        <p>Relax on the pristine beaches of Havelock Island, known for its crystal-clear waters, coral reefs, and water sports activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages">
+        <h2>Travel Packages</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Odisha Heritage Tour.jpg">
+                        <h3>Odisha Heritage Tour</h3>
+                        <p>Rating: ⭐⭐⭐⭐⭐</p>  
+                        <p>Price: ₹15,000</p>
+                        <p>Duration: 7 Days, 6 Nights</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Explore the cultural and historical landmarks of Odisha, including the Sun Temple and Puri Beach.</p>
+                        <a href="https://example.com/book-Odisha" class="button">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Bihar Historical Journey.jpg">
+                        <h3>Bihar Historical Journey</h3>
+                        <p>Rating: ⭐⭐⭐⭐</p>
+                        <p>Price: ₹12,000</p>
+                        <p>Duration: 5 Days, 4 Nights</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Visit the ancient sites of Bihar, including Nalanda University and Bodh Gaya.</p>
+                        <a href="https://example.com/book-Bihar" class="button">Book Now</a>
+                    </div>
+                </div>
+            </div>    
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Jharkhand Nature Expedition.webp">
+                        <h3>Jharkhand Nature Expedition</h3>
+                        <p>Rating: ⭐⭐⭐⭐⭐</p> 
+                        <p>Price: ₹18,000</p>
+                        <p>Duration: 6 Days, 5 Nights</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Experience the natural beauty of Jharkhand with visits to national parks and waterfalls.</p>
+                        <a href="https://example.com/book-Jharkhand" class="button">Book Now</a>
+                    </div>
+                </div>    
+            </div>        
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\West Bengal Cultural Tour.jpg">
+                        <h3>West Bengal Cultural Tour</h3>
+                        <p>Rating: ⭐⭐⭐⭐</p> 
+                        <p>Price: ₹14,000</p>
+                        <p>Duration: 6 Days, 5 Nights</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Discover the cultural heritage of West Bengal, including Kolkata, Darjeeling, and Sundarbans.</p>
+                        <a href="https://example.com/book-Jharkhand" class="button">Book Now</a>
+                    </div>
+                </div>    
+            </div>        
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Andaman Island Adventure.avif">
+                        <h3>Andaman Island Adventure</h3>
+                        <p>Rating: ⭐⭐⭐⭐⭐</p> 
+                        <p>Price: ₹20,000</p>
+                        <p>Duration: 8 Days, 7 Nights</p>
+                    </div>
+                    <div class="card-back">
+                        <p>Enjoy an adventurous trip to the Andaman Islands, with activities like scuba diving and snorkeling.</p>
+                        <a href="https://example.com/book-Jharkhand" class="button">Book Now</a>
+                    </div>
+                </div>   
+            </div>    
+        </div>
+    </section>
+
+    <section id="cuisine">
+        <h2>Cuisine of East India</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Rasgulla.jpg" alt="Rasgulla" height="435px" width="350px">
+                        <h3>Rasgulla, West Bengal</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>A famous Bengali sweet made from chhena (Indian cottage cheese) and soaked in syrup.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Litti Chokha.jpg" alt="Litti Chokha">
+                        <h3>Litti Chokha, Bihar</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>A traditional dish consisting of dough balls stuffed with roasted gram flour and served with mashed vegetables.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Dalma.jpg" alt="Dalma" height="435px" width="350px">
+                        <h3>Dalma, Odisha</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>A wholesome dish made with lentils and a variety of vegetables, seasoned with traditional spices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Dhuska.jpg" alt="Dhuska">
+                        <h3>Dhuska, Jharkhand</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>A popular dish made from rice and lentil batter, deep-fried to perfection.</p>
+                    </div>
+                </div>
+            </div>       
+            <div class="card">
+                 <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Seafood.jpg" alt="Seafood">
+                        <h3>Seafood, Andaman</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Experience a variety of fresh seafood dishes, including fish, crabs, and prawns, straight from the Andaman waters.</p>
+                    </div>
+                 </div>
+            </div>
+    </section>
+
+    <section id="festivals">
+        <h2>Festivals of East India</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="Images\Durga Puja1.jpg" alt="Durga Puja" >
+                <h3>Durga Puja, West Bengal</h3>
+                <p>A grand celebration dedicated to Goddess Durga, marked by elaborate decorations and cultural performances.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Chhath Puja.jpg" alt="Chhath Puja" width="300px" height="350px">
+                <h3>Chhath Puja, Bihar</h3>
+                <p>A significant festival dedicated to the Sun God, celebrated with great devotion and rituals.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Rath Yatra.webp" alt="Rath Yatra" >
+                <h3>Rath Yatra, Odisha</h3>
+                <p>A major festival where deities are taken out in a grand procession, attracting millions of devotees.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Karma Festival.jpg" alt="Karma Festival">
+                <h3>Karma Festival, Jharkhand</h3>
+                <p>A tribal festival celebrating the harvest season, with traditional music, dance, and rituals.</p>
+            </div>
+            <div class="card">
+                <img src="Island Tourism Festival.avif" alt="Island Tourism Festival">
+                <h3>Island Tourism Festival, Andaman</h3>
+                <p>An annual festival showcasing the culture and traditions of the Andaman and Nicobar Islands, with various events and activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="adventure">
+        <h2>Adventure Activities in East India</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="Images\Scuba Diving.jpg" alt="Scuba Diving">
+                <h3>Scuba Diving, Andaman</h3>
+                <p>Explore the underwater world and vibrant coral reefs with scuba diving adventures in the Andaman Islands.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Jharkhand.jpg" alt="Trekking">
+                <h3>Trekking, Jharkhand</h3>
+                <p>Embark on exciting trekking trails through the dense forests and hills of Jharkhand.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Wildlife Safari.jpg" alt="Wildlife Safari">
+                <h3>Wildlife Safari, West Bengal</h3>
+                <p>Experience thrilling wildlife safaris in the Sundarbans, home to the Royal Bengal Tiger and diverse wildlife.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Rock Climbing.jpg" alt="Rock Climbing">
+                <h3>Rock Climbing, Bihar</h3>
+                <p>Challenge yourself with rock climbing adventures in the rugged terrains of Bihar.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Boating.jpg" alt="Boating">
+                <h3>Boating, Odisha</h3>
+                <p>Enjoy peaceful boating experiences in the beautiful lakes and rivers of Odisha.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="handicrafts">
+        <h2>Handicrafts of East India</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="Images\Pattachitra.cms" alt="Pattachitra">
+                <h3>Pattachitra, Odisha</h3>
+                <p>Explore the traditional Pattachitra paintings, known for their intricate details and mythological themes.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Madhubani Painting.jpg" alt="Madhubani Painting">
+                <h3>Madhubani Painting, Bihar</h3>
+                <p>Discover the vibrant Madhubani paintings, a traditional art form depicting folklore and daily life.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Bamboo Crafts.jpg" alt="Bamboo Crafts">
+                <h3>Bamboo Crafts, Jharkhand</h3>
+                <p>Admire the exquisite bamboo crafts, created by skilled artisans using traditional techniques.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Terracotta Art.jpg" alt="Terracotta Art">
+                <h3>Terracotta Art, West Bengal</h3>
+                <p>Marvel at the beautiful terracotta art, featuring intricate designs and cultural motifs.</p>
+            </div>
+            <div class="card">
+                <img src="Images\Shell Crafts.jpg" alt="Shell Crafts">
+                <h3>Shell Crafts, Andaman</h3>
+                <p>Explore the unique shell crafts, crafted from seashells and depicting marine life and island culture.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="Images\O1.jpg" alt="Odisha">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\O2.jpg" alt="Odisha">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\O3.jpg" alt="Odisha">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\O4.jpg" alt="Odisha">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\B1.jpg" alt="Bihar">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\B2.jpg" alt="Bihar">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\jharkhand-gallery.jpg" alt="Jharkhand">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\WB1.jpg" alt="West Bengal">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\WB2.jpg" alt="West Bengal">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\WB3.jpg" alt="West Bengal">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\AN1.jpg" alt="Andaman and Nicobar Islands">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\AN2.jpg" alt="Andaman and Nicobar Islands">
+        </div>
+        <div class="gallery-item">
+            <img src="Images\AN3.avif" alt="Andaman and Nicobar Islands">
+        </div>
+    </div>
+</section>
+    
+    
+<div class="gallery">
+    <div class="gallery-item">
+        <img src="Images\O1.jpg" alt="Beautiful Destination 1">
+        <div class="overlay-text">Beautiful Destination 1</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\O2.jpg" alt="Beautiful Destination 2">
+        <div class="overlay-text">Beautiful Destination 2</div>
+    </div>
+    <div class="gallery-item">
+        <img src="Images\O3.jpg" alt="Beautiful Destination 3">
+        <div class="overlay-text">Beautiful Destination 3</div>
+    </div>
+    <!-- Add more gallery items as needed -->
+</div>
+    
+    <div class="gallery">
+    <div class="gallery-item">
+        <img src="travel-image1.jpg" alt="Beautiful Destination 1">
+        <div class="overlay-text">Beautiful Destination 1</div>
+    </div>
+    <div class="gallery-item">
+        <img src="travel-image2.jpg" alt="Beautiful Destination 2">
+        <div class="overlay-text">Beautiful Destination 2</div>
+    </div>
+    <div class="gallery-item">
+        <img src="travel-image3.jpg" alt="Beautiful Destination 3">
+        <div class="overlay-text">Beautiful Destination 3</div>
+    </div>
+    <div class="gallery-item">
+        <img src="travel-image4.jpg" alt="Beautiful Destination 4">
+        <div class="overlay-text">Beautiful Destination 4</div>
+    </div>
+    <div class="gallery-item">
+        <img src="travel-image5.jpg" alt="Beautiful Destination 5">
+        <div class="overlay-text">Beautiful Destination 5</div>
+    </div>
+    <div class="gallery-item">
+        <img src="travel-image6.jpg" alt="Beautiful Destination 6">
+        <div class="overlay-text">Beautiful Destination 6</div>
+    </div>
+    <!-- Add more gallery items as needed -->
+</div>
+    
+    
+    <footer>
+        <p>&copy; 2024 East India Travel Guide. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

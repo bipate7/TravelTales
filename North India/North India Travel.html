@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Explore North India</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="icon" href="Images/TT4.png">
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: url('Images/Back1.jpg') no-repeat center center fixed;
+                background-size: cover;
+                color: #333;
+                text-decoration: none;
+            }
+
+            header {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 1em;
+                text-align: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+                position: static;
+                z-index: 1000;
+            }
+
+            h1 {
+                font-family: Monotes Italic;
+                font-size: 40px;
+                text-decoration: none;
+            }
+
+            nav a {
+                color: white;
+                margin: 0 1em;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+            nav a:hover {
+                color: #d3cce3;
+            }
+
+            section {
+                padding: 2em;
+                text-align: center;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8));
+                margin: 1em;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            #about {
+                font-family: Orpheus;
+                font-size: 1.2em;
+            }
+
+            #about h2 {
+                font-family: Orpheus;
+                font-size: 2.5rem;
+                text-align: center;
+                position: relative;
+                color: #2b4b6f;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-decoration: none;
+            }
+
+            .card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin: 1em;
+                padding: 1em;
+                width: 300px;
+                height: 400px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                position: relative;
+                overflow: hidden;
+                perspective: 1000px;
+                text-decoration: none;
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            .card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+            }
+
+            .card:hover .card-inner {
+                transform: rotateY(180deg);
+            }
+
+            .card-front, .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 10px;
+                text-decoration: none;
+            }
+
+            .card-front {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card-back {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                transform: rotateY(180deg);
+                padding: -0.1em;
+                box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.1);
+                text-decoration: none;
+            }
+
+            .card img {
+                border-radius: 10px;
+                max-width: 100%;
+            }
+
+            .card h3 {
+                font-size: 1.5em;
+                margin: 0.5em 0;
+            }
+
+            .card p {
+                font-size: 1em;
+                color: #555;
+            }
+            .scroll-container {
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+            }
+
+            .scroll-inner {
+                display: flex;
+                transition: transform 0.3s ease-in-out;
+                scroll-behavior: smooth;
+            }
+            #states .state-card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                margin: 1em;
+                padding: 1em;
+                width: 300px;
+                height: 300px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+            }
+
+            #states .state-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+
+            #states .state-card h4 {
+                font-size: 1.2em;
+                margin: 0.5em 0;
+                text-decoration: none;
+                
+            }
+
+            .gallery {
+                display: flex;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                padding: 2em 0;
+                gap: 1em;
+            }
+            .gallery img {
+                border-radius: 10px;
+                min-width: 300px;
+                height: 100%;
+                transition: transform 0.3s, box-shadow 0.3s;
+                animation: fadeIn 1s ease-in-out;
+                scroll-snap-align: center;
+            }
+            .gallery img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            }
+            footer {
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 1em;
+                text-align: center;
+                box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+            }
+            footer p {
+                margin: 0;
+                font-size: 1em;
+            }
+            .card-back a {
+                display: inline-block;          /* Makes the link behave like a button */
+                padding: 10px 10px;           /* Adds space inside the button */
+                background: linear-gradient(to right, #C62828, #FFEB3B);/* gradient background color */
+                color: white;                  /* White text color */
+                text-align: center;            /* Center the text */
+                text-decoration: none;         /* Remove underline from the link */
+                border-radius: 5px;           /* Rounded corners */
+                transition: background-color 0.3s; /* Smooth transition for hover effect */
+            }
+
+            .card-back a:hover {
+                background: linear-gradient(to right, #A50000, #FFEB3B); /* Darker red on hover */    /* Darker green on hover */
+            }
+            
+            /* General Styling for About Section */
+            #about {
+                background: linear-gradient(to bottom right, #f0f8ff, #e6f7ff);
+                border-radius: 20px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                max-width: 1000px;
+                margin: 50px auto;
+                line-height: 1.8;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: #333;
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Section Title Styling */
+            #about h2 {
+                font-size: 2.5rem;
+                text-align: center;
+                position: relative;
+                color: #2b4b6f;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+        /* Animated Underline */
+        #about h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background-color: #00a8e8;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #about h2:hover::after {
+            width: 50%;
+        }
+
+        /* Paragraph Styling */
+        #about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* Highlighted Words */
+        #about p b {
+            color: #00a8e8;
+            font-weight: bold;
+        }
+
+        #about p i {
+            font-style: italic;
+            color: #007ea7;
+        }
+
+        /* Hover Effects on Paragraphs */
+        #about p:hover {
+            transform: translateY(-2px);
+            color: #222;
+            transition: all 0.3s ease;
+        }
+
+        /* Interactive Background Hover */
+        #about:hover {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+        #about {
+            padding: 20px;
+        }
+
+        #about h2 {
+            font-size: 2rem;
+        }
+
+        #about p {
+            font-size: 1rem;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>"Discover the Wonders of North India: A Journey Through Timeless Treasures"</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#states">States</a>
+                <a href="#places">Places to Travel</a>
+                <a href="#packages">Travel Packages</a>
+                <a href="#Cuisine">Cuisine</a>
+                <a href="#Festivals">Festivals</a>
+                <a href="#Adventure">Adventure</a>
+                <a href="#Handicrafts">Handicrafts</a>
+                <a href="#Testimonials">Testimonials</a>
+                <a href="#Gallery">Gallery</a>
+            </nav>
+        </header>
+
+        <section id="about">
+    <h2><i>About North India</i></h2>
+    <p>North India is known for its rich cultural heritage, stunning landscapes, and historical monuments. It includes the states of Jammu & Kashmir, Himachal Pradesh, Punjab, Haryana, Uttarakhand, Delhi, Uttar Pradesh, and Rajasthan.</p>
+    <p>North India, a region rich in history, culture, and natural beauty, offers an unparalleled travel experience. From the majestic Himalayan peaks to the sacred rivers and bustling cities, this region is a treasure trove of wonders waiting to be explored.</p>
+    
+    <h3>Majestic Mountains and Serene Landscapes</h3>
+    <p>Embark on an adventure to the breathtaking landscapes of Himachal Pradesh and Uttarakhand. Witness the snow-capped Himalayas, tranquil lakes, and lush valleys that offer a perfect escape for nature lovers and adventure enthusiasts alike.</p>
+    
+    <h3>Historical Marvels and Architectural Splendors</h3>
+    <p>Delve into the historical richness of North India with visits to iconic landmarks such as the Taj Mahal in Agra, the Red Fort in Delhi, and the ancient forts and palaces of Rajasthan. Each monument tells a story of a bygone era, reflecting the grandeur of India's royal past.</p>
+    
+    <h3>Spiritual Sanctuaries and Sacred Sites</h3>
+    <p>North India is a spiritual haven with an abundance of revered temples, monasteries, and pilgrimage sites. Explore the holy cities of Varanasi and Haridwar, where the sacred Ganges River flows, and experience the spiritual energy that draws millions of pilgrims and seekers from around the world.</p>
+    
+    <h3>Vibrant Culture and Festivals</h3>
+    <p>Immerse yourself in the vibrant culture of North India, characterized by its colorful festivals, traditional music, and dance. Participate in the lively celebrations of Diwali, Holi, and Navratri, and savor the rich culinary delights that vary from region to region.</p>
+    
+    <h3>Wildlife and Adventure</h3>
+    <p>For the wildlife enthusiast, North India boasts several national parks and wildlife sanctuaries, such as Jim Corbett National Park and Ranthambore National Park, where you can encounter a diverse array of flora and fauna. Adventure seekers can indulge in activities like trekking, river rafting, and skiing in the mountainous regions.</p>
+    
+    <h3>Modern Marvels and Urban Adventures</h3>
+    <p>Experience the blend of modernity and tradition in the bustling cities of Delhi, Jaipur, and Chandigarh. These urban centers offer a mix of historical sites, contemporary architecture, shopping hubs, and vibrant nightlife.</p>
+</section>
+
+
+        <section id="states">
+        <h2>States in North India</h2>
+        <div class="cards">
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Jammu & Kashmir\Kashmir.html">
+                    <img src="Images\JandK.jpg" alt="Jammu & Kashmir" width="300px" height="280px">
+                    <h4>Jammu & Kashmir</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Himachal Pradesh\HimachalPradesh.html">
+                    <img src="Images\HimachalPradesh.cms" alt="Jammu & Kashmir" width="300px" height="280px">
+                    <h4>Himachal Pradesh</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Punjab\Punjab.html">
+                    <img src="Images\Punjab.webp" alt="Punjab" width="300px" height="280px">
+                    <h4>Punjab</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Haryana\Haryana.html">
+                    <img src="Images\H1.gif" alt="Haryana" width="300px" height="280px">
+                    <h4>Haryana</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Uttarakhand\Uttarakhand.html">
+                    <img src="Images\KEDARNATH.jpg" alt="Uttarakhand" width="300px" height="280px">
+                    <h4>Uttarakhand</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Delhi\Delhi.html">
+                    <img src="Images\Delhi1.jpg" alt="Delhi" width="300px" height="280px">
+                    <h4>Delhi</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Uttar Pradesh\UttarPradesh.html">
+                    <img src="Images\Varanasi.cms" alt="Uttar Pradesh" width="300px" height="280px">
+                    <h4>Uttar Pradesh</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="state-card">
+                <div class="pcard">
+                    <a href="Rajasthan\Rajasthan.html">
+                    <img src="Images\rajasthan-tours.jpg" alt="Rajasthan" width="300px" height="280px">
+                    <h4>Rajasthan</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+        
+    <section id="places">
+        <h2>Places to Travel in North India</h2>
+        <div class="cards">
+            <div class="scroll-container">
+        <div class="scroll-inner">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Tajmahal1.jpg" alt="Taj Mahal">
+                        <h3>Taj Mahal</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Agra, Uttar Pradesh</p>
+                        <p>The Taj Mahal is a UNESCO World Heritage Site and one of the most iconic monuments in India. It was built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal.</p>
+                        <p>How to go: Reach Agra by train, road, or air.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Shimla1.jpg" alt="Shimla">
+                        <h3>Shimla</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Himachal Pradesh</p>
+                        <p>Shimla, the capital of Himachal Pradesh, is a popular hill station known for its colonial architecture, beautiful landscapes, and pleasant climate.</p>
+                        <p>How to go: Reach Shimla by train, road, or air.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Manali2copy.jpg" alt="Manali">
+                        <h3>Manali</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Himachal Pradesh</p>
+                        <p>Manali is a popular hill station in Himachal Pradesh known for its scenic beauty, adventure sports, and as a gateway to Ladakh.</p>
+                        <p>How to go: Reach Manali by road or air. The nearest airport is in Bhuntar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\JaipurP.jpeg" alt="Jaipur">
+                            <h3>Jaipur</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Jaipur</h3>
+                            <p>Known as the Pink City, Jaipur is the capital of Rajasthan and home to stunning palaces, forts, and vibrant bazaars.</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\vara1.jpg" alt="Varanasi">
+                            <h3>Varanasi</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Varanasi</h3>
+                            <p>Situated on the banks of the Ganges River, Varanasi is one of the oldest living cities in the world and a major spiritual center in India.</p>
+                        </div>
+                    </div>
+            </div>
+            
+            <!-- Add more cards for other places -->
+        </div>
+    </section>
+
+        <section id="packages">
+            <h2>Travel Packages</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\golden-triangle-tour-india.jpg" alt="Package 1" width="550px" height="500px">
+                            <h3>Golden Triangle Tour</h3>
+                            <p>Price: ₹25,000</p>
+                            <p>Duration: 5 Days / 4 Nights</p>
+                            <p>Rating: ★★★★☆</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Golden Triangle Tour</h3>
+                            <p>Explore the iconic cities of Delhi, Agra, and Jaipur on this 5-day tour. Visit the Taj Mahal, Amber Fort, and more.</p>
+                            <a href="Golden Triangle Tour.html">Tap to know more. . .</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\RJT.png" alt="Package 2">
+                            <h3>Rajasthan Heritage Tour</h3>
+                            <p>Price: ₹40,000</p>
+                            <p>Duration: 8 Days / 7 Nights</p>
+                            <p>Rating: ★★★★★</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Rajasthan Heritage Tour</h3>
+                            <p>Experience the royal heritage of Rajasthan with visits to Jaipur, Udaipur, Jodhpur, and Jaisalmer.</p>
+                            <a href="Rajasthan Heritage Tour.html">Tap to know more. . .</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\Himalayan.webp" alt="Package 3">
+                            <h3>Himalayan Adventure</h3>
+                            <p>Price: ₹30,000</p>
+                            <p>Duration: 6 Days / 5 Nights</p>
+                            <p>Rating: ★★★★☆</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Himalayan Adventure</h3>
+                            <p>Embark on a thrilling adventure in the Himalayas with activities like trekking, river rafting, and more.</p>
+                            <a href="Himalayan Adventure.html">Tap to know more. . .</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="Images\Varanasia.jpg" alt="Package 4">
+                            <h3>Spiritual North India</h3>
+                            <p>Price: ₹20,000</p>
+                            <p>Duration: 4 Days / 3 Nights</p>
+                            <p>Rating: ★★★★☆</p>
+                        </div>
+                        <div class="card-back">
+                            <h3>Spiritual North India</h3>
+                            <p>Discover the spiritual heart of North India with visits to Varanasi, Haridwar, and Rishikesh.</p>
+                            <a href="Spiritual North India.html">Tap to know more. . .</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+        <section id="cuisine">
+        <h2>North Indian Cuisine</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images/Butter Chicken.jpg" alt="Butter Chicken">
+                        <h3>Butter Chicken</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Butter Chicken is a popular dish in North Indian cuisine, known for its creamy tomato-based gravy and tender chicken pieces.</p>
+                        <p>Famous In: Punjab</p>
+                    </div>
+                </div>
+            </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Rogan Josh.jpg" alt="Rogan Josh">
+                    <h3>Rogan Josh</h3>
+                </div>
+                <div class="card-back">
+                    <p>Rogan Josh is a signature dish from Kashmir, made with tender lamb cooked in a rich, aromatic curry.</p>
+                    <p>Famous In: Kashmir</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Chole Bhature.jpg" alt="Chole Bhature">
+                    <h3>Chole Bhature</h3>
+                </div>
+                <div class="card-back">
+                    <p>Chole Bhature is a popular street food from Delhi, consisting of spicy chickpeas (chole) served with fried bread (bhature).</p>
+                    <p>Famous In: Delhi</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Sarson da Saag.jpg" alt="Makki di Roti & Sarson da Saag">
+                    <h3>Makki di Roti & Sarson da Saag</h3>
+                </div>
+                <div class="card-back">
+                    <p>A traditional Punjabi dish made of maize flour bread (makki di roti) served with mustard greens (sarson da saag).</p>
+                    <p>Famous In: Punjab</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Dum Aloo.jpg" alt="Dum Aloo">
+                    <h3>Dum Aloo</h3>
+                </div>
+                <div class="card-back">
+                    <p>Dum Aloo is a popular dish in Kashmir, made with baby potatoes cooked in a rich, spicy yogurt-based gravy.</p>
+                    <p>Famous In: Kashmir</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Litti Chokha1.jpg" alt="Litti Chokha">
+                    <h3>Litti Chokha</h3>
+                </div>
+                <div class="card-back">
+                    <p>Litti Chokha is a traditional dish from Bihar, consisting of wheat balls stuffed with sattu, served with mashed vegetables (chokha).</p>
+                    <p>Famous In: Bihar</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more cuisine cards as needed -->
+    </div>
+</section>
+
+
+<section id="festivals">
+    <h2>Festivals of North India</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Diwali.jpg" alt="Diwali">
+                    <h3>Diwali</h3>
+                </div>
+                <div class="card-back">
+                    <p>Diwali, the Festival of Lights, is celebrated across North India with grand festivities, fireworks, and the lighting of lamps.</p>
+                    <p>Celebrated In: All North Indian States</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Holi.jpg" alt="Holi">
+                    <h3>Holi</h3>
+                </div>
+                <div class="card-back">
+                    <p>Holi is the festival of colors, celebrated with vibrant hues, music, dance, and traditional sweets.</p>
+                    <p>Celebrated In: All North Indian States</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Navratri.png" alt="Navratri">
+                    <h3>Navratri</h3>
+                </div>
+                <div class="card-back">
+                    <p>Navratri is a nine-night festival dedicated to Goddess Durga, celebrated with dance, fasting, and prayers.</p>
+                    <p>Celebrated In: Uttar Pradesh, Delhi, Himachal Pradesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Baisakhi.webp" alt="Baisakhi">
+                    <h3>Baisakhi</h3>
+                </div>
+                <div class="card-back">
+                    <p>Baisakhi is a harvest festival celebrated with great zeal in Punjab, marking the beginning of the harvest season.</p>
+                    <p>Celebrated In: Punjab</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Lohri.avif" alt="Lohri">
+                    <h3>Lohri</h3>
+                </div>
+                <div class="card-back">
+                    <p>Lohri is a popular winter festival in Punjab, celebrated with bonfires, dance, and traditional foods.</p>
+                    <p>Celebrated In: Punjab</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Dussehra.jpg" alt="Dussehra">
+                    <h3>Dussehra</h3>
+                </div>
+                <div class="card-back">
+                    <p>Dussehra, also known as Vijayadashami, celebrates the victory of good over evil and is marked by the burning of effigies of Ravana.</p>
+                    <p>Celebrated In: Uttar Pradesh, Himachal Pradesh, Delhi</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more festival cards as needed -->
+    </div>
+</section>
+
+
+<section id="adventure">
+    <h2>Adventure Activities in North India</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/trekking.jpg" alt="Trekking">
+                    <h3>Trekking</h3>
+                </div>
+                <div class="card-back">
+                    <p>Experience the thrill of trekking in the Himalayan ranges of Himachal Pradesh and Uttarakhand.</p>
+                    <p>Best Locations: Himachal Pradesh, Uttarakhand</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/river rafting.jpg" alt="River Rafting">
+                    <h3>River Rafting</h3>
+                </div>
+                <div class="card-back">
+                    <p>Enjoy the adrenaline rush of river rafting in the turbulent waters of the Ganges in Rishikesh.</p>
+                    <p>Best Location: Rishikesh, Uttarakhand</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/skiing.jpg" alt="Skiing">
+                    <h3>Skiing</h3>
+                </div>
+                <div class="card-back">
+                    <p>Ski down the snowy slopes of Auli, a popular skiing destination in Uttarakhand.</p>
+                    <p>Best Location: Auli, Uttarakhand</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/paragliding.webp" alt="Paragliding">
+                    <h3>Paragliding</h3>
+                </div>
+                <div class="card-back">
+                    <p>Experience the thrill of flying over the mountains with paragliding in Bir-Billing.</p>
+                    <p>Best Location: Bir-Billing, Himachal Pradesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Camping.webp" alt="Camping">
+                    <h3>Camping</h3>
+                </div>
+                <div class="card-back">
+                    <p>Enjoy a night under the stars with camping in the valleys of Himachal Pradesh.</p>
+                    <p>Best Location: Himachal Pradesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Bungee Jumping.jpg" alt="Bungee Jumping">
+                    <h3>Bungee Jumping</h3>
+                </div>
+                <div class="card-back">
+                    <p>Get your adrenaline pumping with bungee jumping in Rishikesh, the adventure capital of India.</p>
+                    <p>Best Location: Rishikesh, Uttarakhand</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more adventure cards as needed -->
+    </div>
+</section>
+
+
+<section id="handicrafts">
+    <h2>Handicrafts of North India</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Pashmina Shawls.jpeg" alt="Pashmina Shawls">
+                    <h3>Pashmina Shawls</h3>
+                </div>
+                <div class="card-back">
+                    <p>Pashmina shawls are luxurious and soft, handwoven from fine wool in Kashmir.</p>
+                    <p>Origin: Kashmir</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Phulkari Embroidery.webp" alt="Phulkari Embroidery">
+                    <h3>Phulkari Embroidery</h3>
+                </div>
+                <div class="card-back">
+                    <p>Phulkari is a traditional embroidery art from Punjab, known for its intricate floral patterns.</p>
+                    <p>Origin: Punjab</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Chikankari.webp" alt="Chikankari">
+                    <h3>Chikankari</h3>
+                </div>
+                <div class="card-back">
+                    <p>Chikankari is a delicate and artful embroidery style from Lucknow, featuring intricate patterns.</p>
+                    <p>Origin: Uttar Pradesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/brassware.jpg" alt="Brassware">
+                    <h3>Brassware</h3>
+                </div>
+                <div class="card-back">
+                    <p>Moradabad is famous for its brassware, including statues, lamps, and utensils.</p>
+                    <p>Origin: Uttar Pradesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Wood Carvings.avif" alt="Wood Carvings">
+                    <h3>Wood Carvings</h3>
+                </div>
+                <div class="card-back">
+                    <p>Kashmiri wood carvings are known for their intricate details, often seen in furniture and decor items.</p>
+                    <p>Origin: Kashmir</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="Images/Bamboo Crafts2.jpg" alt="Bamboo Crafts">
+                    <h3>Bamboo Crafts</h3>
+                </div>
+                <div class="card-back">
+                    <p>Bamboo crafts from Uttarakhand include baskets, furniture, and decorative items, showcasing local craftsmanship.</p>
+                    <p>Origin: Uttarakhand</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more handicraft cards as needed -->
+    </div>
+</section>
+
+
+<section id="testimonials">
+    <h2>What Our Travelers Say</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>John Doe</h3>
+                    <p>"My trip to Rajasthan was nothing short of magical. The forts, palaces, and the desert made it an unforgettable experience."</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Jane Smith</h3>
+                    <p>"Exploring the Himalayas was a dream come true. The trekking routes and the serene beauty of the mountains left me speechless."</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>David Brown</h3>
+                    <p>"The spiritual vibe of Varanasi is unmatched. Witnessing the Ganga Aarti was a deeply moving experience."</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more testimonial cards -->
+    </div>
+</section>
+
+        <footer>
+            <p>© 2024 TravlesTales. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
+
+
+
+

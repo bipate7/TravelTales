@@ -1,0 +1,1909 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Triangle Tour - Discover India's Heritage | TravelTrek</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2a9d8f;
+            --secondary: #264653;
+            --accent: #e9c46a;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9f7f1;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Background Patterns */
+        .bg-pattern {
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+        
+        .bg-pattern-2 {
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-2.png');
+        }
+        
+        .bg-pattern-3 {
+            background-image: url('https://www.transparenttextures.com/patterns/rice-paper-3.png');
+        }
+        
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+            animation: zoomInOut 20s infinite alternate;
+        }
+        
+        @keyframes zoomInOut {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        .tour-highlight-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tour-highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .booking-card {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            background-color: white;
+        }
+        
+        .price-display {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #238f82;
+            border-color: #238f82;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(42, 157, 143, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .text-center .section-title:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .tour-plan-day {
+            margin-bottom: 2rem;
+            border-left: 3px solid var(--primary);
+            padding-left: 25px;
+            position: relative;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tour-plan-day:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 25px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+        }
+        
+        .review-card {
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .star-rating span {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .star-rating span:hover,
+        .star-rating span.active {
+            color: var(--accent);
+        }
+        
+        .similar-tour-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+            flex: 0 0 300px;
+            border: none;
+            background-color: white;
+        }
+        
+        .similar-tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .scrolling-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .scrolling-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .scrolling-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .scrolling-wrapper::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .included-item, .excluded-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+        }
+        
+        .included-item:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success);
+        }
+        
+        .excluded-item:before {
+            content: '\f00d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #dc3545;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .city-highlight {
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .city-highlight:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+        
+        .city-highlight-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .food-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+            margin: 40px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            margin: 20px 0;
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: rgba(42, 157, 143, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-card:after {
+            content: '\201D';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: rgba(42, 157, 143, 0.1);
+            position: absolute;
+            bottom: -30px;
+            right: 10px;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .fact-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .fact-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .fact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .weather-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .weather-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .city-highlight {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-pattern">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Golden Triangle Tour" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">Golden Triangle Tour</h1>
+            <p class="hero-subtitle">Discover the Heart of India - Delhi, Agra & Jaipur</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <span class="badge bg-light text-dark fs-6 p-2"><i class="fas fa-clock me-2"></i>5 Days / 4 Nights</span>
+                <span class="badge bg-light text-dark fs-6 p-2"><i class="fas fa-map-marker-alt me-2"></i>Delhi, Agra, Jaipur</span>
+                <span class="badge bg-light text-dark fs-6 p-2"><i class="fas fa-star me-2"></i>4.8/5 (243 Reviews)</span>
+            </div>
+            <a href="#booking" class="btn btn-primary btn-lg mt-4 px-4 py-3">Book Now <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="#itinerary" class="btn btn-outline-light btn-lg mt-4 px-4 py-3 ms-3">Explore Itinerary</a>
+        </div>
+    </section>
+
+    <!-- Tour Highlights -->
+    <section class="container py-5">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title d-inline-block">Why Choose This Tour?</h2>
+                <p class="lead">Experience the perfect blend of history, culture, and architectural marvels</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="tour-highlight-card card h-100 p-4 text-center">
+                    <div class="highlight-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h4>Iconic Landmarks</h4>
+                    <p>Visit UNESCO World Heritage Sites including the Taj Mahal, Agra Fort, and Jaipur's Amber Fort. Witness architectural marvels that tell stories of India's glorious past.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="tour-highlight-card card h-100 p-4 text-center">
+                    <div class="highlight-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>Culinary Journey</h4>
+                    <p>Savor authentic Indian cuisine with special dining experiences and cooking demonstrations. From street food to royal thalis, discover India's diverse flavors.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="tour-highlight-card card h-100 p-4 text-center">
+                    <div class="highlight-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h4>Luxury Stays</h4>
+                    <p>4-star accommodations with authentic decor reflecting each city's unique character. Heritage properties in Jaipur, modern comforts in Delhi, and Taj-view rooms in Agra.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="tour-highlight-card card h-100 p-4 text-center">
+                    <div class="highlight-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4>Expert Guides</h4>
+                    <p>Knowledgeable local guides bringing history to life with fascinating stories and insights. Our guides are certified historians with years of experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Highlights -->
+    <section class="container py-5 bg-pattern-2">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="section-title d-inline-block">Discover the Three Jewels</h2>
+                <p class="lead">Each city in the Golden Triangle offers unique experiences</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="city-highlight" style="background-image: url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="city-highlight-content">
+                        <h3>Delhi</h3>
+                        <p>The bustling capital where ancient and modern India collide. Explore Mughal monuments, British-era architecture, and vibrant markets.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark">Red Fort</span>
+                            <span class="badge bg-light text-dark">Qutub Minar</span>
+                            <span class="badge bg-light text-dark">Chandni Chowk</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="city-highlight" style="background-image: url('https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')">
+                    <div class="city-highlight-content">
+                        <h3>Agra</h3>
+                        <p>Home to the iconic Taj Mahal, this Mughal city showcases the pinnacle of Islamic architecture in India.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark">Taj Mahal</span>
+                            <span class="badge bg-light text-dark">Agra Fort</span>
+                            <span class="badge bg-light text-dark">Fatehpur Sikri</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="city-highlight" style="background-image: url('https://images.unsplash.com/photo-1582972236019-ea9eab4b8e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                    <div class="city-highlight-content">
+                        <h3>Jaipur</h3>
+                        <p>The Pink City of Rajasthan, known for its majestic forts, palaces, and vibrant culture.</p>
+                        <div class="d-flex flex-wrap gap-2 mt-2">
+                            <span class="badge bg-light text-dark">Amber Fort</span>
+                            <span class="badge bg-light text-dark">Hawa Mahal</span>
+                            <span class="badge bg-light text-dark">City Palace</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Details & Booking -->
+    <section class="container py-5" id="booking">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <h2 class="section-title">Tour Overview</h2>
+                <p class="lead">The Golden Triangle tour is India's most popular tourist circuit, connecting the capital city Delhi with Agra (home of the Taj Mahal) and Jaipur (the Pink City) in Rajasthan. This journey through North India offers a perfect introduction to the country's rich history, diverse cultures, and architectural wonders.</p>
+                
+                <div class="video-container mt-4">
+                    <iframe src="https://www.youtube.com/embed/ixIzimI35SE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <h3 class="mt-5 mb-4">Detailed Itinerary</h3>
+                
+                <div class="timeline" id="itinerary">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 1: Arrival in Delhi - The Capital Experience</strong></h4>
+                            <p>Your journey begins in Delhi, where our representative will greet you at the airport. After settling into your hotel, embark on a guided tour of Old Delhi, visiting:</p>
+                            <ul>
+                                <li><strong>Red Fort:</strong> The magnificent 17th-century Mughal fortress</li>
+                                <li><strong>Jama Masjid:</strong> India's largest mosque with capacity for 25,000 worshippers</li>
+                                <li><strong>Chandni Chowk:</strong> The bustling wholesale market dating back to the 17th century</li>
+                            </ul>
+                            <p>Experience the contrast with New Delhi as you see:</p>
+                            <ul>
+                                <li><strong>India Gate:</strong> War memorial arch inspired by Paris's Arc de Triomphe</li>
+                                <li><strong>Rashtrapati Bhavan:</strong> The President's House with its 340 rooms</li>
+                                <li><strong>Humayun's Tomb:</strong> Precursor to the Taj Mahal and UNESCO World Heritage Site</li>
+                            </ul>
+                            <p>Enjoy a welcome dinner with traditional dance performances at a heritage haveli.</p>
+                            <p><strong>Overnight:</strong> The Imperial Delhi or similar (5-star heritage property)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 2: Delhi to Agra - The Taj Mahal Awaits</strong></h4>
+                            <p>Morning drive to Agra (approx. 3 hours via the Yamuna Expressway). After lunch, visit:</p>
+                            <ul>
+                                <li><strong>Taj Mahal at sunset:</strong> Witness the marble glow golden as the sun sets. Learn the romantic story behind Shah Jahan's tribute to his wife Mumtaz Mahal. Our guide will show you the perfect photography spots and explain the intricate pietra dura inlay work.</li>
+                                <li><strong>Agra Fort:</strong> This massive red sandstone fortress offers stunning views of the Taj from its balconies. Learn about Emperor Shah Jahan's imprisonment here by his son Aurangzeb.</li>
+                            </ul>
+                            <p>Evening at leisure to explore local markets for marble handicrafts or enjoy spa services at your hotel.</p>
+                            <p><strong>Overnight:</strong> Trident Agra or similar (with views of the Taj Mahal)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 3: Agra to Jaipur via Fatehpur Sikri</strong></h4>
+                            <p>Early morning optional visit to see the Taj Mahal at sunrise when the marble appears pink in the morning light (highly recommended). Then drive to Jaipur, stopping at:</p>
+                            <ul>
+                                <li><strong>Fatehpur Sikri:</strong> The abandoned Mughal city built by Emperor Akbar in 1571. Explore the stunning Jama Masjid, Buland Darwaza (54m high gateway), and the tomb of Sufi saint Salim Chishti.</li>
+                            </ul>
+                            <p>Continue to Jaipur (approx. 4 hours), stopping for lunch at a countryside resort. Arrive in Jaipur and check into your heritage-style hotel.</p>
+                            <p>Evening free to relax or explore the vibrant local bazaars for textiles, jewelry, and handicrafts.</p>
+                            <p><strong>Overnight:</strong> Alsisar Haveli or similar (heritage property)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 4: Jaipur - The Pink City</strong></h4>
+                            <p>Full day exploring Jaipur:</p>
+                            <ul>
+                                <li><strong>Amber Fort:</strong> Ride elephants (or jeeps) up to this hilltop fort with its mirrored halls and stunning views. The fort's construction began in 1592 and showcases both Hindu and Mughal architectural styles.</li>
+                                <li><strong>Hawa Mahal:</strong> The iconic "Palace of Winds" with its 953 windows designed for royal ladies to observe street life unseen.</li>
+                                <li><strong>City Palace:</strong> The royal residence with museums displaying weapons, costumes, and manuscripts. See the world's largest silver vessels in the palace.</li>
+                                <li><strong>Jantar Mantar:</strong> The fascinating 18th-century astronomical observatory with massive instruments that still provide accurate predictions.</li>
+                            </ul>
+                            <p>Enjoy a special Rajasthani thali dinner with folk music and dance performances at a heritage property.</p>
+                            <p><strong>Overnight:</strong> Alsisar Haveli or similar</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot">5</div>
+                        <div class="timeline-content">
+                            <h4><strong>Day 5: Jaipur to Delhi - Departure</strong></h4>
+                            <p>Morning visit to a local artisan workshop to see:</p>
+                            <ul>
+                                <li><strong>Block printing:</strong> Watch artisans create intricate patterns using traditional wooden blocks</li>
+                                <li><strong>Gem cutting:</strong> Jaipur is famous for its gemstone industry - see how raw stones are transformed into jewels</li>
+                            </ul>
+                            <p>Drive back to Delhi (approx. 5 hours) with lunch en route at a countryside resort. Transfer to airport for your onward journey, taking unforgettable memories of India's Golden Triangle.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="mt-5 mb-4">Photo Gallery</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Taj Mahal" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Taj Mahal at Sunrise</h5>
+                                <p class="small text-muted">Witness the marble glow pink in the morning light</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1582972236019-ea9eab4b8e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Amber Fort" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Amber Fort Elephant Ride</h5>
+                                <p class="small text-muted">Ascend to the fort in royal style</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Delhi Red Fort" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Red Fort, Delhi</h5>
+                                <p class="small text-muted">The seat of Mughal power for 200 years</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1552911073-52527bab4465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Jaipur Hawa Mahal" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Hawa Mahal, Jaipur</h5>
+                                <p class="small text-muted">The iconic Palace of Winds facade</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Agra Fort" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Agra Fort</h5>
+                                <p class="small text-muted">Red sandstone fortress with Taj views</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1632495288245-81aa2a1a8b3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fatehpur Sikri" class="img-fluid rounded">
+                            <div class="p-3">
+                                <h5>Fatehpur Sikri</h5>
+                                <p class="small text-muted">Akbar's abandoned capital city</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <h3 class="mb-3">Included</h3>
+                        <ul class="list-unstyled">
+                            <li class="included-item">4 nights accommodation in 4-star hotels with daily breakfast</li>
+                            <li class="included-item">3 dinners at specialty restaurants (Day 1, 2, 4)</li>
+                            <li class="included-item">All transfers and sightseeing by private air-conditioned Toyota Innova (up to 3 guests) or Tempo Traveler (4+ guests)</li>
+                            <li class="included-item">Entrance fees to all monuments as per itinerary</li>
+                            <li class="included-item">Professional English-speaking guides at each location (specialized in history/architecture)</li>
+                            <li class="included-item">Elephant ride at Amber Fort (subject to availability) or jeep alternative</li>
+                            <li class="included-item">Traditional welcome with flower garlands</li>
+                            <li class="included-item">Mineral water bottles daily (2 per person)</li>
+                            <li class="included-item">All currently applicable taxes</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="mb-3">Not Included</h3>
+                        <ul class="list-unstyled">
+                            <li class="excluded-item">International/Domestic flights and airport taxes</li>
+                            <li class="excluded-item">Travel insurance (highly recommended)</li>
+                            <li class="excluded-item">Lunches and beverages (except where specified)</li>
+                            <li class="excluded-item">Personal expenses (laundry, phone calls, etc.)</li>
+                            <li class="excluded-item">Camera/video fees at monuments (where applicable)</li>
+                            <li class="excluded-item">Tips for guides and drivers (suggested ₹500/day for guide, ₹300/day for driver)</li>
+                            <li class="excluded-item">Any services not mentioned in inclusions</li>
+                            <li class="excluded-item">Visa fees for India</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Cultural Experiences -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Cultural Experiences</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Rajasthani Folk Dance">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rajasthani Folk Performance</h5>
+                                        <p class="card-text">Enjoy an evening of traditional Kalbeliya dance and folk music during your Jaipur dinner. Watch fire dancers and puppeteers perform ancient art forms.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" class="card-img-top" alt="Cooking Class">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Indian Cooking Demonstration</h5>
+                                        <p class="card-text">Learn to make authentic butter chicken and naan bread with our chef in Jaipur. Discover the secrets of Indian spices and cooking techniques.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top" alt="Market Tour">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Spice Market Tour</h5>
+                                        <p class="card-text">Explore Delhi's famous Khari Baoli spice market with our guide. Smell, taste and learn about the spices that define Indian cuisine.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Food Highlights -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Culinary Highlights</h3>
+                        <p class="lead">Experience India's diverse cuisine through these special meals included in your tour:</p>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="food-card">
+                                    <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2088&q=80" class="card-img-top" alt="Mughlai Cuisine">
+                                    <div class="card-body">
+                                        <h5>Mughlai Feast in Agra</h5>
+                                        <p>Dine on authentic Mughlai dishes that originated in the royal kitchens of the Mughal emperors - tender kebabs, rich kormas, and fragrant biryanis.</p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-light text-dark">Mutton Rogan Josh</span>
+                                            <span class="badge bg-light text-dark">Paneer Tikka</span>
+                                            <span class="badge bg-light text-dark">Sheermal Bread</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="food-card">
+                                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Rajasthani Thali">
+                                    <div class="card-body">
+                                        <h5>Rajasthani Thali in Jaipur</h5>
+                                        <p>Experience a traditional thali (platter) with over 12 different dishes served in small bowls, including dal baati churma, gatte ki sabzi, and ker sangri.</p>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <span class="badge bg-light text-dark">Laal Maas</span>
+                                            <span class="badge bg-light text-dark">Ghevar</span>
+                                            <span class="badge bg-light text-dark">Mawa Kachori</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Route Map -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Tour Route Map</h3>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m46!1m12!1m3!1d2243459.393316665!2d76.8139726!3d27.5277584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m31!3e0!4m5!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!3m2!1d28.6139391!2d77.2090212!4m5!1s0x397477a1d7e0e3c9%3A0x27a653956d3a2e54!2sAgra%2C%20Uttar%20Pradesh!3m2!1d27.1766701!2d78.00807449999999!4m5!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!3m2!1d26.9124336!2d75.7872709!4m5!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!3m2!1d28.6139391!2d77.2090212!5e0!3m2!1sen!2sin!4v1687422593848!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Travel Facts -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Travel Facts</h3>
+                        <div class="row g-4">
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">800 km</div>
+                                    <p>Total distance covered</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">3</div>
+                                    <p>UNESCO World Heritage Sites</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">12+</div>
+                                    <p>Historical monuments visited</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="fact-box">
+                                    <div class="fact-number">5</div>
+                                    <p>Different cuisines experienced</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Weather Guide -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Seasonal Weather Guide</h3>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="weather-card">
+                                    <div class="weather-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </div>
+                                    <h5>Winter (Oct-Mar)</h5>
+                                    <p>Pleasant 10-25°C<br>Ideal for sightseeing<br>Pack light layers</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="weather-card">
+                                    <div class="weather-icon">
+                                        <i class="fas fa-temperature-high"></i>
+                                    </div>
+                                    <h5>Summer (Apr-Jun)</h5>
+                                    <p>Hot 25-45°C<br>Early morning visits recommended<br>Stay hydrated</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="weather-card">
+                                    <div class="weather-icon">
+                                        <i class="fas fa-cloud-rain"></i>
+                                    </div>
+                                    <h5>Monsoon (Jul-Sep)</h5>
+                                    <p>Humid with showers 25-35°C<br>Fewer crowds<br>Carry rain gear</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="mb-4">Traveler Testimonials</h3>
+                        <div class="testimonial-card">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Thompson" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Sarah Thompson</h5>
+                                    <div class="text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small class="text-muted">London, UK • November 2022</small>
+                                </div>
+                            </div>
+                            <p>"This Golden Triangle tour exceeded all our expectations. The itinerary was perfectly paced, allowing us to experience each city's unique character without feeling rushed. Our guide in Agra, Ravi, brought the Taj Mahal's history to life with his storytelling. The heritage hotel in Jaipur was absolutely stunning - we felt like royalty! The cooking demonstration was a highlight we'll remember forever."</p>
+                        </div>
+                        
+                        <div class="testimonial-card mt-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h5 class="mb-0">Michael Chen</h5>
+                                    <div class="text-warning small">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <small class="text-muted">Sydney, Australia • February 2023</small>
+                                </div>
+                            </div>
+                            <p>"As first-time visitors to India, we couldn't have asked for a better introduction. The tour organization was flawless - from the punctual drivers to the knowledgeable guides. The sunset visit to the Taj Mahal was magical, and we appreciated the tips our guide gave us for the best photos. The only suggestion would be to include one more dinner to experience more local cuisine. We added the spice market tour which was fascinating!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Essential Information -->
+                <div class="mt-5">
+                    <h3 class="mb-4">Essential Information</h3>
+                    <div class="accordion" id="infoAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-calendar me-2"></i> Best Time to Visit
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>The ideal time for the Golden Triangle tour is from October to March when temperatures are pleasant (typically 10°C to 25°C). December and January can be cooler, especially in the mornings and evenings, so pack some light warm layers. This is peak tourist season, so monuments will be busier but the weather makes for comfortable sightseeing.</p>
+                                    <p>Summers (April-June) can be extremely hot (up to 45°C), making afternoon sightseeing challenging. However, this is when you'll find fewer crowds and better hotel rates. If traveling in summer, we recommend starting sightseeing very early in the morning.</p>
+                                    <p>Monsoon season (July-September) brings occasional showers but also lush green landscapes and dramatic skies. The rain typically comes in short bursts, allowing for sightseeing between showers. This is the least crowded time to visit.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-hiking me-2"></i> Physical Activity Level
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>This tour involves moderate physical activity. You should be comfortable walking 3-5 miles per day, often on uneven surfaces at historical sites. Some locations like Fatehpur Sikri and Amber Fort involve climbing steps and walking on cobblestones.</p>
+                                    <p>The Amber Fort elephant ride is optional (you can choose to walk or take a jeep instead). The walk up to the fort is about 10-15 minutes uphill. At the Taj Mahal, you'll walk about 1km from the gate to the mausoleum.</p>
+                                    <p>If you have mobility concerns, please let us know - we can arrange for wheelchairs at some sites (available for rent at Taj Mahal and Red Fort) and adjust the itinerary where possible. Many hotels have elevators, but some heritage properties may only have stairs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-tshirt me-2"></i> What to Pack
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li><strong>Clothing:</strong> Dress comfortably but modestly, especially when visiting religious sites (shoulders and knees should be covered). Light, breathable fabrics are ideal for most of the year. In winter (Dec-Jan), bring layers as mornings can be chilly.</li>
+                                        <li><strong>Footwear:</strong> Comfortable walking shoes with good support are essential. You'll be removing shoes at some religious sites, so slip-ons are convenient.</li>
+                                        <li><strong>Sun protection:</strong> A hat, sunglasses and sunscreen are recommended year-round. The sun can be intense even in winter months.</li>
+                                        <li><strong>Accessories:</strong> Many travelers find a scarf useful - for sun protection, covering your head in certain religious sites, and as an extra layer.</li>
+                                        <li><strong>Electronics:</strong> Universal power adapter (India uses 230V, Type D and Type M plugs), extra camera batteries/memory cards.</li>
+                                        <li><strong>Health items:</strong> Basic medications (pain relievers, stomach remedies), hand sanitizer, any prescriptions with copies.</li>
+                                        <li><strong>Other:</strong> Small backpack for daily essentials, reusable water bottle (we provide bottled water but this helps reduce plastic), travel umbrella if visiting in monsoon.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="fas fa-child me-2"></i> Traveling with Children
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes! Many families enjoy this tour. We offer discounted rates for children (5-11 years) and can adjust the pace for families. The elephant ride at Amber Fort and the colorful markets are particular favorites with kids.</p>
+                                    <p>For very young children, consider bringing:</p>
+                                    <ul>
+                                        <li>A lightweight stroller (though be aware some historical sites have uneven surfaces)</li>
+                                        <li>Favorite snacks (though Indian food is generally kid-friendly)</li>
+                                        <li>Small toys/activities for car rides between cities</li>
+                                    </ul>
+                                    <p>We can arrange for:</p>
+                                    <ul>
+                                        <li>Interconnecting rooms or family rooms (subject to availability)</li>
+                                        <li>Babysitting services at hotels if parents want an evening out</li>
+                                        <li>Child car seats (must be requested in advance)</li>
+                                        <li>Modified meal options for picky eaters</li>
+                                    </ul>
+                                    <p>Note that the legal age for elephant rides is 5 years. Younger children can ride in jeeps to Amber Fort.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="fas fa-exchange-alt me-2"></i> Cancellation Policy
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>We offer flexible cancellation policies:</p>
+                                    <ul>
+                                        <li><strong>Free cancellation</strong> up to 30 days before departure (full refund)</li>
+                                        <li><strong>15-29 days</strong> before departure: 75% refund</li>
+                                        <li><strong>7-14 days</strong> before departure: 50% refund</li>
+                                        <li><strong>Less than 7 days</strong>: no refund, but we can reschedule (fees may apply)</li>
+                                    </ul>
+                                    <p>For cancellations due to COVID-19 or other health emergencies, we offer:</p>
+                                    <ul>
+                                        <li>Full credit for future travel valid for 2 years</li>
+                                        <li>Option to transfer booking to another person</li>
+                                    </ul>
+                                    <p>We strongly recommend purchasing travel insurance that covers trip cancellation for unexpected circumstances. Some credit cards also offer cancellation coverage.</p>
+                                    <p>Note that airline cancellation policies may differ if you've booked flights through us.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <i class="fas fa-plane me-2"></i> Visa Requirements
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#infoAccordion">
+                                <div class="accordion-body">
+                                    <p>Most foreign nationals require a visa to enter India. The process is:</p>
+                                    <ol>
+                                        <li><strong>E-Visa:</strong> Available for citizens of 166 countries through the Indian government website. Processing takes 3-5 business days.</li>
+                                        <li><strong>Documents needed:</strong> Passport valid for 6+ months, recent photo, travel itinerary</li>
+                                        <li><strong>Fee:</strong> Varies by nationality (typically $25-100)</li>
+                                        <li><strong>Validity:</strong> 30 days to 1 year depending on visa type</li>
+                                    </ol>
+                                    <p>We recommend applying at least 2 weeks before travel. Some nationalities may need to apply through an embassy.</p>
+                                    <p>COVID-19 requirements (as of June 2023):</p>
+                                    <ul>
+                                        <li>No pre-departure testing required</li>
+                                        <li>No vaccination proof required</li>
+                                        <li>Health declaration form may be needed</li>
+                                    </ul>
+                                    <p>Check the latest requirements with your local Indian embassy as policies may change.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Booking Card -->
+            <div class="col-lg-4">
+                <div class="booking-card card">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h4 class="mb-0 text-center"><i class="fas fa-calendar-alt me-2"></i>Book Your Tour</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h3 class="price-display">₹25,000</h3>
+                            <p class="text-muted">per person (double occupancy)</p>
+                            <div class="d-flex justify-content-center gap-2 mb-3">
+                                <span class="badge bg-success"><i class="fas fa-star me-1"></i>4.8</span>
+                                <span class="badge bg-info text-dark"><i class="fas fa-users me-1"></i>Small Groups</span>
+                                <span class="badge bg-warning text-dark"><i class="fas fa-bolt me-1"></i>Instant Confirmation</span>
+                            </div>
+                        </div>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="tourDate" class="form-label">Select Tour Date</label>
+                                <input type="date" class="form-control" id="tourDate" required>
+                                <small class="text-muted">Tours depart every Monday and Friday</small>
+                            </div>
+                            
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-6">
+                                    <label for="adults" class="form-label">Adults (12+)</label>
+                                    <select class="form-select" id="adults">
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="children" class="form-label">Children (5-11)</label>
+                                    <select class="form-select" id="children">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Room Preference</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="roomType" id="doubleRoom" checked>
+                                    <label class="form-check-label" for="doubleRoom">
+                                        Double Room (1 bed)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="roomType" id="twinRoom">
+                                    <label class="form-check-label" for="twinRoom">
+                                        Twin Room (2 beds)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="roomType" id="singleRoom">
+                                    <label class="form-check-label" for="singleRoom">
+                                        Single Room (+₹8,000)
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="addons" class="form-label">Add-on Experiences</label>
+                                <select class="form-select" id="addons" multiple>
+                                    <option value="sunrise">Sunrise Taj Mahal Visit (+₹1,500)</option>
+                                    <option value="cooking">Rajasthani Cooking Class (+₹2,000)</option>
+                                    <option value="spa">Luxury Spa Package (+₹3,500)</option>
+                                    <option value="photoshoot">Professional Photo Shoot (+₹4,000)</option>
+                                    <option value="spice">Delhi Spice Market Tour (+₹1,200)</option>
+                                    <option value="guide">Private Guide Throughout (+₹6,000)</option>
+                                </select>
+                                <small class="text-muted">Hold Ctrl to select multiple options</small>
+                            </div>
+                            
+                            <div class="d-grid gap-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-lock me-2"></i>Book Now - ₹50,000
+                                </button>
+                                <button type="button" class="btn btn-outline-primary">
+                                    <i class="fas fa-heart me-2"></i>Save to Wishlist
+                                </button>
+                            </div>
+                            
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle me-2"></i> <strong>Flexible Booking:</strong> Free cancellation up to 30 days before departure
+                            </div>
+                            
+                            <div class="alert alert-warning">
+                                <i class="fas fa-bolt me-2"></i> <strong>Limited Availability:</strong> Only 3 spots left for July departures
+                            </div>
+                            
+                            <hr>
+                            
+                            <h5 class="mb-3">Payment Options</h5>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <img src="https://via.placeholder.com/40" alt="Visa" title="Visa">
+                                <img src="https://via.placeholder.com/40" alt="Mastercard" title="Mastercard">
+                                <img src="https://via.placeholder.com/40" alt="Amex" title="American Express">
+                                <img src="https://via.placeholder.com/40" alt="PayPal" title="PayPal">
+                                <img src="https://via.placeholder.com/40" alt="UPI" title="UPI">
+                            </div>
+                            
+                            <hr>
+                            
+                            <h5 class="mb-3">Need Help?</h5>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-phone-alt me-3 text-primary"></i>
+                                <div>
+                                    <small class="text-muted d-block">Call us 24/7</small>
+                                    <strong>+91 98765 43210</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-envelope me-3 text-primary"></i>
+                                <div>
+                                    <small class="text-muted d-block">Email us</small>
+                                    <strong>bookings@traveltour.com</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-comment me-3 text-primary"></i>
+                                <div>
+                                    <small class="text-muted d-block">Live chat</small>
+                                    <strong>Available 9AM-9PM</strong>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light py-3">
+                        <h5 class="mb-0"><i class="fas fa-percentage me-2"></i>Special Offers</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-success">
+                            <h6><i class="fas fa-gift me-2"></i> Early Bird Discount</h6>
+                            <p class="small mb-1">Book 90+ days in advance and save 15%</p>
+                            <a href="#" class="small">Use Code: <strong>EARLY15</strong></a>
+                        </div>
+                        <div class="alert alert-warning">
+                            <h6><i class="fas fa-users me-2"></i> Group Savings</h6>
+                            <p class="small mb-1">Groups of 4+ save 10% on total booking</p>
+                            <a href="#" class="small">Use Code: <strong>GROUP10</strong></a>
+                        </div>
+                        <div class="alert alert-info">
+                            <h6><i class="fas fa-umbrella-beach me-2"></i> Repeat Traveler</h6>
+                            <p class="small mb-1">5% discount for returning customers</p>
+                            <a href="#" class="small">Use Code: <strong>RETURN5</strong></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light py-3">
+                        <h5 class="mb-0"><i class="fas fa-clock me-2"></i>Tour Quick Facts</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-road me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Total Distance</h6>
+                                <p class="small mb-0">Approx. 800km by road</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-bus me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Transport</h6>
+                                <p class="small mb-0">Private AC vehicle with driver</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-hotel me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Accommodation</h6>
+                                <p class="small mb-0">4-star hotels (3 nights)<br>Heritage property (1 night)</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <i class="fas fa-utensils me-3 text-primary mt-1"></i>
+                            <div>
+                                <h6 class="mb-0">Meals</h6>
+                                <p class="small mb-0">4 breakfasts, 3 dinners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="container py-5 bg-pattern-3">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
+                <p class="lead">Rated 4.8/5 from 243 verified reviews</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card card h-100 p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Sarah Johnson</h5>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <small class="text-muted">USA • March 2023</small>
+                        </div>
+                    </div>
+                    <h5>"An unforgettable experience!"</h5>
+                    <p>The Golden Triangle tour exceeded all expectations. Our guide Raj was incredibly knowledgeable and made every site come alive with stories. The hotels were beautiful, especially the heritage property in Jaipur. Seeing the Taj Mahal at sunrise was worth every minute of lost sleep!</p>
+                    <div class="mt-auto pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <small class="text-muted">Verified booking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card card h-100 p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Michael Chen</h5>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <small class="text-muted">Australia • January 2023</small>
+                        </div>
+                    </div>
+                    <h5>"Perfect introduction to India"</h5>
+                    <p>As first-time visitors to India, this tour was the perfect introduction. The itinerary balanced sightseeing with free time. The cooking class add-on was a highlight - we're still making those recipes at home! Only suggestion would be to include one more dinner to experience more local cuisine.</p>
+                    <div class="mt-auto pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <small class="text-muted">Verified booking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="review-card card h-100 p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Elena Rodriguez" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Elena Rodriguez</h5>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <small class="text-muted">Spain • November 2022</small>
+                        </div>
+                    </div>
+                    <h5>"Exceeded all expectations"</h5>
+                    <p>Every detail was perfectly arranged - from the punctual drivers to the excellent guides. The Amber Fort elephant ride and the sunset Taj Mahal visit were magical. We added the photo shoot package and now have professional photos that capture these incredible memories. Highly recommend!</p>
+                    <div class="mt-auto pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <small class="text-muted">Verified booking</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-primary px-4 me-3">See All Reviews</button>
+            <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a Review</button>
+        </div>
+    </section>
+
+    <!-- Similar Tours -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title d-inline-block">You May Also Like</h2>
+                <p class="lead">Explore more incredible Indian journeys</p>
+            </div>
+        </div>
+        
+        <div class="scrolling-wrapper pb-4">
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1582972236019-ea9eab4b8e4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Rajasthan Cultural Tour">
+                <div class="card-body">
+                    <span class="badge bg-success mb-2">Bestseller</span>
+                    <h5 class="card-title">Rajasthan Cultural Tour</h5>
+                    <p class="card-text text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Jaipur, Udaipur, Jodhpur</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
+                            <span class="text-muted ms-2">(187)</span>
+                        </div>
+                        <div>
+                            <strong>₹38,000</strong>
+                            <span class="text-muted d-block small">7 days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2094&q=80" class="card-img-top" alt="Kerala Backwaters">
+                <div class="card-body">
+                    <h5 class="card-title">Kerala Backwaters Cruise</h5>
+                    <p class="card-text text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Cochin, Alleppey, Kumarakom</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.7</span>
+                            <span class="text-muted ms-2">(142)</span>
+                        </div>
+                        <div>
+                            <strong>₹32,000</strong>
+                            <span class="text-muted d-block small">6 days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1598940603846-a1edd0ef2574?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Himalayan Adventure">
+                <div class="card-body">
+                    <span class="badge bg-info text-dark mb-2">New</span>
+                    <h5 class="card-title">Himalayan Adventure</h5>
+                    <p class="card-text text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Shimla, Manali, Dharamshala</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
+                            <span class="text-muted ms-2">(96)</span>
+                        </div>
+                        <div>
+                            <strong>₹28,500</strong>
+                            <span class="text-muted d-block small">8 days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" class="card-img-top" alt="Extended Golden Triangle">
+                <div class="card-body">
+                    <h5 class="card-title">Golden Triangle with Varanasi</h5>
+                    <p class="card-text text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Delhi, Agra, Jaipur, Varanasi</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
+                            <span class="text-muted ms-2">(211)</span>
+                        </div>
+                        <div>
+                            <strong>₹42,000</strong>
+                            <span class="text-muted d-block small">9 days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+            
+            <div class="similar-tour-card card">
+                <img src="https://images.unsplash.com/photo-1585506942812-e72b29cef752?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" class="card-img-top" alt="Goa Beach Vacation">
+                <div class="card-body">
+                    <h5 class="card-title">Goa Beach Vacation</h5>
+                    <p class="card-text text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>North Goa & South Goa</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="text-warning"><i class="fas fa-star"></i> 4.6</span>
+                            <span class="text-muted ms-2">(178)</span>
+                        </div>
+                        <div>
+                            <strong>₹35,000</strong>
+                            <span class="text-muted d-block small">7 days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                    <a href="#" class="btn btn-sm btn-outline-primary w-100">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container py-5 bg-light">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+                <p class="lead">Everything you need to know about the Golden Triangle Tour</p>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                                <i class="fas fa-calendar me-2"></i> What is the best time of year for this tour?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The ideal time for the Golden Triangle tour is from October to March when temperatures are pleasant (typically 10°C to 25°C). December and January can be cooler, especially in the mornings and evenings. Summers (April-June) can be extremely hot (up to 45°C), while monsoon season (July-September) brings occasional showers but fewer crowds.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                <i class="fas fa-hiking me-2"></i> What is the physical activity level required?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>This tour involves moderate physical activity. You should be comfortable walking 3-5 miles per day, often on uneven surfaces at historical sites. The Amber Fort elephant ride is optional (you can choose to walk or take a jeep instead). For very young children, consider bringing a lightweight stroller for the sightseeing days. We can also arrange for wheelchairs at some sites and adjust the itinerary where possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                                <i class="fas fa-tshirt me-2"></i> What should I wear during the tour?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Dress comfortably but modestly, especially when visiting religious sites (shoulders and knees should be covered). Light, breathable fabrics are ideal. Comfortable walking shoes are essential. In winter (Dec-Jan), bring layers as mornings can be chilly. A hat, sunglasses and sunscreen are recommended year-round. Some travelers like to carry a scarf - useful for sun protection and for covering your head in certain religious sites.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+                                <i class="fas fa-child me-2"></i> Is the tour suitable for children?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseFour" class="accordion-collapse collapse" aria-labelledby="faqHeadingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes! Many families enjoy this tour. We offer discounted rates for children (5-11 years) and can adjust the pace for families. The elephant ride at Amber Fort and the colorful markets are particular favorites with kids. For very young children, consider bringing a lightweight stroller for the sightseeing days. We can also arrange for babysitting services at hotels if parents want an evening out.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
+                                <i class="fas fa-exchange-alt me-2"></i> What is the cancellation policy?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseFive" class="accordion-collapse collapse" aria-labelledby="faqHeadingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>We offer flexible cancellation policies:</p>
+                                <ul>
+                                    <li>Free cancellation up to 30 days before departure (full refund)</li>
+                                    <li>15-29 days before departure: 75% refund</li>
+                                    <li>7-14 days before departure: 50% refund</li>
+                                    <li>Less than 7 days: no refund, but we can reschedule (fees may apply)</li>
+                                </ul>
+                                <p>We strongly recommend purchasing travel insurance that covers trip cancellation for unexpected circumstances.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
+                                <i class="fas fa-plane me-2"></i> What are the visa requirements?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseSix" class="accordion-collapse collapse" aria-labelledby="faqHeadingSix" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Most foreign nationals require a visa to enter India. The process is straightforward:</p>
+                                <ol>
+                                    <li><strong>E-Visa:</strong> Available for citizens of 166 countries through the Indian government website</li>
+                                    <li><strong>Documents needed:</strong> Passport valid for 6+ months, recent photo, travel itinerary</li>
+                                    <li><strong>Fee:</strong> Varies by nationality (typically $25-100)</li>
+                                    <li><strong>Processing time:</strong> 3-5 business days</li>
+                                </ol>
+                                <p>We recommend applying at least 2 weeks before travel. Some nationalities may need to apply through an embassy.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
+                                <i class="fas fa-money-bill-wave me-2"></i> What currency should I bring?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseSeven" class="accordion-collapse collapse" aria-labelledby="faqHeadingSeven" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>The Indian Rupee (₹) is the local currency. We recommend:</p>
+                                <ul>
+                                    <li>Bring some USD/EUR to exchange upon arrival (better rates than in your home country)</li>
+                                    <li>Use ATMs to withdraw rupees (inform your bank of travel plans)</li>
+                                    <li>Credit cards are widely accepted in hotels and larger shops</li>
+                                    <li>Small change is useful for markets and tips</li>
+                                </ul>
+                                <p>Current exchange rate: ₹82 = $1 (approx.)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3 border-0 shadow-sm">
+                        <h2 class="accordion-header" id="faqHeadingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseEight" aria-expanded="false" aria-controls="faqCollapseEight">
+                                <i class="fas fa-wifi me-2"></i> Will I have internet access?
+                            </button>
+                        </h2>
+                        <div id="faqCollapseEight" class="accordion-collapse collapse" aria-labelledby="faqHeadingEight" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Yes, you'll have internet access throughout your tour:</p>
+                                <ul>
+                                    <li>All hotels offer free WiFi (speed varies)</li>
+                                    <li>You can purchase a local SIM card at the airport (requires passport copy and photo)</li>
+                                    <li>Major carriers include Airtel, Jio, and Vi with good 4G coverage</li>
+                                    <li>Cost: ~₹500 ($6) for 1.5GB/day for 28 days</li>
+                                </ul>
+                                <p>Alternatively, check your home carrier's international roaming plans.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="mb-3">Have more questions?</p>
+                    <button class="btn btn-primary px-4">Contact Our Travel Experts</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4">Get Travel Inspiration in Your Inbox</h2>
+                        <p class="lead mb-4">Sign up for exclusive offers, insider travel tips, and stunning destination inspiration</p>
+                        <form class="row g-2 justify-content-center">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Subscribe</button>
+                            </div>
+                            <div class="col-12">
+                                <small class="text-muted">We respect your privacy. Unsubscribe at any time.</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="mb-4">TravelTrek</h4>
+                    <p>Creating unforgettable travel experiences across India since 2005. Our expert-planned tours reveal the soul of incredible India.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Tours</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Destinations</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Special Offers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Booking Conditions</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">COVID-19 Updates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Travel Street, New Delhi, India 110001</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +91 98765 43210</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@traveltour.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Mon-Sat: 9AM-7PM</li>
+                        <li class="mb-2"><i class="fas fa-headset me-2"></i> 24/7 Emergency Support</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 TravelTrek. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> in India</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">Share Your Experience</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Overall Rating</label>
+                            <div class="star-rating d-flex justify-content-center" id="modal-rating">
+                                <span>&#9734;</span>
+                                <span>&#9734;</span>
+                                <span>&#9734;</span>
+                                <span>&#9734;</span>
+                                <span>&#9734;</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewerName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="reviewerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="reviewerEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewTitle" class="form-label">Review Title</label>
+                            <input type="text" class="form-control" id="reviewTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewText" class="form-label">Your Review</label>
+                            <textarea class="form-control" id="reviewText" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewPhotos" class="form-label">Upload Photos (Optional)</label>
+                            <input type="file" class="form-control" id="reviewPhotos" multiple accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Star rating functionality
+        document.querySelectorAll('.star-rating').forEach(ratingContainer => {
+            const stars = ratingContainer.querySelectorAll('span');
+            stars.forEach((star, index) => {
+                star.addEventListener('click', () => {
+                    stars.forEach((s, i) => {
+                        if (i <= index) {
+                            s.classList.add('active');
+                            s.innerHTML = '&#9733;';
+                        } else {
+                            s.classList.remove('active');
+                            s.innerHTML = '&#9734;';
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Calculate and update price
+        function updatePrice() {
+            const adults = parseInt(document.getElementById('adults').value) || 0;
+            const children = parseInt(document.getElementById('children').value) || 0;
+            const isSingleRoom = document.getElementById('singleRoom').checked;
+            
+            let basePrice = 25000 * adults + 15000 * children;
+            if (isSingleRoom && adults === 1) {
+                basePrice += 8000;
+            }
+            
+            // Format with Indian rupee symbol and commas
+            const formattedPrice = '₹' + basePrice.toLocaleString('en-IN');
+            document.querySelector('.btn-primary').innerHTML = `<i class="fas fa-lock me-2"></i>Book Now - ${formattedPrice}`;
+        }
+        
+        // Add event listeners to form elements
+        document.getElementById('adults').addEventListener('change', updatePrice);
+        document.getElementById('children').addEventListener('change', updatePrice);
+        document.querySelectorAll('input[name="roomType"]').forEach(radio => {
+            radio.addEventListener('change', updatePrice);
+        });
+        
+        // Initialize price on load
+        updatePrice();
+        
+        // Set default date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('tourDate').min = tomorrow.toISOString().split('T')[0];
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

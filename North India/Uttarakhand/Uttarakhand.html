@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uttarakhand: The Divine Himalayan Escape</title>
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a4d3c;
+            --secondary: #ff7b25;
+            --accent: #f9c80e;
+            --light: #f8f9fa;
+            --dark: #032a23;
+            --text: #333;
+            --text-light: #6c757d;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+        
+        /* Header */
+        .hero {
+            height: 120vh;
+            min-height: 800px;
+            background: linear-gradient(rgba(10, 77, 60, 0.7), rgba(10, 77, 60, 0.7)), 
+                        url('https://cdn.pixabay.com/photo/2020/01/17/17/48/nature-4773588_1280.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f5f5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f5f5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f5f5"/></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(10, 77, 60, 0.95);
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            height: 100px;
+            width: 90px;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f5f5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f5f5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f5f5"/></svg>');
+            background-size: cover;
+            transform: rotate(180deg);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 77, 60, 0.2), rgba(10, 77, 60, 0.5));
+            z-index: 1;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: #f5f5f5;
+            padding: 100px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+        }
+        
+        .feature-card:hover::before {
+            height: 100%;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 20px rgba(10, 77, 60, 0.2);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+        }
+        
+        /* Destinations Section */
+        .destinations {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .destination-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .destination-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .destination-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .destination-card:hover .destination-image img {
+            transform: scale(1.1);
+        }
+        
+        .destination-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+        
+        .destination-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .destination-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .destination-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .destination-meta i {
+            margin-right: 5px;
+            color: var(--accent);
+        }
+        
+        .destination-content {
+            padding: 25px;
+            background-color: white;
+        }
+        
+        .destination-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .destination-highlights {
+            margin-bottom: 20px;
+        }
+        
+        .destination-highlights li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-light);
+        }
+        
+        .destination-highlights li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Packages Section */
+        .packages {
+            padding: 100px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 10px;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .packages-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .package-card {
+            flex: 0 0 auto;
+            width: 350px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .package-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.1);
+        }
+        
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .package-content {
+            padding: 25px;
+        }
+        
+        .package-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .package-features {
+            margin-bottom: 20px;
+        }
+        
+        .package-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+        }
+        
+        .package-features i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .package-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #ddd;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        .duration {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f5f5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f5f5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f5f5"/></svg>');
+            background-size: cover;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid #eee;
+        }
+        
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: rgba(10, 77, 60, 0.1);
+            line-height: 1;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            position: relative;
+            z-index: 2;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 3px solid var(--accent);
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .rating {
+            color: var(--accent);
+            margin-top: 5px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 60px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 77, 60, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-icon {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            background: linear-gradient(rgba(10, 77, 60, 0.9), rgba(10, 77, 60, 0.9)), 
+                        url('https://images.unsplash.com/photo-1581852057106-0b98cc8b0a6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f5f5" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f5f5" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f5f5"/></svg>');
+            background-size: cover;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 0;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23032a23" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23032a23" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23032a23"/></svg>');
+            background-size: cover;
+            transform: rotate(180deg);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #ddd;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent);
+            color: var(--dark);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(249, 200, 14, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 123, 37, 0.4);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .btn-large {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-top: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card {
+                width: 300px;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="" class="logo"><img src="Images/TT5.png" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover the Magic of Uttarakhand</h1>
+            <p>Explore the land of gods, where the Himalayas meet spirituality and adventure</p>
+            <a href="#destinations" class="btn btn-large pulse">Explore Now</a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Uttarakhand</h2>
+                <p>Known as the "Land of the Gods," Uttarakhand is a paradise for nature lovers and adventure seekers alike</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>The Divine Himalayan State</h3>
+                    <p>Uttarakhand, formerly known as Uttaranchal, is a state in northern India crossed by the Himalayas. The state is known for its natural beauty, with snow-capped peaks, dense forests, winding rivers, and spiritual centers that attract pilgrims from around the world.</p>
+                    <p>From the sacred Ganges in Haridwar to the skiing slopes of Auli, from the wildlife in Jim Corbett National Park to the yoga capital Rishikesh, Uttarakhand offers diverse experiences that cater to every type of traveler.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://www.incredibleindia.gov.in/content/dam/incredible-india/images/trips/uttarakhand/haridwar/picturesque-uttrakhand/bhowali-mukteshwar-kausani-uttarakhand-6-tri-iter-day6.jpg" alt="Uttarakhand Landscape">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Uttarakhand?</h2>
+                <p>Discover what makes Uttarakhand a unique and unforgettable destination</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Majestic Himalayas</h3>
+                    <p>Home to some of the highest peaks in India, including Nanda Devi and Trishul, offering breathtaking views and trekking opportunities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Sacred Rivers</h3>
+                    <p>The source of the Ganges and Yamuna rivers, with spiritual significance and opportunities for white-water rafting.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <h3>Spiritual Heaven</h3>
+                    <p>Four sacred Hindu shrines (Char Dham) and numerous ashrams make it India's spiritual capital.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Adventure Sports</h3>
+                    <p>From skiing in Auli to rafting in Rishikesh, Uttarakhand offers thrilling adventures for adrenaline junkies.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Wildlife Sanctuaries</h3>
+                    <p>Home to Jim Corbett National Park and other reserves with rich biodiversity including tigers, elephants, and rare birds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Local Cuisine</h3>
+                    <p>Unique Garhwali and Kumaoni cuisine with dishes like Kafuli, Bhatt ki Churdkani, and Bal Mithai sweets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Destinations</h2>
+                <p>Explore the most beautiful places in Uttarakhand that you must visit</p>
+            </div>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://i0.wp.com/stampedmoments.com/wp-content/uploads/2022/09/boating-naini-lake.jpg?fit=1920%2C1080&ssl=1" alt="Nainital">
+                        <div class="destination-overlay">
+                            <h3>Nainital</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-calendar-alt"></i> March-June</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 300km from Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <p>The charming lake district of India, known for its emerald Naini Lake surrounded by mountains, colonial architecture, and pleasant climate.</p>
+                        <ul class="destination-highlights">
+                            <li>Boating on Naini Lake</li>
+                            <li>Visit to Snow View Point</li>
+                            <li>Explore Tiffin Top</li>
+                            <li>Naina Devi Temple</li>
+                        </ul>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://media1.thrillophilia.com/filestore/pf3hv3jqvrjtt5rotnpr3v6a6y2d_1575268796_shutterstock_1136356946.jpg?w=400&dpr=2" alt="Rishikesh">
+                        <div class="destination-overlay">
+                            <h3>Rishikesh</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-calendar-alt"></i> Sept-April</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 240km from Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <p>The yoga capital of the world, where the Ganges emerges from the Himalayas, offering spiritual experiences and thrilling adventures.</p>
+                        <ul class="destination-highlights">
+                            <li>White-water rafting</li>
+                            <li>Laxman Jhula suspension bridge</li>
+                            <li>Evening Ganga Aarti</li>
+                            <li>Yoga and meditation retreats</li>
+                        </ul>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://tripxl.com/blog/wp-content/uploads/2024/11/Things-To-Do-In-Auli-Cover-Photo-5.jpg" alt="Auli">
+                        <div class="destination-overlay">
+                            <h3>Auli</h3>
+                            <div class="destination-meta">
+                                <span><i class="fas fa-calendar-alt"></i> Dec-March</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 500km from Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="destination-content">
+                        <p>India's premier skiing destination with panoramic views of Himalayan peaks like Nanda Devi, Trishul, and Dron Parvat.</p>
+                        <ul class="destination-highlights">
+                            <li>Skiing and snowboarding</li>
+                            <li>Auli Ropeway (longest in Asia)</li>
+                            <li>Gurso Bugyal alpine meadow</li>
+                            <li>Joshimath temple visit</li>
+                        </ul>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+    <div class="destination-image">
+        <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/06/Mussoorie.jpg" alt="Mussoorie">
+        <div class="destination-overlay">
+            <h3>Mussoorie</h3>
+            <div class="destination-meta">
+                <span><i class="fas fa-calendar-alt"></i> April-June</span>
+                <span><i class="fas fa-map-marker-alt"></i> 290km from Delhi</span>
+            </div>
+        </div>
+    </div>
+    <div class="destination-content">
+        <p>Known as the "Queen of Hills", Mussoorie offers breathtaking views of the Himalayas, colonial charm, and a cool climate ideal for a summer retreat.</p>
+        <ul class="destination-highlights">
+            <li>Walk along Camel’s Back Road</li>
+            <li>Scenic views from Gun Hill</li>
+            <li>Picnic at Kempty Falls</li>
+            <li>Shopping on Mall Road</li>
+        </ul>
+        <a href="#" class="btn">Explore More</a>
+    </div>
+</div>
+
+                <div class="destination-card">
+    <div class="destination-image">
+        <img src="https://cdn-ijnhp.nitrocdn.com/pywIAllcUPgoWDXtkiXtBgvTOSromKIg/assets/images/optimized/rev-5794eaa/www.jaypeehotels.com/blog/wp-content/uploads/2024/09/Blog-2-scaled.jpg" alt="Dehradun">
+        <div class="destination-overlay">
+            <h3>Dehradun</h3>
+            <div class="destination-meta">
+                <span><i class="fas fa-calendar-alt"></i> March-June</span>
+                <span><i class="fas fa-map-marker-alt"></i> 250km from Delhi</span>
+            </div>
+        </div>
+    </div>
+    <div class="destination-content">
+        <p>The capital city of Uttarakhand, nestled in the Doon Valley, Dehradun offers a mix of nature, education, and culture with serene landscapes and historical sites.</p>
+        <ul class="destination-highlights">
+            <li>Robber's Cave adventure</li>
+            <li>Sahastradhara springs</li>
+            <li>Forest Research Institute visit</li>
+            <li>Tapkeshwar Mahadev Temple</li>
+        </ul>
+        <a href="#" class="btn">Explore More</a>
+    </div>
+</div>
+
+                <div class="destination-card">
+    <div class="destination-image">
+        <img src="https://www.chardhamplan.com/images/haridwar-place-to-visit.png" alt="Haridwar">
+        <div class="destination-overlay">
+            <h3>Haridwar</h3>
+            <div class="destination-meta">
+                <span><i class="fas fa-calendar-alt"></i> October-April</span>
+                <span><i class="fas fa-map-marker-alt"></i> 220km from Delhi</span>
+            </div>
+        </div>
+    </div>
+    <div class="destination-content">
+        <p>One of the holiest cities in India, Haridwar is famous for its spiritual energy, sacred ghats on the Ganges, and the grand Ganga Aarti at Har Ki Pauri.</p>
+        <ul class="destination-highlights">
+            <li>Evening Ganga Aarti</li>
+            <li>Har Ki Pauri bathing ghat</li>
+            <li>Mansa Devi Temple trek</li>
+            <li>Bharat Mata Mandir visit</li>
+        </ul>
+        <a href="#" class="btn">Explore More</a>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Packages Section -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Travel Packages</h2>
+                <p>Curated experiences to make your Uttarakhand journey unforgettable</p>
+            </div>
+            <div class="packages-container">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Nainital.jpg" alt="Nainital Retreat">
+                        <div class="package-badge">Best Seller</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Nainital Retreat</h3>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 4 Days / 3 Nights</li>
+                            <li><i class="fas fa-check"></i> Lakeside hotel accommodation</li>
+                            <li><i class="fas fa-check"></i> Daily breakfast & dinner</li>
+                            <li><i class="fas fa-check"></i> Sightseeing tours included</li>
+                            <li><i class="fas fa-check"></i> Boating on Naini Lake</li>
+                        </ul>
+                        <div class="package-price">
+                            <div class="price">₹15,499 <span>per person</span></div>
+                            <div class="duration"><i class="fas fa-clock"></i> 4D/3N</div>
+                        </div>
+                        <a href="Nainital Retreat.html" class="btn btn-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="Images/Rishikesh1.jpg" alt="Rishikesh Adventure">
+                        <div class="package-badge">Adventure</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Rishikesh Adventure</h3>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+                            <li><i class="fas fa-check"></i> Riverside camp stay</li>
+                            <li><i class="fas fa-check"></i> White-water rafting</li>
+                            <li><i class="fas fa-check"></i> Bungee jumping</li>
+                            <li><i class="fas fa-check"></i> Yoga session included</li>
+                        </ul>
+                        <div class="package-price">
+                            <div class="price">₹13,499 <span>per person</span></div>
+                            <div class="duration"><i class="fas fa-clock"></i> 3D/2N</div>
+                        </div>
+                        <a href="Rishikesh Adventure.html" class="btn btn-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://www.shrineyatra.in/wp-content/uploads/2024/08/chardham-tour-package.webp" alt="Char Dham Yatra">
+                        <div class="package-badge">Pilgrimage</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Char Dham Yatra</h3>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 12 Days / 11 Nights</li>
+                            <li><i class="fas fa-check"></i> All four sacred shrines</li>
+                            <li><i class="fasharidwar heritagem fa-check"></i> Comfortable accommodations</li>
+                            <li><i class="fas fa-check"></i> All meals included</li>
+                            <li><i class="fas fa-check"></i> Expert guide throughout</li>
+                        </ul>
+                        <div class="package-price">
+                            <div class="price">₹42,999 <span>per person</span></div>
+                            <div class="duration"><i class="fas fa-clock"></i> 12D/11N</div>
+                        </div>
+                        <a href="#" class="btn btn-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://img-cdn.thepublive.com/filters:format(webp)/30-stades/media/media_files/l5golPMqVgvIgo3vySZl.jpg" alt="Auli Ski Package">
+                        <div class="package-badge">Winter Special</div>
+                    </div>
+                    <div class="package-content">
+                        <h3>Auli Ski Package</h3>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 5 Days / 4 Nights</li>
+                            <li><i class="fas fa-check"></i> Ski-in/ski-out resort</li>
+                            <li><i class="fas fa-check"></i> Professional skiing lessons</li>
+                            <li><i class="fas fa-check"></i> Ropeway rides included</li>
+                            <li><i class="fas fa-check"></i> All meals provided</li>
+                        </ul>
+                        <div class="package-price">
+                            <div class="price">₹24,999 <span>per person</span></div>
+                            <div class="duration"><i class="fas fa-clock"></i> 5D/4N</div>
+                        </div>
+                        <a href="Auli Skiing Experience.html" class="btn btn-block">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+    <div class="package-image">
+        <img src="https://media.istockphoto.com/id/1140128164/photo/mussoorie-landscape-in-cloudy-rainy-monsoon-season-stock-image.jpg?s=612x612&w=0&k=20&c=j-S1rhG75D8YNwidXt_Wt3KdqWjLxeJBFViPnCcUsZ0=" alt="Dehradun Delight">
+        <div class="package-badge">Hill Retreat</div>
+    </div>
+    <div class="package-content">
+        <h3>Dehradun Delight</h3>
+        <ul class="package-features">
+            <li><i class="fas fa-check"></i> 4 Days / 3 Nights</li>
+            <li><i class="fas fa-check"></i> Robber’s Cave & Sahastradhara</li>
+            <li><i class="fas fa-check"></i> Local sightseeing</li>
+            <li><i class="fas fa-check"></i> Deluxe hotel stay</li>
+            <li><i class="fas fa-check"></i> Breakfast & Dinner included</li>
+        </ul>
+        <div class="package-price">
+            <div class="price">₹8,499 <span>per person</span></div>
+            <div class="duration"><i class="fas fa-clock"></i> 4D/3N</div>
+        </div>
+        <a href="#" class="btn btn-block">Book Now</a>
+    </div>
+</div>
+
+                <div class="package-card">
+    <div class="package-image">
+        <img src="https://www.holidify.com/images/compressed/4384.jpg" alt="Haridwar Heritage">
+        <div class="package-badge">Spiritual</div>
+    </div>
+    <div class="package-content">
+        <h3>Haridwar Heritage</h3>
+        <ul class="package-features">
+            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+            <li><i class="fas fa-check"></i> Ganga Aarti at Har Ki Pauri</li>
+            <li><i class="fas fa-check"></i> Temple visits & city tour</li>
+            <li><i class="fas fa-check"></i> Pure veg meals</li>
+            <li><i class="fas fa-check"></i> Budget to premium stay</li>
+        </ul>
+        <div class="package-price">
+            <div class="price">₹5,999 <span>per person</span></div>
+            <div class="duration"><i class="fas fa-clock"></i> 3D/2N</div>
+        </div>
+        <a href="#" class="btn btn-block">Book Now</a>
+    </div>
+</div>
+
+                <div class="package-card">
+    <div class="package-image">
+        <img src="https://gostops.com/blog/wp-content/uploads/2023/01/079_Exterior_02-scaled.jpg" alt="Mussoorie Magic">
+        <div class="package-badge">Nature Escape</div>
+    </div>
+    <div class="package-content">
+        <h3>Mussoorie Magic</h3>
+        <ul class="package-features">
+            <li><i class="fas fa-check"></i> 5 Days / 4 Nights</li>
+            <li><i class="fas fa-check"></i> Kempty Falls & Mall Road</li>
+            <li><i class="fas fa-check"></i> Cable car & scenic viewpoints</li>
+            <li><i class="fas fa-check"></i> Boutique stays with views</li>
+            <li><i class="fas fa-check"></i> Daily breakfast & dinner</li>
+        </ul>
+        <div class="package-price">
+            <div class="price">₹11,999 <span>per person</span></div>
+            <div class="duration"><i class="fas fa-clock"></i> 5D/4N</div>
+        </div>
+        <a href="#" class="btn btn-block">Book Now</a>
+    </div>
+</div>
+
+                
+                <div class="package-card">
+    <div class="package-image">
+        <img src="https://www.indianholiday.com/wordpress/wp-content/uploads/2024/09/dehradun.png" alt="Dehradun Delight Package">
+        <div class="package-badge">Nature & Relaxation</div>
+    </div>
+    <div class="package-content">
+        <h3>Dehradun Delight Package</h3>
+        <ul class="package-features">
+            <li><i class="fas fa-check"></i> 4 Days / 3 Nights</li>
+            <li><i class="fas fa-check"></i> Visit Robber's Cave & Sahastradhara</li>
+            <li><i class="fas fa-check"></i> Stay at valley view resort</li>
+            <li><i class="fas fa-check"></i> Guided city tour</li>
+            <li><i class="fas fa-check"></i> Daily breakfast included</li>
+        </ul>
+        <div class="package-price">
+            <div class="price">₹14,999 <span>per person</span></div>
+            <div class="duration"><i class="fas fa-clock"></i> 4D/3N</div>
+        </div>
+        <a href="#" class="btn btn-block">Book Now</a>
+    </div>
+</div>
+
+                <div class="package-card">
+    <div class="package-image">
+        <img src="https://pix10.agoda.net/hotelImages/30846606/0/9633d8527b8c81473413286b7062b7b7.png?ca=27&ce=0&s=702x392" alt="Mussoorie Magic Package">
+        <div class="package-badge">Hill Station Escape</div>
+    </div>
+    <div class="package-content">
+        <h3>Mussoorie Magic Package</h3>
+        <ul class="package-features">
+            <li><i class="fas fa-check"></i> 5 Days / 4 Nights</li>
+            <li><i class="fas fa-check"></i> Kempty Falls & Mall Road visit</li>
+            <li><i class="fas fa-check"></i> Stay in a luxury hotel</li>
+            <li><i class="fas fa-check"></i> Cable car ride to Gun Hill</li>
+            <li><i class="fas fa-check"></i> Breakfast & dinner included</li>
+        </ul>
+        <div class="package-price">
+            <div class="price">₹18,499 <span>per person</span></div>
+            <div class="duration"><i class="fas fa-clock"></i> 5D/4N</div>
+        </div>
+        <a href="#" class="btn btn-block">Book Now</a>
+    </div>
+</div>
+
+                <div class="package-card">
+    <div class="package-image">
+        <img src="https://www.fabhotels.com/blog/wp-content/uploads/2019/06/Places-to-Visit-in-Haridwar_600.jpg" alt="Haridwar Heritage Package">
+        <div class="package-badge">Spiritual Journey</div>
+    </div>
+    <div class="package-content">
+        <h3>Haridwar Heritage Package</h3>
+        <ul class="package-features">
+            <li><i class="fas fa-check"></i> 3 Days / 2 Nights</li>
+            <li><i class="fas fa-check"></i> Evening Ganga Aarti at Har Ki Pauri</li>
+            <li><i class="fas fa-check"></i> Guided temple visits</li>
+            <li><i class="fas fa-check"></i> Comfortable budget stay</li>
+            <li><i class="fas fa-check"></i> Vegetarian meals included</li>
+        </ul>
+        <div class="package-price">
+            <div class="price">₹9,999 <span>per person</span></div>
+            <div class="duration"><i class="fas fa-clock"></i> 3D/2N</div>
+        </div>
+        <a href="#" class="btn btn-block">Book Now</a>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Stories</h2>
+                <p>What our visitors say about their experiences in Uttarakhand</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Our family trip to Nainital was absolutely magical. The boat ride on Naini Lake at sunset was unforgettable, and our kids loved the cable car ride to Snow View Point. The hotels were comfortable with stunning lake views.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Priya Sharma" class="author-image">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Family Vacation, March 2023</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The yoga retreat in Rishikesh transformed my life. Waking up to the sound of the Ganges, practicing asanas with Himalayan views, and the spiritual atmosphere was exactly what I needed. The instructors were knowledgeable and supportive.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Wilson" class="author-image">
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Solo Traveler, November 2022</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Our skiing holiday in Auli exceeded all expectations. The slopes were perfect for beginners like us, and the instructors were incredibly patient. The views of Nanda Devi peak were worth the trip alone. We're already planning our next winter visit!
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya Patel" class="author-image">
+                        <div class="author-info">
+                            <h4>Ananya Patel</h4>
+                            <p>Adventure Seekers, January 2023</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Glimpses of Uttarakhand</h2>
+                <p>Explore the breathtaking beauty through these stunning visuals</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i0.wp.com/www.easeindiatrip.com/blog/wp-content/uploads/2024/12/Uttarakhand-travel-guide.jpg?resize=1200%2C601&ssl=1" alt="Uttarakhand Landscape" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://static.toiimg.com/thumb/msid-89326554,width-748,height-499,resizemode=4,imgsize-135936/.jpg" alt="Uttarakhand Temple" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://deih43ym53wif.cloudfront.net/Uttarakhand-kedarnath-temple-before-sunrise-hindu-shutterstock_375337813.jpg_d5aae7fdd5.jpg" alt="Uttarakhand River" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://chalo-reisen.de/wp-content/uploads/2022/01/Uttarakhand-7.jpg" alt="Uttarakhand Village" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/badrinath-temple-uttarakhand-state-hero?qlt=82&ts=1726647031134" alt="Uttarakhand Wildlife" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtCXW7YgA7vlH2ZCKtUPuTbLEDjGSUxIz0YA&s" alt="Uttarakhand Trekking" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://deih43ym53wif.cloudfront.net/Swargarohini-trek-uttarakhand-blooming-valley-this-chakratirth-india-flowers-shutterstock_1687487230.jpg_2308a61b17.jpg" alt="Uttarakhand Trekking" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.holidify.com/images/bgImages/UTTARAKHAND.jpg" alt="Uttarakhand Trekking" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready for Your Himalayan Adventure?</h2>
+            <p>Let our travel experts craft your perfect Uttarakhand experience with a customized itinerary tailored to your preferences</p>
+            <a href="#contact" class="btn btn-large pulse">Get a Free Quote</a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Explore Uttarakhand</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Hill Stations</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pilgrimage Sites</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Adventure Sports</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Wildlife Sanctuaries</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Trekking Routes</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Travel Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Best Time to Visit</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Transport Options</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Packing Guide</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Travel Tips</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Packages</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Yashoda Nagar, Jaitala Road, Nagpur</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> traveltalesngp@gmail.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TravelTales. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for the Himalayas</p>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+        
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuBtn.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            menuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 100);
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            backToTopBtn.classList.toggle('active', window.scrollY > 300);
+        });
+        
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Package Card Animation on Scroll
+        const packageCards = document.querySelectorAll('.package-card');
+        
+        const packageObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        packageCards.forEach((card, index) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.5s ease-out ' + (index * 0.1) + 's';
+            packageObserver.observe(card);
+        });
+        
+        // Gallery Lightbox (would need implementation)
+        // This is just a placeholder - you would need to implement a proper lightbox solution
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // In a real implementation, this would open a lightbox with the full image
+                alert('Gallery lightbox would open here in a full implementation');
+            });
+        });
+        
+        // Weather Widget Simulation
+        // In a real implementation, you would fetch this from a weather API
+        const weatherData = {
+            temp: 22,
+            condition: 'Partly Cloudy',
+            icon: '03d',
+            wind: 12,
+            humidity: 65,
+            uv: 6,
+            visibility: 8
+        };
+        
+        function updateWeatherWidget() {
+            document.querySelector('.weather-temp').textContent = weatherData.temp + '°C';
+            document.querySelector('.weather-desc').textContent = weatherData.condition;
+            document.querySelector('.weather-icon').src = 
+                `https://openweathermap.org/img/wn/${weatherData.icon}@2x.png`;
+            // Update other weather elements similarly
+        }
+        
+        // Initialize weather widget
+        updateWeatherWidget();
+    </script>
+</body>
+</html>
+

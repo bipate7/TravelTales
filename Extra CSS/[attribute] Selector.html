@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[attribute] Selector</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+        p {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        p[data-note] {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border-color: #388E3C;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-top: 2px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Attribute Selector: [attribute]</h1>
+    <p>This paragraph does not have a <code>data-note</code> attribute.</p>
+    <p data-note>This paragraph has the <code>data-note</code> attribute.</p>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            The <code>[attribute]</code> selector applies styles to elements that have a specific attribute, regardless of its value. 
+            Here:
+            <ul>
+                <li>The first paragraph has no <code>data-note</code> attribute, so no special styles are applied.</li>
+                <li>The second paragraph has the <code>data-note</code> attribute, so it gets a green background and bold white text.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

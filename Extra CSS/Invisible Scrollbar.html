@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invisible Scrollbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffde7;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            width: 70%;
+            height: 300px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ffffff;
+            overflow-y: scroll;
+        }
+        /* Hide Scrollbar */
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #fbc02d;">Invisible Scrollbar</h1>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultricies sem, sit amet venenatis leo volutpat a.</p>
+        <p>Morbi a massa id sapien mollis eleifend. Sed sit amet odio ac risus ultricies fermentum in id tortor.</p>
+        <p>Aenean dictum urna sit amet erat vehicula, vel posuere velit feugiat.</p>
+        <p>Ut id dolor id libero varius suscipit ac nec ipsum. Mauris auctor elit in sapien tincidunt bibendum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultricies sem, sit amet venenatis leo volutpat a.</p>
+        <p>Morbi a massa id sapien mollis eleifend. Sed sit amet odio ac risus ultricies fermentum in id tortor.</p>
+        <p>Aenean dictum urna sit amet erat vehicula, vel posuere velit feugiat.</p>
+        <p>Ut id dolor id libero varius suscipit ac nec ipsum. Mauris auctor elit in sapien tincidunt bibendum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultricies sem, sit amet venenatis leo volutpat a.</p>
+        <p>Morbi a massa id sapien mollis eleifend. Sed sit amet odio ac risus ultricies fermentum in id tortor.</p>
+        <p>Aenean dictum urna sit amet erat vehicula, vel posuere velit feugiat.</p>
+        <p>Ut id dolor id libero varius suscipit ac nec ipsum. Mauris auctor elit in sapien tincidunt bibendum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultricies sem, sit amet venenatis leo volutpat a.</p>
+        <p>Morbi a massa id sapien mollis eleifend. Sed sit amet odio ac risus ultricies fermentum in id tortor.</p>
+        <p>Aenean dictum urna sit amet erat vehicula, vel posuere velit feugiat.</p>
+        <p>Ut id dolor id libero varius suscipit ac nec ipsum. Mauris auctor elit in sapien tincidunt bibendum.</p>
+    </div>
+    <footer style="text-align: center; margin-top: 20px; color: #555;">
+        <h3>Explanation</h3>
+        <p>
+            This example hides the scrollbar entirely using <code>::-webkit-scrollbar { display: none; }</code>.
+            This is useful for cases where scroll functionality is required but the scrollbar should not be visible.
+        </p>
+    </footer>
+</body>
+</html>

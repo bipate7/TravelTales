@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan: The Royal Experience</title>
+        <link rel="icon" href="Images/TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d4af37;
+            --secondary: #8b0000;
+            --dark: #222;
+            --light: #f8f8f8;
+            --accent: #ff6600;
+            --text: #333;
+            --bg-overlay: rgba(0, 0, 0, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background: url('https://t4.ftcdn.net/jpg/00/59/66/35/360_F_59663502_Q0oCrYRXnIO5R07PehAz03duabpJnM23.jpg') no-repeat center center fixed;
+            background-size: cover;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--bg-overlay), rgba(139, 0, 0, 0.2));
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            color: white;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            background-color: #e6c12e;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--secondary);
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(139, 0, 0, 0.2), rgba(212, 175, 55, 0.2));
+            z-index: 1;
+        }
+        
+        /* Places Section */
+        .places-section {
+            background-color: #f9f9f9;
+            padding: 100px 0;
+        }
+        
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .place-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .place-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .place-card:hover .place-image img {
+            transform: scale(1.1);
+        }
+        
+        .place-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-content {
+            padding: 25px;
+        }
+        
+        .place-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .place-rating {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .place-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .place-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .place-btn:hover {
+            background-color: #6d0000;
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        }
+        
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.1);
+        }
+        
+        .package-content {
+            padding: 25px;
+        }
+        
+        .package-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .package-duration {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .package-duration i {
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+        
+        .package-features {
+            margin-bottom: 20px;
+        }
+        
+        .package-features ul {
+            list-style: none;
+        }
+        
+        .package-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .package-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .package-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .package-btn:hover {
+            background-color: #e05a00;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background-color: var(--secondary);
+            color: white;
+            position: relative;
+        }
+        
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1680&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .testimonials-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+            text-align: center;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary);
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-rating {
+            color: var(--primary);
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-caption {
+            color: white;
+        }
+        
+        .gallery-caption h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .gallery-caption p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Map Section */
+        .map-section {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .map-container {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p {
+            color: #555;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: #6d0000;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-image {
+                margin-top: 30px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--dark);
+                transition: all 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 30px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .places-container, .packages-container, .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo">
+                <img src="Images/TT5.png" alt="TravelTales Logo">
+            </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#places">Places</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover the Royal Splendor of Rajasthan</h1>
+                <p>Experience the vibrant culture, majestic forts, and rich heritage of India's Land of Kings. From golden deserts to colorful festivals, Rajasthan offers unforgettable journeys through time.</p>
+                <a href="#packages" class="hero-btn">Explore Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Royal Legacy</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Welcome to Rajasthan</h3>
+                    <p>Rajasthan, the largest state in India, is a land of contrasts and colors. Known for its royal heritage, the state boasts some of the most magnificent forts, palaces, and temples in the country. The Thar Desert, vibrant festivals, and warm hospitality make Rajasthan a must-visit destination.</p>
+                    <p>The state's history dates back to ancient times, with evidence of human settlement found in the Indus Valley Civilization. Rajasthan was ruled by various Rajput kingdoms, which built spectacular forts and palaces that stand as testaments to their glorious past.</p>
+                    <p>Today, Rajasthan offers a perfect blend of history, culture, adventure, and luxury. Whether you want to explore ancient cities, enjoy camel safaris in the desert, or experience royal hospitality in heritage hotels, Rajasthan has something for every traveler.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1661963054563-ce928e477ff3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFpcHVyfGVufDB8fDB8fHww" alt="Rajasthan Fort">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="places-section" id="places">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Destinations</h2>
+            </div>
+            <div class="places-container">
+                <!-- Jaipur -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-city-1-hero?qlt=82&ts=1726660605161" alt="Jaipur">
+                        <div class="place-badge">Popular</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Jaipur - The Pink City</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Eastern Rajasthan</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p class="place-description">The capital city known for its stunning palaces, vibrant bazaars, and rich cultural heritage. Don't miss the Hawa Mahal, City Palace, and Amber Fort.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Udaipur -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/lake-pichola-udaipur-rajasthan-2-attr-hero?qlt=82&ts=1727353271225" alt="Udaipur">
+                        <div class="place-badge">Lakes</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Udaipur - City of Lakes</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Southern Rajasthan</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <p class="place-description">Romantic city surrounded by beautiful lakes and majestic palaces. The Lake Palace and City Palace are must-visit attractions.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Jaisalmer -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-sam-sand-dunes-jaisalmer-city-hero?qlt=82&ts=1726660014904" alt="Jaisalmer">
+                        <div class="place-badge">Desert</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Jaisalmer - Golden City</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Western Rajasthan</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p class="place-description">Famous for its golden sandstone architecture and Thar Desert experiences. The Jaisalmer Fort and desert safari are highlights.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Jodhpur -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-mehrangarh-fort-jodhpur-rajasthan-city-hero?qlt=82&ts=1726660925514" alt="Jodhpur">
+                        <div class="place-badge">Fort</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Jodhpur - Blue City</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Western Rajasthan</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <p class="place-description">Known for its blue-painted houses and the massive Mehrangarh Fort towering over the city.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Pushkar -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://cdn.pixabay.com/photo/2017/05/14/10/50/pushkar-2311800_1280.jpg" alt="Pushkar">
+                        <div class="place-badge">Sacred</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Pushkar - Holy City</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Central Rajasthan</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <p class="place-description">Famous for its sacred lake and Brahma Temple, Pushkar is an important pilgrimage site and hosts the vibrant Pushkar Camel Fair.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Ranthambore -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="https://media1.thrillophilia.com/filestore/t2zfl63gyeb8yrgmqsp1jhysom00_shutterstock_1246346662-min.jpg" alt="Ranthambore">
+                        <div class="place-badge">Wildlife</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ranthambore National Park</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Eastern Rajasthan</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p class="place-description">One of the best places in India to spot wild tigers, along with other wildlife species in their natural habitat.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Bikaner -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Bikaner.webp" alt="Bikaner">
+                        <div class="place-badge">Desert</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Bikaner</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Best: October to March</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.4</span>
+                        </div>
+                        <p class="place-description">Known for its desert landscape and camel safaris, Bikaner is home to Junagarh Fort, Karni Mata Temple, and the Bikaner Camel Festival.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+
+                <!-- Mount Abu -->
+                <div class="place-card">
+                    <div class="place-image">        
+                        <img src="Images/Mount Abu.jpg" alt="Mount Abu">       
+                        <div class="place-badge">Hill Station</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mount Abu</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Best: November to March</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p class="place-description">The only hill station in Rajasthan, Mount Abu is known for its cool climate and scenic beauty. Attractions include Dilwara Temples, Nakki Lake, and Guru Shikhar.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>
+
+                <!-- Ajmer -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="Images/Ajmer.jpg" alt="Ajmer">
+                        <div class="place-badge">Spiritual</div>
+                    </div>
+                    <div class="place-content">
+                        <h3>Ajmer</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Best: October to March</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <p class="place-description">A historical and religious city, Ajmer is famous for the Ajmer Sharif Dargah. Other attractions include Ana Sagar Lake and Adhai Din Ka Jhonpra.</p>
+                        <a href="#" class="place-btn">Explore More</a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tour Packages</h2>
+            </div>
+            <div class="packages-container">
+                <!-- Royal Triangle -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://www.lih.travel/wp-content/uploads/2024/03/Desktop-Banner.png.webp" alt="Royal Triangle">
+                    </div>
+                    <div class="package-content">
+                        <h3>Royal Triangle Tour</h3>
+                        <div class="package-price">₹25,999</div>
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i> 7 Days / 6 Nights
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>Jaipur - Delhi - Agra</li>
+                                <li>Heritage Hotels Stay</li>
+                                <li>Guided City Tours</li>
+                                <li>All Meals Included</li>
+                                <li>Private Transportation</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Desert Experience -->             
+                <!-- Luxury Rajasthan -->
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://rajasthanyatra.in/blog/wp-content/uploads/2024/04/Galta-Ji-Temple-.webp" alt="Luxury Rajasthan">
+                    </div>
+                    <div class="package-content">
+                        <h3>Luxury Rajasthan</h3>
+                        <div class="package-price">₹68,999</div>
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i> 10 Days / 9 Nights
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>Jaipur - Udaipur - Jodhpur</li>
+                                <li>5-Star Heritage Hotels</li>
+                                <li>Private Guided Tours</li>
+                                <li>Elephant & Boat Rides</li>
+                                <li>Spa & Wellness Sessions</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+    <div class="package-image">
+        <img src="Images/Jaipur Royal Experience.jpg" alt="Jaipur Royal Experience">
+    </div>
+    <div class="package-content">
+        <h3>Jaipur Royal Experience</h3>
+        <div class="package-price">₹10,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Explore the Pink City in luxury</li>
+                <li>Heritage Palace Stay</li>
+                <li>Guided City Tour</li>
+                <li>Elephant Ride at Amber Fort</li>
+                <li>Private Transportation</li>
+            </ul>
+        </div>
+        <a href="Jaipur Royal Experience.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Udaipur Lake Retreat.cms" alt="Udaipur Lake Retreat">
+    </div>
+    <div class="package-content">
+        <h3>Udaipur Lake Retreat</h3>
+        <div class="package-price">₹12,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>A serene getaway by the lakes</li>
+                <li>Lakeview Hotel Stay</li>
+                <li>Boat Ride on Lake Pichola</li>
+                <li>City Palace Visit</li>
+                <li>Cultural Dinner Show</li>
+            </ul>
+        </div>
+        <a href="Udaipur Lake Retreat.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Jaisalmer Desert Safari.jpg" alt="Jaisalmer Desert Safari">
+    </div>
+    <div class="package-content">
+        <h3>Jaisalmer Desert Safari</h3>
+        <div class="package-price">₹15,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Experience the golden sands</li>
+                <li>Desert Camp Stay</li>
+                <li>Camel Safari</li>
+                <li>Folk Music & Dance Performance</li>
+                <li>Jaisalmer Fort Visit</li>
+            </ul>
+        </div>
+        <a href="Jaisalmer Desert Safari.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Jodhpur Heritage Tour.webp" alt="Jodhpur Heritage Tour">
+    </div>
+    <div class="package-content">
+        <h3>Jodhpur Heritage Tour</h3>
+        <div class="package-price">₹11,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Discover the Blue City's charm</li>
+                <li>Heritage Haveli Stay</li>
+                <li>Mehrangarh Fort Visit</li>
+                <li>Local Market Tour</li>
+                <li>Traditional Rajasthani Dinner</li>
+            </ul>
+        </div>
+        <a href="Jodhpur Heritage Tour.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Pushkar Spiritual Sojourn.jpg" alt="Pushkar Spiritual Sojourn">
+    </div>
+    <div class="package-content">
+        <h3>Pushkar Spiritual Sojourn</h3>
+        <div class="package-price">₹9,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>A holy retreat by the lake</li>
+                <li>Temple Visits</li>
+                <li>Holy Dip in Pushkar Lake</li>
+                <li>Camel Fair Experience</li>
+                <li>Vegetarian Meals Included</li>
+            </ul>
+        </div>
+        <a href="Pushkar Spiritual Sojourn.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Bikaner Camel Safari.jpg" alt="Bikaner Camel Safari">
+    </div>
+    <div class="package-content">
+        <h3>Bikaner Camel Safari</h3>
+        <div class="package-price">₹10,500</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Ride the dunes in style</li>
+                <li>Desert Camp Experience</li>
+                <li>Junagarh Fort Visit</li>
+                <li>Karni Mata Temple Tour</li>
+                <li>Traditional Folk Performances</li>
+            </ul>
+        </div>
+        <a href="Bikaner Camel Safari.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Mount Abu.avif" alt="Mount Abu Hill Retreat">
+    </div>
+    <div class="package-content">
+        <h3>Mount Abu Hill Retreat</h3>
+        <div class="package-price">₹8,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Relax in Rajasthan's only hill station</li>
+                <li>Resort Stay with Mountain Views</li>
+                <li>Dilwara Temples Visit</li>
+                <li>Nakki Lake Boat Ride</li>
+                <li>Sunset Point Excursion</li>
+            </ul>
+        </div>
+        <a href="Mount Abu Hill Retreat.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Ajmer Pilgrimage Tour.jpg" alt="Ajmer Pilgrimage Tour">
+    </div>
+    <div class="package-content">
+        <h3>Ajmer Pilgrimage Tour</h3>
+        <div class="package-price">₹9,500</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Visit the sacred Ajmer Sharif</li>
+                <li>Dargah Sharif Ziyarat</li>
+                <li>Pushkar Combination Tour</li>
+                <li>Spiritual Guidance</li>
+                <li>Comfortable Accommodation</li>
+            </ul>
+        </div>
+        <a href="Ajmer Pilgrimage Tour.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="Images/Ranthambore Wildlife Safari.jpg" alt="Ranthambore Wildlife Safari">
+    </div>
+    <div class="package-content">
+        <h3>Ranthambore Wildlife Safari</h3>
+        <div class="package-price">₹13,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Spot tigers in the wild</li>
+                <li>Multiple Jungle Safaris</li>
+                <li>Luxury Jungle Resort Stay</li>
+                <li>Expert Naturalist Guide</li>
+                <li>Ranthambore Fort Visit</li>
+            </ul>
+        </div>
+        <a href="Ranthambore Wildlife Safari.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-image">
+        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-chittorgarh-fort-chittorgarh-rajasthan-attr-hero?qlt=82&ts=1727352792140" alt="Chittorgarh Fort Adventure">
+    </div>
+    <div class="package-content">
+        <h3>Chittorgarh Fort Adventure</h3>
+        <div class="package-price">₹10,000</div>
+        <div class="package-duration">
+            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
+        </div>
+        <div class="package-features">
+            <ul>
+                <li>Explore the historic Chittorgarh Fort</li>
+                <li>Fort Guided Tour</li>
+                <li>Light and Sound Show</li>
+                <li>Vijay Stambh Visit</li>
+                <li>Cultural Performances</li>
+            </ul>
+        </div>
+        <a href="Chittorgarh Fort Adventure.html" class="package-btn">Book Now</a>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="testimonial-text">
+                        "Our Rajasthan tour was absolutely magical! From the stunning palaces to the warm hospitality, every moment was unforgettable. The desert safari in Jaisalmer was the highlight of our trip."
+                    </div>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">Travel Blogger, USA</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Glimpses of Rajasthan</h2>
+            </div>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://static.toiimg.com/img/101335068/Master.jpg" alt="Jaipur">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Hawa Mahal</h3>
+                            <p>Iconic Palace of Winds in Jaipur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1349545253_20190715095335.jpg" alt="Udaipur">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Lake Pichola</h3>
+                            <p>Serene waters of Udaipur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.swantour.com/blogs/wp-content/uploads/2019/02/Jaisalmer-Fort.jpg" alt="Jaisalmer">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Golden Fort</h3>
+                            <p>Jaisalmer's magnificent sandstone fort</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://indiano.travel/wp-content/uploads/2022/05/Pilgrims-walking-on-Chandra-Ghat-along-Pushkar-Sarovar-lake.-It-is-located-in-Ajmer-district-of-the-Rajasthan-state.-Pushkar-Lake-is-a-sacred-lake-of-the-Hindus-and-Sikhs.jpg" alt="Pushkar">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Pushkar Lake</h3>
+                            <p>Sacred waters of Pushkar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://synergypaint.in/wp-content/uploads/2024/06/Best-Places-to-Visit-in-Jodhpur-You-Must-Visit-in-20240A.jpg" alt="Jodhpur">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Blue City</h3>
+                            <p>Jodhpur's iconic blue houses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://ichef.bbci.co.uk/images/ic/1200xn/p033wcjv.jpg" alt="Desert">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Thar Desert</h3>
+                            <p>Golden sands of Rajasthan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg/960px-Jaipur_03-2016_22_City_Palace_complex.jpg" alt="City Palace">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Jaipur City Palace</h3>
+                            <p>Royal heritage of the Pink City</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://assets.simplotel.com/simplotel/image/upload/x_0,y_378,w_4000,h_2250,r_0,c_crop,q_80,fl_progressive/w_500,f_auto,c_fit/the-baagh-ananta-elite-ranthambore/History_of_Ranthambore_Fort_in_Ranthambore_National_Park" alt="Ranthambore Fort">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h3>Ranthambore Fort</h3>
+                            <p>Ancient citadel amidst the wilderness</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Rajasthan</h2>
+            </div>
+            <div id="map">
+            <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1UUV509hF-xOJTElJF1Etwa_RqLAayx4&ehbc=2E312F" width="1190" height="500"></iframe>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Plan Your Royal Journey</h3>
+                    <p>Have questions about traveling to Rajasthan? Our travel experts are here to help you plan your perfect itinerary.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Office</h4>
+                                <p>Yashoda Nagar, Jaitala Road, Nagpur - 440036</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Call Us</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Us</h4>
+                                <p>traveltalesngp@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Rajasthan</h3>
+                    <p>Rajasthan is India's largest state, known for its royal heritage, majestic forts, colorful culture, and warm hospitality. We showcase the best of this magnificent land.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Rajasthan</a></li>
+                        <li><a href="#places">Destinations</a></li>
+                        <li><a href="#packages">Tour Packages</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Popular Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Jaipur</a></li>
+                        <li><a href="#">Udaipur</a></li>
+                        <li><a href="#">Jodhpur</a></li>
+                        <li><a href="#">Jaisalmer</a></li>
+                        <li><a href="#">Pushkar</a></li>
+                        <li><a href="#">Ranthambore</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for travel tips, special offers, and Rajasthan updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelTales. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff0000;"></i> for Rajasthan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize animations when elements come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.section-title, .about-content, .place-card, .package-card, .gallery-item, .contact-container');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.animation = 'fadeInUp 1s ease-out forwards';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

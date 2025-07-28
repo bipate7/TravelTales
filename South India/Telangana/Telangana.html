@@ -1,0 +1,1759 @@
+ <!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telangana Tourism - Experience the Land of Heritage</title>
+    <link rel="icon" href="Images\TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #f1faee;
+            --accent: #a8dadc;
+            --dark: #1d3557;
+            --light: #f8f9fa;
+            --gold: #ffd166;
+            --text: #333333;
+            --text-light: #6c757d;
+            --teal: #00796b;
+            --indigo: #3f51b5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* Hero Section with Parallax Effect */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background:  url('https://images.unsplash.com/photo-1551161242-b5af797b7233?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHlkZXJhYmFkfGVufDB8fDB8fHww') no-repeat center center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                                      rgba(30, 77, 119, 0.6) 0%, 
+                                      rgba(0, 121, 107, 0.7) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            z-index: 2;
+            animation: slideUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(90deg, #ffd166, #f8961e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 2s infinite alternate;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-out;
+        }
+        
+        /* Animated Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+            margin: 0 10px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                                      transparent, 
+                                      rgba(255, 255, 255, 0.2), 
+                                      transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.6);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Section Styling with Creative Backgrounds */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section:nth-child(odd) {
+            background-color: white;
+        }
+        
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--teal));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 15px auto 0;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        /* Creative Place Cards with 3D Effect */
+        .places-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            perspective: 1000px;
+        }
+        
+        .place-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .place-card:hover {
+            transform: perspective(1000px) rotateY(10deg) translateY(-20px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(29, 53, 87, 0.8) 0%, rgba(0, 121, 107, 0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        
+        .place-card:hover::before {
+            opacity: 1;
+        }
+        
+        .place-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .place-card:hover .place-img {
+            transform: scale(1.1);
+        }
+        
+        .place-content {
+            padding: 25px;
+            position: relative;
+            z-index: 3;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .place-card:hover .place-content {
+            background-color: transparent;
+            color: white;
+        }
+        
+        .place-card:hover .place-content p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .place-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .place-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .place-card:hover .place-content h3::after {
+            background-color: var(--gold);
+            width: 80px;
+        }
+        
+        .place-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        .place-rating {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .place-description {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+        
+        .place-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 3;
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .place-card:hover .place-tag {
+            background-color: var(--gold);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Creative Package Cards with Flip Effect */
+        .packages-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 30px 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            perspective: 1000px;
+        }
+        
+        .packages-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .packages-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .packages-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, var(--primary), var(--teal));
+            border-radius: 10px;
+        }
+        
+        .package-card {
+            flex: 0 0 auto;
+            width: 350px;
+            height: 600px;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            scroll-snap-align: start;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .package-card:hover {
+            transform: rotateY(15deg) translateY(-20px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .package-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-img {
+            transform: scale(1.1);
+        }
+        
+        .package-content {
+            padding: 20px;
+            position: relative;
+        }
+        
+        .package-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .package-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .package-card:hover .package-content h3::after {
+            width: 80px;
+            background-color: var(--teal);
+        }
+        
+        .package-highlight {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        
+        .package-card:hover .package-highlight {
+            color: var(--teal);
+        }
+        
+        .package-highlight i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .package-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .package-price {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.8rem;
+            background: linear-gradient(90deg, var(--primary), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .package-card:hover .package-price {
+            background: linear-gradient(90deg, var(--teal), var(--indigo));
+            -webkit-background-clip: text;
+        }
+        
+        .package-duration {
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-duration i {
+            margin-right: 5px;
+        }
+        
+        .package-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, var(--primary), var(--teal));
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .package-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                                      transparent, 
+                                      rgba(255, 255, 255, 0.3), 
+                                      transparent);
+            transition: 0.5s;
+        }
+        
+        .package-btn:hover::before {
+            left: 100%;
+        }
+        
+        .package-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 121, 107, 0.4);
+        }
+        
+        /* History Section */
+        .history-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('Images/telangana-history.jpg') no-repeat center center/cover fixed;
+            color: white;
+            position: relative;
+        }
+        
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .history-content h2 {
+            color: var(--gold);
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+        }
+        
+        .history-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--gold);
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            background-color: var(--dark);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .culture-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Images/pattern.png') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .culture-section .section-title h2 {
+            color: white;
+        }
+        
+        .culture-section .section-title h2::after {
+            background: linear-gradient(90deg, var(--gold), var(--primary));
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .culture-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .culture-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .culture-card:hover::before {
+            opacity: 1;
+            animation: shine 1.5s;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-15px);
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .culture-icon {
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .culture-card:hover .culture-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--primary);
+        }
+        
+        .culture-card h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .culture-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .culture-card:hover h3::after {
+            width: 80px;
+            background-color: var(--primary);
+        }
+        
+        .culture-card p {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .culture-card:hover p {
+            color: white;
+        }
+        
+        /* Interactive Map Section */
+        .map-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            position: relative;
+        }
+        
+        .map-container {
+            height: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+            border: 10px solid white;
+            transform: perspective(1000px) rotateX(5deg);
+            transition: all 0.5s ease;
+        }
+        
+        .map-container:hover {
+            transform: perspective(1000px) rotateX(0deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Testimonials with Creative Layout */
+        .testimonials {
+            background-color: var(--secondary);
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .testimonial {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 0 20px;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .testimonial:hover {
+            transform: rotateY(10deg) translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 5px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial:hover .testimonial-avatar {
+            border-color: var(--teal);
+            transform: scale(1.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -15px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Newsletter with Creative Design */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('Images/pattern2.png') repeat;
+            opacity: 0.1;
+        }
+        
+        .newsletter h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .newsletter-btn {
+            padding: 18px 35px;
+            background-color: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #14213d;
+            transform: translateX(5px);
+        }
+        
+        /* Creative Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .footer-links li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover::before {
+            transform: translateX(5px);
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Floating Elements in Footer */
+        .footer-floating {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .footer-floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: float 20s infinite linear;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 209, 102, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 209, 102, 0.8);
+            }
+        }
+        
+        @keyframes shine {
+            from {
+                transform: rotate(45deg) translate(-30%, -30%);
+            }
+            to {
+                transform: rotate(45deg) translate(30%, 30%);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .places-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 50px;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .places-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .package-card {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Telangana</h1>
+            <p>Where heritage meets innovation in the heart of India</p>
+            <div>
+                <a href="#places" class="btn">Explore Destinations</a>
+                <a href="#packages" class="btn btn-outline">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="history-section">
+        <div class="container">
+            <div class="history-content">
+                <h2>The Rich History of Telangana</h2>
+                <p>Telangana, the youngest state in India, has a history that dates back to the ancient Satavahana dynasty (230 BCE to 220 CE). The region has been ruled by various dynasties including the Kakatiyas, the Qutb Shahis, and the Nizams, each leaving behind a unique cultural and architectural legacy.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Satavahana Era (230 BCE - 220 CE)</h3>
+                            <p>The Satavahanas established their kingdom with Pratishthana (modern Paithan) as their capital, contributing to the development of art, architecture, and trade.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Kakatiya Dynasty (1083–1323 CE)</h3>
+                            <p>The Kakatiyas built the iconic Warangal Fort and the Thousand Pillar Temple, establishing Telangana as a center of art and culture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Qutb Shahi Period (1518–1687)</h3>
+                            <p>The Qutb Shahi dynasty founded Hyderabad and built architectural marvels like the Charminar and Golconda Fort.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Asaf Jahi Dynasty (1724–1948)</h3>
+                            <p>The Nizams ruled Hyderabad State, making it one of the richest princely states in India, known for its pearls, diamonds, and the famous Koh-i-Noor diamond.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Formation of Telangana State (2014)</h3>
+                            <p>After a long struggle, Telangana was officially formed as the 29th state of India on June 2, 2014, with Hyderabad as its capital.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section id="places" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Places</h2>
+                <p>Explore the rich cultural heritage and natural beauty of Telangana through these incredible destinations</p>
+            </div>
+            
+            <div class="places-container">
+                <!-- Hyderabad -->
+                <div class="place-card">
+                    <span class="place-tag">Top Rated</span>
+                    <img src="Images/Hyderabad.webp" alt="Hyderabad" class="place-img">
+                    <div class="place-content">
+                        <h3>Hyderabad</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <p class="place-description">The City of Pearls, where the iconic Charminar stands tall amidst bustling bazaars, and the aroma of Hyderabadi biryani fills the air.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Warangal -->
+                <div class="place-card">
+                    <img src="Images/Warangal.cms" alt="Warangal" class="place-img">
+                    <div class="place-content">
+                        <h3>Warangal</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <p class="place-description">Ancient capital of the Kakatiya dynasty, home to the magnificent Warangal Fort and the thousand-pillared temple.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Nalgonda -->
+                <div class="place-card">
+                    <img src="Images/Nalgonda.jpg" alt="Nalgonda" class="place-img">
+                    <div class="place-content">
+                        <h3>Nalgonda</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov-Feb</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.3</span>
+                        </div>
+                        <p class="place-description">Land of temples and forts, where the Nagarjuna Sagar Dam creates a breathtaking vista against the Nallamala hills.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Khammam -->
+                <div class="place-card">
+                    <span class="place-tag">Historical</span>
+                    <img src="Images/Khammam.webp" alt="Khammam" class="place-img">
+                    <div class="place-content">
+                        <h3>Khammam</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.4</span>
+                        </div>
+                        <p class="place-description">Historical city dominated by the imposing Khammam Fort, with lush forests and the Godavari river enhancing its beauty.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Rangareddy -->
+                <div class="place-card">
+                    <img src="Images/Rangareddy.jpg" alt="Rangareddy" class="place-img">
+                    <div class="place-content">
+                        <h3>Rangareddy</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.2</span>
+                        </div>
+                        <p class="place-description">Gateway to Hyderabad's outskirts with a mix of urban development and rural charm, known for its vibrant culture.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Medak -->
+                <div class="place-card">
+                    <span class="place-tag">Architectural</span>
+                    <img src="Images/Medak.jpg" alt="Medak" class="place-img">
+                    <div class="place-content">
+                        <h3>Medak</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <p class="place-description">Home to the magnificent Medak Cathedral, one of the largest churches in India, with stunning stained glass windows.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Adilabad -->
+                <div class="place-card">
+                    <span class="place-tag">Nature</span>
+                    <img src="Images/Adilabad.jpg" alt="Adilabad" class="place-img">
+                    <div class="place-content">
+                        <h3>Adilabad</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <p class="place-description">Lush green forests, cascading waterfalls, and rich tribal culture make this northern district a nature lover's delight.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Mahbubnagar -->
+                <div class="place-card">
+                    <img src="Images/Mahbubnagar.jpg" alt="Mahbubnagar" class="place-img">
+                    <div class="place-content">
+                        <h3>Mahbubnagar</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.1</span>
+                        </div>
+                        <p class="place-description">Known for its rich history, beautiful landscapes, and the stunning Pillalamarri Banyan Tree that's over 800 years old.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Siddipet -->
+                <div class="place-card">
+                    <span class="place-tag">Spiritual</span>
+                    <img src="Images/Siddipet.webp" alt="Siddipet" class="place-img">
+                    <div class="place-content">
+                        <h3>Siddipet</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.3</span>
+                        </div>
+                        <p class="place-description">Famous for its ancient temples and cultural heritage, including the historic Sri Raja Rajeshwara Swamy Temple.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+                
+                <!-- Nizamabad -->
+                <div class="place-card">
+                    <img src="Images/Nizamabad.jpg" alt="Nizamabad" class="place-img">
+                    <div class="place-content">
+                        <h3>Nizamabad</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span class="place-rating"><i class="fas fa-star"></i> 4.2</span>
+                        </div>
+                        <p class="place-description">Known for its historical sites like the Nizamabad Fort and natural beauty including the Alisagar Reservoir.</p>
+                        <a href="#" class="btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Curated Travel Packages</h2>
+                <p>Handpicked experiences to help you discover the best of Telangana</p>
+            </div>
+            
+            <div class="packages-container">
+                <!-- Hyderabad Heritage -->
+                <div class="package-card">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-charminar_hyderabad_telangana-1-city-hero?qlt=82&ts=1726653248112" alt="Hyderabad Heritage Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Hyderabad Heritage Tour</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Charminar, Golconda Fort, Qutb Shahi Tombs</p>
+                        <div class="package-details">
+                            <span class="package-price">₹4,999</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 3 Days</span>
+                        </div>
+                        <p>Immerse yourself in 400 years of history with this comprehensive tour of Hyderabad's architectural wonders.</p>
+                        <a href="Hyderabad Heritage Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Warangal Fort -->
+                <div class="package-card">
+                    <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-kakatiya-rock-and-musical-garden-warangal-telangana-city-hero?qlt=82&ts=1726653480998" alt="Warangal Fort Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Warangal Fort Tour</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Warangal Fort, Thousand Pillar Temple, Bhadrakali Lake</p>
+                        <div class="package-details">
+                            <span class="package-price">₹3,799</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 2 Days</span>
+                        </div>
+                        <p>Step back in time to the glorious Kakatiya era with this tour of Warangal's magnificent historical sites.</p>
+                        <a href="Warangal Fort Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Nalgonda Temples -->
+                <div class="package-card">
+                    <img src="https://www.manatemples.in/images/TE_NGL_pangal.jpg" alt="Nalgonda Temple Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Nalgonda Temple Trail</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Yadagirigutta, Nagarjuna Sagar, Pillalamarri</p>
+                        <div class="package-details">
+                            <span class="package-price">₹3,299</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 2 Days</span>
+                        </div>
+                        <p>A spiritual journey through ancient temples and the breathtaking Nagarjuna Sagar dam.</p>
+                        <a href="Nalgonda Temple Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Khammam Historical -->
+                <div class="package-card">
+                    <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/03/c30342090d0c757cdeacfdc30bef7744_1000x1000.jpg" alt="Khammam Historical Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Khammam Historical Tour</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Khammam Fort, Papi Hills, Bhadrachalam</p>
+                        <div class="package-details">
+                            <span class="package-price">₹4,199</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 3 Days</span>
+                        </div>
+                        <p>Explore the rich history and scenic beauty along the Godavari river in this comprehensive tour.</p>
+                        <a href="Khammam Historical Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Rangareddy Cultural -->
+                <div class="package-card">
+                    <img src="https://mediaim.expedia.com/destination/2/b04b17d15caa10a533585ac2e1ad7bea.jpg" alt="Rangareddy Cultural Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Rangareddy Cultural Tour</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Shamirpet Lake, Ananthagiri Hills, Osman Sagar</p>
+                        <div class="package-details">
+                            <span class="package-price">₹2,999</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 2 Days</span>
+                        </div>
+                        <p>Experience the vibrant culture and scenic beauty of Rangareddy district's countryside.</p>
+                        <a href="Rangareddy Cultural Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Medak Cathedral -->
+                <div class="package-card">
+                    <img src="https://th-i.thgim.com/public/incoming/xkd1j4/article67673610.ece/alternates/LANDSCAPE_1200/Image.jpeg" alt="Medak Cathedral Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Medak Cathedral Special</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Medak Cathedral, Edupayala, Singur Dam</p>
+                        <div class="package-details">
+                            <span class="package-price">₹2,999</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 1 Day</span>
+                        </div>
+                        <p>Marvel at the architectural splendor of Medak Cathedral and explore the surrounding attractions.</p>
+                        <a href="Medak Cathedral Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Adilabad Nature -->
+                <div class="package-card">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/0b/70/fc/1st-waterfall.jpg?w=1400&h=1400&s=1" alt="Adilabad Nature Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Adilabad Nature Retreat</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Kuntala Waterfall, Kawal Wildlife, Pochera Falls</p>
+                        <div class="package-details">
+                            <span class="package-price">₹4,499</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 3 Days</span>
+                        </div>
+                        <p>Reconnect with nature through waterfalls, wildlife, and tribal culture in northern Telangana.</p>
+                        <a href="Adilabad Nature Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Mahbubnagar Heritage -->
+                <div class="package-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA_yEHWZ85bK6vXg50NaN_2ebmx8FeMRVi1V9H-NO1dVR8P5At4YDI24MZyQbENv_JGcI&usqp=CAU" alt="Mahbubnagar Heritage Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Mahbubnagar Heritage Tour</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Pillalamarri, Koilkonda Fort, Jurala Dam</p>
+                        <div class="package-details">
+                            <span class="package-price">₹3,499</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 2 Days</span>
+                        </div>
+                        <p>Discover the rich history and architectural heritage of Mahbubnagar district.</p>
+                        <a href="Mahbubnagar Heritage Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Siddipet Temple -->
+                <div class="package-card">
+                    <img src="https://storage.googleapis.com/realtyplusmag-news-photo/news-photo/112983.World%E2%80%99s-First-3D-Printed-Temple-%E2%80%9CSreepada-Kaarya-Siddeshwara-Swamy-Devasthanam%E2%80%9D-by-Apsuja-Infratech-in-collaboration-with-Simpliforge-Creations-unveiled-in-Siddipet.jpg" alt="Siddipet Temple Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Siddipet Temple Tour</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Sri Raja Rajeshwara Swamy Temple, Kondapochamma Sagar</p>
+                        <div class="package-details">
+                            <span class="package-price">₹3,299</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 2 Days</span>
+                        </div>
+                        <p>A spiritual journey to the ancient temples and water projects of Siddipet district.</p>
+                        <a href="Siddipet Temple Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Nizamabad Nature -->
+                <div class="package-card">
+                    <img src="https://www.indiatravel.app/wp-content/uploads/2024/04/places-to-visit-in-nizamabad.png" alt="Nizamabad Nature and History Tour" class="package-img">
+                    <div class="package-content">
+                        <h3>Nizamabad Nature & History</h3>
+                        <p class="package-highlight"><i class="fas fa-map-marker-alt"></i> Nizamabad Fort, Alisagar, Pocharam Wildlife</p>
+                        <div class="package-details">
+                            <span class="package-price">₹3,799</span>
+                            <span class="package-duration"><i class="far fa-clock"></i> 2 Days</span>
+                        </div>
+                        <p>Explore the historical sites and natural beauty of Nizamabad district.</p>
+                        <a href="Nizamabad Nature and History Tour.html" class="package-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Telangana's Rich Culture</h2>
+                <p>Discover the vibrant traditions that make Telangana unique</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Cuisine</h3>
+                    <p>From the world-famous Hyderabadi Biryani to Sarva Pindi and Jonna Rotte, Telangana's cuisine is a flavorful journey through spices and traditions.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Arts & Music</h3>
+                    <p>Experience the rhythmic beats of Dappu, the graceful movements of Perini dance, and the soulful melodies of Telangana's folk music traditions.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Festivals</h3>
+                    <p>Celebrate Bathukamma, Bonalu, and Sammakka Saralamma Jatara - festivals that showcase Telangana's spirit and agricultural heritage.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Handicrafts</h3>
+                    <p>Discover the intricate Bidriware metalwork, Pochampally ikat weaves, and Nirmal paintings that reflect the region's artistic heritage.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Architecture</h3>
+                    <p>From the Kakatiya's thousand-pillared temples to the Qutb Shahi's Charminar, Telangana's architecture tells stories of its glorious past.</p>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-icon">
+                        <i class="fas fa-mask"></i>
+                    </div>
+                    <h3>Tribal Heritage</h3>
+                    <p>Explore the rich traditions of Telangana's tribal communities like the Lambadas, Gonds, and Koyas through their art, dance, and lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Telangana</h2>
+                <p>Plan your journey through our interactive map</p>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1GgWVrz1LNE-UEYMPJer_bhJTjt2D3wY&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Stories</h2>
+                <p>What our visitors say about their Telangana experience</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <img src="Images/Test.avif" alt="Sarah Johnson" class="testimonial-avatar">
+                    <p class="testimonial-text">"The Hyderabad Heritage Tour exceeded all my expectations. The Golconda Fort sound and light show was magical, and our guide's knowledge of Qutb Shahi history was impressive."</p>
+                    <h4 class="testimonial-author">Sarah Johnson</h4>
+                    <p class="testimonial-role">Travel Blogger, UK</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="Images/Test.avif" alt="Rajesh Kumar" class="testimonial-avatar">
+                    <p class="testimonial-text">"The Warangal Fort tour was absolutely breathtaking. Walking through the ruins of the Kakatiya empire made me feel connected to India's glorious past in a way I never expected."</p>
+                    <h4 class="testimonial-author">Rajesh Kumar</h4>
+                    <p class="testimonial-role">History Enthusiast, Delhi</p>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="Images/Test.avif" alt="Priya Patel" class="testimonial-avatar">
+                    <p class="testimonial-text">"Adilabad's nature tour was the perfect escape from city life. The waterfalls were spectacular, and learning about tribal culture from our guide was a highlight of our trip."</p>
+                    <h4 class="testimonial-author">Priya Patel</h4>
+                    <p class="testimonial-role">Photographer, Mumbai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest travel deals and Telangana tourism updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-column">
+                    <h3>About Telangana Tourism</h3>
+                    <p>Promoting the rich cultural heritage and natural beauty of Telangana since 2014. Our mission is to showcase the state's unique identity through authentic travel experiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#places">Destinations</a></li>
+                        <li><a href="#packages">Tour Packages</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Telangana Tourism House, Hyderabad</li>
+                        <li><i class="fas fa-phone"></i> +91 40 2345 6789</li>
+                        <li><i class="fas fa-envelope"></i> info@telanganatourism.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Travel Tales. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for Telangana</p>
+            </div>
+        </div>
+        
+        <!-- Floating elements for decoration -->
+        <div class="footer-floating">
+            <div class="footer-floating-element" style="width: 100px; height: 100px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+            <div class="footer-floating-element" style="width: 150px; height: 150px; top: 70%; left: 80%; animation-delay: 2s;"></div>
+            <div class="footer-floating-element" style="width: 80px; height: 80px; top: 40%; left: 30%; animation-delay: 4s;"></div>
+        </div>
+    </footer>
+</body>
+</html>

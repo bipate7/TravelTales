@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Index Explanation</title>
+    <style>
+        /* Container with relative positioning */
+        .container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+        /* Box 1 (lower z-index) */
+        .box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            top: 50px;
+            left: 50px;
+            z-index: 1; /* Lower z-index, appears behind box2 */
+        }
+
+        /* Box 2 (higher z-index) */
+        .box2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            top: 30px;
+            left: 80px;
+            z-index: 2; /* Higher z-index, appears on top of box1 */
+        }
+
+        /* Styling for heading and paragraph */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            text-align: center;
+            color: #555;
+        }
+
+        /* Explanation box styling */
+        .explanation {
+            background-color: #e8f0fe;
+            padding: 10px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Z-Index CSS Example and Explanation</h1>
+    <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+
+    <div class="explanation">
+        <h2>Explanation of the Code:</h2>
+        <h3>1. Container (<code>.container</code>):</h3>
+        <ul>
+            <li><strong>position: relative;</strong> - This positions the container relative to its normal position, making it the reference point for any absolutely positioned child elements inside it.</li>
+            <li><strong>width: 300px;</strong> and <strong>height: 200px;</strong> - These set the size of the container.</li>
+            <li><strong>background-color: #f0f0f0;</strong> - Sets a light gray background color for the container, making it visually distinct.</li>
+            <li><strong>border: 1px solid #ccc;</strong> - Adds a border around the container to visually separate it from other elements.</li>
+        </ul>
+
+        <h3>2. Box 1 (<code>.box1</code>):</h3>
+        <ul>
+            <li><strong>position: absolute;</strong> - This positions the box relative to the nearest positioned ancestor, in this case, the <code>.container</code>.</li>
+            <li><strong>z-index: 1;</strong> - The <code>z-index</code> controls the stacking order. Box 1 has a lower <code>z-index</code> than Box 2, so it appears behind it.</li>
+            <li><strong>top: 50px;</strong> and <strong>left: 50px;</strong> - Positions Box 1 50px from the top and left within the container.</li>
+            <li><strong>width: 100px;</strong> and <strong>height: 100px;</strong> - Sets the dimensions of Box 1.</li>
+            <li><strong>background-color: red;</strong> - Gives Box 1 a red color.</li>
+        </ul>
+
+        <h3>3. Box 2 (<code>.box2</code>):</h3>
+        <ul>
+            <li><strong>position: absolute;</strong> - Positions Box 2 absolutely within the container.</li>
+            <li><strong>z-index: 2;</strong> - Box 2 has a higher <code>z-index</code> than Box 1, so it appears on top of Box 1.</li>
+            <li><strong>top: 30px;</strong> and <strong>left: 80px;</strong> - Positions Box 2 slightly above and to the right of Box 1, so they overlap.</li>
+            <li><strong>width: 100px;</strong> and <strong>height: 100px;</strong> - Sets the dimensions of Box 2.</li>
+            <li><strong>background-color: blue;</strong> - Gives Box 2 a blue color.</li>
+        </ul>
+
+        <h3>4. Heading (<code>&lt;h1&gt;</code>):</h3>
+        <ul>
+            <li><strong>text-align: center;</strong> - Centers the heading text horizontally.</li>
+            <li><strong>color: #333;</strong> - Sets a dark gray color for the heading text for better readability.</li>
+        </ul>
+
+        <h3>5. Paragraph (<code>&lt;p&gt;</code>):</h3>
+        <ul>
+            <li><strong>text-align: center;</strong> - Centers the explanatory text.</li>
+            <li><strong>color: #555;</strong> - Sets the text color to a lighter gray for a softer look.</li>
+        </ul>
+
+        <h3>Summary of <code>z-index</code> Usage:</h3>
+        <ul>
+            <li>The <code>z-index</code> property determines the stacking order of elements. The element with the higher <code>z-index</code> will appear on top of elements with a lower <code>z-index</code>.</li>
+            <li>In this example, Box 1 has a <code>z-index</code> of 1 and appears behind Box 2, which has a <code>z-index</code> of 2.</li>
+            <li>This is why the blue Box 2 overlaps and appears on top of the red Box 1, even though they are in the same container.</li>
+        </ul>
+    </div>
+</body>
+</html>

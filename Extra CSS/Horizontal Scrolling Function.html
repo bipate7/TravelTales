@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scrolling</title>
+    <style>
+        /* Scrollable container with hidden scrollbar */
+        .scroll-container {
+            display: flex; /* Uses flexbox to align items in a row */
+            overflow-x: auto; /* Enables horizontal scrolling */
+            padding: 20px; /* Adds space around the scroll container */
+            scrollbar-width: none; /* Firefox specific to hide scrollbar */
+            -ms-overflow-style: none; /* IE/Edge specific to hide scrollbar */
+        }
+
+        /* Webkit scrollbar removal */
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* Hides scrollbar in webkit browsers (Chrome, Safari, etc.) */
+        }
+
+        /* Card styling */
+        .card {
+            flex: 0 0 200px; /* Makes each card 200px wide and prevents it from resizing */
+            margin: 10px; /* Adds space between each card */
+            background-color: lightblue; /* Sets the background color of each card */
+            text-align: center; /* Centers the text inside each card */
+            padding: 20px; /* Adds space inside each card */
+            border-radius: 8px; /* Rounds the corners of the card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect around each card */
+        }
+
+        h1 {
+            text-align: center; /* Centers the heading */
+            color: #333; /* Sets the color of the heading text */
+        }
+    </style>
+</head>
+<body>
+    <h1>Horizontal Scrolling Cards</h1>
+    <div class="scroll-container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 7</div>
+        <div class="card">Card 8</div>
+        <div class="card">Card 9</div>
+        <div class="card">Card 10</div>
+        <div class="card">Card 11</div>
+        <div class="card">Card 12</div>
+        <div class="card">Card 13</div>
+        <div class="card">Card 14</div>
+        <div class="card">Card 15</div>
+    </div>
+    <p style="text-align: center;">Use the scrollbar at the bottom to scroll through the cards horizontally.</p>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid: Fractional Units</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFF3E0;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #F57C00;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 15px;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: #F57C00;
+            color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Grid: Fractional Units</h1>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+    </div>
+    <footer>
+        <h3>Explanation</h3>
+        <p>
+            Fractional units (<code>fr</code>) allocate available space proportionally. 
+            In this example:
+            <ul>
+                <li>Column 1 takes 1 part.</li>
+                <li>Column 2 takes 2 parts.</li>
+                <li>Column 3 takes 1 part.</li>
+            </ul>
+        </p>
+    </footer>
+</body>
+</html>

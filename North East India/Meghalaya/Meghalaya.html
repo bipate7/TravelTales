@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghalaya: The Abode of Clouds | Premium Travel Guide</title>
+    <link rel="icon" href="images/meghalaya-favicon.png">
+    <link rel="icon" href="Images\TT4.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --secondary: #FFC107;
+            --accent: #4CAF50;
+            --dark: #212121;
+            --light: #FAFAFA;
+            --text: #424242;
+            --text-light: #757575;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 12px;
+            --section-padding: 80px 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .header-scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-weight: 500;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            animation: zoomInOut 20s infinite alternate;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background-color: #FFD700;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+
+        /* Places Section */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .place-card:nth-child(1) { animation-delay: 0.1s; }
+        .place-card:nth-child(2) { animation-delay: 0.2s; }
+        .place-card:nth-child(3) { animation-delay: 0.3s; }
+        .place-card:nth-child(4) { animation-delay: 0.4s; }
+        .place-card:nth-child(5) { animation-delay: 0.5s; }
+        .place-card:nth-child(6) { animation-delay: 0.6s; }
+        .place-card:nth-child(7) { animation-delay: 0.7s; }
+
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .place-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .place-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .place-card:hover .place-img img {
+            transform: scale(1.1);
+        }
+
+        .place-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .place-content {
+            padding: 20px;
+        }
+
+        .place-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .place-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .place-meta i {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
+        .place-content p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--primary-dark);
+        }
+
+        .read-more:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Packages Section */
+        .packages-section {
+            background-color: #f9f9f9;
+        }
+
+        .packages-container {
+            position: relative;
+        }
+
+        .packages-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 30px;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .packages-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .package-card {
+            flex: 0 0 350px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .package-card:nth-child(1) { animation-delay: 0.1s; }
+        .package-card:nth-child(2) { animation-delay: 0.2s; }
+        .package-card:nth-child(3) { animation-delay: 0.3s; }
+        .package-card:nth-child(4) { animation-delay: 0.4s; }
+        .package-card:nth-child(5) { animation-delay: 0.5s; }
+        .package-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .package-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .package-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .package-card:hover .package-img img {
+            transform: scale(1.1);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .package-content {
+            padding: 20px;
+        }
+
+        .package-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .package-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .package-duration, .package-rating {
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .package-duration i, .package-rating i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+
+        .package-rating {
+            color: var(--secondary);
+        }
+
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .package-price span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .book-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .book-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Map Section */
+        .map-container {
+            height: 500px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin-top: 30px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Culture Section */
+        .culture-section {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .culture-section .section-title h2 {
+            color: white;
+        }
+
+        .culture-section .section-title h2::after {
+            background-color: var(--secondary);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .culture-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            position: relative;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .culture-card:nth-child(1) { animation-delay: 0.1s; }
+        .culture-card:nth-child(2) { animation-delay: 0.2s; }
+        .culture-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .culture-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .culture-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .culture-card h3 i {
+            color: var(--secondary);
+        }
+
+        .culture-card p {
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background-color: #f9f9f9;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            font-family: serif;
+            color: rgba(0, 0, 0, 0.1);
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 2px solid var(--secondary);
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-rating {
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-section .section-title h2 {
+            color: white;
+        }
+
+        .newsletter-section .section-title h2::after {
+            background-color: var(--secondary);
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .newsletter-btn {
+            padding: 15px 30px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background-color: #FFD700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes zoomInOut {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card {
+                flex: 0 0 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .newsletter-input {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="Images/TT4.png" alt="Travel Tales Logo">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#places">Destinations</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="https://www.treksandtrails.org/blog/wp-content/uploads/2019/08/Meghalaya-6-1024x549.jpg" alt="Meghalaya Landscape" class="hero-bg">
+        <div class="hero-content">
+            <h1>Discover Meghalaya: The Abode of Clouds</h1>
+            <p>Explore the mystical landscapes, living root bridges, and vibrant Khasi culture of Northeast India's most enchanting state</p>
+            <a href="#packages" class="cta-btn">Explore Packages</a>
+        </div>
+    </section>
+
+    <!-- Places Section -->
+    <section class="section" id="places">
+        <div class="container">
+            <div class="section-title">
+                <h2>Must-Visit Destinations</h2>
+                <p>From the wettest place on Earth to Asia's cleanest village, Meghalaya offers unforgettable experiences</p>
+            </div>
+            <div class="places-grid">
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://www.shutterstock.com/image-photo/seven-sisters-waterfalls-cherrapunji-meghalaya-600nw-2519057159.jpg" alt="Cherrapunji">
+                        <span class="place-badge">Top Rated</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Cherrapunji</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-May</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Khasi Hills</span>
+                        </div>
+                        <p>Famous as one of the wettest places on Earth, Cherrapunji boasts spectacular waterfalls like Nohkalikai Falls (India's tallest plunge waterfall) and unique living root bridges. The Mawsmai Cave offers an adventurous underground experience.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://t4.ftcdn.net/jpg/03/38/31/57/360_F_338315747_hJljiEYlJLKjcT1oQnvm7K9SBFJtWK74.jpg" alt="Shillong">
+                        <span class="place-badge">Cultural Hub</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Shillong</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Mar-Nov</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Khasi Hills</span>
+                        </div>
+                        <p>The capital city known as "Scotland of the East" offers colonial charm, vibrant markets, and nearby attractions like Elephant Falls and Shillong Peak. Don't miss the Don Bosco Museum for insights into Northeast India's tribal cultures.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://nomadicweekends.com/blog/wp-content/uploads/2019/10/m-3.jpg" alt="Mawlynnong">
+                        <span class="place-badge">Eco Village</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mawlynnong</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Apr</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Khasi Hills</span>
+                        </div>
+                        <p>Voted as Asia's cleanest village, Mawlynnong offers picturesque bamboo huts, beautiful gardens, and the famous Sky View platform offering panoramic views of Bangladesh plains. The living root bridge at Riwai village is a short walk away.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://nomadicweekends.com/blog/wp-content/uploads/2019/09/66851483_2355591914534526_8824396371357335552_o.jpg" alt="Dawki">
+                        <span class="place-badge">Natural Wonder</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Dawki</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov-Mar</span>
+                            <span><i class="fas fa-map-marker-alt"></i> West Jaintia Hills</span>
+                        </div>
+                        <p>Famous for its crystal-clear Umngot River where boats appear to float in mid-air. The India-Bangladesh border crossing here offers unique photo opportunities. The nearby Shnongpdeng village is perfect for camping and water sports.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://travenjo.com/wp-content/uploads/2022/06/Seven-Sisters-Falls-1-gaimg.jpg?x58748" alt="Mawsynram">
+                        <span class="place-badge">Unique</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Mawsynram</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Jun-Sep</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Khasi Hills</span>
+                        </div>
+                        <p>Officially the wettest place on Earth, receiving over 11,000mm of rain annually. Witness unique adaptations like grass bridges and visit the impressive Mawjymbuin Cave with its stalagmite formations resembling a Shiva lingam.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://www.meghalayatourism.in/wp-content/uploads/2020/07/Nongriat-Root-Bridges-1.jpg" alt="Nongriat">
+                        <span class="place-badge">Adventure</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Nongriat</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct-Mar</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Khasi Hills</span>
+                        </div>
+                        <p>Home to the famous double-decker living root bridge, accessible via a challenging 3,000-step hike through lush rainforest. The natural pools at Rainbow Falls make the strenuous trek worthwhile for adventurous travelers.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="place-card">
+                    <div class="place-img">
+                        <img src="https://blogs.tripzygo.in/wp-content/uploads/2024/09/laitlum-canyon.jpg" alt="Laitlum Canyon">
+                        <span class="place-badge">Scenic</span>
+                    </div>
+                    <div class="place-content">
+                        <h3>Laitlum Canyon</h3>
+                        <div class="place-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Sep-May</span>
+                            <span><i class="fas fa-map-marker-alt"></i> East Khasi Hills</span>
+                        </div>
+                        <p>Known as the "End of Hills," this spectacular canyon offers breathtaking views of deep gorges and rolling hills. The rustic village of Rasong provides a glimpse into traditional Khasi life away from tourist crowds.</p>
+                        <a href="#" class="read-more">Explore More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages-section" id="packages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Tour Packages</h2>
+                <p>Carefully curated experiences to help you discover the best of Meghalaya</p>
+            </div>
+            <div class="packages-container">
+                <div class="packages-carousel">
+                    <div class="package-card">
+    <div class="package-img">
+        <img src="Images/Shillong1.avif" alt="Shillong Package">
+        <span class="package-badge">Top Rated</span>
+    </div>
+    <div class="package-content">
+        <h3>Shillong Adventure</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 5 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+        </div>
+        <div class="package-price">₹15,000 <span>per person</span></div>
+        <p>Experience the beauty of Shillong with guided tours and adventure activities.</p>
+        <a href="Shillong Adventure.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Cherrapunji2.webp" alt="Cherrapunji Package">
+        <span class="package-badge">Limited Offer</span>
+    </div>
+    <div class="package-content">
+        <h3>Cherrapunji Exploration</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 6 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+        </div>
+        <div class="package-price">₹18,000 <span>per person</span></div>
+        <p>Discover the natural wonders of Cherrapunji with our exclusive tour package.</p>
+        <a href="Cherrapunji Exploration.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Mawlynnong.jpg" alt="Mawlynnong Package">
+        <span class="package-badge">Cleanest Village</span>
+    </div>
+    <div class="package-content">
+        <h3>Mawlynnong Experience</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+        </div>
+        <div class="package-price">₹12,000 <span>per person</span></div>
+        <p>Explore the cleanest village in Asia with our special tour package.</p>
+        <a href="Mawlynnong Experience.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Mawsynram.jpg" alt="Mawsynram Package">
+        <span class="package-badge">Nature Escape</span>
+    </div>
+    <div class="package-content">
+        <h3>Mawsynram Getaway</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 4.5</div>
+        </div>
+        <div class="package-price">₹10,000 <span>per person</span></div>
+        <p>Enjoy a serene retreat in Mawsynram, the wettest place on earth.</p>
+        <a href="Mawsynram Getaway.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Dawki.jpg" alt="Dawki Package">
+        <span class="package-badge">Scenic Beauty</span>
+    </div>
+    <div class="package-content">
+        <h3>Dawki Delight</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 5 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+        </div>
+        <div class="package-price">₹14,000 <span>per person</span></div>
+        <p>Experience the crystal-clear waters of the Umngot River in Dawki.</p>
+        <a href="Dawki Delight.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Nohkalikai Falls.jpg" alt="Nohkalikai Falls Package">
+        <span class="package-badge">Popular Choice</span>
+    </div>
+    <div class="package-content">
+        <h3>Nohkalikai Falls Adventure</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 4 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 5.0</div>
+        </div>
+        <div class="package-price">₹16,000 <span>per person</span></div>
+        <p>Witness the majestic Nohkalikai Falls with our exclusive package.</p>
+        <a href="Nohkalikai Falls Adventure.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+<div class="package-card">
+    <div class="package-img">
+        <img src="Images/Elephant Falls.jpg" alt="Elephant Falls Package">
+        <span class="package-badge">Family Friendly</span>
+    </div>
+    <div class="package-content">
+        <h3>Elephant Falls Tour</h3>
+        <div class="package-details">
+            <div class="package-duration"><i class="fas fa-clock"></i> 3 Days</div>
+            <div class="package-rating"><i class="fas fa-star"></i> 4.5</div>
+        </div>
+        <div class="package-price">₹13,000 <span>per person</span></div>
+        <p>Explore the beautiful Elephant Falls with our guided tours.</p>
+        <a href="Elephant Falls Tour.html" class="book-btn">Book Now</a>
+    </div>
+</div>
+
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="https://sikkim.ch/wp-content/themes/yootheme/cache/56/sikkim.ch_meghalaya-56cd9c9d.jpeg" alt="Meghalaya Highlights">
+                            <span class="package-badge">Best Seller</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Meghalaya Highlights</h3>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i> 7 Days
+                                </div>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </div>
+                            </div>
+                            <div class="package-price">₹25,000 <span>per person</span></div>
+                            <p>Comprehensive tour covering Shillong, Cherrapunji, Mawlynnong, and Dawki with all major attractions included.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/06/Explore-Marvellous-Meghalaya-8-Reasons-Why-You-Should-Take-the-Living-Root-Bridge-Trek-2-1280x720.webp" alt="Living Root Bridges Trek">
+                            <span class="package-badge">Adventure</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Living Root Bridges Trek</h3>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i> 5 Days
+                                </div>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </div>
+                            </div>
+                            <div class="package-price">₹18,000 <span>per person</span></div>
+                            <p>Challenging trek to Nongriat's double-decker root bridge with visits to Rainbow Falls and other natural wonders.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="https://res.cloudinary.com/kmadmin/image/upload/v1618829757/kiomoi/Cherrapunji_Double_Decker_Living_Root_Bridge_1618829756084.jpg" alt="Shillong Getaway">
+                        </div>
+                        <div class="package-content">
+                            <h3>Shillong Getaway</h3>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i> 4 Days
+                                </div>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </div>
+                            </div>
+                            <div class="package-price">₹15,000 <span>per person</span></div>
+                            <p>Explore Shillong's colonial charm, nearby waterfalls, and cultural attractions with comfortable stays.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="https://img.freepik.com/premium-photo/cherrapunji-waterfalls-monsoon-magic-meghalaya_1344896-526.jpg" alt="Cherrapunji Monsoon Magic">
+                            <span class="package-badge">Seasonal</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Cherrapunji Monsoon Magic</h3>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i> 5 Days
+                                </div>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </div>
+                            </div>
+                            <div class="package-price">₹20,000 <span>per person</span></div>
+                            <p>Witness the spectacular waterfalls at their mightiest during peak monsoon season (June-September).</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="https://travenjo.com/wp-content/uploads/2022/01/upo-lf-Dawki-Shnongpdeng-River-1.jpg" alt="Dawki River Experience">
+                        </div>
+                        <div class="package-content">
+                            <h3>Dawki River Experience</h3>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i> 3 Days
+                                </div>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i> 4.6
+                                </div>
+                            </div>
+                            <div class="package-price">₹12,000 <span>per person</span></div>
+                            <p>Boat rides on crystal-clear Umngot River combined with camping at Shnongpdeng village.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-img">
+                            <img src="https://t3.ftcdn.net/jpg/08/66/94/08/360_F_866940859_vyTEYM5S4u6IPfIfPjNn6ZNwsRWgvIn6.jpg" alt="Meghalaya Photography Tour">
+                            <span class="package-badge">Premium</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Photography Tour</h3>
+                            <div class="package-details">
+                                <div class="package-duration">
+                                    <i class="fas fa-clock"></i> 8 Days
+                                </div>
+                                <div class="package-rating">
+                                    <i class="fas fa-star"></i> 5.0
+                                </div>
+                            </div>
+                            <div class="package-price">₹35,000 <span>per person</span></div>
+                            <p>Guided photography expedition covering all scenic locations with professional tips and golden hour shoots.</p>
+                            <a href="#" class="book-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="section culture-section" id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Khasi Culture & Traditions</h2>
+                <p>Discover the rich heritage of Meghalaya's indigenous communities</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <h3><i class="fas fa-users"></i> Matrilineal Society</h3>
+                    <p>The Khasi people follow a unique matrilineal system where property and family names are passed through the mother's line. The youngest daughter (Ka Khadduh) inherits the ancestral property and cares for aging parents.</p>
+                </div>
+                <div class="culture-card">
+                    <h3><i class="fas fa-utensils"></i> Cuisine</h3>
+                    <p>Meghalaya's cuisine features smoked meats, bamboo shoots, and fermented foods. Must-try dishes include Jadoh (rice with meat), Dohneiiong (pork with black sesame), and Tungrymbai (fermented soybean paste).</p>
+                </div>
+                <div class="culture-card">
+                    <h3><i class="fas fa-music"></i> Music & Dance</h3>
+                    <p>Traditional instruments include the bamboo flute (Tangmuri) and drums (Ksing). The Wangala harvest festival features vibrant dances celebrating the Sun God. The Shad Suk Mynsiem dance symbolizes purity and joy.</p>
+                </div>
+                <div class="culture-card">
+                    <h3><i class="fas fa-tree"></i> Living Architecture</h3>
+                    <p>The living root bridges of Meghalaya are remarkable examples of bio-engineering. Created by guiding rubber tree roots across rivers, these bridges grow stronger over time, some spanning over 50 feet and lasting centuries.</p>
+                </div>
+                <div class="culture-card">
+                    <h3><i class="fas fa-scroll"></i> Oral Traditions</h3>
+                    <p>Khasi culture preserves history through rich oral traditions. The "Ki Nongsaiñ Hima" (priestesses) recite genealogies and myths during ceremonies. The Khasi language has its own script and is recognized in the Indian constitution.</p>
+                </div>
+                <div class="culture-card">
+                    <h3><i class="fas fa-leaf"></i> Sacred Groves</h3>
+                    <p>Meghalaya's sacred groves (Law Kyntang) are preserved forest patches protected by religious beliefs. These biodiversity hotspots conserve rare flora and fauna while maintaining the ecological balance of the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="map">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Meghalaya</h2>
+                <p>Discover the geographical diversity and key attractions across the state</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1ioAGokhzqw1I0PorxkX_yhHGa00WP64&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Experiences</h2>
+                <p>What our visitors say about their journey through Meghalaya</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Meghalaya was like stepping into a fairy tale! The living root bridges were absolutely magical, and our guide from MeghalayaExplorer made sure we experienced authentic Khasi culture. The monsoon waterfalls were worth every slippery step!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Travel Blogger, UK</p>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>As a photographer, Meghalaya offered endless breathtaking frames. From the crystal-clear waters of Dawki to the misty valleys of Cherrapunji, every moment was picture-perfect. The photography tour package was worth every rupee!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajiv Mehta">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajiv Mehta</h4>
+                            <p>Wildlife Photographer, India</p>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Our family trip to Meghalaya was unforgettable. The kids loved Mawlynnong village and its cleanliness lessons, while we adults marveled at the engineering of living root bridges. The homestay experience gave us genuine Khasi hospitality.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Family Traveler, Delhi</p>
+                            <div class="testimonial-rating">★★★★☆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for travel tips, special offers, and Meghalaya updates</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>MeghalayaExplorer is dedicated to showcasing the beauty and culture of Meghalaya through authentic travel experiences. We work with local communities to promote sustainable tourism.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#places">Destinations</a></li>
+                        <li><a href="#packages">Tour Packages</a></li>
+                        <li><a href="#culture">Khasi Culture</a></li>
+                        <li><a href="#testimonials">Traveler Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Travel Tales, Nagpur, Maharashtra 793001</p>
+                    <p><i class="fas fa-phone"></i> +91 9876543210</p>
+                    <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9AM to 6PM</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Helpful Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Travel Guide</a></li>
+                        <li><a href="#">Best Time to Visit</a></li>
+                        <li><a href="#">Local Cuisine Guide</a></li>
+                        <li><a href="#">Packing List</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TravelTales. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff5252;"></i> in Meghalaya</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const header = document.getElementById('header');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Carousel navigation
+        const carousel = document.querySelector('.packages-carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                // Update active dot
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+                
+                // Scroll carousel
+                const scrollAmount = index * 380; // 350px card width + 30px gap
+                carousel.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Carousel scroll detection
+        carousel.addEventListener('scroll', () => {
+            const scrollPosition = carousel.scrollLeft;
+            const activeIndex = Math.round(scrollPosition / 380);
+            
+            dots.forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.place-card, .package-card, .testimonial-card, .culture-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
