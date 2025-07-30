@@ -145,31 +145,88 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .hero-content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-            transform: translateY(50px);
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out;
+    transform: translateY(50px);
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-content {
+        transform: translateY(20px);
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+}
+
         
         .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.hero-buttons .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 160px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        width: 80%;
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+}
+
         
         .btn {
             display: inline-block;
@@ -318,7 +375,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         .about-image img {
             width: 100%;
-            height: 450px;
+            height: 350px;
             display: block;
             transition: transform 0.8s ease;
         }
@@ -1620,5 +1677,3 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 </script>
 </body>
 </html>
-                
-                
