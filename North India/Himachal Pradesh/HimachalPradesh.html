@@ -456,21 +456,37 @@
         }
         
         /* Map Section */
-        .map-container {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            height: 500px;
-            width: 1150px;
-            left: 30px;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+.map-container {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 60vh; /* responsive height */
+    width: 90%; /* responsive width */
+    margin: 20px auto; /* center align */
+    max-width: 1150px;
+    position: relative;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Optional: Additional responsiveness if needed */
+@media (max-width: 768px) {
+    .map-container {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container {
+        height: 40vh;
+    }
+}
+
         
         
         /* Testimonials */
@@ -1198,15 +1214,21 @@
             </div>
         </section>
         
-        <!-- Map Section -->
-    <section class="section" id="map">
-        <div class="section-title">
-            <h2>Explore Himachal</h2>        
-        </div>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1hIMsv_tfYD1tIgMmmbkdgpbE_sC8btc&ehbc=2E312F"  width="640" height="480"></iframe> 
-        </div>
-    </section>s
+    <!-- Map Section -->
+<section class="section" id="map">
+    <div class="section-title">
+        <h2>Explore Himachal</h2>        
+    </div>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/d/u/8/embed?mid=1hIMsv_tfYD1tIgMmmbkdgpbE_sC8btc&ehbc=2E312F" 
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe> 
+    </div>
+</section>
+
 
         <!-- Testimonials Section -->
         <section class="testimonials-section" id="testimonials">
