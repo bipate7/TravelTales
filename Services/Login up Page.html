@@ -5,8 +5,12 @@
     <link rel="icon" type="image/logo" href="Images/TT4.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -16,8 +20,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 98vh;
+            min-height: 100vh;
         }
+
         header {
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
@@ -28,31 +33,37 @@
             left: 0;
             z-index: 1000;
         }
+
         nav {
             display: flex;
             justify-content: center;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             padding: 14px 20px;
             transition: background 0.3s;
         }
+
         nav a:hover {
             background: rgba(255, 255, 255, 0.3);
         }
+
         .container {
             background: rgba(255, 255, 255, 0.1);
-            padding: 5px;
-            width: 400px;
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
             border-radius: 20px;
             box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(0.8px);
+            -webkit-backdrop-filter: blur(0..6px);
             text-align: center;
             animation: fadeIn 1s ease-in-out;
             transition: transform 0.3s, background 0.3s;
         }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -63,47 +74,63 @@
                 transform: scale(1);
             }
         }
+
         .container:hover {
             transform: scale(1.02);
             background: rgba(255, 255, 255, 0.2);
         }
+
         h1 {
-            font-size: 40px;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 10px;
             color: #fff;
             font-family: 'Pacifico', cursive;
         }
+
         h5 {
             margin-bottom: 20px;
             color: #f5ebeb;
+            font-size: 1em;
         }
+
         h5 a {
             color: #f5ebeb;
             text-decoration: none;
             transition: color 0.3s;
         }
+
         h5 a:hover {
             color: #007BFF;
         }
+
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         form img {
             margin-bottom: 20px;
             border-radius: 50%;
+            width: 100px;
+            height: 100px;
             transition: transform 0.3s;
         }
+
         form img:hover {
             transform: scale(1.1);
         }
+
         form label {
             font-weight: bold;
             margin-bottom: 5px;
             color: #fff;
+            width: 80%;
+            text-align: left;
         }
-        form input[type="text"], form input[type="password"] {
+
+        form input[type="text"],
+        form input[type="password"] {
             width: 80%;
             padding: 10px;
             margin-bottom: 15px;
@@ -112,22 +139,27 @@
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
             transition: border-color 0.3s, box-shadow 0.3s;
         }
-        form input[type="text"]:focus, form input[type="password"]:focus {
+
+        form input:focus {
             border-color: #007BFF;
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
             outline: none;
         }
-        form input[type="checkbox"] {
-            margin-right: 10px;
+
+        form label input[type="checkbox"] {
+            margin-right: 8px;
         }
+
         form .psw a {
             color: #f5ebeb;
             text-decoration: none;
             font-size: 0.9em;
         }
+
         form .psw a:hover {
             color: #007BFF;
         }
+
         form button {
             width: 80%;
             padding: 10px;
@@ -135,25 +167,29 @@
             border-radius: 5px;
             background: #007BFF;
             color: white;
-            font-size: 16px;
+            font-size: 1em;
             cursor: pointer;
             transition: background 0.3s, transform 0.3s;
             box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3);
         }
+
         form button:hover {
             background: #0056b3;
             transform: translateY(-3px);
         }
+
         .social-buttons {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
+
         .social-buttons a {
             display: inline-block;
             position: relative;
         }
+
         .social-buttons a::before {
             content: attr(aria-label);
             position: absolute;
@@ -168,17 +204,21 @@
             transition: opacity 0.3s;
             white-space: nowrap;
         }
+
         .social-buttons a:hover::before {
             opacity: 1;
         }
+
         .social-buttons img {
             width: 40px;
             height: 40px;
             transition: transform 0.3s;
         }
+
         .social-buttons img:hover {
             transform: scale(1.1);
         }
+
         footer {
             width: 100%;
             color: whitesmoke;
@@ -187,16 +227,24 @@
             bottom: 0;
             left: 0;
             background: rgba(0, 0, 0, 0);
-            padding: 20px 0;
-            font-size: 10px;
+            padding: 10px 0;
+            font-size: 0.75em;
         }
+
         @media (max-width: 600px) {
             h1 {
-                font-size: 30px;
+                font-size: 2em;
             }
-            form input[type="text"], form input[type="password"], form button {
+
+            .container {
+                padding: 15px;
+            }
+
+            form input,
+            form button {
                 width: 100%;
             }
+
             .social-buttons img {
                 width: 30px;
                 height: 30px;
@@ -208,31 +256,32 @@
     <div class="container">
         <h1>Login</h1>
         <h5>Not a member? <a href="Sign up Page.html">Register now</a></h5>
-        <form action="/action_page.php" method="post"> 
-            <img src="Images/TravelTales3.png" height="120px" width="120px" alt="User Image">
+        <form action="/action_page.php" method="post">
+            <img src="Images/TravelTales3.png" alt="User Image">
             <label for="uname">Username</label>
             <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
             <label for="psw">Password</label>
             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-            <label>
-                <input type="checkbox" checked="checked" name="remember">Remember me
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
-                <span class="psw"><a href="Reset Password.html">Forgot Password?</a></span>
-            </label>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-size: 14px;">
+  <label style="display: flex; align-items: center;">
+    <input type="checkbox" style="margin-right: 6px;"> Remember me
+  </label>
+  <a href="#" style="text-decoration: none; color: #fff;">Forgot Password?</a>
+</div>
+            <br>
             <button type="submit">Login</button>
             <div>
                 <p>Or</p>
                 <p>Sign in with</p>
                 <div class="social-buttons">
                     <a href="https://www.facebook.com/login.php/" aria-label="Facebook"><img src="Images/facebook.png" alt="Facebook Logo"></a>
-                    <a href="https://accounts.google.com/v3/signin/identifier?dsh=S1812573153%3A1655944654029516&flowEntry=ServiceLogin&flowName=WebLiteSignIn&ifkv=AX3vH39E0iYVTmn-NoMNM_C35EPrno8LWsRx2Qhr0HApkVLZ-Zc_Vql8ouaSQOiXzEmthrpOPAV5" aria-label="Google"><img src="Images/googleplus.png" alt="Google Logo"></a>
+                    <a href="https://accounts.google.com/" aria-label="Google"><img src="Images/googleplus.png" alt="Google Logo"></a>
                     <a href="https://x.com/i/flow/login?lang=en" aria-label="Twitter"><img src="Images/twitter.png" alt="Twitter Logo"></a>
                 </div>
                 <p>&copy; 2025 TravelTales. All Rights Reserved.</p>
             </div>
         </form>
     </div>
-    <footer>
-
+    <footer></footer>
 </body>
 </html>
