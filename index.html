@@ -3,3310 +3,2924 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Explore North India | Land of Culture & Adventure</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelTales Travels</title>
-    <link rel="icon" href="Logos\TT4.png">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="icon" href="Images/TT4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        *{
-    padding:0;
-    margin:0;
+        :root {
+            --primary-color: #2568b2;
+            --secondary-color: #ff7e33;
+            --accent-color: #e63946;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--dark-color);
+            padding: 0.5rem;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            color: var(--secondary-color);
+        }
+
+        .logo:hover img {
+            transform: rotate(15deg);
+        }
+
+        /* Navigation Styles */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            transition: var(--transition);
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            margin: 0 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            z-index: 1001;
+            padding: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 350px;
+                height: 100vh;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                z-index: 1000;
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                margin: 1.5rem 0;
+                font-size: 1.3rem;
+                color: var(--dark-color);
+            }
+            
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 120vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 120px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1500px;
+            padding: 0 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+            opacity: 0;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 0;
+            padding: 1rem;
+            position: relative;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            margin: 0 auto;
+            max-width: 1550px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        
+        #about {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-top: 60px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            position: relative;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: var(--gradient);
+            color: white;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-item:hover h4 {
+            color: white;
+            background: transparent;
+            -webkit-background-clip: initial;
+            background-clip: initial;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .stat-item:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Cards Layout */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        /* Card Styles - Improved for Packages Section */
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            perspective: 1000px;
+            height: 500px; /* Increased height for better content display */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            flex: 1;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-front {
+            justify-content: space-between;
+        }
+
+        .card-back {
+            background-color: white;
+            transform: rotateY(180deg);
+            padding: 1.5rem;
+            justify-content: space-between;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .card-price {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin: 0.5rem 0;
+        }
+
+        .card-duration {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .card-duration i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-rating {
+            color: #FFD700;
+            margin: 0.5rem 0;
+        }
+
+        /* Improved back card styling */
+        .card-back-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-back h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .card-back p {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .card-features {
+            margin: 1rem 0;
+        }
+
+        .card-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-feature i {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .card-button {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        /* State Cards */
+        .state-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 350px;
+            position: relative;
+        }
+
+        .state-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .state-card img {
+            width: 100%;
+            height: 290px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .state-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .state-card h4 {
+            padding: 0.5rem;
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .state-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .state-card:hover::before {
+            opacity: 0.8;
+        }
+
+        .state-card a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(20px);
+        }
+
+        .state-card:hover a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .state-card a h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .state-card a .btn {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Gallery Styles */
+        .gallery-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            color: white;
+            z-index: 2;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Testimonial Styles */
+        .testimonials-container {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(0, 0, 0, 0.05);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .rating {
+            color: #FFD700;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+            color: var(--primary-color);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Parallax Section */
+        .parallax {
+            height: 600px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 5rem 0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .parallax h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        /* Contact Section Styling */
+#contact {
+    background: none;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 15px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Contact Form Container */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Fields */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: 0.3s ease;
     box-sizing: border-box;
-    font-family:'Poppins',sans-serif;
-    text-decoration: none;
-    list-style: none;
-    scroll-behavior: smooth;
 }
 
-/* Home page */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0077b6;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 119, 182, 0.15);
+}
 
-.banner{
-    width:100%;
-    height: 100vh;
+/* Submit Button */
+.contact-form .btn {
+    background-color: #0077b6;
+    color: white;
+    padding: 12px 28px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.contact-form .btn:hover {
+    background-color: #005f8f;
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+}
+
+/* Fully Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title p {
+        font-size: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 12px 15px;
+    }
+
+    .contact-form .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title h2 {
+        font-size: 1.7rem;
+    }
+
+    .section-title p {
+        font-size: 0.95rem;
+    }
+
+    .contact-container {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+}
+
+        /* Newsletter Section */
+        .newsletter {
+            background: var(--gradient);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            color: white;
+            text-align: center;
+            margin: 5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            padding: 0 2rem;
+            background: var(--dark-color);
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: black;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 5rem 1rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 0.3rem 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 400px;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 992px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Adjust card height for tablets */
+            .card {
+                height: 480px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-btn {
+                border-radius: 50px;
+                padding: 1rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .footer-links a:hover {
+                padding-left: 0;
+            }
+
+            /* Adjust card height for smaller tablets */
+            .card {
+                height: 460px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .section-title p {
+                font-size: 1rem;
+            }
+
+            /* Adjust card height for mobile */
+            .card {
+                height: 500px;
+            }
+
+            /* Make sure back card content is properly visible on mobile */
+            .card-back {
+                padding: 1.2rem;
+            }
+
+            .card-back p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra small devices (phones, 360px and down) */
+        @media (max-width: 360px) {
+            .card {
+                height: 520px;
+            }
+
+            .card-back {
+                padding: 1rem;
+            }
+        }
+        /* ======================
+   CUISINE SECTION STYLES
+   ====================== */
+#cuisine {
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'), #fff0f5;
+    background-blend-mode: overlay;
+    padding: 5rem 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin: 3rem auto;
+}
+
+
+.cuisine-card {
+    background: white;
+    border-radius: 15px;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
-.banner video{
+.cuisine-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.cuisine-img {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.cuisine-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.cuisine-card:hover .cuisine-img img {
+    transform: scale(1.1);
+}
+
+.cuisine-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+}
+
+.cuisine-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+}
+
+.cuisine-card:hover .cuisine-overlay h3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cuisine-content {
+    padding: 1.5rem;
+}
+
+.cuisine-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.cuisine-dishes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.cuisine-dishes span {
+    background: rgba(37, 104, 178, 0.1);
+    color: var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+}
+
+/* ========================
+   FESTIVALS SECTION STYLES
+   ======================== */
+#festivals {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 7rem 4rem;
+}
+
+#festivals::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    object-fit: cover;
     width: 100%;
-    height: 120%;
-    pointer-events: none;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
 }
 
-.content{
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(1, 0, 5, 0.3),rgba(4, 1, 17, 0.3));
-
-}
-
-nav {
-    width: 100%;
-    position: absolute;
-    background-color: transparent;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 15%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav .logo{
-    width: 150px;
-}
-
-nav ul li{
-    list-style: none;
-    display: inline-block;
-    margin-left: 40px;
-}
-
-.navbar{
-    display: flex;
-    margin-right: 4vh;
-}
-
-.navbar a{
-    color: white;
-    font-size: 18px;
-    padding: 10px 22px;
-    border-radius: 4px;
-    font-weight: 500;   
-    text-decoration: none;
-    transition: ease 0.40s;
-}
-
-.navbar a:hover,.navbar a.active{
-    background: white;
-    color: black;
-    box-shadow: 5px 10px 30px rgb(85 85 85 20);
-    border-radius: 5px;
-    
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: 17px;
-}
-
-.title{
-    text-decoration: none;
-    /* display: inline-block; */
-    font-size: 4vh;
-    color: rgb(255, 255, 255);
-    padding: 14px 17px;
-    margin-top: 32vh;
-    text-align: center;
-    vertical-align: center;
-}
-
-.title h1{
-    font-size: 10vh;
-    text-shadow: 2px black;
-    transition: ease 0.3s;
-}
-
-.title h1:hover{
-    color:transparent;
-    -webkit-text-stroke: 1px white;
-    
-}
-
-.button{
-    display: inline-block;
-    margin-top:5vh;
-    font-size: 25px;
-    padding: 10px 30px;
-    color: rgb(21, 74, 74);
-    /* background-color:rgb(164, 44, 44); */
-    background-color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: ease 0.30s;
-}
-
-.button:hover{
-    transform: scale(1.1);
-    color: white;
-    background-color: rgb(21, 74, 74);
-    /*border: 2px solid rgb(42, 37, 68); */
-    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.4);
-    padding: 10px 30px;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 2.5rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    z-index: 1002;
-    margin-right: 2vh;
-}
-
-@media (max-width: 900px) {
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 10px;
-    }
-    .navbar {
-        position: fixed;
-        top: 0;
-        right: -100vw;
-        width: 60vw;
-        height: 100vh;
-        background: rgba(21, 74, 74, 0.95);
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: 80px;
-        transition: right 0.3s ease;
-        z-index: 1001;
-        margin: 0;
-    }
-    .navbar.open {
-        right: 0;
-    }
-    .navbar li {
-        margin: 20px 0 0 30px;
-        display: block;
-    }
-    .menu-toggle {
-        display: block;
-    }
-}
-
-@media (max-width: 600px) {
-    .navbar {
-        width: 80vw;
-        padding-top: 60px;
-    }
-    .logo {
-        width: 120px;
-    }
-    .title h1 {
-        font-size: 6vh;
-    }
-}
-
-
-/* WHERE TO GO SECTION (BOOK TRIP) */
-:root {
-  --yellow: #fde02f;
-  --yellow-dark: #ffb300;
-  --glass-white: rgba(255,255,255,0.22);
-  --glass-border: rgba(253,224,47,0.35);
-  --glass-blur: blur(16px);
-  --shadow: 0 12px 40px 0 rgba(31,38,135,0.28);
-  --input-bg: rgba(255,255,255,0.92);
-  --input-border: #fde02f99;
-  --icon-color: #fde02f;
-  --icon-focus: #ffb300;
-  --subtitle: #fffc;
-  --heading-shadow: 0 4px 18px rgba(0,0,0,0.4);
-  --pulse-shadow: 0 0 0 0 rgba(253, 224, 47, 0.7);
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url('Main Page/SearchDestination.jpg') center/cover no-repeat fixed;
-}
-.banner {
-  background-size:100%;
-  width: 99vw;
-  min-height: 100vh;
-  text-align: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  background: url('Main Page/SearchDestination.jpg') center/cover no-repeat fixed;
-}
-
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Floating Destination Icons */
-.destination-icon {
-  position: absolute;
-  opacity: 0.1;
-  animation: float 6s ease-in-out infinite;
-  z-index: 1;
-}
-
-.destination-icon:nth-child(1) {
-  top: 15%;
-  left: 10%;
-  font-size: 2rem;
-  animation-delay: 0s;
-}
-
-.destination-icon:nth-child(2) {
-  top: 70%;
-  left: 15%;
-  font-size: 3rem;
-  animation-delay: 1s;
-}
-
-.destination-icon:nth-child(3) {
-  top: 30%;
-  right: 10%;
-  font-size: 2.5rem;
-  animation-delay: 2s;
-}
-
-.destination-icon:nth-child(4) {
-  top: 80%;
-  right: 20%;
-  font-size: 2rem;
-  animation-delay: 3s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
-}
-
-/* Glassmorphic Panel with Neumorphism */
-.banner-text-item {
-  position: relative;
-  z-index: 2;
-  width: 90vw;
-  max-width: 850px;
-  margin: 0 auto;
-  padding: 42px 36px;
-  background: var(--glass-white);
-  box-shadow: var(--shadow), 
-              inset 2px 2px 5px rgba(255,255,255,0.1),
-              inset -2px -2px 5px rgba(0,0,0,0.2);
-  border-radius: 28px;
-  backdrop-filter: var(--glass-blur);
-  border: 1.5px solid var(--glass-border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeInUp 1.1s cubic-bezier(.23,1.08,.74,1.01) 0.1s both;
-  box-sizing: border-box;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.banner-text-item:hover {
-  box-shadow: 0 16px 50px 0 #fde02f44, 
-              inset 2px 2px 5px rgba(255,255,255,0.1),
-              inset -2px -2px 5px rgba(0,0,0,0.2);
-  transform: translateY(-5px);
-}
-
-/* Heading with Gradient Text */
-.banner-heading h1 {
-  font-size: 3.2rem;
-  font-weight: 800;
-  background: linear-gradient(45deg, var(--yellow), #fff, var(--yellow));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin: 0;
-  letter-spacing: 1px;
-  text-shadow: var(--heading-shadow);
-  animation: fadeInDown 1.1s;
-  position: relative;
-  display: inline-block;
-}
-
-.banner-heading h1::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--yellow), transparent);
-  border-radius: 3px;
-}
-
-.subtitle {
-  color: var(--subtitle);
-  font-size: 1.3rem;
-  margin-bottom: 28px;
-  margin-top: 12px;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px;
-  animation: fadeIn 1.5s;
-  max-width: 80%;
-  line-height: 1.5;
-}
-
-/* Booking Form with Floating Labels */
-.form {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  width: 100%;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 24px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  transition: gap 0.2s;
-  animation: fadeInUp 1.4s;
-}
-
-.input-group {
-  position: relative;
-  display: flex;
-  align-items: center;
-  flex: 1 1 120px;
-  min-width: 0;
-  max-width: 260px;
-  width: 100%;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-
-.input-group:hover {
-  transform: translateY(-2px);
-}
-
-.input-icon {
-  position: absolute;
-  left: 16px;
-  color: var(--icon-color);
-  font-size: 1.3rem;
-  z-index: 2;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-.form input[type="text"],
-.form input[type="date"] {
-  padding: 16px 16px 16px 48px;
-  font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 12px;
-  outline: none;
-  border: 1.5px solid var(--input-border);
-  background: var(--input-bg);
-  margin: 0;
-  width: 100%;
-  min-width: 0;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-sizing: border-box;
-  color: #333;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(253, 224, 47, 0.1);
-}
-
-.form input::placeholder {
-  color: #888;
-  transition: all 0.3s ease;
-}
-
-.form input:focus {
-  border: 1.5px solid var(--yellow);
-  box-shadow: 0 6px 20px rgba(253, 224, 47, 0.3);
-  background: #fff;
-}
-
-.form input:focus::placeholder {
-  opacity: 0;
-}
-
-.form input:focus ~ .input-icon,
-.input-group:focus-within .input-icon {
-  color: var(--icon-focus);
-  filter: drop-shadow(0 0 8px #fde02fbb);
-  transform: scale(1.1);
-}
-
-/* Book Button with Pulse Animation */
-.book {
-  margin-top: 0;
-  margin-left: 10px;
-  padding: 18px 38px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--yellow) 40%, var(--yellow-dark) 100%);
-  color: #222;
-  font-size: 1.2rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(253, 224, 47, 0.3), 
-              0 6px 10px rgba(253, 224, 47, 0.1);
-  letter-spacing: 1.2px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: auto;
-  min-width: 140px;
-  position: relative;
-  overflow: hidden;
-  outline: none;
-  animation: pulse 2s infinite;
-}
-
-.book span {
-  position: relative;
-  z-index: 2;
-}
-
-.book::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--yellow-dark) 10%, var(--yellow) 90%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.book:hover::before {
-  opacity: 1;
-}
-
-.book:hover, .book:focus {
-  color: #fff;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 30px rgba(253, 224, 47, 0.5);
-  animation: none;
-}
-
-.book:active {
-  transform: scale(0.97);
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--pulse-shadow); }
-  70% { box-shadow: 0 0 0 12px rgba(253, 224, 47, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(253, 224, 47, 0); }
-}
-
-/* Confirmation Animation */
-#confirmation {
-  display: none;
-  margin-top: 28px;
-  font-size: 1.3rem;
-  color: #fff;
-  font-weight: 600;
-  text-shadow: 0 2px 8px #000;
-  background: rgba(0,0,0,0.3);
-  padding: 16px 28px;
-  border-radius: 50px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: var(--yellow);
-  opacity: 0;
-  animation: confettiFall 3s ease-in-out forwards;
-}
-
-@keyframes confettiFall {
-  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .banner-heading h1 {
-    font-size: 2.6rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-    max-width: 90%;
-  }
-
-  .form {
-    flex-direction: row;
-    justify-content: center;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .banner-text-item {
-    padding: 32px 24px;
-    width: 90vw;
-  }
-
-  .banner-heading h1 {
-    font-size: 2.2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .input-group {
-    max-width: 100%;
-  }
-
-  .book {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .banner-heading h1 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 0.95rem;
-  }
-
-  .form input[type="text"],
-  .form input[type="date"] {
-    font-size: 1rem;
-    padding: 14px 14px 14px 44px;
-  }
-
-  .input-icon {
-    font-size: 1.1rem;
-    left: 12px;
-  }
-
-  .book {
-    font-size: 1rem;
-    padding: 16px;
-  }
-}
-
-/*Services*/
-body {
-    background: linear-gradient(to right, #a8e0ff, #f0f4c3);
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    min-height: 100vh;
-}
-
-.text h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 100px 0px 10px 0;
-    line-height: 1.2;
-    text-align: center;
-    color: #2c3e50;
-}
-
-.rowitems {
+.festival-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    align-items: stretch;
-    margin: 20px 5vw;
-    padding-bottom: 40px;
-}
-
-.container-box {
-    border: 1px solid #d3d3d3;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.05);
-    transition: box-shadow 0.3s, transform 0.3s;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.container-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-    transition: background 0.2s;
-}
-
-.container-image img {
-    width: 100%;
-    max-height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background: #f4f4f4;
-}
-
-.container-box h4 {
-    font-size: 1.25rem;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-.container-box p {
-    font-size: 1rem;
-    color: #7f8c8d;
-    margin-bottom: 0;
-}
-
-.container-box:hover, .container-box:focus-within {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
-    border-color: #a8e0ff;
-}
-
-.container-link:focus {
-    outline: 3px solid #a8e0ff;
-    outline-offset: 2px;
-    background: #f0f4c3;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .text h2 {
-        font-size: 1.5rem;
-        margin-top: 24px;
-    }
-    .rowitems {
-        margin: 10px 2vw;
-        gap: 15px;
-    }
-    .container-link {
-        padding: 12px;
-    }
-    .container-image img {
-        max-height: 120px;
-    }
-}
-
-
-/* Destinations */
-/* India Regions Banner */
-.india-regions {
-    font-family: 'Benedict', serif;
-    background: transparent;
-    padding: 65px 10px 20px 25px;
-    text-align: center;
-}
-.india-regions img {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-.india-regions p {
-    margin-top: 12px;
-    font-size: 1.15rem;
-    color: #444;
-}
-
-/* Destination Cards Container */
-.destination-content {
-    display: flex;
-    gap: 28px;
-    overflow-x: auto;
-    padding: 36px 5vw 24px 15vw;
-    scroll-snap-type: x mandatory;
-    background: transparent;
-}
-.destination-content::-webkit-scrollbar {
-    display: none;
-}
-
-/* Destination Card */
-.d-content {
-    flex: 0 0 300px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-    background: #fff;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
     position: relative;
-    transition: transform 0.4s cubic-bezier(.4,2,.3,1), box-shadow 0.4s;
-    cursor: pointer;
-    scroll-snap-align: start;
-    outline: none;
-}
-.d-content:focus, .d-content:hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 8px 32px rgba(44,62,80,0.16);
     z-index: 2;
 }
 
-/* Image and Overlay */
-.d-content figure {
-    margin: 0;
-    position: relative;
-    height: 420px;
+.festival-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
     overflow: hidden;
-}
-.d-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 20px;
-    transition: filter 0.4s;
-}
-.d-content:hover img, .d-content:focus img {
-    filter: brightness(0.8) blur(1px);
-}
-
-/* Overlay Text */
-.d-content figcaption {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    background: linear-gradient(0deg, rgba(44,62,80,0.85) 70%, rgba(44,62,80,0.2) 100%);
-    color: #fff;
-    padding: 24px 20px 18px 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.4s, transform 0.4s;
-}
-.d-content:hover figcaption, .d-content:focus figcaption {
-    opacity: 1;
-    transform: translateY(0);
-}
-.d-content h5 {
-    font-family: 'Libre Franklin', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin: 0 0 4px 0;
-    letter-spacing: 1px;
-}
-.d-content p {
-    font-size: 1rem;
-    margin: 0;
-    font-weight: 400;
-}
-
-/* Entrance Animation */
-.d-content {
-    opacity: 0;
-    transform: translateY(30px) scale(0.98);
-    animation: fadeInUp 0.7s forwards;
-}
-.d-content:nth-child(1) { animation-delay: 0.1s;}
-.d-content:nth-child(2) { animation-delay: 0.2s;}
-.d-content:nth-child(3) { animation-delay: 0.3s;}
-.d-content:nth-child(4) { animation-delay: 0.4s;}
-.d-content:nth-child(5) { animation-delay: 0.5s;}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .destination-content {
-        gap: 16px;
-        padding: 24px 2vw 16px 2vw;
-    }
-    .d-content {
-        flex: 0 0 240px;
-    }
-    .d-content figure { height: 300px; }
-}
-@media (max-width: 700px) {
-    .india-regions { padding: 28px 2vw 12px 2vw; }
-    .destination-content { gap: 10px; padding: 18px 2vw; }
-    .d-content { flex: 0 0 82vw; }
-    .d-content figure { height: 220px; }
-    .d-content h5 { font-size: 1.08rem; }
-    .d-content p { font-size: 0.95rem; }
-}
-@media (max-width: 480px) {
-    .d-content { flex: 0 0 94vw; }
-    .d-content figure { height: 160px; }
-    .d-content h5 { font-size: 0.98rem; }
-    .d-content p { font-size: 0.88rem; }
-}
-
-/* Locations */
-.location-content {
-    position: relative; /* Ensure relative positioning */
-    padding: 50px 10px;
-    top: 25px;
-    margin: 0 10px; /* Adjust margin for better alignment */
-    overflow-x: auto; /* Enable horizontal scrolling */
+    box-shadow: var(--shadow);
+    transition: var(--transition);
     display: flex;
-    justify-content: flex-start; /* Adjust as needed */
-    flex-wrap: nowrap; /* Ensures items stay in one row */
+    flex-direction: column;
 }
 
-.location-content::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit (Chrome, Safari, etc.) */
+.festival-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-.col-content {
-    flex: 0  0 auto; /* Ensure items do not shrink */
-    width: 450px; /* Increase width of each postcard */
-    margin: 0 25px; /* Adjust margin for spacing */
-    position: relative;
-    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95),transform 0.3s;
-}
-.col-content:hover{
-    transform: scale(1.1);
-}
-.col-content img {
-    height: 550px; /* Increase image height */
-    width: 100%;
-    border-radius: 20px; /* Increase border radius for rounded corners */
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.col-content h5 {
-    font-family: Libre Franklin;
-    position: absolute;
-    font-size: 25px; /* Increase font size */
+.festival-date {
+    background: var(--gradient);
     color: white;
-    font-weight: 500;
-    left: 20px; /* Adjust position */
-    bottom: 40px; /* Adjust position */
-    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
 }
 
-.col-content p {
-    position: absolute;
-    font-size: 15px; /* Increase font size */
-    color: white;
-    left: 20px; /* Adjust position */
-    bottom: 22px; /* Adjust position */
-    cursor: pointer;
+.festival-date span {
+    font-size: 1.2rem;
 }
 
-.col-content:hover {
-    transform: translateY(-25px); /* Adjust hover effect */
-    
+.festival-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Ensure consistent styling across different screen sizes */
-@media (max-width: 768px) {
-    .location-content {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding: 30px 10px;
-    }
-    
-    .col-content {
-        margin: 0 5px;
-    }
+.festival-content h3 {
+    color: var(--secondary-);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
 }
 
-/* Testimonials Section */
-/* Container & Title */
-/* Container & Title */
-.testimonials-single-row {
-  background: linear-gradient(135deg, #a0d8f7 0%, #fff9e6 100%);
-  padding: 50px 0 30px 0;
-  text-align: center;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+.festival-content p {
+    margin-bottom: 1rem;
+    flex: 1;
 }
-
-.testimonial-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #0b3d91; /* Deep ocean blue */
-  margin-bottom: 40px;
-  letter-spacing: 1.1px;
-  text-shadow: 1px 1px 3px #f7b733; /* warm yellow shadow */
-  animation: fadeInDown 1.2s ease forwards;
-}
-
-/* Row & Track */
-.testimonial-row {
-  width: 100vw;
-  overflow: hidden;
-  user-select: none;
-  position: relative;
-}
-
-.testimonial-track {
-  display: flex;
-  gap: 22px;
-  animation: scroll-left 38s linear infinite;
-  will-change: transform;
-}
-
-.testimonial-row:hover .testimonial-track,
-.testimonial-row:focus-within .testimonial-track {
-  animation-play-state: paused;
-}
-
-/* Keyframes */
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Testimonial Card */
-.testimonial {
-  background: #e0f7fa; /* Light cyan */
-  border-radius: 20px;
-  box-shadow: 0 6px 20px rgba(11, 61, 145, 0.12);
-  padding: 20px 18px 24px 18px;
-  min-width: 300px;
-  max-width: 350px;
-  position: relative;
-  cursor: default;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border: 3px solid #f7b733; /* warm yellow border */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  user-select: text;
-  filter: drop-shadow(0 2px 4px rgba(247, 183, 51, 0.3));
-}
-
-.testimonial:hover,
-.testimonial:focus-within {
-  transform: scale(1.08) translateY(-6px);
-  box-shadow: 0 14px 45px rgba(11, 61, 145, 0.25);
-  border-color: #0288d1; /* bright blue on hover */
-  outline: none;
-}
-
-/* Quote Icon */
-.quote-icon {
-  font-size: 3.2rem;
-  color: #f7b733; /* warm yellow */
-  opacity: 0.35;
-  position: absolute;
-  top: 14px;
-  left: 18px;
-  user-select: none;
-  pointer-events: none;
-  animation: floatQuote 3s ease-in-out infinite alternate;
-}
-
-/* Floating quote animation */
-@keyframes floatQuote {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(8px); }
-}
-
-/* Image */
-.testimonial img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  border: 3px solid #0288d1; /* bright blue */
-  object-fit: cover;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 10px rgba(3, 169, 244, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.testimonial:hover img,
-.testimonial:focus-within img {
-  transform: scale(1.12) rotate(-4deg);
-  border-color: #f7b733; /* warm yellow on hover */
-  box-shadow: 0 6px 14px rgba(247, 183, 51, 0.5);
-}
-
-/* Text */
-.testimonial p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #01579b; /* dark blue */
-  margin-bottom: 14px;
-  font-weight: 500;
-  font-style: italic;
-  user-select: text;
-  transition: color 0.3s ease;
-}
-
-.testimonial:hover p,
-.testimonial:focus-within p {
-  color: #f57c00; /* bright orange on hover */
-}
-
-.testimonial h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0288d1; /* bright blue */
-  margin: 0;
-  user-select: text;
-  transition: color 0.3s ease;
-}
-
-.testimonial:hover h4,
-.testimonial:focus-within h4 {
-  color: #f7b733; /* warm yellow on hover */
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .testimonial {
-    min-width: 250px;
-    max-width: 270px;
-    padding: 18px 14px 20px 14px;
-  }
-  .testimonial img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 12px;
-  }
-  .testimonial p {
-    font-size: 0.95rem;
-  }
-  .testimonial h4 {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .testimonial-row {
-    margin-bottom: 24px;
-  }
-  .testimonial {
-    min-width: 60vw;
-    max-width: 80vw;
-  }
-  .testimonial img {
-    width: 56px;
-    height: 56px;
-  }
-  .testimonial p {
-    font-size: 0.9rem;
-  }
-  .testimonial h4 {
-    font-size: 0.95rem;
-  }
-}
-
-/* Title fadeInDown animation */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* Blog Section */
-.blog {
-    background: linear-gradient(120deg, #e0f7fa 0%, #fffde4 100%);
-    padding: 60px 0;
+.btn-outline {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.7rem;
     text-align: center;
 }
 
-.blog-title h2 {
-    font-size: 2.3rem;
-    color: #0b3d91;
-    margin-bottom: 40px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    animation: blogTitleFadeIn 1s both;
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-@keyframes blogTitleFadeIn {
-    from { opacity: 0; transform: translateY(-40px);}
-    to { opacity: 1; transform: translateY(0);}
-}
-
-.blog-content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 36px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.blog-post {
-    background: #fff;
-    box-shadow: 0 6px 32px rgba(44, 62, 80, 0.11);
-    padding: 0 0 24px 0;
-    text-align: left;
-    max-width: 340px;
-    width: 100%;
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.35s cubic-bezier(.4,2,.3,1), box-shadow 0.35s;
-    animation: blogCardFadeIn 0.9s both;
-}
-.blog-post:nth-child(1) { animation-delay: 0.1s;}
-.blog-post:nth-child(2) { animation-delay: 0.25s;}
-.blog-post:nth-child(3) { animation-delay: 0.4s;}
-
-@keyframes blogCardFadeIn {
-    from { opacity: 0; transform: translateY(40px) scale(0.96);}
-    to { opacity: 1; transform: translateY(0) scale(1);}
-}
-
-.blog-img-wrapper {
-    overflow: hidden;
-    border-radius: 18px 18px 0 0;
-    height: 200px;
-    background: #b2ebf2;
-}
-
-.blog-post img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.4s cubic-bezier(.4,2,.3,1), filter 0.4s;
-    display: block;
-}
-
-.blog-post:hover img {
-    transform: scale(1.07) rotate(-2deg);
-    filter: brightness(0.92) saturate(1.2);
-}
-
-.blog-post h3 {
-    font-size: 1.3rem;
-    color: #0288d1;
-    margin: 18px 18px 8px 18px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    min-height: 48px;
-}
-
-.blog-post p {
-    font-size: 1.05rem;
-    color: #555;
-    margin: 0 18px 16px 18px;
-    line-height: 1.6;
-    min-height: 70px;
-}
-
-.read-more {
-    display: inline-block;
-    background: linear-gradient(90deg, #f7b733 0%, #fc575e 100%);
-    color: #fff;
-    text-decoration: none;
-    padding: 8px 22px;
-    border-radius: 20px;
-    margin-left: 18px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
-    box-shadow: 0 2px 10px rgba(252,87,94,0.08);
-    border: none;
-    font-size: 1rem;
-}
-
-.read-more:hover {
-    background: linear-gradient(90deg, #fc575e 0%, #f7b733 100%);
-    color: #fff;
-    box-shadow: 0 4px 18px rgba(252,87,94,0.18);
-}
-
-.blog-post:hover {
-    transform: translateY(-10px) scale(1.04);
-    box-shadow: 0 16px 40px rgba(44, 62, 80, 0.16);
-}
-
-/* Responsive Design */
-@media (max-width: 1000px) {
-    .blog-content {
-        gap: 24px;
+/* Responsive adjustments for tablets */
+@media (max-width: 991px) {
+    #festivals {
+        padding: 5rem 2rem;
     }
-    .blog-post {
-        max-width: 320px;
+
+    .festival-cards {
+        gap: 1.5rem;
     }
-}
-@media (max-width: 700px) {
-    .blog-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-    }
-    .blog-post {
-        max-width: 95vw;
-    }
-    .blog-img-wrapper,
-    .blog-post img {
-        height: 170px;
-    }
-}
-@media (max-width: 480px) {
-    .blog-title h2 {
-        font-size: 1.3rem;
-        margin-bottom: 20px;
-    }
-    .blog-content {
-        gap: 18px;
-    }
-    .blog-post {
-        padding-bottom: 16px;
+
+    .festival-card {
         border-radius: 12px;
     }
-    .blog-img-wrapper,
-    .blog-post img {
-        height: 120px;
-        border-radius: 12px 12px 0 0;
+
+    .festival-date span {
+        font-size: 1rem;
     }
-    .blog-post h3 {
-        font-size: 1.05rem;
-        margin: 12px 10px 6px 10px;
-        min-height: 32px;
+
+    .festival-content {
+        padding: 1rem;
     }
-    .blog-post p {
-        font-size: 0.93rem;
-        margin: 0 10px 10px 10px;
-        min-height: 40px;
+
+    .btn-outline {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
     }
-    .read-more {
-        padding: 6px 14px;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 576px) {
+    #festivals {
+        padding: 4rem 1rem;
+    }
+
+    .festival-cards {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .festival-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .festival-content p {
         font-size: 0.9rem;
-        margin-left: 10px;
+    }
+
+    .btn-outline {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.7rem;
     }
 }
 
 
-/* Newsletter */
 
-.newsletter{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.newstext h2{
-    margin-top: 100px;
-    font-size: 38px;
-}
-
-.newstext p{
-    font-size: 20px;
-    color: #4c4c4c;
-}
-
-.newsletter form{
-    margin-top: 100px;
-    width: 100%;
-    position: relative;
-}
-
-.newsletter form input:first-child{
-    display: inline-block;
-    width: 335px;
-    font-size: 15px;
-    outline: none;
-    border: none;
-    border-radius: 18px;
-    padding: 20px 60px 20px 30px;
-    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
-}
-
-.newsletter form input:last-child{
-    display: inline-block;
-    position: absolute;
-    outline: none;
-    border: 2px solid transparent;
+/* ========================
+   ADVENTURE SECTION STYLES
+   ======================== */
+#adventure {
+    background-color: #f9f9f9;
+    padding: 5rem 2rem;
     border-radius: 20px;
-    color: white;
-    background-color: rgb(21, 74, 74);
-    padding: 3.5px 4px;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight:400;
-    top: 14px;
-    right: 6px;
-    transition: ease 0.30s;
+    margin: 3rem auto;
 }
 
-.newsletter form input:last-child:hover{
-    border: px solid rgb(21, 74, 74);
-    background-color: white;
-    color: rgb(21, 74, 74);
-}
-
-
-/* Footer */
-
-.footer{
-    margin-top: 80px;
-    background-color: rgb(21, 74, 74);
-}
-
-.foot{
-    padding: 20px 0;
-}
-
-.footer-content{
+.adventure-tabs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
-}
-.footer-content p{
-    color: #fff;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
-.footlinks h4{
-    margin-top: 30px;
-    font-size: 20px;
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    background: #eee;
+    border: none;
+    border-radius: 50px;
     font-weight: 600;
-    color: white;
-    margin-bottom: 30px;
-    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
+.tab-btn.active {
+    background: var(--gradient);
+    color: white;
+}
 
-.footlinks h4::before{
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 70px;
-    left: 0;
-    bottom: -7px;
+.tab-btn:hover:not(.active) {
+    background: #ddd;
+}
+
+.adventure-content {
     background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
-.footlinks ul li{
-    margin-bottom: 15px;
-}
-
-.footlinks ul li a{
-    font-size: 17px;
-    color: #dddddd;
-    display: block;
-    transition: ease 0.30s;
-}
-
-.footlinks ul li a:hover{
-    transform: translate(6px);
-    color: white;
-}
-.social a{
-    font-size: 25px;
-    margin: 4px;
-    height: 40px;
-    width: 40px;
-    color: #00c04b;
-    background-color:  #fff;
-    display: inline-flex;
-    justify-content: center;
+.tab-panel {
+    display: none;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    border-radius: 20px;
-    transition: ease 0.30s;
-}
-.social a{
-    color: #1f7a38;
 }
 
-.social a:hover{
-    transform: scale(1.2);
+.tab-panel.active {
+    display: grid;
 }
 
-.end{
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 12px;
+.adventure-info {
+    padding: 2rem;
 }
 
-.end p{
-    font-size: 15px;
-    color: white;
-    letter-spacing: 1px;
-    font-weight: 300;
+.adventure-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
 }
 
-/* About Us */
-
-.aboutbody{
-    background-color: #191919;
+.adventure-info ul {
+    margin: 1.5rem 0;
+    padding-left: 1.5rem;
 }
 
-.about{
-    width: 100%;
-    padding: 78px 0px;
+.adventure-info li {
+    margin-bottom: 0.5rem;
 }
 
-.about img{
-    height: auto;
-    width: 400px;
-}
-
-.abt-text{
-    width: 500px;
-}
-
-.abt-text h1{
-    font-size: 70px;
-    color: white;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.abt-text h1 span{
-    color: #fc0050;
-    letter-spacing: 1px;
-}
-
-.abt-text p{
-    color: white;
-    font-size: 24px;
-    margin-bottom: 45px;
-    line-height: 30px;
-    letter-spacing: 1px;
-}
-
-.main{
-    width: 1130px;
-    max-width: 95%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.connectbtn{
-    display: inline-block;
-    background-color: #fc0050;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    padding: 13px 30px;
-    border-radius: 30px;
-    transition: ease 0.4s;
-    border: 2px solid transparent;
-    letter-spacing: 1px;
-}
-
-.connectbtn:hover{
-    background-color: transparent;
-    border: 2px solid #fc0050;
-    transform: scale(1.1);
-}
-
-.connect-section{
-    margin-top: 26px;
-}
-
-
-.social-icons a{
-    height: 40px;
-    width: 40px;
-    margin: 4px;
-    font-size: 30px;
-    color: #101010;
-    background-color: white;
-    border-radius: 20px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: ease 0.30s;
-}
-
-.social-icons a:hover{
-    transform: scale(1.2);
-}
-
-/* Contact Us */
-
-.contactbody{
-    background-color: #101010;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-}
-
-.contact{
-    padding: 110px 30%;
-    height: 100%;
-    min-height: 100vh;
-}
-
-.contact-form h1{
-    font-size: 80px;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.contact-form h1 span{
-    color:#fc0050;
-}
-
-.contact-form p{
-    color: white;
-    line-height: 30px;
-    letter-spacing: 1px;
-    font-size: 23px;
-    margin-bottom: 20px;
-}
-
-
-.contact-form form input,form textarea{
-    width: 100%;
-    padding: 17px;
-    border: none;
-    outline: none;
-    background-color: #191919;
-    font-size: 20px;
-    color: white;
-    margin-bottom: 10px;
-    border-radius: 10px;
-}
-
-.contact-form form .submit-btn{
-    display: inline-block;
-    background-color: #fc0050;
-    font-size: 27px;
-    font-weight: 600px;
-    border: 2px solid transparent;
-    border-radius: 40px;
-    width: 220px;
-    cursor: pointer;
-    transition: ease 0.30s;
-
-}
-
-.contact-form form .submit-btn:hover{
-    border: 2px solid #fc0050;
-    background-color: transparent;
-    transform: scale(1.1);
-
-}
-
-/* Registration Form */
-
-.register-body{
-    background-color: #101010;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.registration{
-    padding: 110px 30%;
-    height: 100%;
-    min-height: 100vh;
-}
-
-.register-form h1{
-    font-size: 80px;
-    color: white;
-    margin-bottom: 20px;
-}
-.register-form h1 span{
-    color: #fc0050;
-}
-
-.register-form{
-    color: white;
-    font-size: 20px;
-}
-
-.register-form form input{
-    color: white;
-    padding: 17px;
-    background-color: #191919;
-    font-size: 20px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    
-}
-.register-form h4{
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 20px;
-    color: #fc0050;
-}
-
-
-.register-form form .submitbtn{
-    display: inline-block;
-    background-color: #fc0050;
-    font-size: 27px;
-    font-weight: 600px;
-    border: 2px solid transparent;
-    border-radius: 60px;
-    width: 220px;
-    cursor: pointer;
-    transition: ease 0.30s;
-}
-
-.register-form form .submitbtn:hover{
-    border: 2px solid #fc0050;
-    background-color: transparent;
-    transform: scale(1.1);
-}
-
-
-.location-body{
-    background-color: #191919;
-    color: white;
-}
-
-.location-section{
-    padding: 110px;
-    height: 100%;
-    min-height: 100vh;
-}
-
-.location-heading h1{
-    margin-top: 20px;
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.location-heading h1 span{
-    color: #fc0050;
-}
-
-.location-detail h1{
-    padding-top: 60px;
-    color: #fc0050;
-    font-size: 40px;
-}
-
-.location-detail p{
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-}
-
-.location-img img{
+.adventure-img {
     height: 400px;
-    width: 400px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
-.stars i{
-    font-size: 20px;
-    color: rgb(197, 167, 44);
-}
-.logo-container img {
-                width: 180px;
-            }     
-            
-            /* Explore the world Section */
-        .explore-section {
-            background-color: #f9f9f9;
-            padding: 50px 0;
-        }
-        .explore-section h1 {
-            font-size: 48px;
-            font-weight: 700;
-        }
-        .explore-section h1 span {
-            color: orange;
-            font-family: 'Cursive', sans-serif;
-        }
-        .explore-section p {
-            font-size: 18px;
-            color: #555;
-        }
-        .successful-years {
-            background-color: #00c04b;
-            color: white;
-            padding: 30px;
-            border-radius: 50%;
-            text-align: center;
-            position: absolute;
-            top: 40%;
-            left: -10%;
-            font-size: 24px;
-        }
-        .card-info {
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .icon-box {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-        .icon-box img {
-            width: 80px;
-            margin-right: 15px;
-        }
-        .read-more-btn {
-            background-color: #ff4500;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 5px;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .read-more-btn:hover {
-            background-color: #e63900;
-        }
-        /* Section Styles */
-        section {
-            padding: 50px 20px;
-        }
-
-        h2 {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        /* Features Section */
-        .features {
-  background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%);
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.10);
-  padding: 60px 0 50px 0;
-  margin: 40px 0;
-  text-align: center;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fadeInFeatures 1.2s;
+.adventure-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-@keyframes fadeInFeatures {
-  from { opacity: 0; transform: translateY(40px);}
-  to { opacity: 1; transform: translateY(0);}
+/* =========================
+   HANDICRAFTS SECTION STYLES
+   ========================= */
+#handicrafts {
+    padding: 5rem 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin: 3rem auto;
 }
 
-.features-title h2 {
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: #0b3d91;
-  margin-bottom: 48px;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px #f7b73344;
-  animation: fadeInDown 1.2s both;
+.handicraft-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px);}
-  to { opacity: 1; transform: translateY(0);}
+.handicraft-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
 }
 
-.features-icons {
-  display: flex;
-  justify-content: center;
-  gap: 38px;
-  flex-wrap: wrap;
-  padding: 0 24px;
+.handicraft-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.feature-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(44, 62, 80, 0.09);
-  padding: 28px 20px 28px 20px;
-  max-width: 280px;
-  min-width: 180px;
-  flex: 1 1 200px;
-  margin: 12px 0;
-  transition: 
-    transform 0.35s cubic-bezier(.4,2,.3,1),
-    box-shadow 0.35s,
-    border 0.3s;
-  border: 2px solid transparent;
-  position: relative;
-  cursor: pointer;
-  animation: fadeInUp 1s both;
+.handicraft-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: var(--transition);
 }
 
-.feature-card:nth-child(1) { animation-delay: 0.15s;}
-.feature-card:nth-child(2) { animation-delay: 0.3s;}
-.feature-card:nth-child(3) { animation-delay: 0.45s;}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px);}
-  to { opacity: 1; transform: translateY(0);}
+.handicraft-item:hover img {
+    transform: scale(1.1);
 }
 
-.feature-card:hover,
-.feature-card:focus-within {
-  transform: translateY(-12px) scale(1.04);
-  box-shadow: 0 12px 40px rgba(44, 62, 80, 0.14);
-  border: 2px solid #f7b733;
-  outline: none;
+.handicraft-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    transform: translateY(100%);
+    transition: var(--transition);
 }
 
-.feature-icon {
-  font-size: 3.3rem;
-  margin-bottom: 18px;
-  color: #f7b733;
-  background: linear-gradient(90deg, #0b3d91 0%, #f7b733 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: iconPop 1.2s both;
-  display: inline-block;
+.handicraft-item:hover .handicraft-info {
+    transform: translateY(0);
 }
 
-@keyframes iconPop {
-  0% { transform: scale(0.7);}
-  60% { transform: scale(1.2);}
-  100% { transform: scale(1);}
+.handicraft-info h3 {
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
 }
 
-.feature-card h4 {
-  margin: 12px 0 8px 0;
-  font-weight: bold;
-  font-size: 1.22rem;
-  color: #0b3d91;
-  letter-spacing: 0.5px;
+.handicraft-origin {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    background: var(--secondary-color);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.feature-card p {
-  color: #666;
-  font-size: 1.03rem;
-  margin: 0;
+/* =====================
+   RESPONSIVE ADJUSTMENTS
+   ===================== */
+@media (max-width: 992px) {
+    .tab-panel {
+        grid-template-columns: 1fr;
+    }
+    
+    .adventure-img {
+        height: 300px;
+        order: -1;
+    }
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
-  .feature-icon {
-  font-size: 3.3rem;
-  margin-bottom: 18px;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  color: unset;
-  animation: iconPop 1.2s both;
-  display: inline-block;
+@media (max-width: 768px) {
+    .cuisine-card, .festival-card, .handicraft-item {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .adventure-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
-  .feature-card {
-    padding: 26px 10px 22px 10px;
-    min-width: 180px;
-    max-width: 95vw;
-  }
-  .features {
-    padding: 40px 0 30px 0;
-  }
-  .features-title h2 {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-  }
+@media (max-width: 576px) {
+    .handicraft-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .festival-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* --------- Enhanced for Cuisine Section ---------- */
+@media (max-width: 576px) {
+    .cuisine-card {
+        max-width: 100%;
+    }
+
+    .cuisine-dishes span {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
 }
 
-@media (max-width: 600px) {
-  .features-icons {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 0 2vw;
-  }
-  .feature-card {
-    width: 65vw;
-    min-width: 0;
-    max-width: 98vw;
-    padding: 18px 8px 14px 8px;
-  }
-  .feature-icon {
-    font-size: 2.1rem;
-    margin-bottom: 10px;
-  }
+/* --------- Enhancements for Festival Cards ---------- */
+.festival-card {
+    text-align: center;
 }
 
-        
-        /* Travel Packages Section */
-.travel-packages {
-  background-image: linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.18)), url('https://cdn.pixabay.com/photo/2018/09/24/08/52/mountains-3699372_1280.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 64px 0 48px 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  position: relative;
+.festival-date {
+    font-size: 1rem;
+    padding: 0.8rem;
 }
 
-.package-title h2 {
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  text-shadow: 0 2px 12px #0007;
-  margin-bottom: 28px;
-  text-align: center;
-  animation: fadeInDown 0.8s both;
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-.packages-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 12px 0 12px 0;
-  gap: 28px;
-  margin: 0 auto;
-  max-width: 1000px;
-  /* Hide scrollbar for all browsers */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.packages-container::-webkit-scrollbar { display: none; }
-
-.package-card {
-  flex: 0 0 250px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 18px;
-  box-shadow: 0 6px 24px rgba(44, 62, 80, 0.13);
-  overflow: hidden;
-  text-decoration: none;
-  color: #222;
-  transition: 
-    transform 0.35s cubic-bezier(.4,2,.3,1), 
-    box-shadow 0.35s, 
-    border 0.3s;
-  border: 2.5px solid transparent;
-  position: relative;
-  animation: fadeInUp 0.8s both;
-}
-.package-card:hover, .package-card:focus-within {
-  transform: scale(1.06) translateY(-8px) rotate(-1deg);
-  box-shadow: 0 16px 40px rgba(44, 62, 80, 0.18);
-  border: 2.5px solid #f7b733;
-  z-index: 2;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px) scale(0.96);}
-  to { opacity: 1; transform: translateY(0) scale(1);}
-}
-
-.package-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 18px 18px 0 0;
-  transition: filter 0.4s, transform 0.4s;
-  filter: brightness(0.98) saturate(1.1);
-}
-
-.package-card:hover img, .package-card:focus-within img {
-  filter: brightness(0.93) saturate(1.25) blur(0.5px);
-  transform: scale(1.07) rotate(-2deg);
-}
-
-.card-body {
-  padding: 22px 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: none;
-}
-
-.package-card h5 {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #0b3d91;
-  margin: 0 0 8px 0;
-  letter-spacing: 0.5px;
-}
-
-.stars {
-  color: #FFD700;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  letter-spacing: 1.5px;
-  text-shadow: 0 1px 3px #fff8;
-}
-
-.package-card .details {
-  color: #555;
-  font-size: 0.97rem;
-  margin-bottom: 8px;
-}
-
-.package-card .price {
-  color: #f76b1c;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-top: 5px;
-  letter-spacing: 0.2px;
-}
-.package-card .price span {
-  display: block;
-  font-weight: 400;
-  color: #888;
-  font-size: 0.87rem;
-}
-
-/* Scroll Buttons */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 9;
-  background: rgba(255,255,255,0.85);
-  border: none;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 2rem;
-  color: #0b3d91;
-  box-shadow: 0 3px 12px #0002;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  outline: none;
-}
-.scroll-btn.left { left: 10px; }
-.scroll-btn.right { right: 10px; }
-
-.scroll-btn:hover, .scroll-btn:focus {
-  background: #f7b733;
-  color: #fff;
-  transform: scale(1.13);
-}
-
-/* Responsive Design */
-@media (max-width: 1100px) {
-  .packages-container { max-width: 90vw; }
-  .package-card { flex: 0 0 220px; }
-}
-@media (max-width: 800px) {
-  .package-title h2 { font-size: 2rem; }
-  .package-card { flex: 0 0 220px; }
-  .package-card img { height: 150px; }
-}
-@media (max-width: 600px) {
-  .travel-packages { padding: 15px 0 12px 0; }
-  .package-title h2 { font-size: 1.2rem; }
-  .scroll-btn { width: 18px; height: 18px; font-size: 1.4rem; }
-  .package-card { flex: 0 0 90vw; }
-  .package-card img { height: 250px; }
-  .card-body { padding: 12px 10px 10px 10px; }
-}
-.view-details-btn {
-  display: inline-block;
-  margin-top: 14px;
-  background: linear-gradient(90deg, #0b3d91 0%, #f7b733 100%);
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  box-shadow: 0 2px 12px rgba(11, 61, 145, 0.10);
-  border: none;
-  transition: background 0.3s, color 0.3s, transform 0.3s;
-  cursor: pointer;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-
-.view-details-btn:hover,
-.view-details-btn:focus {
-  background: linear-gradient(90deg, #f7b733 0%, #0b3d91 100%);
-  color: #fff;
-  transform: scale(1.08) translateY(-2px);
-  outline: none;
-}
-
-/*tour Cards*/
-        .tour-type-section {
-  background: url('https://www.toptal.com/designers/subtlepatterns/uploads/criss-cross.png');
-  background-size: cover;
-  padding: 70px 0 50px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.package-title .text h2 {
-  font-size: 2.5rem;
-  color: #154a4a;
-  font-weight: 800;
-  margin-bottom: 48px;
-  text-align: center;
-  letter-spacing: 1.5px;
-  text-shadow: 0 2px 8px #f7b73344;
-}
-
-/* Responsive Grid for Cards */
-.tour-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 38px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 25px;
-  justify-items: center;
-}
-
-/* Card Style */
-.tour-card {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(6px);
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(21, 74, 74, 0.11), 0 1.5px 8px #f7b73344;
-  border: 1.5px solid #f7b73333;
-  padding: 36px 24px 24px 24px;
-  text-align: center;
-  position: relative;
-  overflow: visible;
-  transition: 
-    transform 0.4s cubic-bezier(.4,2,.3,1),
-    box-shadow 0.4s,
-    border-color 0.3s;
-  cursor: pointer;
-  z-index: 1;
-  min-width: 0;
-  animation: fadeInUp 0.9s both;
-}
-.tour-card:hover,
-.tour-card:focus-within {
-  transform: translateY(-14px) scale(1.045);
-  box-shadow: 0 16px 48px rgba(21, 74, 74, 0.22), 0 1.5px 12px #f7b73388;
-  border-color: #f7b733;
-  outline: none;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* Illustration Style */
-.tour-illustration {
-  width: 100%;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-  background: linear-gradient(120deg, #e0f7fa 0%, #fffde4 100%);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px #f7b73322;
-  overflow: hidden;
-}
-.tour-illustration img {
-  width: 100px;
-  height: 130px;
-  object-fit: contain;
-  transition: transform 0.4s cubic-bezier(.4,2,.3,1);
-  filter: drop-shadow(0 2px 6px #f7b73344);
-}
-.tour-card:hover .tour-illustration img,
-.tour-card:focus-within .tour-illustration img {
-  transform: scale(1.13) rotate(-6deg);
-}
-
-.tour-card h5 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #154a4a;
-  margin: 12px 0 8px 0;
-  letter-spacing: 0.5px;
-}
-
-.tour-card p {
-  color: #666;
-  font-size: 1.03rem;
-  margin: 0;
-  min-height: 48px;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 900px) {
-  .tour-type-section {
-    padding: 40px 0 30px 0;
-  }
-  .package-title .text h2 {
-    font-size: 1.6rem;
-  }
-  .tour-cards-container {
-    gap: 18px;
-    padding: 0 5px;
-  }
-  .tour-card {
-    padding: 22px 10px 16px 10px;
-  }
-  .tour-illustration {
-    height: 130px;
-  }
-  .tour-illustration img {
-    width: 68px;
-    height: 80x;
-  }
-}
-
-@media (max-width: 600px) {
-  .tour-type-section {
-    padding: 24px 0 10px 0;
-  }
-  .package-title .text h2 {
+.festival-content h3 {
     font-size: 1.1rem;
-    margin-bottom: 18px;
-  }
-  .tour-cards-container {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .tour-card {
-    padding: 12px 4vw 10px 4vw;
-    min-width: 0;
-  }
-  .tour-illustration {
-    height: 80px;
-  }
-  .tour-illustration img {
-    width: 60px;
-    height: 60px;
-  }
 }
 
-/*Locations*/
-        .locations {
-  padding: 60px 30px;
-  background: linear-gradient(to bottom, #e0f7fa, #fff);
-  font-family: 'Segoe UI', sans-serif;
+.festival-content p {
+    font-size: 0.9rem;
+    text-align: justify;
 }
 
-.locations-heading {
-  text-align: center;
-  margin-bottom: 40px;
+/* Make festival cards look consistent on smaller screens */
+@media (max-width: 576px) {
+    .festival-content h3 {
+        font-size: 1rem;
+    }
+
+    .festival-content p {
+        font-size: 0.85rem;
+    }
 }
 
-.locations-heading h2 {
-  font-size: 40px;
-  font-weight: 700;
-  color: #1b4965;
-}
+/* --------- Responsive Enhancements for Adventure Tabs ---------- */
+@media (max-width: 576px) {
+    .tab-btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
 
-.locations-heading p {
-  font-size: 18px;
-  color: #555;
-  margin-top: 10px;
-}
+    .adventure-info h3 {
+        font-size: 1.1rem;
+    }
 
-.location-wrapper {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 300px;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px 0;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.location-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.location-card {
-  position: relative;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  scroll-snap-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.location-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-}
-
-.location-card .overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1));
-  color: white;
-  border-radius: 0 0 20px 20px;
-  transition: background 0.5s ease;
-}
-
-.location-card .overlay h3 {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.location-card .overlay p {
-  font-size: 14px;
-  margin-top: 5px;
-  color: #ddd;
-}
-.offer-banner {
-  width: 100%;
-  background: linear-gradient(90deg, #f7b42c 0%, #fc575e 100%);
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 12px 0;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 2px 12px rgba(252,87,94,0.08);
-  letter-spacing: 0.5px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-}
-
-.offer-close {
-  background: rgba(255,255,255,0.2);
-  border: none;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 700;
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  padding: 0 10px;
-  border-radius: 50%;
-  transition: background 0.2s;
-}
-.offer-close:hover, .offer-close:focus {
-  background: rgba(255,255,255,0.4);
-  outline: none;
-}
-
-.offer-track {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 18s linear infinite;
-  padding-left: 100%;
-  cursor: pointer;
-  user-select: none;
-}
-
-.offer-banner.paused .offer-track {
-  animation-play-state: paused;
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .offer-banner {
-    font-size: 0.97rem;
-    padding: 8px 0;
-  }
-  .offer-close {
-    font-size: 1.2rem;
-    right: 10px;
-  }
-}
-.feature-card img{
-    width: 120px;
-    height: 130px;
+    .adventure-info p, .adventure-info ul {
+        font-size: 0.9rem;
+    }
 }
 
     </style>
 </head>
 <body>
+    <div class="bg-animation"></div>
+    <div class="overlay"></div>
 
-    
-<!-- Background Video & Header -->
-
-    <div class="banner">
-    <video src="Videos/V3.mp4" type="video/mp4" autoplay muted loop></video>
-    <div class="content" id="home">
-        <nav>
-            <img src="Logos/TravelTales3.png" class="logo" alt="Logo" title="TravelTales Travels">
-            <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
-            <ul class="navbar" id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Travel Tales/Tour.html">Tours</a></li>
-                <li><a href="Destinations/Destinations.html">Destinations</a></li>
-                <li><a href="Travel Tales/Tours Packages.html">Packages</a></li>
-                <li><a href="Travel Tales/About Us.html">About Us</a></li>
-                <li><a href="Services/Contact.html">Contact Us</a></li>
-                <li><a href="Services/Login up Page.html">Login/Signup</a></li>
-            </ul>
-        </nav>
-        <div class="title">
-            <h1>TRAVELTales</h1>
-            <p>"Discover the World, One Tale at a Time"</p>
-            <a href="Services/Sign up Page.html" class="button">Register Now!</a>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="Images/TT4.png" alt="Explore North India Logo">
+            </a>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#states">States</a></li>
+                    <li><a href="#places">Places</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#cuisine">Cuisine</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-</div>
-<script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.getElementById('navbar');
-    menuToggle.addEventListener('click', () => {
-        navbar.classList.toggle('open');
-    });
-    // Optional: Close menu when clicking a link (for better UX)
-    document.querySelectorAll('.navbar a').forEach(link => {
-        link.addEventListener('click', () => {
-            navbar.classList.remove('open');
-        });
-    });
-</script>
-
-
-<!-- WHERE TO GO SECTION (BOOK TRIP) -->
-<section class="banner">
-  <div class="banner-text-item">
-    <div class="banner-heading">
-      <h1>Find Your Next Tour!</h1>
-      <p class="subtitle">Explore new destinations, create memories, and start your next adventure!</p>
-    </div>
-    <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
-      <div class="input-group">
-        <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
-        <input type="text" list="mylist" placeholder="Where would you like to go?" required>
-        <datalist id="mylist">
-            <select class="form-select" id="Where would you like to go?">
-          <option>Delhi</option>
-          <option>Mumbai</option>
-          <option>Bangalore</option>
-          <option>Kolkata</option>
-          <option>Chennai</option>
-          <option>Hyderabad</option>
-          <option>Pune</option>
-          <option>Jaipur</option>
-          <option>Goa</option>
-          <option>Agra</option>
-          <option>Varanasi</option>
-          <option>Udaipur</option>
-          <option>Shimla</option>
-          <option>Manali</option>
-          <option>Leh</option>
-          <option>Ladakh</option>
-          <option>Kashmir</option>
-          <option>Amritsar</option>
-          <option>Rishikesh</option>
-          <option>Haridwar</option>
-          <option>Darjeeling</option>
-          <option>Mysore</option>
-          <option>Coorg</option>
-          <option>Ooty</option>
-          <option>Kodaikanal</option>
-          <option>Gokarna</option>
-          <option>Hampi</option>
-          <option>Rann of Kutch</option>
-          <option>Jaisalmer</option>
-          <option>Pushkar</option>
-          <option>Andaman & Nicobar</option>
-          <option>Pondicherry</option>
-          <option>Mahabalipuram</option>
-          <option>Shillong</option>
-          <option>Guwahati</option>
-          <option>Gangtok</option>
-          <option>Sikkim</option>
-          <option>Cherrapunji</option>
-          <option>Munnar</option>
-          <option>Alleppey</option>
-          <option>Kochi</option>
-          <option>Trivandrum</option>
-          <option>Madurai</option>
-          <option>Ranthambore</option>
-          <option>Jim Corbett</option>
-          <option>Kaziranga</option>
-          <option>Khajuraho</option>
-          <option>Ajanta & Ellora</option>
-          <option>Konark</option>
-          <option>Puri</option>
-            </select>
-        </datalist>
-      </div>
-      <div class="input-group">
-        <span class="input-icon"><i class="fa fa-calendar-alt"></i></span>
-        <input type="date" class="date" required>
-      </div>
-      <div class="input-group">
-        <span class="input-icon"><i class="fa fa-users"></i></span>
-        <input type="text" list="guest" placeholder="No. of Guests" required>
-        <datalist id="guest">
-            <select class="form-select" id="No. of Guests">
-                  <option>1 Adult</option>
-                  <option selected>2 Adults</option>
-                  <option>3 Adults</option>
-                  <option>4 Adults</option>
-                  <option>Family</option>
-            </select>
-        </datalist>
-      </div>
-      <button type="submit" class="book">Book Now</button>
-    </form>
-    <div id="confirmation" style="display:none; margin-top:24px; font-size:1.18rem; color:#fff; font-weight:bold; text-shadow:0 2px 8px #000;">
-      🎉 Your trip has been booked! We wish you a wonderful journey.
-    </div>
-  </div>
-</section>
-<!-- comment 
-<script>
-  // Simple confirmation animation
-  function bookTrip(e) {
-    e.preventDefault();
-    const form = document.querySelector('.form');
-    const confirmation = document.getElementById('confirmation');
-    form.style.pointerEvents = "none";
-    form.style.opacity = 0.6;
-    confirmation.style.display = "block";
-    confirmation.animate([
-      { opacity: 0, transform: 'scale(0.9)' },
-      { opacity: 1, transform: 'scale(1.05)' },
-      { opacity: 1, transform: 'scale(1)' }
-    ], { duration: 700, easing: 'cubic-bezier(.23,1.08,.74,1.01)' });
-    setTimeout(() => {
-      form.reset();
-      form.style.pointerEvents = "";
-      form.style.opacity = 1;
-      confirmation.style.display = "none";
-    }, 2800);
-    return false;
-  }
-</script>
-
-
-<!-- Services -->
-<main class="container">
-    <header class="text">
-        <h2>We have the best services available for you!</h2>
     </header>
-    <section class="rowitems">
-        <article class="container-box">
-            <a href="Services/FlightServices.html" target="_blank" rel="noopener noreferrer" class="container-link">
-                <figure class="container-image">
-                    <img src="Services/Images/AirIndia.jpg" alt="Air India Flight Services">
-                </figure>
-                <h4>Flight Services</h4>
-                <p>Arrival and Departure</p>
-            </a>
-        </article>
-        <article class="container-box">
-            <a href="Services/Train Services.html" target="_blank" rel="noopener noreferrer" class="container-link">
-                <figure class="container-image">
-                    <img src="Services/Images/Railway.webp" alt="Indian Railway Train Services">
-                </figure>
-                <h4>Train Services</h4>
-                <p>Ticket Booking</p>
-            </a>
-        </article>
-        <article class="container-box">
-            <a href="Services/Pick up and drop.html" target="_blank" rel="noopener noreferrer" class="container-link">
-                <figure class="container-image">
-                    <img src="Services/Images/Booking.jpeg" alt="Travel Pick-up and Drop Services">
-                </figure>
-                <h4>Travel Services</h4>
-                <p>Pick-up and Drop</p>
-            </a>
-        </article>
-        <article class="container-box">
-            <a href="Services/Hotel Services.html" target="_blank" rel="noopener noreferrer" class="container-link">
-                <figure class="container-image">
-                    <img src="Services/Images/Hotel.jpeg" alt="Hotel Check-in and Check-out Services">
-                </figure>
-                <h4>Hotel Services</h4>
-                <p>Check-in and Check-out</p>
-            </a>
-        </article>
+
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="https://videos.pexels.com/video-files/18765949/18765949-uhd_2560_1440_60fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Discover the Magic of North India</h1>
+            <p>Explore the majestic Himalayas, vibrant cultures, and rich heritage of India's most breathtaking region</p>
+            <a href="#packages" class="hero-btn">Explore Tours</a>
+        </div>
     </section>
-</main>
-<br><Br><br><br>
-<!-- Advertisement Banner -->
-<div class="offer-banner" id="offerBanner" role="region" aria-label="Special Offers">
-    <!-- comment <button class="offer-close" aria-label="Close Offer Banner" onclick="closeBanner()">×</button>-->
-  <div class="offer-track" id="offerTrack">
-    <span>
-      ✈️ <b>TravelTales Special:</b> 20% OFF on all bookings! &nbsp;|&nbsp;
-      🚆 <b>Train Tickets:</b> Win Vouchers! &nbsp;|&nbsp;
-      🚗 <b>Free Pick-up & Drop</b> for First-Time Users! &nbsp;|&nbsp;
-      🏨 <b>Exclusive Hotel Deals</b> – Limited Time! &nbsp;|&nbsp;
-      🌏 <b>Summer Vacation:</b> Plan & Save Big!
-    </span>
-  </div>
-</div>
-<script>
-    // Pause animation on hover/touch
-const banner = document.getElementById('offerBanner');
-const track = document.getElementById('offerTrack');
 
-function pauseBanner() {
-  banner.classList.add('paused');
-}
-function resumeBanner() {
-  banner.classList.remove('paused');
-}
+    <main>
+        <section id="about">
+            <div class="section-title">
+                <h2>About North India</h2>
+                <p>North India is a land of diverse landscapes, rich history, and vibrant cultures that will captivate your heart</p>
+            </div>
 
-track.addEventListener('mouseenter', pauseBanner);
-track.addEventListener('mouseleave', resumeBanner);
-track.addEventListener('touchstart', pauseBanner);
-track.addEventListener('touchend', resumeBanner);
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Majestic Landscapes & Rich Heritage</h3>
+                    <p>North India is known for its stunning Himalayan ranges, sacred rivers, and golden deserts. The region boasts some of India's most iconic landmarks including the Taj Mahal, Golden Temple, and the palaces of Rajasthan.</p>
+                    <p>From the snow-capped peaks of Himachal Pradesh to the spiritual banks of the Ganges in Varanasi, North India offers an unparalleled diversity of experiences for every traveler.</p>
+                    <p>The region's history spans thousands of years, with influences from ancient civilizations, Mughal emperors, and British colonial rule, all leaving their mark on the architecture, cuisine, and culture.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Taj Mahal">
+                </div>
+            </div>
 
-// Close banner
-function closeBanner() {
-  banner.style.display = 'none';
-}
-
-</script>
-
-<!-- Destinations -->
-<section class="destinations" id="destination">
-  <div class="india-regions">
-    <img src="Main Page/I1.png" alt="Map of Indian Regions" />
-    <p>
-      <i>
-        "From the snow-capped Himalayas to the sun-kissed beaches of the south, India's diverse regions await your discovery."
-      </i>
-    </p>
-  </div>
-  <div class="destination-content">
-    <a href="North India/North India Travel.html" target="_blank" class="d-content" tabindex="0">
-      <figure>
-        <img src="Main Page/NorthIndia.png" alt="North India" />
-        <figcaption>
-          <h5>North India</h5>
-          <p>Himalayas, culture & heritage</p>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="North East India/NorthEastTravel.html" target="_blank" class="d-content" tabindex="0">
-      <figure>
-        <img src="Main Page/NorthEastIndia.png" alt="North East India" />
-        <figcaption>
-          <h5>North East India</h5>
-          <p>Scenic beauty & tribes</p>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="East India/EastIndia.html" target="_blank" class="d-content" tabindex="0">
-      <figure>
-        <img src="Main Page/EastIndia.png" alt="East India" />
-        <figcaption>
-          <h5>East India</h5>
-          <p>Temples & tea gardens</p>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="South India/SouthIndia.html" target="_blank" class="d-content" tabindex="0">
-      <figure>
-        <img src="Main Page/SouthIndia.png" alt="South India" />
-        <figcaption>
-          <h5>South India</h5>
-          <p>Beaches & traditions</p>
-        </figcaption>
-      </figure>
-    </a>
-    <a href="West India/West India.html" target="_blank" class="d-content" tabindex="0">
-      <figure>
-        <img src="Main Page/WestIndia.png" alt="West India" />
-        <figcaption>
-          <h5>West India</h5>
-          <p>Deserts & vibrant cities</p>
-        </figcaption>
-      </figure>
-    </a>
-  </div>
-</section>
-
-
-    <!-- Features Section -->
-<section class="features">
-  <div class="features-title">
-    <h2>Your Perfect Travel Experience Awaits!</h2>
-  </div>
-  <div class="features-icons">
-    <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-            <img src="https://ouch-prod-var-cdn.icons8.com/cs/illustrations/thumbs/O083W3MrsTFmy07X.webp" >
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h4>8</h4>
+                    <p>States to Explore</p>
+                </div>
+                <div class="stat-item">
+                    <h4>500+</h4>
+                    <p>Heritage Sites</p> 
+                </div> 
+                <div class="stat-item"> 
+                    <h4>12</h4> 
+                    <p>National Parks</p> 
+                </div> <div class="stat-item"> 
+                    <h4>50+</h4> 
+                    <p>Adventure Activities</p> 
+                </div> 
+            </div> 
+        </section>
+        <section id="states">
+        <div class="section-title">
+            <h2>Explore Our States</h2>
+            <p>Discover the unique character and attractions of each North Indian state</p>
         </div>
-      <h4>Exclusive Destinations</h4>
-      <p>Explore the best travel spots in India with unique itineraries tailored for you.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-            <img src="https://ouch-prod-var-cdn.icons8.com/od/illustrations/thumbs/7I6o33MVBeycl_a1.webp">
+
+        <div class="cards">
+            <div class="state-card">
+                <img src="Images\JandK.jpg" alt="Jammu&Kashmir">
+                <h4>Jammu & Kashmir</h4>
+                <a href="Jammu & Kashmir/Kashmir.html">
+                    <h4>Jammu & Kashmir</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\HimachalPradesh.cms" alt="Himachal Pradesh">
+                <h4>Himachal Pradesh</h4>
+                <a href="Himachal Pradesh/>HimachalPradesh.html">
+                    <h4>Himachal Pradesh</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\Punjab.webp" alt="Punjab">
+                <h4>Punjab</h4>
+                <a href="Punjab/Punjab.html">
+                    <h4>Punjab</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\H1.gif" alt="Haryana">
+                <h4>Haryana</h4>
+                <a href="Haryana/Haryana.html">
+                    <h4>Haryana</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\KEDARNATH.jpg" alt="Uttarakhand">
+                <h4>Uttarakhand</h4>
+                <a href="Uttarakhand/Uttarakhand.html">
+                    <h4>Uttarakhand</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\Delhi1.jpg" alt="Delhi">
+                <h4>Delhi</h4>
+                <a href="Delhi/Delhi.html">
+                    <h4>Delhi</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\Varanasi.cms" alt="Uttar Pradesh">
+                <h4>Uttar Pradesh</h4>
+                <a href="UttarPradesh/UttarPradesh.html">
+                    <h4>Uttar Pradesh</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
+            <div class="state-card">
+                <img src="Images\rajasthan-tours.jpg" alt="Rajasthan">
+                <h4>Rajasthan</h4>
+                <a href="Rajasthan/Rajasthan.html">
+                    <h4>Rajasthan</h4>
+                    <span class="btn">Explore</span>
+                </a>
+            </div>
         </div>
-      <h4>Luxury Accommodations</h4>
-      <p>Stay at premium hotels and resorts for a comfortable and memorable experience.</p>
-    </div>
-    <div class="feature-card">
-        <div class="feature-icon" aria-hidden="true">
-            <img src="https://ouch-prod-var-cdn.icons8.com/vz/illustrations/thumbs/nIQGP-gsRvZgSGEQ.webp">
+    </section>
+
+    <section id="packages">
+        <div class="section-title">
+            <h2>Popular Tour Packages</h2>
+            <p>Carefully curated experiences to make your North India journey unforgettable</p>
         </div>
-      <h4>Affordable Prices</h4>
-      <p>Get the best deals starting at ₹18,000 for two people, inclusive of everything.</p>
-    </div>
-  </div>
-</section>
 
-
-
-    <!-- Travel Packages Section -->
-    <section class="travel-packages">
-  <div class="container position-relative">
-    <div class="package-title">
-      <div class="text">
-        <h2>India Travel Packages</h2>
-      </div>
-    </div>
-
-    <!-- Scroll Buttons -->
-    <button class="scroll-btn left" aria-label="Scroll left" onclick="scrollLeft()">&lt;</button>
-    <button class="scroll-btn right" aria-label="Scroll right" onclick="scrollRight()">&gt;</button>
-
-        <div class="packages-container" id="packages">
-            <!-- Repeat this block for each package -->
-
-                    <a href="#"><div class="package-card">
-                    <img src="Main Page/Shimla.jpeg" alt="Shimla">
-                    <div class="card-body">
-                        <a href="#"><h5>Shimla & Manali</h5></a>
-                        <div class="stars">★★★★☆</div>
-                        <p class="details">5 Days 4 Nights | For 2 People</p>
-                        <p class="price">₹25,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
+        <div class="cards">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\golden-triangle-tour-india.jpg" alt="Golden Triangle Tour">
+                        <div class="card-content">
+                            <h3>Golden Triangle Tour</h3>
+                            <p>Explore Delhi, Agra and Jaipur - India's most iconic cities</p>
+                            <div class="card-duration">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>7 Days / 6 Nights</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(128 reviews)</span>
+                            </div>
+                            <div class="card-price">From ₹25,999</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3>Golden Triangle Tour</h3>
+                            <p>This classic tour covers India's most visited destinations, offering a perfect blend of history, culture and architectural wonders.</p>
+                            <div class="card-features">
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Visit the Taj Mahal at sunrise</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Explore Delhi's historic monuments</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Experience Jaipur's royal heritage</span>
+                                </div>
+                            </div>
+                            <div class="card-button">
+                                <a href="Golden Triangle Tour.html" class="btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                        
-                <a href="#"><div class="package-card">
-                    <img src="Main Page\Goa.jpeg" alt="Goa">
-                    <div class="card-body">
-                        <a href="#"><h5>Goa Beach Tour</h5></a>
-                        <div class="stars">★★★★☆</div>
-                        <p class="details">4 Days 3 Nights | For 2 People</p>
-                        <p class="price">₹18,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
-                </div>
+            </div>
 
-                <a href="#"><div class="package-card">
-                    <img src="Main Page\Kerala.jpeg" alt="Kerala">
-                    <div class="card-body">
-                        <h5>Kerala Backwaters</h5>
-                        <div class="stars">★★★★★</div>
-                        <p class="details">6 Days 5 Nights | For 2 People</p>
-                        <p class="price">₹35,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
+            <!-- Additional package cards would follow the same structure -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Himalayan.webp" alt="Himalayan Adventure">
+                        <div class="card-content">
+                            <h3>Himalayan Adventure</h3>
+                            <p>Trek through the majestic Himalayas</p>
+                            <div class="card-duration">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>10 Days / 9 Nights</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(95 reviews)</span>
+                            </div>
+                            <div class="card-price">From ₹35,500</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3>Himalayan Adventure</h3>
+                            <p>An exhilarating journey through the breathtaking landscapes of Himachal Pradesh and Uttarakhand.</p>
+                            <div class="card-features">
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Trek to stunning mountain vistas</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Stay in traditional mountain lodges</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Experience local hill culture</span>
+                                </div>
+                            </div>
+                            <div class="card-button">
+                                <a href="Himalayan Adventure.html" class="btn">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <a href="#"><div class="package-card">
-                    <img src="Main Page\Jaipur.jpeg" alt="Jaipur">
-                    <div class="card-body">
-                        <h5>Jaipur & Udaipur</h5>
-                        <div class="stars">★★★★☆</div>
-                        <p class="details">5 Days 4 Nights | For 2 People</p>
-                        <p class="price">₹22,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
-                </div>
-
-                <a href="#"><div class="package-card">
-                    <img src="Main Page\Kashmir.jpeg" alt="Kashmir">
-                    <div class="card-body">
-                        <h5>Kashmir Paradise</h5>
-                        <div class="stars">★★★★★</div>
-                        <p class="details">7 Days 6 Nights | For 2 People</p>
-                        <p class="price">₹40,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
-                </div>
-
-                <a href="#"><div class="package-card">
-                    <img src="Main Page\Rajasthan.jpeg" alt="Rajasthan">
-                    <div class="card-body">
-                        <h5>Rajasthan Heritage</h5>
-                        <div class="stars">★★★★★</div>
-                        <p class="details">8 Days 7 Nights | For 2 People</p>
-                        <p class="price">₹50,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
-                </div>
-
-                <a href="#"><div class="package-card">
-                    <img src="Main Page\Leh Ladakh.jpeg" alt="Leh Ladakh"></a>
-                    <div class="card-body">
-                        <h5>Leh Ladakh Adventure</h5>
-                        <div class="stars">★★★★☆</div>
-                        <p class="details">6 Days 5 Nights | For 2 People</p>
-                        <p class="price">₹45,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
-                </div>
-                <div class="package-card">
-                    <img src="https://cdn.pixabay.com/photo/2020/05/12/09/35/phi-phi-island-5162095_1280.jpg" alt="Andaman and Nicobar">
-                    <div class="card-body">
-                        <h5>Andaman Escapade</h5>
-                        <div class="stars">★★★★★</div>
-                        <p class="details">5 Days 4 Nights | For 2 People</p>
-                        <p class="price">₹30,000 <span>Start From</span></p>
-                        <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                    </div></a>
-                </div>
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Darjeeling.webp" alt="Darjeeling">
-                        <div class="card-body">
-                            <h5>Darjeeling Delight</h5>
-                            <div class="stars">★★★★☆</div>
-                            <p class="details">4 Days 3 Nights | For 2 People</p>
-                            <p class="price">₹20,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\RJT.png" alt="Rajasthan Royalty">
+                        <div class="card-content">
+                            <h3>Rajasthan Royalty</h3>
+                            <p>Live like kings in India's land of palaces</p>
+                            <div class="card-duration">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>12 Days / 11 Nights</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(142 reviews)</span>
+                            </div>
+                            <div class="card-price">From ₹42,800</div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3>Rajasthan Royalty</h3>
+                            <p>Immerse yourself in the grandeur of Rajasthan's royal heritage with stays in palace hotels and desert camps.</p>
+                            <div class="card-features">
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Stay in heritage palace hotels</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Camel safari in Thar Desert</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Cultural performances & local cuisine</span>
+                                </div>
+                            </div>
+                            <div class="card-button">
+                                <a href="Rajasthan Heritage Tour Experience.html" class="btn">Book Now</a>
+                            </div>
+                        </div>
                     </div>
                     
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Varanasi.jpeg" alt="Varanasi">
-                        <div class="card-body">
-                            <h5>Varanasi Spiritual Retreat</h5>
-                            <div class="stars">★★★★☆</div>
-                            <p class="details">3 Days 2 Nights | For 2 People</p>
-                            <p class="price">₹15,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Images\Varanasia.jpg" alt="Spiritual North India">
+                        <div class="card-content">
+                            <h3>Spiritual North India</h3>
+                            <p>Experience India’s most sacred cities and serene ghats</p>
+                            <div class="card-duration">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>4 Days / 3 Nights</span>
+                            </div>
+                            <div class="card-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(86 reviews)</span>
+                            </div>
+                            <div class="card-price">From ₹20,000</div>
+                        </div>
                     </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Rishikesh.jpeg" alt="Rishikesh">
-                        <div class="card-body">
-                            <h5>Rishikesh Adventure</h5>
-                            <div class="stars">★★★★★</div>
-                            <p class="details">3 Days 2 Nights | For 2 People</p>
-                            <p class="price">₹12,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
+                    <div class="card-back">
+                        <div class="card-back-content">
+                            <h3>Spiritual North India</h3>
+                            <p>Discover the spiritual essence of North India with visits to Varanasi, Haridwar, and Rishikesh—cities rich in culture, rituals, and riverside serenity.</p>
+                            <div class="card-features">
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Evening Ganga Aarti at Varanasi</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Yoga and meditation sessions in Rishikesh</span>
+                                </div>
+                                <div class="card-feature">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Explore temples and ghats in Haridwar</span>
+                                </div>
+                            </div>
+                            <div class="card-button">
+                                <a href="Spiritual North India.html" class="btn">Book Now</a>
+                            </div>
+                        </div>
                     </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Coffee Trail.jpg" alt="Coorg">
-                        <div class="card-body">
-                            <h5>Coorg Coffee Trail</h5>
-                            <div class="stars">★★★★☆</div>
-                            <p class="details">4 Days 3 Nights | For 2 People</p>
-                            <p class="price">₹18,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
-                    </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Mysore.jpeg" alt="Mysore">
-                        <div class="card-body">
-                            <h5>Mysore Royal Tour</h5>
-                            <div class="stars">★★★★★</div>
-                            <p class="details">3 Days 2 Nights | For 2 People</p>
-                            <p class="price">₹14,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
-                    </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Shillong.jpeg" alt="Shillong">
-                        <div class="card-body">
-                            <h5>Shillong & Cherrapunji</h5>
-                            <div class="stars">★★★★★</div>
-                            <p class="details">5 Days 4 Nights | For 2 People</p>
-                            <p class="price">₹25,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
-                    </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Agra.jpeg" alt="Agra">
-                        <div class="card-body">
-                            <h5>Agra & Fatehpur Sikri</h5>
-                            <div class="stars">★★★★☆</div>
-                            <p class="details">2 Days 1 Night | For 2 People</p>
-                            <p class="price">₹10,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
-                    </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Khajuraho.webp" alt="Khajuraho">
-                        <div class="card-body">
-                            <h5>Khajuraho Heritage</h5>
-                            <div class="stars">★★★★★</div>
-                            <p class="details">4 Days 3 Nights | For 2 People</p>
-                            <p class="price">₹28,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
-                    </div>
-
-                <a href="#"><div class="package-card">
-                        <img src="Main Page\Kutch.jpeg" alt="Kutch">
-                        <div class="card-body">
-                            <h5>Rann of Kutch Festival</h5>
-                            <div class="stars">★★★★★</div>
-                            <p class="details">5 Days 4 Nights | For 2 People</p>
-                            <p class="price">₹32,000 <span>Start From</span></p>
-                            <a href="package-details-shimla.html" class="view-details-btn">View Details</a>
-                        </div></a>
-                </div>    
+                </div>
             </div>
         </div>
     </section>
-    <script>
-        function scrollLeft() {
-  document.getElementById('packages').scrollBy({ left: -320, behavior: 'smooth' });
-}
-function scrollRight() {
-  document.getElementById('packages').scrollBy({ left: 320, behavior: 'smooth' });
-}
 
-    </script>
-    <!--<script>
-        const packages = document.getElementById('packages');
+        <!-- Add these sections after the Gallery section in your HTML -->
 
-        function scrollLeft() {
-            packages.scrollBy({ left: -300, behavior: 'smooth' });
-        }
-
-        function scrollRight() {
-            packages.scrollBy({ left: 300, behavior: 'smooth' });
-        }
-    </script>-->
-    
-    
-<!-- Locations -->
-<section class="locations" id="locations">
-  <div class="locations-heading">
-    <h2>🌍 Explore Stunning Locations</h2>
-    <p>Unveil India's diverse beauty—from mountains to beaches, deserts to rainforests</p>
-  </div>
-
-  <div class="location-wrapper">
-    <div class="location-card" style="background-image: url('Main Page/JK1.jpg')">
-      <div class="overlay">
-        <h3>Kashmir</h3>
-        <p>Paradise on Earth</p>
-      </div>
+<!-- Cuisine Section -->
+<section id="cuisine">
+    <div class="section-title">
+        <h2>North Indian Cuisine</h2>
+        <p>Discover the rich and diverse flavors of North India's culinary traditions</p>
     </div>
 
-    <div class="location-card" style="background-image: url('Main Page/Raj6.jpg')">
-      <div class="overlay">
-        <h3>Jaipur</h3>
-        <p>The Pink City</p>
-      </div>
-    </div>
-
-    <div class="location-card" style="background-image: url('Main Page/L4.jpg')">
-      <div class="overlay">
-        <h3>Ladakh</h3>
-        <p>Adventure Capital</p>
-      </div>
-    </div>
-
-    <div class="location-card" style="background-image: url('Main Page/A1.jpg')">
-      <div class="overlay">
-        <h3>Tawang Monastery</h3>
-        <p>Arunachal Pradesh</p>
-      </div>
-    </div>
-
-    <div class="location-card" style="background-image: url('Main Page/G1.jpg')">
-      <div class="overlay">
-        <h3>Palolem Beach</h3>
-        <p>Goa</p>
-      </div>
-    </div>
-
-    <div class="location-card" style="background-image: url('Main Page/K1.avif')">
-      <div class="overlay">
-        <h3>Kannan Devan Hills</h3>
-        <p>Kerala</p>
-      </div>
-    </div>
-
-    <div class="location-card" style="background-image: url('Main Page/LA1.jpg')">
-      <div class="overlay">
-        <h3>Lakshadweep</h3>
-        <p>Island Heaven</p>
-      </div>
-    </div>
-
-    <div class="location-card" style="background-image: url('Main Page/ALLP1.jpg')">
-      <div class="overlay">
-        <h3>Alleppey</h3>
-        <p>Backwater Magic</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- Pick A Tour Type -->
-<section class="tour-type-section">
-  <div class="package-title">
-    <div class="text">
-      <h2>Pick A Tour Type</h2>
-    </div>
-  </div>
-  <div class="tour-cards-container">
-    <div class="tour-card">
-      <div class="tour-illustration">
-        <img src="https://ouch-prod-var-cdn.icons8.com/vz/illustrations/thumbs/nIQGP-gsRvZgSGEQ.webp" alt="Adventure Tour Illustration" />
-      </div>
-      <h5>Adventure</h5>
-      <p>Thrilling experiences for adrenaline seekers: rafting, paragliding, and more.</p>
-    </div>
-    <div class="tour-card">
-      <div class="tour-illustration">
-        <img src="https://ouch-prod-var-cdn.icons8.com/rq/illustrations/thumbs/mdaxIjGdw-w3u-q-.webp" alt="Hiking Tour Illustration" />
-      </div>
-      <h5>Hiking</h5>
-      <p>Explore scenic trails and majestic landscapes with guided hiking tours.</p>
-    </div>
-    <div class="tour-card">
-      <div class="tour-illustration">
-        <img src="https://ouch-prod-var-cdn.icons8.com/wc/illustrations/thumbs/TLxIErDeDJwZ6UGb.webp" alt="Romance Tour Illustration" />
-      </div>
-      <h5>Romance</h5>
-      <p>Perfect getaways for couples: candlelit dinners, beach walks, and more.</p>
-    </div>
-    <div class="tour-card">
-      <div class="tour-illustration">
-        <img src="https://ouch-prod-var-cdn.icons8.com/az/illustrations/thumbs/DGjAhI-iL9DZvGe1.webp" alt="Culture Tour Illustration" />
-      </div>
-      <h5>Culture</h5>
-      <p>Immerse yourself in local traditions, festivals, and heritage tours.</p>
-    </div>
-    <div class="tour-card">
-      <div class="tour-illustration">
-        <img src="https://ouch-prod-var-cdn.icons8.com/gc/illustrations/thumbs/9w1trdXhvS4CPQ4W.webp" alt="Wildlife Tour Illustration" />
-      </div>
-      <h5>Wildlife</h5>
-      <p>Discover India's rich biodiversity with safaris and nature expeditions.</p>
-    </div>
-    <div class="tour-card">
-      <div class="tour-illustration">
-        <img src="https://ouch-prod-var-cdn.icons8.com/ey/illustrations/thumbs/7e5KiKwdZvFTjL9h.webp" alt="Family Tour Illustration" />
-      </div>
-      <h5>Family</h5>
-      <p>Fun-filled packages designed for families, ensuring joy for all ages.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="testimonials-single-row" id="testimonials">
-  <h2 class="testimonial-title">What Our Clients Say</h2>
-
-  <div class="testimonial-row">
-    <div class="testimonial-track">
-      <!-- Testimonials -->
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/couple.png" alt="John & Emma - Happy Couple" />
-        <p>TravelTales made our vacation unforgettable! The service was excellent and everything was well-organized. We can't wait to book our next trip!</p>
-        <h4>- John & Emma</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/man.png" alt="Sarah M. - Solo Traveler" />
-        <p>Amazing experience from start to finish. The team at TravelTales was professional and very helpful. Highly recommended!</p>
-        <h4>- Sarah M.</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/woman.png" alt="Mike & Linda - Couple" />
-        <p>The best travel agency we've ever used. The tour packages are well thought out and affordable. We had a fantastic time in Kashmir.</p>
-        <h4>- Mike & Linda</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/man.png" alt="The Smith Family" />
-        <p>Our family trip was seamless and fun. The kids loved every moment. Thank you, TravelTales, for the memories!</p>
-        <h4>- The Smith Family</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/woman.png" alt="Priya S. - Solo Explorer" />
-        <p>As a solo traveler, I felt safe and cared for. The personalized itinerary was perfect. Will travel again with you!</p>
-        <h4>- Priya S.</h4>
-      </article>
-
-      <!-- Duplicate testimonials for seamless scroll -->
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/couple.png" alt="John & Emma - Happy Couple" />
-        <p>TravelTales made our vacation unforgettable! The service was excellent and everything was well-organized. We can't wait to book our next trip!</p>
-        <h4>- John & Emma</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/man.png" alt="Sarah M. - Solo Traveler" />
-        <p>Amazing experience from start to finish. The team at TravelTales was professional and very helpful. Highly recommended!</p>
-        <h4>- Sarah M.</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/woman.png" alt="Mike & Linda - Couple" />
-        <p>The best travel agency we've ever used. The tour packages are well thought out and affordable. We had a fantastic time in Kashmir.</p>
-        <h4>- Mike & Linda</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/man.png" alt="The Smith Family" />
-        <p>Our family trip was seamless and fun. The kids loved every moment. Thank you, TravelTales, for the memories!</p>
-        <h4>- The Smith Family</h4>
-      </article>
-      <article class="testimonial">
-        <div class="quote-icon">❝</div>
-        <img src="Pictures/man.png" alt="Priya S. - Solo Explorer" />
-        <p>As a solo traveler, I felt safe and cared for. The personalized itinerary was perfect. Will travel again with you!</p>
-        <h4>- Priya S.</h4>
-      </article>
-    </div>
-  </div>
-</section>
-<br>
-
-    <!-- Blog Section -->
-    <section class="blog" id="blog">
-    <div class="blog-title">
-        <h2>Latest from Our Blog</h2>
-    </div>
-    <div class="blog-content">
-        <div class="blog-post">
-            <div class="blog-img-wrapper">
-                <img src="Blog Page/BLOG1.jpg" alt="Exploring the Hidden Gems of Goa">
+    <div class="cards">
+        <div class="cuisine-card">
+            <div class="cuisine-img">
+                <img src="https://blog.swiggy.com/wp-content/uploads/2024/09/Image-9_Mughlai-Biryani-1024x538.png" alt="Mughlai Cuisine">
+                <div class="cuisine-overlay">
+                    <h3>Mughlai Delicacies</h3>
+                </div>
             </div>
-            <h3>Exploring the Hidden Gems of Goa</h3>
-            <p>Discover the lesser-known attractions of Goa that will leave you mesmerized. From secluded beaches to ancient forts, find out what makes Goa a top travel destination.</p>
-            <a href="Blog Page/GoaBlog.html" class="read-more">Read More</a>
+            <div class="cuisine-content">
+                <h3>Mughlai Cuisine</h3>
+                <p>Rich, aromatic dishes like biryani, kebabs, and korma that originated in the Mughal courts.</p>
+                <div class="cuisine-dishes">
+                    <span>Butter Chicken</span>
+                    <span>Rogan Josh</span>
+                    <span>Nihari</span>
+                </div>
+            </div>
         </div>
-        <div class="blog-post">
-            <div class="blog-img-wrapper">
-                <img src="Blog Page/blog2.jpg" alt="A Journey Through the Valleys of Kashmir">
+
+        <div class="cuisine-card">
+            <div class="cuisine-img">
+                <img src="https://s3.amazonaws.com/indiafoodnetwork/wp-content/uploads/2021/01/13134034/makki-ki-roti-sarson-ka-saag-UBCCCJP.jpg" alt="Punjabi Food">
+                <div class="cuisine-overlay">
+                    <h3>Punjabi Specialties</h3>
+                </div>
             </div>
-            <h3>A Journey Through the Valleys of Kashmir</h3>
-            <p>Experience the breathtaking beauty of Kashmir. Our blog takes you through the must-visit places and experiences in this paradise on earth.</p>
-            <a href="Blog Page/KashmirBlog.html" class="read-more">Read More</a>
+            <div class="cuisine-content">
+                <h3>Punjabi Food</h3>
+                <p>Hearty, wholesome dishes with robust flavors from the agricultural heartland of India.</p>
+                <div class="cuisine-dishes">
+                    <span>Sarson ka Saag</span>
+                    <span>Makki di Roti</span>
+                    <span>Dal Makhani</span>
+                </div>
+            </div>
         </div>
-        <div class="blog-post">
-            <div class="blog-img-wrapper">
-                <img src="Blog Page/blog3.jpg" alt="Top 10 Things to Do in Jaipur">
+
+        <div class="cuisine-card">
+            <div class="cuisine-img">
+                <img src="https://images.moneycontrol.com/static-mcnews/2024/09/20240916115933_Rajasthani-vegetarian-cuisine-.jpg?impolicy=website&width=770&height=431" alt="Rajasthani Cuisine">
+                <div class="cuisine-overlay">
+                    <h3>Rajasthani Flavors</h3>
+                </div>
             </div>
-            <h3>Top 10 Things to Do in Jaipur</h3>
-            <p>From visiting historic palaces to enjoying traditional Rajasthani cuisine, find out the top 10 things you must do when in Jaipur.</p>
-            <a href="Blog Page/Jaipur Blog.html" class="read-more">Read More</a>
+            <div class="cuisine-content">
+                <h3>Rajasthani Cuisine</h3>
+                <p>Distinctive dishes adapted to the arid climate with long shelf-life ingredients.</p>
+                <div class="cuisine-dishes">
+                    <span>Dal Baati Churma</span>
+                    <span>Gatte ki Sabzi</span>
+                    <span>Ker Sangri</span>
+                </div>
+            </div>
+        </div>
+        <div class="cuisine-card">
+    <div class="cuisine-img">
+        <img src="Images/Butter Chicken.jpg" alt="Butter Chicken">
+        <div class="cuisine-overlay">
+            <h3>Butter Chicken</h3>
+        </div>
+    </div>
+    <div class="cuisine-content">
+        <h3>Butter Chicken</h3>
+        <p>A creamy tomato-based chicken curry, rich in flavor and spices.</p>
+        <div class="cuisine-dishes">
+            <span>Punjab</span>
+            <span>Spicy</span>
+            <span>Non-Veg</span>
+        </div>
+    </div>
+</div>
+
+<div class="cuisine-card">
+    <div class="cuisine-img">
+        <img src="Images/Rogan Josh.jpg" alt="Rogan Josh">
+        <div class="cuisine-overlay">
+            <h3>Rogan Josh</h3>
+        </div>
+    </div>
+    <div class="cuisine-content">
+        <h3>Rogan Josh</h3>
+        <p>Aromatic lamb curry with flavors from Kashmir, slow-cooked for tenderness.</p>
+        <div class="cuisine-dishes">
+            <span>Kashmir</span>
+            <span>Lamb</span>
+            <span>Rich</span>
+        </div>
+    </div>
+</div>
+
+<div class="cuisine-card">
+    <div class="cuisine-img">
+        <img src="Images/Chole Bhature.jpg" alt="Chole Bhature">
+        <div class="cuisine-overlay">
+            <h3>Chole Bhature</h3>
+        </div>
+    </div>
+    <div class="cuisine-content">
+        <h3>Chole Bhature</h3>
+        <p>Fluffy deep-fried bread served with spicy chickpeas curry.</p>
+        <div class="cuisine-dishes">
+            <span>Delhi</span>
+            <span>Street Food</span>
+            <span>Veg</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+</section>
+
+<!-- Festivals Section -->
+<section id="festivals" class="parallax" style="background-image: url('https://www.taleof2backpackers.com/wp-content/uploads/2020/03/Dauji-ka-Huranga.jpg')">
+    <div class="section-title">
+        <h2>Vibrant Festivals</h2>
+        <p>Experience the colorful celebrations of North India's cultural heritage</p>
+    </div>
+
+    <div class="festival-cards">
+        <div class="festival-card">
+            <div class="festival-date">
+                <span>Jan-Feb</span>
+            </div>
+            <div class="festival-content">
+                <h3>Jaipur Literature Festival</h3>
+                <p>The world's largest free literary festival held in the pink city of Jaipur.</p>
+                <a href="#" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-date">
+                <span>Mar-Apr</span>
+            </div>
+            <div class="festival-content">
+                <h3>Holi</h3>
+                <p>The festival of colors celebrated with enthusiasm across North India.</p>
+                <a href="#" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-date">
+                <span>Oct-Nov</span>
+            </div>
+            <div class="festival-content">
+                <h3>Diwali</h3>
+                <p>The festival of lights illuminating homes and hearts across the region.</p>
+                <a href="#" class="btn-outline">Learn More</a>
+            </div>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-date">
+                <span>Nov-Dec</span>
+            </div>
+            <div class="festival-content">
+                <h3>Pushkar Camel Fair</h3>
+                <p>A vibrant mix of livestock trading, cultural events and religious rituals.</p>
+                <a href="#" class="btn-outline">Learn More</a>
+            </div>
         </div>
     </div>
 </section>
 
-
-<!-- Newsletter -->
-
-<section class="newsletter">
-    <div class="newstext">
-        <h2>Newsletter</h2>
-        <p>Subscribe to get offers and latest<br>updates every week!</p>
+<!-- Adventure Section -->
+<section id="adventure">
+    <div class="section-title">
+        <h2>Adventure Activities</h2>
+        <p>Thrilling experiences in North India's diverse landscapes</p>
     </div>
 
-    <div class="send">
-        <form action="">
-            <input type="email" name="emailid" placeholder="E-mail" required>
-            <input type="submit" value="Subscribe">
+    <div class="adventure-container">
+        <div class="adventure-tabs">
+            <button class="tab-btn active" data-tab="trekking">Trekking</button>
+            <button class="tab-btn" data-tab="water">Water Sports</button>
+            <button class="tab-btn" data-tab="winter">Winter Sports</button>
+            <button class="tab-btn" data-tab="desert">Desert Adventures</button>
+        </div>
+
+        <div class="adventure-content">
+            <div class="tab-panel active" id="trekking">
+                <div class="adventure-info">
+                    <h3>Himalayan Treks</h3>
+                    <p>Explore breathtaking trails in the Indian Himalayas, from easy day hikes to challenging multi-day expeditions. Popular treks include:</p>
+                    <ul>
+                        <li>Valley of Flowers (Uttarakhand)</li>
+                        <li>Hampta Pass (Himachal Pradesh)</li>
+                        <li>Stok Kangri (Ladakh)</li>
+                    </ul>
+                    <a href="#" class="btn">Book an Adventure</a>
+                </div>
+                <div class="adventure-img">
+                    <img src="https://www.thrillophilia.com/blog/wp-content/uploads/2015/01/Everest-base-camp.jpg" alt="Himalayan Trekking">
+                </div>
+            </div>
+
+            <div class="tab-panel" id="water">
+                <div class="adventure-info">
+                    <h3>River Adventures</h3>
+                    <p>Exciting water activities in North India's rivers:</p>
+                    <ul>
+                        <li>White water rafting in Rishikesh</li>
+                        <li>Kayaking in the Zanskar River</li>
+                        <li>Parasailing in Goa (winter months)</li>
+                    </ul>
+                    <a href="#" class="btn">Book an Adventure</a>
+                </div>
+                <div class="adventure-img">
+                    <img src="https://www.holidify.com/images/cmsuploads/compressed/Barapole-River-Rafting-image_20171012135016.jpg" alt="River Rafting">
+                </div>
+            </div>
+
+            <div class="tab-panel" id="winter">
+                <div class="adventure-info">
+                    <h3>Snow Experiences</h3>
+                    <p>Winter sports and activities in the Himalayas:</p>
+                    <ul>
+                        <li>Skiing in Auli and Gulmarg</li>
+                        <li>Ice climbing in Spiti Valley</li>
+                        <li>Snow leopard treks in Ladakh</li>
+                    </ul>
+                    <a href="#" class="btn">Book an Adventure</a>
+                </div>
+                <div class="adventure-img">
+                    <img src="https://indiathrills.com/wp-content/uploads/elementor/thumbs/8565363673_50bfe4fbae_b-pr9l847estwhdxojjkf45ih7hiptdqvqdws485jc3g.jpg" alt="Skiing">
+                </div>
+            </div>
+
+            <div class="tab-panel" id="desert">
+                <div class="adventure-info">
+                    <h3>Desert Thrills</h3>
+                    <p>Adventures in the Thar Desert of Rajasthan:</p>
+                    <ul>
+                        <li>Camel safaris in Jaisalmer</li>
+                        <li>Dune bashing in Bikaner</li>
+                        <li>Hot air ballooning over Jaipur</li>
+                    </ul>
+                    <a href="#" class="btn">Book an Adventure</a>
+                </div>
+                <div class="adventure-img">
+                    <img src="https://indiathrills.com/wp-content/uploads/2020/07/Camel-Safari-In-Rajasthan-1280.jpg" alt="Desert Safari">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Remove active class from all
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      tabPanels.forEach(panel => panel.classList.remove("active"));
+
+      // Add active class to clicked tab
+      button.classList.add("active");
+      document.getElementById(button.dataset.tab).classList.add("active");
+    });
+  });
+</script>
+
+
+<!-- Handicrafts Section -->
+<section id="handicrafts">
+    <div class="section-title">
+        <h2>Traditional Handicrafts</h2>
+        <p>Exquisite artisanal creations from North India's skilled craftsmen</p>
+    </div>
+
+    <div class="handicraft-gallery">
+        <div class="handicraft-item">
+            <img src="https://weaverstory.com/cdn/shop/articles/Contemporary_Men_s_Pashmina_Shawls_by_Weaver_Story.png?v=1679565581" alt="Kashmiri Pashmina">
+            <div class="handicraft-info">
+                <h3>Kashmiri Pashmina</h3>
+                <p>Luxurious handwoven shawls made from fine cashmere wool</p>
+                <span class="handicraft-origin">Kashmir</span>
+            </div>
+        </div>
+
+        <div class="handicraft-item">
+            <img src="https://indianartideas.in/articleimages/1594032281blue%20pottery.png" alt="Blue Pottery">
+            <div class="handicraft-info">
+                <h3>Jaipur Blue Pottery</h3>
+                <p>Turquoise blue ceramic art with Persian influences</p>
+                <span class="handicraft-origin">Rajasthan</span>
+            </div>
+        </div>
+
+        <div class="handicraft-item">
+            <img src="https://medialit.in/thevoices/wp-content/uploads/2021/02/Brass-City.jpg" alt="Brassware">
+            <div class="handicraft-info">
+                <h3>Moradabad Brassware</h3>
+                <p>Intricately designed brass items with fine engravings</p>
+                <span class="handicraft-origin">Uttar Pradesh</span>
+            </div>
+        </div>
+
+        <div class="handicraft-item">
+            <img src="https://miro.medium.com/max/1000/1*fQtB756C-SfRU57LiA1l7g.jpeg" alt="Phulkari">
+            <div class="handicraft-info">
+                <h3>Punjabi Phulkari</h3>
+                <p>Vibrant floral embroidery traditionally made by Punjabi women</p>
+                <span class="handicraft-origin">Punjab</span>
+            </div>
+        </div>
+
+        <div class="handicraft-item">
+            <img src="https://cdn.shopify.com/s/files/1/1865/3293/files/Saharanpur-4_large.jpg?v=1504640670" alt="Woodwork">
+            <div class="handicraft-info">
+                <h3>Saharanpur Woodwork</h3>
+                <p>Exquisitely carved wooden furniture and decorative items</p>
+                <span class="handicraft-origin">Uttar Pradesh</span>
+            </div>
+        </div>
+
+        <div class="handicraft-item">
+            <img src="https://thumbs.dreamstime.com/b/handmade-kashmir-carpets-oriental-design-patterns-nature-motif-carpets-several-carpets-handmade-kashmir-carpets-111653113.jpg" alt="Carpets">
+            <div class="handicraft-info">
+                <h3>Kashmiri Carpets</h3>
+                <p>Hand-knotted silk and wool carpets with intricate designs</p>
+                <span class="handicraft-origin">Kashmir</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Photo Gallery</h2>
+            <p>Visual stories from our travelers across North India</p>
+        </div>
+
+        <div class="gallery-container">
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGFqJTIwbWFoYWwlMjBhZ3JhJTIwaW5kaWF8ZW58MHx8MHx8fDA%3D" alt="Taj Mahal">
+                    <div class="gallery-caption">
+                        <h4>Taj Mahal, Agra</h4>
+                        <p>The iconic symbol of love</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://t4.ftcdn.net/jpg/02/51/76/47/360_F_251764777_pTKqHvjL9JwBScIsOlcF4llsRkDQ4VNj.jpg" alt="Jaipur">
+                    <div class="gallery-caption">
+                        <h4>Hawa Mahal, Jaipur</h4>
+                        <p>The Palace of Winds</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/04/Ganga-Aarti-Varanasi-1.jpg?fit=1024%2C683&ssl=1" alt="Varanasi">
+                    <div class="gallery-caption">
+                        <h4>Ganga Aarti, Varanasi</h4>
+                        <p>Spiritual ceremony on the Ganges</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://media.istockphoto.com/id/1218830644/photo/beautiful-lake.jpg?s=612x612&w=0&k=20&c=r5or5KmtrZE5P93cDPG2FzxWQxhZA0qeTInoXJ7qXxA=" alt="Ladakh">
+                    <div class="gallery-caption">
+                        <h4>Pangong Lake, Ladakh</h4>
+                        <p>High altitude Himalayan lake</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://e1.pxfuel.com/desktop-wallpaper/720/739/desktop-wallpaper-rishikesh.jpg" alt="Rishikesh">
+                    <div class="gallery-caption">
+                        <h4>Rishikesh</h4>
+                        <p>Yoga capital of the world</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://t4.ftcdn.net/jpg/00/47/86/25/360_F_47862524_mvITCUmtQpRI6QvSLEByyOBT1MXQiXrK.jpg" alt="Amritsar">
+                    <div class="gallery-caption">
+                        <h4>Golden Temple, Amritsar</h4>
+                        <p>Sikhism's holiest shrine</p>
+                    </div>
+                </div>
+                <!-- Shimla, Himachal Pradesh -->
+                <div class="gallery-item">
+                    <img src="https://t3.ftcdn.net/jpg/04/09/57/16/360_F_409571615_KEsl0FOjDX23T805YsCUVqJyhjy6iRJt.jpg" alt="Shimla">
+                    <div class="gallery-caption">
+                        <h4>Shimla, Himachal Pradesh</h4>
+                        <p>The Queen of Hills</p>
+                    </div>
+                </div>
+                <!-- Ranikhet, Uttarakhand -->
+                <div class="gallery-item">
+                    <img src="https://www.holidify.com/images/bgImages/RANIKHET.jpg" alt="Ranikhet">
+                    <div class="gallery-caption">
+                        <h4>Ranikhet, Uttarakhand</h4>
+                        <p>Peaceful cantonment town in the Kumaon Hills</p>
+                    </div>
+                </div>
+                <!-- Mussoorie, Uttarakhand -->
+                <div class="gallery-item">
+                    <img src="https://t4.ftcdn.net/jpg/04/70/68/73/360_F_470687328_X5mqwze2IFjvzO62cTima3wdk9HjBzMC.jpg" alt="Mussoorie">
+                    <div class="gallery-caption">
+                        <h4>Mussoorie, Uttarakhand</h4>
+                        <p>The charming hill station known as the Queen of Hills</p>
+                    </div>
+                </div>
+                <!-- Jim Corbett National Park -->
+                <div class="gallery-item">
+                    <img src="https://media.istockphoto.com/id/1487988908/photo/wild-bengal-male-tiger-or-panthera-tigris-side-profile-in-natural-green-scenic-background.jpg?s=612x612&w=0&k=20&c=w7DQW5ne20rsy4hudWNUo-D_iTW0YgEq5cYiCmjN4r4=" alt="Jim Corbett">
+                    <div class="gallery-caption">
+                        <h4>Jim Corbett National Park</h4>
+                        <p>India’s oldest national park and tiger reserve</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="section-title">
+            <h2>Traveler Stories</h2>
+            <p>What our guests say about their North India experiences</p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="cards">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">The Golden Triangle tour exceeded all our expectations. Our guide was incredibly knowledgeable and made every site come alive with stories. The Taj Mahal at sunrise was truly magical!</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">The Himalayan trek was challenging but absolutely worth it. The views were breathtaking and our guides took excellent care of us. Can't wait to come back for another adventure!</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Rajasthan was like stepping into a fairy tale. The palaces, the colors, the food - everything was spectacular. The desert safari was the highlight of our trip. Highly recommend!</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Elena Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Elena Rodriguez</h4>
+                            <p>Madrid, Spain</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">We experienced the spiritual side of India in Rishikesh and Varanasi. The Ganga Aarti was so peaceful, and the yoga retreat left us recharged. The planning was flawless!</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Raj Malhotra">
+                        </div>
+                        <div class="author-info">
+                            <h4>Raj Malhotra</h4>
+                            <p>New York, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+<div class="testimonial-card">
+    <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <p class="testimonial-text">Our family trip to Amritsar and Dharamshala was full of heartwarming moments. The Golden Temple was serene and peaceful. Loved the local food and hospitality!</p>
+    <div class="testimonial-author">
+        <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Priya Verma">
+        </div>
+        <div class="author-info">
+            <h4>Priya Verma</h4>
+            <p>Delhi, India</p>
+        </div>
+    </div>
+</div>
+
+<div class="testimonial-card">
+    <div class="rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <i class="far fa-star"></i>
+    </div>
+    <p class="testimonial-text">We booked a trip to Shimla and Manali, and it was absolutely beautiful. Snow-capped peaks, mall road vibes, and fresh mountain air—it was like a dream vacation!</p>
+    <div class="testimonial-author">
+        <div class="author-img">
+            <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Luca Marino">
+        </div>
+        <div class="author-info">
+            <h4>Luca Marino</h4>
+            <p>Naples, Italy</p>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax" style="background-image: url('https://indiasomeday.com/wp-content/uploads/2018/11/trekking_bhrigu-lake-kullu-manali_-by-Vijay-Dhankhar-from-Pixabay.jpg')">
+        <div class="parallax-content">
+            <h2>Ready for Your North India Adventure?</h2>
+            <p>Let us create a personalized itinerary that matches your travel style and interests</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to book your trip? We're here to help!</p>
+        </div>
+
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for travel tips, special offers, and North India inspiration</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
         </form>
-    </div>
-</section>
+    </section>
+</main>
 
-<!-- Footer -->
-
-<section class="footer">
-    <div class="foot">
-        <div class="footer-content">
-            <div class="footlinks">
-                <div class="logo-container">
-                    <img src="Logos\TT6.png" alt="Travel Tales Logo"> <!-- Replace with your logo path -->
-                </div>
-                <p>08, Nagpur, Maharashtra</p>
-                <p>+96899999000</p>
-                <p>TravelTales@gmail.com</p>
-            </div>
-            
-            <div class="footlinks">
-                <h4>Top Destinations</h4>
-                <ul>
-                    <li><a href="./register.html">Ladhak</a></li>
-                    <li><a href="./about.html">Manali</a></li>
-                    <li><a href="./contact.html">Jsipur</a></li>
-                    <li><a href="#">Coimbatore</a></li>
-                    <li><a href="#">Kerala</a></li>
-                    <li><a href="#">Goa</a></li>
-                </ul>
-            </div>
-            <div class="footlinks">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="Services/Sign up Page.html">Register</a></li>
-                    <li><a href="Travel Tales/About Us.html">About Us</a></li>
-                    <li><a href="Services/Contact Us Page.html">Contact Us</a></li>
-                    <li><a href="#">Team Members</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Career</a></li>
-                </ul>
-            </div>
-            <div class="footlinks">
-                <h4>Connect</h4>
-                <div class="social">
-                    <a href="" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    <a href="" target="_blank"><i class='bx bxl-instagram' ></i></a>
-                    <a href="" target="_blank"><i class='bx bxl-twitter' ></i></a>
-                    <a href="" target="_blank"><i class='bx bxl-linkedin' ></i></a>
-                    <a href="" target="_blank"><i class='bx bxl-youtube' ></i></a>
-                    <a href="" target="_blank"><i class='bx bxl-github'></i></a>
-                </div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Explore North India</h3>
+            <p>Your trusted guide to discovering the wonders of North India. We create unforgettable travel experiences with a perfect blend of adventure, culture and comfort.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#packages">Tour Packages</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Support</h3>
+            <ul class="footer-links">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Booking Terms</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cancellation Policy</a></li>
+                <li><a href="#">Travel Insurance</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+                <li><i class="fas fa-map-marker-alt"></i> 123, Yashoda Nagar, Nagpur, Maharahstra, India</li>
+                <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                <li><i class="fas fa-envelope"></i> Traveltalesngp@gmail.com</li>
+                <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
+            </ul>
+        </div>
     </div>
-    <div class="end">
-        <p>Copyright © 2024 TravelTales All Rights Reserved.<br>Website by: Karan Bipate</p>
+    <div class="copyright">
+        <p>&copy; 2025 Travel Tales | Created with ❤️ for North India. All Rights Reserved.</p>
+
     </div>
-</section>
-</body>
+</footer>
+
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+
+    // Smooth scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form submission handling
+    document.querySelectorAll('form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    });
+
+    // Animation on scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.card, .state-card, .testimonial-card, .gallery-item');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+
+    // Set initial state for animated elements
+    document.querySelectorAll('.card, .state-card, .testimonial-card, .gallery-item').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+</script>
+</body> 
 </html>
