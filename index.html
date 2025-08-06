@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelTales Travels</title>
-    <link rel="icon" href="Logos\TT4.png">
+    <link rel="icon" href="Logos/TT4.png">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -251,46 +251,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Floating Destination Icons */
-.destination-icon {
-  position: absolute;
-  opacity: 0.1;
-  animation: float 6s ease-in-out infinite;
-  z-index: 1;
-}
-
-.destination-icon:nth-child(1) {
-  top: 15%;
-  left: 10%;
-  font-size: 2rem;
-  animation-delay: 0s;
-}
-
-.destination-icon:nth-child(2) {
-  top: 70%;
-  left: 15%;
-  font-size: 3rem;
-  animation-delay: 1s;
-}
-
-.destination-icon:nth-child(3) {
-  top: 30%;
-  right: 10%;
-  font-size: 2.5rem;
-  animation-delay: 2s;
-}
-
-.destination-icon:nth-child(4) {
-  top: 80%;
-  right: 20%;
-  font-size: 2rem;
-  animation-delay: 3s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
-}
 
 /* Glassmorphic Panel with Neumorphism */
 .banner-text-item {
@@ -352,15 +312,17 @@ body {
 
 .subtitle {
   color: var(--subtitle);
-  font-size: 1.3rem;
-  margin-bottom: 28px;
-  margin-top: 12px;
+  font-size: 1.6rem;
+  margin: 12px auto 28px auto; /* Auto margins to center horizontally */
   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.5px;
   animation: fadeIn 1.5s;
   max-width: 80%;
   line-height: 1.5;
+  text-align: center; /* Align text inside */
+  display: block;
 }
+
 
 /* Booking Form with Floating Labels */
 .form {
@@ -403,6 +365,42 @@ body {
   transition: all 0.3s ease;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
+.input-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  width: 260px;
+  height: 50px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.input-icon {
+  margin-right: 10px;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.input-group select,
+.input-group input[type="date"] {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  background: transparent;
+  color: #333;
+  appearance: none;
+}
 
 .form input[type="text"],
 .form input[type="date"] {
@@ -444,12 +442,58 @@ body {
   filter: drop-shadow(0 0 8px #fde02fbb);
   transform: scale(1.1);
 }
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: border 0.3s ease;
+}
+
+.input-group:hover {
+  border-color: #ff6f61;
+}
+
+.input-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #ff6f61;
+}
+
+.input-group select,
+.input-group input[type="date"] {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  background: transparent;
+  color: #333;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.input-group select:focus,
+.input-group input:focus {
+  outline: none;
+}
 
 /* Book Button with Pulse Animation */
 .book {
   margin-top: 0;
   margin-left: 10px;
-  padding: 18px 38px;
+  padding: 12px 28px;
   border: none;
   border-radius: 12px;
   background: linear-gradient(135deg, var(--yellow) 40%, var(--yellow-dark) 100%);
@@ -501,6 +545,7 @@ body {
 
 .book:active {
   transform: scale(0.97);
+  color: #F57C00;
 }
 
 @keyframes pulse {
@@ -2503,85 +2548,94 @@ body {
       <p class="subtitle">Explore new destinations, create memories, and start your next adventure!</p>
     </div>
     <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
-      <div class="col-md-4 mb-3">
-  <label for="destination" class="form-label">Where would you like to go?</label>
-  <select class="form-select" id="destination" required>
-    <option disabled selected>Select a destination</option>
-    <option>Delhi</option>
-    <option>Mumbai</option>
-    <option>Bangalore</option>
-    <option>Kolkata</option>
-    <option>Chennai</option>
-    <option>Hyderabad</option>
-    <option>Pune</option>
-    <option>Jaipur</option>
-    <option>Goa</option>
-    <option>Agra</option>
-    <option>Varanasi</option>
-    <option>Udaipur</option>
-    <option>Shimla</option>
-    <option>Manali</option>
-    <option>Leh</option>
-    <option>Ladakh</option>
-    <option>Kashmir</option>
-    <option>Amritsar</option>
-    <option>Rishikesh</option>
-    <option>Haridwar</option>
-    <option>Darjeeling</option>
-    <option>Mysore</option>
-    <option>Coorg</option>
-    <option>Ooty</option>
-    <option>Kodaikanal</option>
-    <option>Gokarna</option>
-    <option>Hampi</option>
-    <option>Rann of Kutch</option>
-    <option>Jaisalmer</option>
-    <option>Pushkar</option>
-    <option>Andaman & Nicobar</option>
-    <option>Pondicherry</option>
-    <option>Mahabalipuram</option>
-    <option>Shillong</option>
-    <option>Guwahati</option>
-    <option>Gangtok</option>
-    <option>Sikkim</option>
-    <option>Cherrapunji</option>
-    <option>Munnar</option>
-    <option>Alleppey</option>
-    <option>Kochi</option>
-    <option>Trivandrum</option>
-    <option>Madurai</option>
-    <option>Ranthambore</option>
-    <option>Jim Corbett</option>
-    <option>Kaziranga</option>
-    <option>Khajuraho</option>
-    <option>Ajanta & Ellora</option>
-    <option>Konark</option>
-    <option>Puri</option>
-  </select>
-</div>
 
+      <!-- Destination -->
       <div class="input-group">
-        <span class="input-icon"><i class="fa fa-calendar-alt"></i></span>
-        <input type="date" class="date" required>
+        <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+        <select class="form-select" id="destination" required>
+          <option disabled selected>Where would you like to go?</option>
+          <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Bangalore</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Hyderabad</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Goa</option>
+          <option>Agra</option>
+          <option>Varanasi</option>
+          <option>Udaipur</option>
+          <option>Shimla</option>
+          <option>Manali</option>
+          <option>Leh</option>
+          <option>Ladakh</option>
+          <option>Kashmir</option>
+          <option>Amritsar</option>
+          <option>Rishikesh</option>
+          <option>Haridwar</option>
+          <option>Darjeeling</option>
+          <option>Mysore</option>
+          <option>Coorg</option>
+          <option>Ooty</option>
+          <option>Kodaikanal</option>
+          <option>Gokarna</option>
+          <option>Hampi</option>
+          <option>Rann of Kutch</option>
+          <option>Jaisalmer</option>
+          <option>Pushkar</option>
+          <option>Andaman & Nicobar</option>
+          <option>Pondicherry</option>
+          <option>Mahabalipuram</option>
+          <option>Shillong</option>
+          <option>Guwahati</option>
+          <option>Gangtok</option>
+          <option>Sikkim</option>
+          <option>Cherrapunji</option>
+          <option>Munnar</option>
+          <option>Alleppey</option>
+          <option>Kochi</option>
+          <option>Trivandrum</option>
+          <option>Madurai</option>
+          <option>Ranthambore</option>
+          <option>Jim Corbett</option>
+          <option>Kaziranga</option>
+          <option>Khajuraho</option>
+          <option>Ajanta & Ellora</option>
+          <option>Konark</option>
+          <option>Puri</option>
+        </select>
       </div>
-      <div class="col-md-4 mb-3">
-  <label for="guests" class="form-label">No. of Guests</label>
-  <select class="form-select" id="guests" required>
-    <option disabled selected>Select guests</option>
-    <option>1 Adult</option>
-    <option>2 Adults</option>
-    <option>3 Adults</option>
-    <option>4 Adults</option>
-    <option>Family</option>
-  </select>
-</div>
+
+      <!-- Date -->
+      <!-- Date Selection -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-calendar"></i></span>
+    <input type="date" required>
+  </div>
+
+      <!-- No. of Guests -->
+      <div class="input-group">
+        <span class="input-icon"><i class="fa fa-users"></i></span>
+        <select class="form-select" id="guests" required>
+          <option disabled selected>No. of Guests</option>
+          <option>1 Adult</option>
+          <option>2 Adults</option>
+          <option>3 Adults</option>
+          <option>4 Adults</option>
+          <option>Family</option>
+        </select>
+      </div>
+
       <button type="submit" class="book">Book Now</button>
     </form>
-    <div id="confirmation" style="display:none; margin-top:24px; font-size:1.18rem; color:#fff; font-weight:bold; text-shadow:0 2px 8px #000;">
+
+    <div id="confirmation">
       🎉 Your trip has been booked! We wish you a wonderful journey.
     </div>
   </div>
 </section>
+
 <!-- comment 
 <script>
   // Simple confirmation animation
