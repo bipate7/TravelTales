@@ -8,21 +8,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajasthan: The Royal Experience</title>
-        <link rel="icon" href="Images/TT4.png">
+    <title>Rajasthan: The Royal Experience | TravelTales</title>
+    <link rel="icon" href="Images/TT4.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
             --primary: #d4af37;
+            --primary-light: #e8c44d;
+            --primary-dark: #b38f2a;
             --secondary: #8b0000;
+            --secondary-light: #a50000;
             --dark: #222;
+            --darker: #111;
             --light: #f8f8f8;
+            --lighter: #fff;
             --accent: #ff6600;
             --text: #333;
+            --text-light: #777;
             --bg-overlay: rgba(0, 0, 0, 0.7);
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 10px;
         }
         
         * {
@@ -31,15 +43,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text);
-            background: url('https://t4.ftcdn.net/jpg/00/59/66/35/360_F_59663502_Q0oCrYRXnIO5R07PehAz03duabpJnM23.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: var(--lighter);
             line-height: 1.6;
             overflow-x: hidden;
         }
         
+        /* Background Pattern */
         body::before {
             content: '';
             position: fixed;
@@ -47,31 +63,134 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+            opacity: 0.05;
             z-index: -1;
         }
         
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Selection Styling */
+        ::selection {
+            background-color: var(--primary);
+            color: var(--darker);
+        }
+        
+        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
+        /* Section Padding */
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+        }
+        
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--darker);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--lighter);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--lighter);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e05a00;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
         /* Header Styles */
         header {
             background: linear-gradient(to right, var(--bg-overlay), rgba(139, 0, 0, 0.2));
-            color: white;
-            padding: 7px 0;
+            color: var(--lighter);
+            padding: 12px 0;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
         }
         
         header.scrolled {
-            padding: 10px 0;
-            background: rgba(0, 0, 0, 0.7);
+            padding: 08px 0;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: var(--shadow-md);
         }
         
         .header-container {
@@ -81,19 +200,60 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 1.8rem;
-        }
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    height: 80px; /* Adjust based on your logo's aspect ratio */
+    width: auto;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+/* Optional hover effect on just the logo image */
+.logo:hover img {
+    transform: rotate(-5deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .logo {
+        font-size: 1.8rem;
+    }
+    .logo img {
+        height: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+    .logo img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+    .logo img {
+        height: 35px;
+        margin-right: 8px;
+    }
+}
         
         nav ul {
             display: flex;
@@ -102,19 +262,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         nav ul li {
             margin-left: 30px;
+            position: relative;
         }
         
         nav ul li a {
-            color: white;
+            color: var(--lighter);
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: color 0.3s ease;
+            transition: var(--transition);
             position: relative;
+            display: inline-block;
         }
         
         nav ul li a:hover {
             color: var(--primary);
+            transform: translateY(-2px);
         }
         
         nav ul li a::after {
@@ -125,7 +288,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             bottom: -5px;
             left: 0;
             background-color: var(--primary);
-            transition: width 0.3s ease;
+            transition: var(--transition);
         }
         
         nav ul li a:hover::after {
@@ -136,14 +299,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             display: none;
             background: none;
             border: none;
-            color: white;
+            color: var(--lighter);
             font-size: 1.5rem;
             cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+            transform: scale(1.1);
         }
         
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: 110vh;
+            min-height: 700px;
             display: flex;
             align-items: center;
             position: relative;
@@ -158,22 +329,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
             z-index: 0;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
         
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
-            color: white;
+            color: var(--lighter);
             animation: fadeInUp 1s ease-out;
         }
         
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 4.5rem;
-            font-weight: 700;
+            font-weight: 900;
             margin-bottom: 20px;
             line-height: 1.2;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
@@ -184,62 +365,126 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             margin-bottom: 30px;
             max-width: 600px;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0.9;
         }
         
-        .hero-btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--dark);
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
-        .hero-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
-            background-color: #e6c12e;
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
         }
         
-        /* About Section */
-        .section {
-            padding: 100px 0;
-            background-color: white;
+        .floating-element {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
         }
         
+        .floating-element:nth-child(1) {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M12 2L4 12l8 10 8-10z"/></svg>');
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 20s;
+        }
+        
+        .floating-element:nth-child(2) {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><circle cx="12" cy="12" r="10"/></svg>');
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+            animation-duration: 25s;
+        }
+        
+        .floating-element:nth-child(3) {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>');
+            width: 120px;
+            height: 120px;
+            top: 30%;
+            left: 70%;
+            animation-delay: 5s;
+            animation-duration: 30s;
+        }
+        
+        /* Section Title */
         .section-title {
             text-align: center;
             margin-bottom: 60px;
             position: relative;
+            overflow: hidden;
         }
         
         .section-title h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
+            font-weight: 700;
             color: var(--secondary);
             display: inline-block;
             position: relative;
+            padding-bottom: 15px;
         }
         
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 3px;
+            width: 80px;
+            height: 4px;
             background-color: var(--primary);
-            bottom: -15px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 20px auto 0;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        /* About Section */
+        .about-section {
+            background-color: var(--lighter);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.05) 0%, rgba(212, 175, 55, 0.05) 100%);
+            z-index: 0;
         }
         
         .about-content {
             display: flex;
             align-items: center;
             gap: 50px;
+            position: relative;
+            z-index: 1;
         }
         
         .about-text {
@@ -247,7 +492,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
@@ -255,25 +501,71 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         .about-text p {
             margin-bottom: 20px;
             font-size: 1.1rem;
+            color: var(--text);
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--darker);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .feature-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0;
         }
         
         .about-image {
             flex: 1;
             position: relative;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-lg);
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
         
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
         
         .about-image:hover img {
-            transform: scale(1.05);
+            transform: scale(1.05) rotateY(5deg);
         }
         
         .about-image::before {
@@ -283,34 +575,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(139, 0, 0, 0.2), rgba(212, 175, 55, 0.2));
+            background: linear-gradient(45deg, rgba(139, 0, 0, 0.1), rgba(212, 175, 55, 0.1));
             z-index: 1;
+            pointer-events: none;
         }
         
         /* Places Section */
         .places-section {
             background-color: #f9f9f9;
-            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .places-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%238b0000"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%238b0000"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%238b0000"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 0;
         }
         
         .places-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
+            position: relative;
+            z-index: 1;
         }
         
         .place-card {
-            background-color: white;
-            border-radius: 10px;
+            background-color: var(--lighter);
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
             position: relative;
+            transform-style: preserve-3d;
         }
         
         .place-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: var(--shadow-lg);
         }
         
         .place-image {
@@ -323,7 +633,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
         
         .place-card:hover .place-image img {
@@ -335,12 +645,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             top: 20px;
             right: 20px;
             background-color: var(--primary);
-            color: white;
+            color: var(--darker);
             padding: 5px 15px;
             border-radius: 20px;
             font-weight: 600;
             font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .place-card:hover .place-badge {
+            transform: rotate(10deg) scale(1.1);
         }
         
         .place-content {
@@ -348,6 +663,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .place-content h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             margin-bottom: 10px;
             color: var(--dark);
@@ -357,7 +673,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
-            color: #777;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
         
@@ -368,48 +684,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         .place-description {
             margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .place-btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .place-btn:hover {
-            background-color: #6d0000;
+            color: var(--text);
         }
         
         /* Packages Section */
         .packages-section {
-            padding: 100px 0;
             background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            position: relative;
+            overflow: hidden;
         }
         
         .packages-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
+            position: relative;
+            z-index: 1;
         }
         
         .package-card {
-            background-color: white;
-            border-radius: 10px;
+            background-color: var(--lighter);
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
             position: relative;
         }
         
         .package-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-lg);
         }
         
         .package-image {
@@ -422,7 +726,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
         
         .package-card:hover .package-image img {
@@ -434,6 +738,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .package-content h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             margin-bottom: 10px;
             color: var(--dark);
@@ -444,13 +749,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
+            transition: var(--transition);
+        }
+        
+        .package-card:hover .package-price {
+            color: var(--primary-dark);
         }
         
         .package-duration {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
-            color: #777;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
         
@@ -471,6 +781,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             margin-bottom: 8px;
             position: relative;
             padding-left: 25px;
+            color: var(--text);
         }
         
         .package-features li::before {
@@ -480,30 +791,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             position: absolute;
             left: 0;
             color: var(--primary);
+            transition: var(--transition);
         }
         
-        .package-btn {
-            display: block;
-            text-align: center;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .package-btn:hover {
-            background-color: #e05a00;
+        .package-features li:hover::before {
+            transform: scale(1.2);
         }
         
         /* Testimonials Section */
         .testimonials-section {
-            padding: 100px 0;
             background-color: var(--secondary);
-            color: white;
+            color: var(--lighter);
             position: relative;
+            overflow: hidden;
         }
         
         .testimonials-section::before {
@@ -513,32 +813,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1680&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.2;
+            background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+            opacity: 0.1;
             z-index: 0;
-        }
-        
-        .testimonials-container {
-            position: relative;
-            z-index: 1;
         }
         
         .testimonials-slider {
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
+            z-index: 1;
         }
         
         .testimonial {
             background-color: rgba(255, 255, 255, 0.1);
             padding: 40px;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             margin: 20px;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.5s ease;
+            transition: var(--transition);
             text-align: center;
+            transform-style: preserve-3d;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         
         .testimonial-avatar {
@@ -548,6 +849,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             overflow: hidden;
             margin: 0 auto 20px;
             border: 3px solid var(--primary);
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover .testimonial-avatar {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
         
         .testimonial-avatar img {
@@ -561,6 +868,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             margin-bottom: 20px;
             font-size: 1.1rem;
             line-height: 1.8;
+            position: relative;
+        }
+        
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+        }
+        
+        .testimonial-text::before {
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -10px;
         }
         
         .testimonial-author {
@@ -582,8 +909,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         /* Gallery Section */
         .gallery-section {
-            padding: 100px 0;
-            background-color: white;
+            background-color: var(--lighter);
+            position: relative;
+            overflow: hidden;
         }
         
         .gallery-container {
@@ -594,23 +922,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         .gallery-item {
             position: relative;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             height: 250px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            transform-style: preserve-3d;
         }
         
         .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transform: scale(1.03) rotateY(5deg);
+            box-shadow: var(--shadow-lg);
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.8s ease;
         }
         
         .gallery-item:hover img {
@@ -628,7 +957,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             align-items: flex-end;
             padding: 20px;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: var(--transition);
         }
         
         .gallery-item:hover .gallery-overlay {
@@ -636,7 +965,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .gallery-caption {
-            color: white;
+            color: var(--lighter);
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
         }
         
         .gallery-caption h3 {
@@ -651,16 +986,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         /* Map Section */
         .map-section {
-            padding: 80px 0;
             background-color: #f5f5f5;
+            position: relative;
+            overflow: hidden;
         }
         
         .map-container {
             height: 500px;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+        
+        .map-container:hover {
+            box-shadow: var(--shadow-lg);
         }
         
         .map-container iframe {
@@ -671,8 +1011,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         /* Contact Section */
         .contact-section {
-            padding: 100px 0;
-            background-color: white;
+            background-color: var(--lighter);
+            position: relative;
+            overflow: hidden;
         }
         
         .contact-container {
@@ -685,7 +1026,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .contact-info h3 {
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
@@ -698,13 +1040,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
         }
         
         .contact-icon {
             width: 50px;
             height: 50px;
             background-color: var(--primary);
-            color: white;
+            color: var(--darker);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -712,23 +1059,58 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             font-size: 1.2rem;
             margin-right: 15px;
             flex-shrink: 0;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: rotate(15deg) scale(1.1);
         }
         
         .contact-text h4 {
             font-size: 1.2rem;
             margin-bottom: 5px;
+            color: var(--dark);
         }
         
         .contact-text p {
-            color: #555;
+            color: var(--text);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(139, 0, 0, 0.1);
+            border-radius: 50%;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--lighter);
+            transform: translateY(-5px);
         }
         
         .contact-form {
             flex: 1;
             background-color: #f9f9f9;
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .contact-form:hover {
+            box-shadow: var(--shadow-md);
         }
         
         .form-group {
@@ -739,6 +1121,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
+            color: var(--dark);
         }
         
         .form-control {
@@ -748,7 +1131,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             border-radius: 5px;
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            background-color: var(--lighter);
         }
         
         .form-control:focus {
@@ -762,27 +1146,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             resize: vertical;
         }
         
-        .submit-btn {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            background-color: #6d0000;
-        }
-        
         /* Footer */
         footer {
             background-color: var(--dark);
-            color: white;
+            color: var(--lighter);
+            position: relative;
+            overflow: hidden;
             padding: 60px 0 20px;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/dark-geometric.png');
+            opacity: 0.1;
+            z-index: 0;
         }
         
         .footer-container {
@@ -790,10 +1172,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
         }
         
         .footer-col h3 {
-            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--primary);
             position: relative;
@@ -824,26 +1209,47 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         }
         
         .footer-links a {
-            color: white;
+            color: var(--lighter);
             text-decoration: none;
             opacity: 0.8;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: block;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .footer-links a::before {
+            content: '\f054';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+            color: var(--primary);
+            opacity: 0;
+            transition: var(--transition);
         }
         
         .footer-links a:hover {
             opacity: 1;
             color: var(--primary);
-            padding-left: 5px;
+            padding-left: 20px;
         }
         
-        .social-links {
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: 5px;
+        }
+        
+        .footer-social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
         
-        .social-links a {
+        .footer-social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -851,14 +1257,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
+            color: var(--lighter);
+            transition: var(--transition);
         }
         
-        .social-links a:hover {
+        .footer-social-links a:hover {
             background-color: var(--primary);
-            color: var(--dark);
-            transform: translateY(-3px);
+            color: var(--darker);
+            transform: translateY(-5px);
         }
         
         .footer-bottom {
@@ -867,6 +1273,40 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
             opacity: 0.7;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--darker);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
         
         /* Animations */
@@ -883,24 +1323,52 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         @keyframes float {
             0% {
-                transform: translateY(0px);
+                transform: translateY(0px) rotate(0deg);
             }
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-20px) rotate(5deg);
             }
             100% {
-                transform: translateY(0px);
+                transform: translateY(0px) rotate(0deg);
             }
         }
         
-        .floating {
-            animation: float 3s ease-in-out infinite;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         /* Responsive Styles */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                gap: 30px;
             }
         }
         
@@ -925,6 +1393,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             .contact-container {
                 flex-direction: column;
             }
+            
+            .contact-form {
+                margin-top: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -934,13 +1410,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             
             nav {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: -100%;
                 width: 80%;
-                height: calc(100vh - 80px);
-                background-color: var(--dark);
-                transition: all 0.5s ease;
+                max-width: 350px;
+                height: 100vh;
+                background-color: var(--darker);
+                transition: var(--transition);
                 z-index: 999;
+                padding: 80px 30px 30px;
+                box-shadow: var(--shadow-lg);
             }
             
             nav.active {
@@ -949,11 +1428,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             
             nav ul {
                 flex-direction: column;
-                padding: 30px;
+                gap: 20px;
             }
             
             nav ul li {
-                margin: 15px 0;
+                margin: 0;
             }
             
             .mobile-menu-btn {
@@ -961,61 +1440,101 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             }
             
             .hero h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
                 font-size: 1rem;
             }
             
-            .section-title h2 {
-                font-size: 2.2rem;
+            .hero-cta {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .places-container, .packages-container, .gallery-container {
+            .btn {
+                width: 100%;
+            }
+            
+            .places-container,
+            .packages-container,
+            .gallery-container {
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             }
             
-            .contact-form {
-                padding: 30px;
+            .map-container {
+                height: 400px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
             }
         }
         
         @media (max-width: 576px) {
+            .hero {
+                min-height: 600px;
+            }
+            
             .hero h1 {
                 font-size: 2.2rem;
             }
             
-            .hero-btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 70px 0;
+            .section-padding {
+                padding: 60px 0;
             }
             
             .section-title h2 {
                 font-size: 1.8rem;
             }
             
-            .footer-container {
+            .about-features {
                 grid-template-columns: 1fr;
             }
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            letter-spacing: 1px;
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
         }
         
-        .logo img {
-            height: 100px;
-            width: auto;
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .places-container,
+            .packages-container,
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .footer-col h3 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -1024,9 +1543,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <div class="logo">
                 <img src="Images/TT5.png" alt="TravelTales Logo">
-            </div>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
@@ -1046,27 +1563,78 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        
+        <!-- Fallback image if video doesn't load -->
+        <img src="https://www.revv.co.in/blogs/wp-content/uploads/2020/05/Road-trips-to-Rajasthan.jpg" alt="Rajasthan Landscape" class="hero-video">
+        
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate__animated animate__fadeInUp">
                 <h1>Discover the Royal Splendor of Rajasthan</h1>
                 <p>Experience the vibrant culture, majestic forts, and rich heritage of India's Land of Kings. From golden deserts to colorful festivals, Rajasthan offers unforgettable journeys through time.</p>
-                <a href="#packages" class="hero-btn">Explore Packages</a>
+                <div class="hero-cta">
+                    <a href="#packages" class="btn btn-primary">Explore Packages</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="section" id="about">
+    <section class="about-section section-padding" id="about">
         <div class="container">
             <div class="section-title">
                 <h2>The Royal Legacy</h2>
+                <p>Discover the rich history and vibrant culture of Rajasthan, India's most colorful state</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Welcome to Rajasthan</h3>
                     <p>Rajasthan, the largest state in India, is a land of contrasts and colors. Known for its royal heritage, the state boasts some of the most magnificent forts, palaces, and temples in the country. The Thar Desert, vibrant festivals, and warm hospitality make Rajasthan a must-visit destination.</p>
                     <p>The state's history dates back to ancient times, with evidence of human settlement found in the Indus Valley Civilization. Rajasthan was ruled by various Rajput kingdoms, which built spectacular forts and palaces that stand as testaments to their glorious past.</p>
-                    <p>Today, Rajasthan offers a perfect blend of history, culture, adventure, and luxury. Whether you want to explore ancient cities, enjoy camel safaris in the desert, or experience royal hospitality in heritage hotels, Rajasthan has something for every traveler.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-umbrella-beach"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Diverse Landscapes</h4>
+                                <p>From golden deserts to lush forests and serene lakes</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-landmark"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Rich Heritage</h4>
+                                <p>Over 5000 years of history and culture</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Delicious Cuisine</h4>
+                                <p>Authentic Rajasthani flavors and royal recipes</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Photographer's Paradise</h4>
+                                <p>Stunning architecture and colorful streets</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
                     <img src="https://plus.unsplash.com/premium_photo-1661963054563-ce928e477ff3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFpcHVyfGVufDB8fDB8fHww" alt="Rajasthan Fort">
@@ -1076,14 +1644,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </section>
 
     <!-- Places Section -->
-    <section class="places-section" id="places">
+    <section class="places-section section-padding" id="places">
         <div class="container">
             <div class="section-title">
                 <h2>Must-Visit Destinations</h2>
+                <p>Explore the most beautiful and culturally significant places in Rajasthan</p>
             </div>
             <div class="places-container">
                 <!-- Jaipur -->
-                <div class="place-card">
+                <div class="place-card animate__animated animate__fadeInUp">
                     <div class="place-image">
                         <img src="https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-city-1-hero?qlt=82&ts=1726660605161" alt="Jaipur">
                         <div class="place-badge">Popular</div>
@@ -1095,12 +1664,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.8</span>
                         </div>
                         <p class="place-description">The capital city known for its stunning palaces, vibrant bazaars, and rich cultural heritage. Don't miss the Hawa Mahal, City Palace, and Amber Fort.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
                 
                 <!-- Udaipur -->
-                <div class="place-card">
+                <div class="place-card animate__animated animate__fadeInUp">
                     <div class="place-image">
                         <img src="https://s7ap1.scene7.com/is/image/incredibleindia/lake-pichola-udaipur-rajasthan-2-attr-hero?qlt=82&ts=1727353271225" alt="Udaipur">
                         <div class="place-badge">Lakes</div>
@@ -1112,12 +1681,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.9</span>
                         </div>
                         <p class="place-description">Romantic city surrounded by beautiful lakes and majestic palaces. The Lake Palace and City Palace are must-visit attractions.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
                 
                 <!-- Jaisalmer -->
-                <div class="place-card">
+                <div class="place-card animate__animated animate__fadeInUp">
                     <div class="place-image">
                         <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-sam-sand-dunes-jaisalmer-city-hero?qlt=82&ts=1726660014904" alt="Jaisalmer">
                         <div class="place-badge">Desert</div>
@@ -1129,12 +1698,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.7</span>
                         </div>
                         <p class="place-description">Famous for its golden sandstone architecture and Thar Desert experiences. The Jaisalmer Fort and desert safari are highlights.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
                 
                 <!-- Jodhpur -->
-                <div class="place-card">
+                <div class="place-card animate__animated animate__fadeInUp">
                     <div class="place-image">
                         <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-mehrangarh-fort-jodhpur-rajasthan-city-hero?qlt=82&ts=1726660925514" alt="Jodhpur">
                         <div class="place-badge">Fort</div>
@@ -1146,12 +1715,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.6</span>
                         </div>
                         <p class="place-description">Known for its blue-painted houses and the massive Mehrangarh Fort towering over the city.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
                 
                 <!-- Pushkar -->
-                <div class="place-card">
+                <div class="place-card animate__animated animate__fadeInUp">
                     <div class="place-image">
                         <img src="https://t4.ftcdn.net/jpg/02/46/88/67/360_F_246886773_BAJqfMMVpReatxLZrUhiX2bRzxZuDryE.jpg" alt="Pushkar">
                         <div class="place-badge">Sacred</div>
@@ -1163,12 +1732,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.5</span>
                         </div>
                         <p class="place-description">Famous for its sacred lake and Brahma Temple, Pushkar is an important pilgrimage site and hosts the vibrant Pushkar Camel Fair.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
                 
                 <!-- Ranthambore -->
-                <div class="place-card">
+                <div class="place-card animate__animated animate__fadeInUp">
                     <div class="place-image">
                         <img src="https://media1.thrillophilia.com/filestore/t2zfl63gyeb8yrgmqsp1jhysom00_shutterstock_1246346662-min.jpg" alt="Ranthambore">
                         <div class="place-badge">Wildlife</div>
@@ -1180,7 +1749,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.8</span>
                         </div>
                         <p class="place-description">One of the best places in India to spot wild tigers, along with other wildlife species in their natural habitat.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
                 
@@ -1197,7 +1766,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.4</span>
                         </div>
                         <p class="place-description">Known for its desert landscape and camel safaris, Bikaner is home to Junagarh Fort, Karni Mata Temple, and the Bikaner Camel Festival.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                         <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
 
@@ -1214,7 +1783,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.7</span>
                         </div>
                         <p class="place-description">The only hill station in Rajasthan, Mount Abu is known for its cool climate and scenic beauty. Attractions include Dilwara Temples, Nakki Lake, and Guru Shikhar.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                         <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
                 </div>
 
@@ -1231,22 +1800,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <span class="place-rating"><i class="fas fa-star"></i> 4.5</span>
                         </div>
                         <p class="place-description">A historical and religious city, Ajmer is famous for the Ajmer Sharif Dargah. Other attractions include Ana Sagar Lake and Adhai Din Ka Jhonpra.</p>
-                        <a href="#" class="place-btn">Explore More</a>
+                         <a href="#" class="btn btn-accent" style="width: 100%;">Explore More</a>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Packages Section -->
-    <section class="packages-section" id="packages">
+    <section class="packages-section section-padding" id="packages">
         <div class="container">
             <div class="section-title">
                 <h2>Tour Packages</h2>
+                <p>Carefully curated experiences to make your Rajasthan journey unforgettable</p>
             </div>
             <div class="packages-container">
                 <!-- Royal Triangle -->
-                <div class="package-card">
+                <div class="package-card animate__animated animate__fadeInUp">
                     <div class="package-image">
                         <img src="https://www.lih.travel/wp-content/uploads/2024/03/Desktop-Banner.png.webp" alt="Royal Triangle">
                     </div>
@@ -1265,13 +1835,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 <li>Private Transportation</li>
                             </ul>
                         </div>
-                        <a href="#" class="package-btn">Book Now</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Book Now</a>
                     </div>
                 </div>
                 
-                <!-- Desert Experience -->             
                 <!-- Luxury Rajasthan -->
-                <div class="package-card">
+                <div class="package-card animate__animated animate__fadeInUp">
                     <div class="package-image">
                         <img src="https://rajasthanyatra.in/blog/wp-content/uploads/2024/04/Galta-Ji-Temple-.webp" alt="Luxury Rajasthan">
                     </div>
@@ -1290,251 +1859,118 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                                 <li>Spa & Wellness Sessions</li>
                             </ul>
                         </div>
-                        <a href="#" class="package-btn">Book Now</a>
+                        <a href="#" class="btn btn-accent" style="width: 100%;">Book Now</a>
                     </div>
                 </div>
                 
-                <div class="package-card">
-    <div class="package-image">
-        <img src="Images/Jaipur Royal Experience.jpg" alt="Jaipur Royal Experience">
-    </div>
-    <div class="package-content">
-        <h3>Jaipur Royal Experience</h3>
-        <div class="package-price">₹10,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Explore the Pink City in luxury</li>
-                <li>Heritage Palace Stay</li>
-                <li>Guided City Tour</li>
-                <li>Elephant Ride at Amber Fort</li>
-                <li>Private Transportation</li>
-            </ul>
-        </div>
-        <a href="Jaipur Royal Experience.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Udaipur Lake Retreat.cms" alt="Udaipur Lake Retreat">
-    </div>
-    <div class="package-content">
-        <h3>Udaipur Lake Retreat</h3>
-        <div class="package-price">₹12,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>A serene getaway by the lakes</li>
-                <li>Lakeview Hotel Stay</li>
-                <li>Boat Ride on Lake Pichola</li>
-                <li>City Palace Visit</li>
-                <li>Cultural Dinner Show</li>
-            </ul>
-        </div>
-        <a href="Udaipur Lake Retreat.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Jaisalmer Desert Safari.jpg" alt="Jaisalmer Desert Safari">
-    </div>
-    <div class="package-content">
-        <h3>Jaisalmer Desert Safari</h3>
-        <div class="package-price">₹15,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Experience the golden sands</li>
-                <li>Desert Camp Stay</li>
-                <li>Camel Safari</li>
-                <li>Folk Music & Dance Performance</li>
-                <li>Jaisalmer Fort Visit</li>
-            </ul>
-        </div>
-        <a href="Jaisalmer Desert Safari.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Jodhpur Heritage Tour.webp" alt="Jodhpur Heritage Tour">
-    </div>
-    <div class="package-content">
-        <h3>Jodhpur Heritage Tour</h3>
-        <div class="package-price">₹11,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Discover the Blue City's charm</li>
-                <li>Heritage Haveli Stay</li>
-                <li>Mehrangarh Fort Visit</li>
-                <li>Local Market Tour</li>
-                <li>Traditional Rajasthani Dinner</li>
-            </ul>
-        </div>
-        <a href="Jodhpur Heritage Tour.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Pushkar Spiritual Sojourn.jpg" alt="Pushkar Spiritual Sojourn">
-    </div>
-    <div class="package-content">
-        <h3>Pushkar Spiritual Sojourn</h3>
-        <div class="package-price">₹9,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>A holy retreat by the lake</li>
-                <li>Temple Visits</li>
-                <li>Holy Dip in Pushkar Lake</li>
-                <li>Camel Fair Experience</li>
-                <li>Vegetarian Meals Included</li>
-            </ul>
-        </div>
-        <a href="Pushkar Spiritual Sojourn.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Bikaner Camel Safari.jpg" alt="Bikaner Camel Safari">
-    </div>
-    <div class="package-content">
-        <h3>Bikaner Camel Safari</h3>
-        <div class="package-price">₹10,500</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Ride the dunes in style</li>
-                <li>Desert Camp Experience</li>
-                <li>Junagarh Fort Visit</li>
-                <li>Karni Mata Temple Tour</li>
-                <li>Traditional Folk Performances</li>
-            </ul>
-        </div>
-        <a href="Bikaner Camel Safari.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Mount Abu.avif" alt="Mount Abu Hill Retreat">
-    </div>
-    <div class="package-content">
-        <h3>Mount Abu Hill Retreat</h3>
-        <div class="package-price">₹8,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Relax in Rajasthan's only hill station</li>
-                <li>Resort Stay with Mountain Views</li>
-                <li>Dilwara Temples Visit</li>
-                <li>Nakki Lake Boat Ride</li>
-                <li>Sunset Point Excursion</li>
-            </ul>
-        </div>
-        <a href="Mount Abu Hill Retreat.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Ajmer Pilgrimage Tour.jpg" alt="Ajmer Pilgrimage Tour">
-    </div>
-    <div class="package-content">
-        <h3>Ajmer Pilgrimage Tour</h3>
-        <div class="package-price">₹9,500</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Visit the sacred Ajmer Sharif</li>
-                <li>Dargah Sharif Ziyarat</li>
-                <li>Pushkar Combination Tour</li>
-                <li>Spiritual Guidance</li>
-                <li>Comfortable Accommodation</li>
-            </ul>
-        </div>
-        <a href="Ajmer Pilgrimage Tour.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="Images/Ranthambore Wildlife Safari.jpg" alt="Ranthambore Wildlife Safari">
-    </div>
-    <div class="package-content">
-        <h3>Ranthambore Wildlife Safari</h3>
-        <div class="package-price">₹13,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Spot tigers in the wild</li>
-                <li>Multiple Jungle Safaris</li>
-                <li>Luxury Jungle Resort Stay</li>
-                <li>Expert Naturalist Guide</li>
-                <li>Ranthambore Fort Visit</li>
-            </ul>
-        </div>
-        <a href="Ranthambore Wildlife Safari.html" class="package-btn">Book Now</a>
-    </div>
-</div>
-
-<div class="package-card">
-    <div class="package-image">
-        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/1-chittorgarh-fort-chittorgarh-rajasthan-attr-hero?qlt=82&ts=1727352792140" alt="Chittorgarh Fort Adventure">
-    </div>
-    <div class="package-content">
-        <h3>Chittorgarh Fort Adventure</h3>
-        <div class="package-price">₹10,000</div>
-        <div class="package-duration">
-            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
-        </div>
-        <div class="package-features">
-            <ul>
-                <li>Explore the historic Chittorgarh Fort</li>
-                <li>Fort Guided Tour</li>
-                <li>Light and Sound Show</li>
-                <li>Vijay Stambh Visit</li>
-                <li>Cultural Performances</li>
-            </ul>
-        </div>
-        <a href="Chittorgarh Fort Adventure.html" class="package-btn">Book Now</a>
-    </div>
-</div>
+                <!-- Jaipur Royal Experience -->
+                <div class="package-card animate__animated animate__fadeInUp">
+                    <div class="package-image">
+                        <img src="Images/Jaipur Royal Experience.jpg" alt="Jaipur Royal Experience">
+                    </div>
+                    <div class="package-content">
+                        <h3>Jaipur Royal Experience</h3>
+                        <div class="package-price">₹10,000</div>
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>Explore the Pink City in luxury</li>
+                                <li>Heritage Palace Stay</li>
+                                <li>Guided City Tour</li>
+                                <li>Elephant Ride at Amber Fort</li>
+                                <li>Private Transportation</li>
+                            </ul>
+                        </div>
+                        <a href="Jaipur Royal Experience.html" class="btn btn-accent" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Udaipur Lake Retreat -->
+                <div class="package-card animate__animated animate__fadeInUp">
+                    <div class="package-image">
+                        <img src="Images/Udaipur Lake Retreat.cms" alt="Udaipur Lake Retreat">
+                    </div>
+                    <div class="package-content">
+                        <h3>Udaipur Lake Retreat</h3>
+                        <div class="package-price">₹12,000</div>
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i> 5 Days / 4 Nights
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>A serene getaway by the lakes</li>
+                                <li>Lakeview Hotel Stay</li>
+                                <li>Boat Ride on Lake Pichola</li>
+                                <li>City Palace Visit</li>
+                                <li>Cultural Dinner Show</li>
+                            </ul>
+                        </div>
+                        <a href="Udaipur Lake Retreat.html" class="btn btn-accent" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Jaisalmer Desert Safari -->
+                <div class="package-card animate__animated animate__fadeInUp">
+                    <div class="package-image">
+                        <img src="Images/Jaisalmer Desert Safari.jpg" alt="Jaisalmer Desert Safari">
+                    </div>
+                    <div class="package-content">
+                        <h3>Jaisalmer Desert Safari</h3>
+                        <div class="package-price">₹15,000</div>
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i> 3 Days / 2 Nights
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>Experience the golden sands</li>
+                                <li>Desert Camp Stay</li>
+                                <li>Camel Safari</li>
+                                <li>Folk Music & Dance Performance</li>
+                                <li>Jaisalmer Fort Visit</li>
+                            </ul>
+                        </div>
+                        <a href="Jaisalmer Desert Safari.html" class="btn btn-accent" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                
+                <!-- Jodhpur Heritage Tour -->
+                <div class="package-card animate__animated animate__fadeInUp">
+                    <div class="package-image">
+                        <img src="Images/Jodhpur Heritage Tour.webp" alt="Jodhpur Heritage Tour">
+                    </div>
+                    <div class="package-content">
+                        <h3>Jodhpur Heritage Tour</h3>
+                        <div class="package-price">₹11,000</div>
+                        <div class="package-duration">
+                            <i class="fas fa-calendar-alt"></i> 4 Days / 3 Nights
+                        </div>
+                        <div class="package-features">
+                            <ul>
+                                <li>Discover the Blue City's charm</li>
+                                <li>Heritage Haveli Stay</li>
+                                <li>Mehrangarh Fort Visit</li>
+                                <li>Local Market Tour</li>
+                                <li>Traditional Rajasthani Dinner</li>
+                            </ul>
+                        </div>
+                        <a href="Jodhpur Heritage Tour.html" class="btn btn-accent" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <section class="testimonials-section section-padding">
         <div class="container">
             <div class="section-title">
                 <h2>Traveler Experiences</h2>
+                <p>What our guests say about their Rajasthan journey with us</p>
             </div>
             <div class="testimonials-slider">
-                <div class="testimonial">
+                <div class="testimonial animate__animated animate__fadeInUp">
                     <div class="testimonial-avatar">
                         <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
                     </div>
@@ -1556,13 +1992,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery-section" id="gallery">
+    <section class="gallery-section section-padding" id="gallery">
         <div class="container">
             <div class="section-title">
                 <h2>Glimpses of Rajasthan</h2>
+                <p>Capturing the vibrant colors and majestic beauty of Rajasthan</p>
             </div>
             <div class="gallery-container">
-                <div class="gallery-item">
+                <div class="gallery-item animate__animated animate__fadeInUp">
                     <img src="https://static.toiimg.com/img/101335068/Master.jpg" alt="Jaipur">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
@@ -1571,7 +2008,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate__animated animate__fadeInUp">
                     <img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1349545253_20190715095335.jpg" alt="Udaipur">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
@@ -1580,7 +2017,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate__animated animate__fadeInUp">
                     <img src="https://www.swantour.com/blogs/wp-content/uploads/2019/02/Jaisalmer-Fort.jpg" alt="Jaisalmer">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
@@ -1589,7 +2026,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate__animated animate__fadeInUp">
                     <img src="https://indiano.travel/wp-content/uploads/2022/05/Pilgrims-walking-on-Chandra-Ghat-along-Pushkar-Sarovar-lake.-It-is-located-in-Ajmer-district-of-the-Rajasthan-state.-Pushkar-Lake-is-a-sacred-lake-of-the-Hindus-and-Sikhs.jpg" alt="Pushkar">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
@@ -1598,7 +2035,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate__animated animate__fadeInUp">
                     <img src="https://synergypaint.in/wp-content/uploads/2024/06/Best-Places-to-Visit-in-Jodhpur-You-Must-Visit-in-20240A.jpg" alt="Jodhpur">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
@@ -1607,7 +2044,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item animate__animated animate__fadeInUp">
                     <img src="https://ichef.bbci.co.uk/images/ic/1200xn/p033wcjv.jpg" alt="Desert">
                     <div class="gallery-overlay">
                         <div class="gallery-caption">
@@ -1616,48 +2053,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg/960px-Jaipur_03-2016_22_City_Palace_complex.jpg" alt="City Palace">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Jaipur City Palace</h3>
-                            <p>Royal heritage of the Pink City</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://assets.simplotel.com/simplotel/image/upload/x_0,y_378,w_4000,h_2250,r_0,c_crop,q_80,fl_progressive/w_500,f_auto,c_fit/the-baagh-ananta-elite-ranthambore/History_of_Ranthambore_Fort_in_Ranthambore_National_Park" alt="Ranthambore Fort">
-                    <div class="gallery-overlay">
-                        <div class="gallery-caption">
-                            <h3>Ranthambore Fort</h3>
-                            <p>Ancient citadel amidst the wilderness</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Map Section -->
-    <section class="map-section">
+    <section class="map-section section-padding">
         <div class="container">
             <div class="section-title">
                 <h2>Explore Rajasthan</h2>
+                <p>Discover the geographical diversity and key attractions of Rajasthan</p>
             </div>
-            <div id="map">
-            <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1UUV509hF-xOJTElJF1Etwa_RqLAayx4&ehbc=2E312F" width="1190" height="500"></iframe>
-        </div>
+            <div class="map-container animate__animated animate__fadeInUp">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1UUV509hF-xOJTElJF1Etwa_RqLAayx4&ehbc=2E312F" width="640" height="480"></iframe>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section section-padding" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Get In Touch</h2>
+                <p>Have questions or ready to book your Rajasthan adventure? Contact us today!</p>
             </div>
             <div class="contact-container">
-                <div class="contact-info">
+                <div class="contact-info animate__animated animate__fadeInLeft">
                     <h3>Plan Your Royal Journey</h3>
                     <p>Have questions about traveling to Rajasthan? Our travel experts are here to help you plan your perfect itinerary.</p>
                     
@@ -1699,7 +2120,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </div>
                 </div>
                 
-                <div class="contact-form">
+                <div class="contact-form animate__animated animate__fadeInRight">
                     <form>
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -1717,7 +2138,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                             <label for="message">Your Message</label>
                             <textarea id="message" class="form-control" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1731,7 +2152,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="footer-col">
                     <h3>About Rajasthan</h3>
                     <p>Rajasthan is India's largest state, known for its royal heritage, majestic forts, colorful culture, and warm hospitality. We showcase the best of this magnificent land.</p>
-                    <div class="social-links">
+                    <div class="footer-social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1739,7 +2160,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
                 <div class="footer-col">
                     <h3>Quick Links</h3>
-                    <ul class="footer-links">
+                                        <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Rajasthan</a></li>
                         <li><a href="#places">Destinations</a></li>
@@ -1749,7 +2170,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Popular Destinations</h3>
+                    <h3>Popular Places</h3>
                     <ul class="footer-links">
                         <li><a href="#">Jaipur</a></li>
                         <li><a href="#">Udaipur</a></li>
@@ -1761,21 +2182,27 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
                 <div class="footer-col">
                     <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for travel tips, special offers, and Rajasthan updates.</p>
-                    <form>
+                    <p>Subscribe to our newsletter for travel tips and special offers.</p>
+                    <form class="newsletter-form">
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Your Email" required>
                         </div>
-                        <button type="submit" class="submit-btn">Subscribe</button>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 TravelTales. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff0000;"></i> for Rajasthan</p>
+                <p>&copy; 2023 TravelTales Rajasthan. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> in India</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -1786,7 +2213,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-        
+
         // Header Scroll Effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
@@ -1796,39 +2223,73 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 header.classList.remove('scrolled');
             }
         });
-        
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
         // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
                 }
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
             });
         });
-        
-        // Initialize animations when elements come into view
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.section-title, .about-content, .place-card, .package-card, .gallery-item, .contact-container');
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate__animated');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
+                const windowHeight = window.innerHeight;
                 
-                if (elementPosition < screenPosition) {
-                    element.style.animation = 'fadeInUp 1s ease-out forwards';
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList[1];
+                    element.classList.add(animationClass);
                 }
             });
-        };
-        
+        }
+
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
+        // Form Submission
+        const contactForm = document.querySelector('.contact-form form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                this.reset();
+            });
+        }
     </script>
 </body>
 </html>
