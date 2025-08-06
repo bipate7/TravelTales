@@ -2564,19 +2564,17 @@ body {
         <span class="input-icon"><i class="fa fa-calendar-alt"></i></span>
         <input type="date" class="date" required>
       </div>
-      <div class="input-group">
-        <span class="input-icon"><i class="fa fa-users"></i></span>
-        <input type="text" list="guest" placeholder="No. of Guests" required>
-        <datalist id="guest">
-            <select class="form-select" id="No. of Guests">
-                  <option>1 Adult</option>
-                  <option selected>2 Adults</option>
-                  <option>3 Adults</option>
-                  <option>4 Adults</option>
-                  <option>Family</option>
-            </select>
-        </datalist>
-      </div>
+      <div class="col-md-4 mb-3">
+  <label for="guests" class="form-label">No. of Guests</label>
+  <select class="form-select" id="guests" required>
+    <option disabled selected>Select guests</option>
+    <option>1 Adult</option>
+    <option>2 Adults</option>
+    <option>3 Adults</option>
+    <option>4 Adults</option>
+    <option>Family</option>
+  </select>
+</div>
       <button type="submit" class="book">Book Now</button>
     </form>
     <div id="confirmation" style="display:none; margin-top:24px; font-size:1.18rem; color:#fff; font-weight:bold; text-shadow:0 2px 8px #000;">
