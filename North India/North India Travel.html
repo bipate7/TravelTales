@@ -220,7 +220,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         /* Hero Section */
         .hero {
-            height: 115vh;
+            height: 120vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1538,6 +1538,58 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+/* Responsive adjustments for tablets */
+@media (max-width: 991px) {
+    #festivals {
+        padding: 5rem 2rem;
+    }
+
+    .festival-cards {
+        gap: 1.5rem;
+    }
+
+    .festival-card {
+        border-radius: 12px;
+    }
+
+    .festival-date span {
+        font-size: 1rem;
+    }
+
+    .festival-content {
+        padding: 1rem;
+    }
+
+    .btn-outline {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 576px) {
+    #festivals {
+        padding: 4rem 1rem;
+    }
+
+    .festival-cards {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .festival-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .festival-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-outline {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.7rem;
+    }
+}
+
 
 
 /* ========================
@@ -1874,9 +1926,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
         <div class="cards">
             <div class="state-card">
-                <img src="Images\JandK.jpg" alt="Rajasthan">
+                <img src="Images\JandK.jpg" alt="Jammu&Kashmir">
                 <h4>Jammu & Kashmir</h4>
-                <a href="Jammu & Kasmir/Kashmir.html">
+                <a href="Jammu & Kashmir/Kashmir.html">
                     <h4>Jammu & Kashmir</h4>
                     <span class="btn">Explore</span>
                 </a>
@@ -1884,13 +1936,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="state-card">
                 <img src="Images\HimachalPradesh.cms" alt="Himachal Pradesh">
                 <h4>Himachal Pradesh</h4>
-                <a href="Himachal Pradesh/>HimachalPradesh.html">
+                <a href="Himachal Pradesh/HimachalPradesh.html">
                     <h4>Himachal Pradesh</h4>
                     <span class="btn">Explore</span>
                 </a>
             </div>
             <div class="state-card">
-                <img src="Images\Punjab.webp" alt="Himachal Pradesh">
+                <img src="Images\Punjab.webp" alt="Punjab">
                 <h4>Punjab</h4>
                 <a href="Punjab/Punjab.html">
                     <h4>Punjab</h4>
@@ -1898,7 +1950,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </a>
             </div>
             <div class="state-card">
-                <img src="Images\H1.gif" alt="Himachal Pradesh">
+                <img src="Images\H1.gif" alt="Haryana">
                 <h4>Haryana</h4>
                 <a href="Haryana/Haryana.html">
                     <h4>Haryana</h4>
@@ -1906,7 +1958,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </a>
             </div>
             <div class="state-card">
-                <img src="Images\KEDARNATH.jpg" alt="Himachal Pradesh">
+                <img src="Images\KEDARNATH.jpg" alt="Uttarakhand">
                 <h4>Uttarakhand</h4>
                 <a href="Uttarakhand/Uttarakhand.html">
                     <h4>Uttarakhand</h4>
@@ -1914,7 +1966,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </a>
             </div>
             <div class="state-card">
-                <img src="Images\Delhi1.jpg" alt="Himachal Pradesh">
+                <img src="Images\Delhi1.jpg" alt="Delhi">
                 <h4>Delhi</h4>
                 <a href="Delhi/Delhi.html">
                     <h4>Delhi</h4>
