@@ -9,6 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hidden Gems of Goa | TravelTales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --tt-primary: #2A5C8B;  /* TravelTales blue */
@@ -32,6 +33,36 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             background-color: var(--tt-light);
             color: var(--tt-text);
             line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
         
         /* TravelTales Header */
@@ -49,76 +80,151 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             padding: 0 20px;
             color: white;
             position: relative;
+            animation: fadeIn 1.5s ease-out;
         }
         
-        .tt-navbar {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
-        }
-        
-        .tt-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .tt-logo span {
-            color: var(--tt-secondary);
-        }
-        
-        .tt-nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .tt-nav-links a:hover {
-            color: var(--tt-secondary);
-        }
-        
-        .tt-header-content {
-            max-width: 800px;
-            margin-top: 60px;
-        }
-        
-        .tt-blog-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-        
-        .tt-tagline {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .tt-byline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        
-        .tt-author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            border: 2px solid var(--tt-secondary);
-        }
-        
+        /* Navbar Styles */
+.tt-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+    z-index: 1000;
+    transition: all 0.5s ease;
+}
+
+.tt-navbar.scrolled {
+    background: rgba(42, 92, 139, 0.95);
+    padding: 10px 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Logo Styles */
+.tt-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.tt-logo-img {
+    width: 80px;
+    height: 110px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.tt-logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+.tt-logo span span {
+    color: var(--tt-secondary);
+}
+
+.tt-logo:hover {
+    transform: scale(1.05);
+}
+
+.tt-logo:hover .tt-logo-img {
+    transform: rotate(15deg);
+}
+
+/* Navigation Links */
+.tt-nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.tt-nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.tt-nav-links a:hover {
+    color: var(--tt-secondary);
+}
+
+.tt-nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--tt-secondary);
+    transition: width 0.3s ease;
+}
+
+.tt-nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Mobile Menu Toggle (for responsive design) */
+.tt-menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .tt-navbar {
+        padding: 15px 20px;
+    }
+    
+    .tt-nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(42, 92, 139, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transition: all 0.5s ease;
+    }
+    
+    .tt-nav-links.active {
+        left: 0;
+    }
+    
+    .tt-nav-links a {
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+    
+    .tt-menu-toggle {
+        display: block;
+    }
+    
+    .tt-logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .tt-logo span {
+        font-size: 1.5rem;
+    }
+}
         /* TravelTales Blog Content */
         .tt-container {
             max-width: 900px;
@@ -130,15 +236,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             font-size: 0.9rem;
             margin-bottom: 20px;
             color: var(--tt-primary);
+            animation: fadeIn 1s ease-out;
         }
         
         .tt-breadcrumb a {
             color: var(--tt-primary);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
         
         .tt-breadcrumb a:hover {
             text-decoration: underline;
+            color: var(--tt-secondary);
         }
         
         .tt-blog-intro {
@@ -147,6 +256,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             position: relative;
             padding-bottom: 20px;
             color: var(--tt-dark);
+            animation: slideUp 1s ease-out 0.5s both;
         }
         
         .tt-blog-intro:after {
@@ -157,6 +267,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             width: 100px;
             height: 3px;
             background: var(--tt-secondary);
+            animation: slideUp 1s ease-out 0.7s both;
         }
         
         .tt-section-title {
@@ -166,6 +277,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             color: var(--tt-primary);
             position: relative;
             padding-bottom: 15px;
+            animation: slideUp 1s ease-out;
         }
         
         .tt-section-title:after {
@@ -176,6 +288,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             width: 60px;
             height: 4px;
             background: linear-gradient(to right, var(--tt-secondary), var(--tt-accent));
+            animation: slideUp 1s ease-out 0.3s both;
         }
         
         /* TravelTales Post Card */
@@ -187,6 +300,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             margin-bottom: 60px;
             transition: all 0.4s ease;
             border-left: 4px solid var(--tt-primary);
+            animation: fadeIn 1s ease-out;
         }
         
         .tt-post:hover {
@@ -221,6 +335,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.9rem;
+            animation: slideUp 0.5s ease-out 0.5s both;
         }
         
         .tt-post-content {
@@ -248,6 +363,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             display: flex;
             align-items: center;
             margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-post-meta span:hover {
+            color: var(--tt-secondary);
+            transform: translateX(5px);
         }
         
         .tt-post-meta i {
@@ -267,11 +388,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             border-bottom: 2px solid var(--tt-secondary);
             padding-bottom: 3px;
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .tt-read-more:hover {
             color: var(--tt-accent);
             border-bottom-color: var(--tt-accent);
+            transform: translateX(5px);
+        }
+        
+        .tt-read-more:after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-read-more:hover:after {
+            right: -20px;
+            opacity: 1;
         }
         
         /* TravelTales Pull Quote */
@@ -285,6 +421,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             margin: 30px 0;
             background: rgba(247, 163, 37, 0.1);
             font-style: italic;
+            animation: fadeIn 1s ease-out;
+            position: relative;
+        }
+        
+        .tt-pull-quote:before, .tt-pull-quote:after {
+            content: '"';
+            font-family: serif;
+            font-size: 3rem;
+            color: rgba(247, 163, 37, 0.2);
+            position: absolute;
+        }
+        
+        .tt-pull-quote:before {
+            top: 0;
+            left: 10px;
+        }
+        
+        .tt-pull-quote:after {
+            bottom: -20px;
+            right: 10px;
         }
         
         /* TravelTales Tips Box */
@@ -294,6 +450,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             padding: 20px;
             margin: 25px 0;
             border-radius: 0 4px 4px 0;
+            animation: slideUp 0.8s ease-out;
         }
         
         .tt-tip h4 {
@@ -306,6 +463,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         .tt-tip h4:before {
             content: '✈';
             margin-right: 10px;
+            animation: float 3s ease-in-out infinite;
         }
         
         /* TravelTales Gallery Grid */
@@ -322,6 +480,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             border-radius: 8px;
             position: relative;
             transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out;
         }
         
         .tt-grid-item:hover {
@@ -333,6 +492,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .tt-grid-item:hover img {
+            transform: scale(1.1);
         }
         
         /* TravelTales Newsletter */
@@ -345,6 +509,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             color: white;
             position: relative;
             overflow: hidden;
+            animation: pulse 2s ease-in-out infinite alternate;
         }
         
         .tt-newsletter:before {
@@ -356,6 +521,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             height: 150px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
         }
         
         .tt-newsletter h3 {
@@ -386,6 +552,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             border: none;
             border-radius: 30px 0 0 30px;
             font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tt-newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(247, 163, 37, 0.3);
         }
         
         .tt-newsletter-form button {
@@ -401,192 +573,437 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         .tt-newsletter-form button:hover {
             background: var(--tt-accent);
+            transform: scale(1.05);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--tt-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--tt-primary);
+            transform: translateY(-5px);
         }
         
         /* Footer */
         .custom-footer {
-  background: linear-gradient(135deg, #1b1f24, #2c3e50);
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  position: relative;
-  padding-top: 0;
-}
+            background: linear-gradient(135deg, #1b1f24, #2c3e50);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            position: relative;
+            padding-top: 0;
+            animation: fadeIn 1s ease-out;
+        }
 
-.wave-divider svg {
-  display: block;
-  width: 100%;
-  height: 80px;
-  margin-bottom: -5px;
-}
-.footer-logo img {
-  height: 90px; /* Adjust height as needed */
-  margin-bottom: 15px;
-  object-fit: contain;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 60px 10% 20px;
-  gap: 40px;
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.footer-brand {
-  flex: 1 1 250px;
-}
-
-.footer-brand h2 {
-  color: #ff8243;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.footer-brand p {
-  font-size: 0.95rem;
-  color: #ddd;
-  margin-bottom: 20px;
-}
-
-.social-icons a {
-  color: #ff8243;
-  margin-right: 10px;
-  font-size: 1.3rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.social-icons a:hover {
-  color: #fff;
-  transform: scale(1.2);
-}
-
-.footer-links,
-.footer-contact,
-.newsletter {
-  flex: 1 1 200px;
-}
-
-.footer-links h4,
-.footer-contact h4,
-.newsletter h4 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #ff8243;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-.footer-links ul li a:hover {
-  color: #fff;
-}
-
-.footer-contact p {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-  color: #ddd;
-}
-
-.footer-contact i {
-  margin-right: 8px;
-  color: #ff8243;
-}
-
-.newsletter form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.newsletter input {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  font-size: 0.95rem;
-}
-
-.newsletter button {
-  padding: 10px 15px;
-  background-color: #ff8243;
-  border: none;
-  color: white;
-  font-size: 0.95rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.newsletter button:hover {
-  background-color: #fff;
-  color: #ff8243;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 25px 10%;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #aaa;
-}
-.footer-bottom span {
-  color: #ff8243;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  } 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  .social-icons {
-    justify-content: center;
-  }
-  .newsletter form {
-    align-items: center;
-  }
-}
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: 80px;
+            margin-bottom: -5px;
+        }
         
-        @media (max-width: 480px) {
+        .footer-logo img {
+            height: 90px;
+            margin-bottom: 15px;
+            object-fit: contain;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 60px 10% 20px;
+            gap: 40px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .footer-brand {
+            flex: 1 1 250px;
+        }
+
+        .footer-brand h2 {
+            color: #ff8243;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: #ff8243;
+            margin-right: 10px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .social-icons a:hover {
+            color: #fff;
+            transform: translateY(-5px) scale(1.2);
+        }
+
+        .footer-links,
+        .footer-contact,
+        .newsletter {
+            flex: 1 1 200px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .newsletter h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ff8243;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4:after,
+        .footer-contact h4:after,
+        .newsletter h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff8243;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #ff8243;
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+        
+        .footer-links ul li a:hover:after {
+            width: 100%;
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 8px;
+            color: #ff8243;
+            min-width: 20px;
+        }
+
+        .newsletter form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter input:focus {
+            box-shadow: 0 0 0 3px rgba(255, 130, 67, 0.3);
+        }
+
+        .newsletter button {
+            padding: 10px 15px;
+            background-color: #ff8243;
+            border: none;
+            color: white;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            background-color: #fff;
+            color: #ff8243;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 10%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .footer-bottom span {
+            color: #ff8243;
+            font-weight: 600;
+        }
+        
+        .footer-bottom strong {
+            color: #ff8243;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-bottom strong:hover {
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            } 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Parallax Effect */
+        .tt-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 60px 0;
+        }
+        
+        .tt-parallax-content {
+            background: rgba(42, 92, 139, 0.8);
+            color: white;
+            padding: 30px;
+            max-width: 600px;
+            border-radius: 8px;
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+        
+        /* Floating Elements */
+        .tt-floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(255,255,255,0.3);
+            animation: float 5s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        .tt-floating-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .tt-floating-icon:nth-child(2) {
+            top: 60%;
+            left: 15%;
+            animation-delay: 1s;
+        }
+        
+        .tt-floating-icon:nth-child(3) {
+            top: 30%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .tt-floating-icon:nth-child(4) {
+            top: 70%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .tt-nav-links a {
+                margin-left: 15px;
+            }
+            
             .tt-blog-title {
-                font-size: 2.2rem;
+                font-size: 3rem;
+            }
+            
+            .tt-post-image {
+                height: 300px;
             }
             
             .tt-photo-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tt-parallax {
+                background-attachment: scroll;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tt-navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+            }
+            
+            .tt-nav-links {
+                margin-top: 15px;
+            }
+            
+            .tt-nav-links a {
+                margin: 0 10px;
+            }
+            
+            .tt-blog-title {
+                font-size: 2.5rem;
+            }
+            
+            .tt-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .tt-container {
+                padding: 40px 20px;
             }
             
             .tt-post-content {
                 padding: 25px;
             }
             
-            .tt-footer-content {
+            .tt-newsletter {
+                padding: 30px 20px;
+            }
+            
+            .tt-newsletter-form {
+                flex-direction: column;
+            }
+            
+            .tt-newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .tt-newsletter-form button {
+                border-radius: 30px;
+                padding: 10px;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-links ul li a:hover {
+                padding-left: 0;
+            }
+            
+            .footer-contact p {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tt-blog-title {
+                font-size: 2rem;
+            }
+            
+            .tt-byline {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .tt-author-avatar {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .tt-photo-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .tt-post-image {
+                height: 250px;
+            }
+            
+            .tt-section-title {
+                font-size: 1.6rem;
+                margin: 40px 0 20px;
+            }
+            
+            .tt-post-title {
+                font-size: 1.4rem;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -595,7 +1012,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <!-- TravelTales Header -->
     <header class="tt-header">
         <nav class="tt-navbar">
-            <a href="#" class="tt-logo">Travel<span>Tales</span></a>
+            <a href="#" class="tt-logo">
+                <img src="Images/TT5.png" alt="TravelTales Logo" class="tt-logo-img">
+            </a>
             <div class="tt-nav-links">
                 <a href="#">Destinations</a>
                 <a href="#">Travel Guides</a>
@@ -616,6 +1035,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </div>
             </div>
         </div>
+        
+        <!-- Floating decorative elements -->
+        <div class="tt-floating-icon">🌴</div>
+        <div class="tt-floating-icon">🌊</div>
+        <div class="tt-floating-icon">☀️</div>
+        <div class="tt-floating-icon">🏖️</div>
     </header>
     
     <!-- TravelTales Blog Content -->
@@ -638,10 +1063,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="tt-post-content">
                 <h3 class="tt-post-title">Kakolem: The Tiger Beach</h3>
                 <div class="tt-post-meta">
-                    <span><i>📍</i> South Goa</span>
-                    <span><i>🏖️</i> Secluded Beach</span>
-                    <span><i>🚶</i> Moderate Hike</span>
-                    <span><i>⭐</i> TravelTales Certified</span>
+                    <span><i class="fas fa-map-marker-alt"></i> South Goa</span>
+                    <span><i class="fas fa-umbrella-beach"></i> Secluded Beach</span>
+                    <span><i class="fas fa-hiking"></i> Moderate Hike</span>
+                    <span><i class="fas fa-star"></i> TravelTales Certified</span>
                 </div>
                 <p class="tt-post-excerpt">
                     Our team at TravelTales rates Kakolem as Goa's most spectacular hidden beach. Known locally as Tiger Beach (though no tigers here!), this secluded cove near Cabo de Rama requires a 15-minute hike down a steep trail. The effort is rewarded with a pristine crescent of golden sand framed by dramatic cliffs, with waters that shift from emerald to sapphire throughout the day.
@@ -676,6 +1101,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
         </div>
         
+        <!-- Parallax Section -->
+        <div class="tt-parallax" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+            <div class="tt-parallax-content">
+                <h3>Goa Beyond the Beaches</h3>
+                <p>Discover the lush hinterlands, spice plantations, and vibrant local culture that make Goa truly unique. Our eco-tours take you where few tourists go.</p>
+                <button style="background: var(--tt-secondary); color: white; border: none; padding: 10px 20px; border-radius: 30px; margin-top: 15px; cursor: pointer; transition: all 0.3s ease;">Explore Eco-Tours</button>
+            </div>
+        </div>
+        
         <h2 class="tt-section-title">Historical Treasures</h2>
         
         <div class="tt-post">
@@ -686,10 +1120,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="tt-post-content">
                 <h3 class="tt-post-title">Cabo de Rama: The Forgotten Fort</h3>
                 <div class="tt-post-meta">
-                    <span><i>📍</i> Canacona</span>
-                    <span><i>🏰</i> Historical Site</span>
-                    <span><i>🌅</i> Sunset Spot</span>
-                    <span><i>⭐</i> TravelTales Certified</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Canacona</span>
+                    <span><i class="fas fa-landmark"></i> Historical Site</span>
+                    <span><i class="fas fa-sun"></i> Sunset Spot</span>
+                    <span><i class="fas fa-star"></i> TravelTales Certified</span>
                 </div>
                 <p class="tt-post-excerpt">
                     While tourists flock to Chapora Fort (thanks to Bollywood), our TravelTales team consistently recommends Cabo de Rama for a more authentic experience. This 16th century fort offers panoramic views without the crowds, along with fascinating history spanning Hindu, Muslim, and Portuguese rule.
@@ -709,14 +1143,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         </div>
         
         <!-- TravelTales Newsletter -->
-        <div class="tt-newsletter">
-            <h3>Join the TravelTales Community</h3>
-            <p>Get exclusive travel guides, hidden gems, and special offers straight to your inbox</p>
-            <form class="tt-newsletter-form">
-                <input type="email" placeholder="Your email address">
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
+        <!-- Previous code remains the same until the newsletter section -->
         
         <h2 class="tt-section-title">Nature's Wonders</h2>
         
@@ -728,10 +1155,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="tt-post-content">
                 <h3 class="tt-post-title">Netravali: Goa's Mystical Bubble Lake</h3>
                 <div class="tt-post-meta">
-                    <span><i>📍</i> Sanguem Taluka</span>
-                    <span><i>🌿</i> Wildlife Sanctuary</span>
-                    <span><i>🔍</i> Natural Wonder</span>
-                    <span><i>⭐</i> TravelTales Certified</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Sanguem Taluka</span>
+                    <span><i class="fas fa-tree"></i> Wildlife Sanctuary</span>
+                    <span><i class="fas fa-search"></i> Natural Wonder</span>
+                    <span><i class="fas fa-star"></i> TravelTales Certified</span>
                 </div>
                 <p class="tt-post-excerpt">
                     One of our most magical discoveries in Goa wasn't on the coast but deep in the Netravali Wildlife Sanctuary. The Bubble Lake is a scientific marvel wrapped in local legend—when you clap, hundreds of bubbles rise mysteriously from the lake bottom. Scientists say it's methane gas from decaying vegetation; locals believe it's the breath of a giant serpent dwelling below.
@@ -753,93 +1180,198 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <a href="#" class="tt-read-more">Discover more natural wonders in our Eco-Travel Guide →</a>
             </div>
         </div>
+
+        <h2 class="tt-section-title">Local Experiences</h2>
+        
+        <div class="tt-post">
+            <div class="tt-post-image">
+                <img src="https://images.unsplash.com/photo-1598866594230-a7c12756260f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Goan spice plantation">
+                <span class="tt-image-caption">Organic spice plantation tour in Goa</span>
+            </div>
+            <div class="tt-post-content">
+                <h3 class="tt-post-title">Sahakari Spice Farm: A Feast for the Senses</h3>
+                <div class="tt-post-meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Ponda</span>
+                    <span><i class="fas fa-utensils"></i> Culinary Experience</span>
+                    <span><i class="fas fa-leaf"></i> Eco-Tourism</span>
+                    <span><i class="fas fa-star"></i> TravelTales Certified</span>
+                </div>
+                <p class="tt-post-excerpt">
+                    Escape the beaches and immerse yourself in Goa's lush interior at Sahakari Spice Farm. This organic plantation offers a multi-sensory journey through rows of cardamom, vanilla, pepper vines, and nutmeg trees. The air is thick with intoxicating aromas, and the knowledgeable guides bring the plants to life with stories of their medicinal and culinary uses.
+                </p>
+                
+                <p>
+                    The highlight is the traditional Goan lunch served on banana leaves—a feast of local specialties like xitt-coddi (rice and curry), pork vindaloo, and bebinca (layered coconut cake). Wash it down with feni, Goa's famous cashew or coconut liquor. After lunch, you can ride an elephant (ethical practices verified by our team) or simply relax in the tranquil surroundings.
+                </p>
+                
+                <div class="tt-tip">
+                    <h4>Best Time to Visit</h4>
+                    <p>November to February when temperatures are cooler. Morning tours (8:30am) are less crowded and you'll see workers harvesting spices. Wear comfortable shoes and light clothing—it gets humid in the plantation.</p>
+                </div>
+                
+                <a href="#" class="tt-read-more">Explore more authentic Goan experiences →</a>
+            </div>
+        </div>
+
+        <!-- Interactive Map Section -->
+        <div class="tt-post" style="padding: 0; overflow: hidden;">
+            <div class="tt-post-image" style="height: 500px;">
+                <iframe src="https://www.google.com/maps/d/u/8/embed?mid=1LI_9md80fgNPOafpu3F3MjdzyVqo-1Q&ehbc=2E312F" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="tt-post-content">
+                <h3 class="tt-post-title">Goa's Hidden Gems Map</h3>
+                <p class="tt-post-excerpt">
+                    Use our interactive map to locate all the hidden gems mentioned in this guide. We've included secret beaches, historical sites, natural wonders, and authentic local experiences. Save it to your Google Maps for easy access during your trip.
+                </p>
+                <div class="tt-tip">
+                    <h4>Pro Tip</h4>
+                    <p>Click the star icon to save this map to your Google account. Many of these locations have limited connectivity, so download offline maps before you go.</p>
+                </div>
+                <a href="#" class="tt-read-more">View full screen map →</a>
+            </div>
+        </div>
+
+        <!-- Travel Planning Section -->
+        <div class="tt-newsletter" style="background: linear-gradient(135deg, var(--tt-accent), var(--tt-primary));">
+            <h3>Plan Your Perfect Goa Trip</h3>
+            <p>Get our free customizable Goa itinerary based on your travel style and interests</p>
+            <form class="tt-newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Get Itinerary</button>
+            </form>
+        </div>
     </div>
     
-<!-- Custom Footer End --><!-- Enhanced Footer Start -->
-<footer class="custom-footer">
-  <!-- Decorative Wave -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 120 28">
-      <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
-    </svg>
-  </div>
+    <!-- Enhanced Footer -->
+    <footer class="custom-footer">
+        <div class="wave-divider">
+            <svg viewBox="0 0 120 28">
+                <path d="M0,0 C30,25 90,0 120,25 L120 0 L0 0 Z" fill="#2c3e50"></path>
+            </svg>
+        </div>
 
-  <div class="footer-container">
-    <div class="footer-brand">
-      <div class="footer-logo">
-  <img src="Images/TT5.png" alt="Travel Tales Logo"  />
-</div>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="Images/TT5.png" alt="Travel Tales Logo">
+                </div>
+                <p>Wander more, wonder always. Your perfect journey begins with us.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
 
-      <p>Wander more, wonder always. Your perfect journey begins with us.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Offers</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Get in Touch</h4>
+                <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
+            </div>
+
+            <div class="newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
     </div>
 
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Packages</a></li>
-        <li><a href="#">Offers</a></li>
-        <li><a href="#">Gallery</a></li>
-      </ul>
-    </div>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.tt-navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-    <div class="footer-links">
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Careers</a></li>
-      </ul>
-    </div>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
 
-    <div class="footer-contact">
-      <h4>Get in Touch</h4>
-      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
-      <p><i class="fas fa-envelope"></i> TravelTales@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Nagpur, India</p>
-    </div>
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
-    <div class="newsletter">
-      <h4>Subscribe to Our Newsletter</h4>
-      <form>
-        <input type="email" placeholder="Enter your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-  <div class="footer-bottom">
-  <p>&copy; 2025 <span>Travel Tales</span>. Crafted with ❤️ by <strong>Karan Bipate</strong>.</p>
-</div>
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-</footer>
-<!-- Enhanced Footer End -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-</html>
+        // Newsletter form submission
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                // Here you would typically send the email to your server
+                alert(`Thank you for subscribing with ${email}! We'll be in touch soon.`);
+                this.reset();
+            });
+        });
 
-  
-    
-<!-- Back to Top Button -->
-<div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-  <i class="fas fa-chevron-up"></i>
-</div>
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.tt-post, .tt-section-title, .tt-pull-quote, .tt-tip');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if (elementPosition < screenPosition) {
+                    element.style.animation = 'slideUp 0.8s ease-out forwards';
+                }
+            });
+        }
 
-
-<!-- Bootstrap JS, Font Awesome for icons -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</body>
-</html>
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
 </body>
 </html>
