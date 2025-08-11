@@ -210,427 +210,138 @@ nav ul li a{
 
 
 /* WHERE TO GO SECTION (BOOK TRIP) */
+/* ===== COLORS & VARIABLES ===== */
 :root {
   --yellow: #fde02f;
   --yellow-dark: #ffb300;
-  --glass-white: rgba(255,255,255,0.22);
-  --glass-border: rgba(253,224,47,0.35);
-  --glass-blur: blur(16px);
-  --shadow: 0 12px 40px 0 rgba(31,38,135,0.28);
-  --input-bg: rgba(255,255,255,0.92);
+  --input-bg: rgba(255, 255, 255, 0.92);
   --input-border: #fde02f99;
   --icon-color: #fde02f;
-  --icon-focus: #ffb300;
-  --subtitle: #fffc;
-  --heading-shadow: 0 4px 18px rgba(0,0,0,0.4);
-  --pulse-shadow: 0 0 0 0 rgba(253, 224, 47, 0.7);
+  --shadow: 0 12px 40px rgba(31, 38, 135, 0.28);
 }
+
+/* ===== RESET & BACKGROUND ===== */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: url('Main Page/SearchDestination.jpg') center/cover no-repeat fixed;
 }
+
+/* ===== BANNER ===== */
 .banner {
-  background-size:100%;
-  width: 99vw;
+  width: 100%;
   min-height: 100vh;
-  text-align: center;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  background: url('Main Page/SearchDestination.jpg') center/cover no-repeat fixed;
+  padding: 1rem;
 }
 
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-
-/* Glassmorphic Panel with Neumorphism */
 .banner-text-item {
-  position: relative;
-  z-index: 2;
-  width: 90vw;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(253, 224, 47, 0.35);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
   max-width: 850px;
-  margin: 0 auto;
-  padding: 42px 36px;
-  background: var(--glass-white);
-  box-shadow: var(--shadow), 
-              inset 2px 2px 5px rgba(255,255,255,0.1),
-              inset -2px -2px 5px rgba(0,0,0,0.2);
-  border-radius: 28px;
-  backdrop-filter: var(--glass-blur);
-  border: 1.5px solid var(--glass-border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeInUp 1.1s cubic-bezier(.23,1.08,.74,1.01) 0.1s both;
-  box-sizing: border-box;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  text-align: center;
 }
 
-.banner-text-item:hover {
-  box-shadow: 0 16px 50px 0 #fde02f44, 
-              inset 2px 2px 5px rgba(255,255,255,0.1),
-              inset -2px -2px 5px rgba(0,0,0,0.2);
-  transform: translateY(-5px);
-}
-
-/* Heading with Gradient Text */
+/* ===== HEADING ===== */
 .banner-heading h1 {
-  font-size: 3.2rem;
+  font-size: clamp(1.6rem, 5vw, 2.5rem);
   font-weight: 800;
   background: linear-gradient(45deg, var(--yellow), #fff, var(--yellow));
   -webkit-background-clip: text;
-  background-clip: text;
   color: transparent;
-  margin: 0;
-  letter-spacing: 1px;
-  text-shadow: var(--heading-shadow);
-  animation: fadeInDown 1.1s;
-  position: relative;
-  display: inline-block;
-}
-
-.banner-heading h1::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--yellow), transparent);
-  border-radius: 3px;
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  color: var(--subtitle);
-  font-size: 1.6rem;
-  margin: 12px auto 28px auto; /* Auto margins to center horizontally */
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.5px;
-  animation: fadeIn 1.5s;
-  max-width: 80%;
-  line-height: 1.5;
-  text-align: center; /* Align text inside */
-  display: block;
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
 }
 
-
-/* Booking Form with Floating Labels */
+/* ===== FORM LAYOUT ===== */
 .form {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  width: 100%;
-  align-items: flex-end;
-  justify-content: center;
-  margin-top: 24px;
   flex-wrap: wrap;
-  box-sizing: border-box;
-  transition: gap 0.2s;
-  animation: fadeInUp 1.4s;
+  gap: 15px;
+  justify-content: center;
 }
 
 .input-group {
   position: relative;
-  display: flex;
-  align-items: center;
-  flex: 1 1 120px;
-  min-width: 0;
-  max-width: 260px;
-  width: 100%;
-  box-sizing: border-box;
-  transition: all 0.3s ease;
-}
-
-.input-group:hover {
-  transform: translateY(-2px);
+  width: 260px;
 }
 
 .input-icon {
   position: absolute;
-  left: 16px;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
   color: var(--icon-color);
-  font-size: 1.3rem;
-  z-index: 2;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-.input-container {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  width: 260px;
-  height: 50px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.05);
-  position: relative;
-}
-
-.input-icon {
-  margin-right: 10px;
-  color: #555;
   font-size: 1.1rem;
+  pointer-events: none;
 }
 
+/* ===== INPUT & SELECT STYLING ===== */
 .input-group select,
 .input-group input[type="date"] {
-  border: none;
-  outline: none;
   width: 100%;
-  font-size: 1rem;
-  background: transparent;
+  padding: 14px 14px 14px 40px;
+  border: 1.5px solid var(--input-border);
+  border-radius: 10px;
+  background: var(--input-bg);
+  font-size: clamp(0.85rem, 3vw, 1rem);
   color: #333;
   appearance: none;
-}
-
-.form input[type="text"] {
-  padding: 12px 12px 12px 35px;
-  font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 12px;
   outline: none;
-  border: 1.5px solid var(--input-border);
-  background: var(--input-bg);
-  margin: 0;
-  width: 100%;
-  min-width: 0;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-sizing: border-box;
-  color: #333;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(253, 224, 47, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form input::placeholder {
-  color: #888;
-  transition: all 0.3s ease;
+.input-group select:focus,
+.input-group input[type="date"]:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 10px rgba(253, 224, 47, 0.4);
 }
 
-.form input:focus {
-  border: 1.5px solid var(--yellow);
-  box-shadow: 0 6px 20px rgba(253, 224, 47, 0.3);
-  background: #fff;
-}
-
-.form input:focus::placeholder {
-  opacity: 0;
-}
-
-.form input:focus ~ .input-icon,
-.input-group:focus-within .input-icon {
-  color: var(--icon-focus);
-  filter: drop-shadow(0 0 8px #fde02fbb);
-  transform: scale(1.1);
-}
-.input-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 2rem;
-  justify-content: center;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 10px 15px;
-  width: 280px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: border 0.3s ease;
-}
-
-.input-group:hover {
-  border-color: #ff6f61;
-}
-
-/* Book Button with Pulse Animation */
+/* ===== BOOK BUTTON ===== */
 .book {
-  margin-top: 0;
-  margin-left: 10px;
-  padding: 12px 28px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
   border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--yellow) 40%, var(--yellow-dark) 100%);
-  color: #222;
-  font-size: 1.2rem;
-  font-family: 'Poppins', sans-serif;
+  border-radius: 10px;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
   font-weight: 600;
-  text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(253, 224, 47, 0.3), 
-              0 6px 10px rgba(253, 224, 47, 0.1);
-  letter-spacing: 1.2px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  width: auto;
-  min-width: 140px;
-  position: relative;
-  overflow: hidden;
-  outline: none;
-  animation: pulse 2s infinite;
+  transition: transform 0.3s ease;
 }
 
-.book span {
-  position: relative;
-  z-index: 2;
+.book:hover {
+  transform: translateY(-3px);
 }
 
-.book::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--yellow-dark) 10%, var(--yellow) 90%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.book:hover::before {
-  opacity: 1;
-}
-
-.book:hover, .book:focus {
-  color: #fff;
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 30px rgba(253, 224, 47, 0.5);
-  animation: none;
-}
-
-.book:active {
-  transform: scale(0.97);
-  color: #F57C00;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--pulse-shadow); }
-  70% { box-shadow: 0 0 0 12px rgba(253, 224, 47, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(253, 224, 47, 0); }
-}
-
-/* Confirmation Animation */
-#confirmation {
-  display: none;
-  margin-top: 28px;
-  font-size: 1.3rem;
-  color: #fff;
-  font-weight: 600;
-  text-shadow: 0 2px 8px #000;
-  background: rgba(0,0,0,0.3);
-  padding: 16px 28px;
-  border-radius: 50px;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: var(--yellow);
-  opacity: 0;
-  animation: confettiFall 3s ease-in-out forwards;
-}
-
-@keyframes confettiFall {
-  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .banner-heading h1 {
-    font-size: 2.6rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-    max-width: 90%;
-  }
-
-  .form {
-    flex-direction: row;
-    justify-content: center;
-    gap: 8px;
-  }
-}
-
+/* ===== MOBILE ADJUSTMENTS ===== */
 @media (max-width: 768px) {
-  .banner-text-item {
-    padding: 32px 24px;
-    width: 90vw;
-  }
-
-  .banner-heading h1 {
-    font-size: 2.2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .input-group {
-    max-width: 100%;
-  }
-
-  .book {
     width: 100%;
-    margin-left: 0;
   }
 }
 
 @media (max-width: 480px) {
   .banner-heading h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-
   .subtitle {
     font-size: 0.95rem;
   }
-
-  .form input[type="text"],
-  .form input[type="date"] {
-    font-size: 1rem;
-    padding: 14px 14px 14px 44px;
-  }
-
-  .input-icon {
-    font-size: 1.1rem;
-    left: 12px;
-  }
-
-  .book {
-    font-size: 1rem;
-    padding: 16px;
-  }
 }
+
 
 /*Services*/
 body {
@@ -872,13 +583,13 @@ body {
     .india-regions { padding: 28px 2vw 12px 2vw; }
     .destination-content { gap: 10px; padding: 18px 2vw; }
     .d-content { flex: 0 0 82vw; }
-    .d-content figure { height: 220px; }
+    .d-content figure { height: 320px; }
     .d-content h5 { font-size: 1.08rem; }
     .d-content p { font-size: 0.95rem; }
 }
 @media (max-width: 480px) {
     .d-content { flex: 0 0 94vw; }
-    .d-content figure { height: 160px; }
+    .d-content figure { height: 300px; }
     .d-content h5 { font-size: 0.98rem; }
     .d-content p { font-size: 0.88rem; }
 }
@@ -2518,102 +2229,54 @@ body {
 
 <!-- WHERE TO GO SECTION (BOOK TRIP) -->
 <section class="banner">
-  <div class="banner-text-item">
-    <div class="banner-heading">
-      <h1>Find Your Next Tour!</h1>
+    <div class="banner-text-item">
+      <div class="banner-heading">
+        <h1>Find Your Next Tour!</h1>
+      </div>
       <p class="subtitle">Explore new destinations, create memories, and start your next adventure!</p>
+
+      <form class="form" autocomplete="off" onsubmit="return false">
+        <!-- Destination -->
+        <div class="input-group">
+          <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+          <select required>
+            <option value="" disabled selected>Where would you like to go?</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Bangalore</option>
+            <option>Kolkata</option>
+            <option>Goa</option>
+            <option>Shimla</option>
+            <option>Manali</option>
+            <option>Ladakh</option>
+            <option>Kashmir</option>
+            <option>Amritsar</option>
+          </select>
+        </div>
+
+        <!-- Date -->
+        <div class="input-group">
+          <span class="input-icon"><i class="fa fa-calendar"></i></span>
+          <input type="date" required>
+        </div>
+
+        <!-- Guests -->
+        <div class="input-group">
+          <span class="input-icon"><i class="fa fa-users"></i></span>
+          <select required>
+            <option value="" disabled selected>No. of Guests</option>
+            <option>1 Adult</option>
+            <option>2 Adults</option>
+            <option>3 Adults</option>
+            <option>Family</option>
+          </select>
+        </div>
+
+        <!-- Book Button -->
+        <button type="submit" class="book">Book Now</button>
+      </form>
     </div>
-      
-      <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
-
-      <!-- Destination -->
-      
-      <!-- Destination -->
-  <div class="input-group">
-    <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
-    <select required>
-      <option value="" disabled selected>Where would you like to go?</option>
-    <option>Delhi</option>
-          <option>Mumbai</option>
-          <option>Bangalore</option>
-          <option>Kolkata</option>
-          <option>Chennai</option>
-          <option>Hyderabad</option>
-          <option>Pune</option>
-          <option>Jaipur</option>
-          <option>Goa</option>
-          <option>Agra</option>
-          <option>Varanasi</option>
-          <option>Udaipur</option>
-          <option>Shimla</option>
-          <option>Manali</option>
-          <option>Leh</option>
-          <option>Ladakh</option>
-          <option>Kashmir</option>
-          <option>Amritsar</option>
-          <option>Rishikesh</option>
-          <option>Haridwar</option>
-          <option>Darjeeling</option>
-          <option>Mysore</option>
-          <option>Coorg</option>
-          <option>Ooty</option>
-          <option>Kodaikanal</option>
-          <option>Gokarna</option>
-          <option>Hampi</option>
-          <option>Rann of Kutch</option>
-          <option>Jaisalmer</option>
-          <option>Pushkar</option>
-          <option>Andaman & Nicobar</option>
-          <option>Pondicherry</option>
-          <option>Mahabalipuram</option>
-          <option>Shillong</option>
-          <option>Guwahati</option>
-          <option>Gangtok</option>
-          <option>Sikkim</option>
-          <option>Cherrapunji</option>
-          <option>Munnar</option>
-          <option>Alleppey</option>
-          <option>Kochi</option>
-          <option>Trivandrum</option>
-          <option>Madurai</option>
-          <option>Ranthambore</option>
-          <option>Jim Corbett</option>
-          <option>Kaziranga</option>
-          <option>Khajuraho</option>
-          <option>Ajanta & Ellora</option>
-          <option>Konark</option>
-          <option>Puri</option>
-    </select>
-  </div>
-      <!-- Date -->
-      <!-- Date Selection -->
-  <div class="input-group">
-    <span class="input-icon"><i class="fa fa-calendar"></i></span>
-    <input type="date" required>
-  </div>
-
-      <!-- No. of Guests -->
-      <!-- Guests -->
-  <div class="input-group">
-    <span class="input-icon"><i class="fa fa-users"></i></span>
-    <select required>
-      <option value="" disabled selected>No. of Guests</option>
-      <option>1 Adult</option>
-      <option>2 Adults</option>
-      <option>3 Adults</option>
-      <option>Family</option>
-    </select>
-  </div>
-
-      <button type="submit" class="book">Book Now</button>
-    </form>
-
-    <div id="confirmation">
-      🎉 Your trip has been booked! We wish you a wonderful journey.
-    </div>
-  </div>
-</section>
-
+  </section>
 <!-- comment 
 <script>
   // Simple confirmation animation
