@@ -209,20 +209,30 @@ nav ul li a{
 }
 
 
-/* WHERE TO GO SECTION (BOOK TRIP) */
+
+
+
 /* ===== COLORS & VARIABLES ===== */
 :root {
-  --yellow: #fde02f;
+ --yellow: #fde02f;
   --yellow-dark: #ffb300;
-  --input-bg: rgba(255, 255, 255, 0.92);
+  --glass-white: rgba(255,255,255,0.22);
+  --glass-border: rgba(253,224,47,0.35);
+  --glass-blur: blur(16px);
+  --shadow: 0 12px 40px 0 rgba(31,38,135,0.28);
+  --input-bg: rgba(255,255,255,0.92);
   --input-border: #fde02f99;
   --icon-color: #fde02f;
-  --shadow: 0 12px 40px rgba(31, 38, 135, 0.28);
+  --icon-focus: #ffb300;
+  --subtitle: #fffc;
+  --heading-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  --pulse-shadow: 0 0 0 0 rgba(253, 224, 47, 0.7);
 }
 
 /* ===== RESET & BACKGROUND ===== */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background: url('Main Page/SearchDestination.jpg') center/cover no-repeat fixed;
 }
@@ -235,6 +245,10 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: url('Main Page/SearchDestination.jpg') center/cover no-repeat fixed;
 }
 
 .banner-text-item {
@@ -341,6 +355,10 @@ body {
     font-size: 0.95rem;
   }
 }
+
+
+
+
 
 
 /*Services*/
@@ -2229,54 +2247,102 @@ body {
 
 <!-- WHERE TO GO SECTION (BOOK TRIP) -->
 <section class="banner">
-    <div class="banner-text-item">
-      <div class="banner-heading">
-        <h1>Find Your Next Tour!</h1>
-      </div>
+  <div class="banner-text-item">
+    <div class="banner-heading">
+      <h1>Find Your Next Tour!</h1>
       <p class="subtitle">Explore new destinations, create memories, and start your next adventure!</p>
-
-      <form class="form" autocomplete="off" onsubmit="return false">
-        <!-- Destination -->
-        <div class="input-group">
-          <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
-          <select required>
-            <option value="" disabled selected>Where would you like to go?</option>
-            <option>Delhi</option>
-            <option>Mumbai</option>
-            <option>Bangalore</option>
-            <option>Kolkata</option>
-            <option>Goa</option>
-            <option>Shimla</option>
-            <option>Manali</option>
-            <option>Ladakh</option>
-            <option>Kashmir</option>
-            <option>Amritsar</option>
-          </select>
-        </div>
-
-        <!-- Date -->
-        <div class="input-group">
-          <span class="input-icon"><i class="fa fa-calendar"></i></span>
-          <input type="date" required>
-        </div>
-
-        <!-- Guests -->
-        <div class="input-group">
-          <span class="input-icon"><i class="fa fa-users"></i></span>
-          <select required>
-            <option value="" disabled selected>No. of Guests</option>
-            <option>1 Adult</option>
-            <option>2 Adults</option>
-            <option>3 Adults</option>
-            <option>Family</option>
-          </select>
-        </div>
-
-        <!-- Book Button -->
-        <button type="submit" class="book">Book Now</button>
-      </form>
     </div>
-  </section>
+      
+      <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
+
+      <!-- Destination -->
+      
+      <!-- Destination -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+    <select required>
+      <option value="" disabled selected>Where would you like to go?</option>
+    <option>Delhi</option>
+          <option>Mumbai</option>
+          <option>Bangalore</option>
+          <option>Kolkata</option>
+          <option>Chennai</option>
+          <option>Hyderabad</option>
+          <option>Pune</option>
+          <option>Jaipur</option>
+          <option>Goa</option>
+          <option>Agra</option>
+          <option>Varanasi</option>
+          <option>Udaipur</option>
+          <option>Shimla</option>
+          <option>Manali</option>
+          <option>Leh</option>
+          <option>Ladakh</option>
+          <option>Kashmir</option>
+          <option>Amritsar</option>
+          <option>Rishikesh</option>
+          <option>Haridwar</option>
+          <option>Darjeeling</option>
+          <option>Mysore</option>
+          <option>Coorg</option>
+          <option>Ooty</option>
+          <option>Kodaikanal</option>
+          <option>Gokarna</option>
+          <option>Hampi</option>
+          <option>Rann of Kutch</option>
+          <option>Jaisalmer</option>
+          <option>Pushkar</option>
+          <option>Andaman & Nicobar</option>
+          <option>Pondicherry</option>
+          <option>Mahabalipuram</option>
+          <option>Shillong</option>
+          <option>Guwahati</option>
+          <option>Gangtok</option>
+          <option>Sikkim</option>
+          <option>Cherrapunji</option>
+          <option>Munnar</option>
+          <option>Alleppey</option>
+          <option>Kochi</option>
+          <option>Trivandrum</option>
+          <option>Madurai</option>
+          <option>Ranthambore</option>
+          <option>Jim Corbett</option>
+          <option>Kaziranga</option>
+          <option>Khajuraho</option>
+          <option>Ajanta & Ellora</option>
+          <option>Konark</option>
+          <option>Puri</option>
+    </select>
+  </div>
+      <!-- Date -->
+      <!-- Date Selection -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-calendar"></i></span>
+    <input type="date" required>
+  </div>
+
+      <!-- No. of Guests -->
+      <!-- Guests -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-users"></i></span>
+    <select required>
+      <option value="" disabled selected>No. of Guests</option>
+      <option>1 Adult</option>
+      <option>2 Adults</option>
+      <option>3 Adults</option>
+      <option>Family</option>
+    </select>
+  </div>
+
+      <button type="submit" class="book">Book Now</button>
+    </form>
+
+    <div id="confirmation">
+      🎉 Your trip has been booked! We wish you a wonderful journey.
+    </div>
+  </div>
+</section>
+
 <!-- comment 
 <script>
   // Simple confirmation animation
