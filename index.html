@@ -403,7 +403,7 @@ body {
 }
 
 .form input[type="text"] {
-  padding: 16px 16px 16px 48px;
+  padding: 12px 12px 12px 35px;
   font-size: 1.1rem;
   font-family: 'Poppins', sans-serif;
   border-radius: 12px;
@@ -2523,14 +2523,17 @@ body {
       <h1>Find Your Next Tour!</h1>
       <p class="subtitle">Explore new destinations, create memories, and start your next adventure!</p>
     </div>
-    <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
+      
+      <form class="form" autocomplete="off" onsubmit="return bookTrip(event)">
 
       <!-- Destination -->
-      <div class="input-group">
-        <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
-        <select class="form-select" id="destination" required>
-          <option disabled selected>Where would you like to go?</option>
-          <option>Delhi</option>
+      
+      <!-- Destination -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-map-marker-alt"></i></span>
+    <select required>
+      <option value="" disabled selected>Where would you like to go?</option>
+    <option>Delhi</option>
           <option>Mumbai</option>
           <option>Bangalore</option>
           <option>Kolkata</option>
@@ -2580,9 +2583,8 @@ body {
           <option>Ajanta & Ellora</option>
           <option>Konark</option>
           <option>Puri</option>
-        </select>
-      </div>
-
+    </select>
+  </div>
       <!-- Date -->
       <!-- Date Selection -->
   <div class="input-group">
@@ -2591,17 +2593,17 @@ body {
   </div>
 
       <!-- No. of Guests -->
-      <div class="input-group">
-        <span class="input-icon"><i class="fa fa-users"></i></span>
-        <select class="form-select" id="guests" required>
-          <option disabled selected>No. of Guests</option>
-          <option>1 Adult</option>
-          <option>2 Adults</option>
-          <option>3 Adults</option>
-          <option>4 Adults</option>
-          <option>Family</option>
-        </select>
-      </div>
+      <!-- Guests -->
+  <div class="input-group">
+    <span class="input-icon"><i class="fa fa-users"></i></span>
+    <select required>
+      <option value="" disabled selected>No. of Guests</option>
+      <option>1 Adult</option>
+      <option>2 Adults</option>
+      <option>3 Adults</option>
+      <option>Family</option>
+    </select>
+  </div>
 
       <button type="submit" class="book">Book Now</button>
     </form>
