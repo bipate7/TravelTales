@@ -8,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelTales Travels</title>
+    <title>TravelTales Travel</title>
     <link rel="icon" href="Logos/TT4.png">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -356,8 +356,106 @@ body {
     font-size: 0.95rem;
   }
 }
+/* ===== LAPTOP RESPONSIVENESS ===== */
+@media (max-width: 1366px) and (min-width: 1025px) {
+  .banner-text-item {
+    max-width: 720px; /* Slightly smaller width */
+    padding: 1.8rem;
+  }
 
+  .banner-heading h1 {
+    font-size: 2.2rem; /* Slightly smaller heading */
+  }
 
+  .subtitle {
+    font-size: 1.05rem;
+  }
+
+  .form {
+    gap: 12px;
+  }
+
+  .input-group {
+    width: 220px; /* Slightly smaller inputs for better fit */
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .banner-text-item {
+    max-width: 650px;
+    padding: 1.5rem;
+  }
+
+  .banner-heading h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .input-group {
+    width: 200px;
+  }
+
+  .book {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Confirmation Animation */
+#confirmation {
+  display: none;
+  margin-top: 28px;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 8px #000;
+  background: rgba(0,0,0,0.3);
+  padding: 16px 28px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--yellow);
+  opacity: 0;
+  animation: confettiFall 3s ease-in-out forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+}
+
+/* ===== DESKTOP / LAPTOP FORM LAYOUT ===== */
+@media (min-width: 1025px) {
+  .form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .input-group {
+    width: auto;
+    flex: 1;
+    min-width: 150px;
+  }
+
+  /* Keep "Book Now" on its own row below the inputs */
+  .book {
+    flex-basis: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+  }
+}
 
 
 
@@ -2200,6 +2298,11 @@ body {
     width: 120px;
     height: 130px;
 }
+input[type="date"]::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
 
     </style>
 </head>
@@ -2317,11 +2420,11 @@ body {
   </div>
       <!-- Date -->
       <!-- Date Selection -->
-  <div class="input-group">
-    <span class="input-icon"><i class="fa fa-calendar"></i></span>
-      <option value="" disabled selected>📅 Pick Your Perfect Day</option>
-    <input type="date" required>
-  </div>
+ <div class="input-group">
+  <span class="input-icon"><i class="fa fa-calendar"></i></span>
+  <input type="date" required placeholder="Pick Your Perfect Day" onfocus="this.showPicker()">
+</div>
+
 
       <!-- No. of Guests -->
       <!-- Guests -->
@@ -2344,8 +2447,7 @@ body {
     </div>
   </div>
 </section>
-
-<!-- comment 
+ 
 <script>
   // Simple confirmation animation
   function bookTrip(e) {
