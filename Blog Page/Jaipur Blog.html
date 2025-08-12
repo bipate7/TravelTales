@@ -3,13 +3,591 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Things to Do in Jaipur | TravelTales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #a8dadc;
+            --accent: #457b9d;
+            --dark: #1d3557;
+            --light: #f1faee;
+            --gold: #ffd166;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .blog-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1539599100182-69657d1eef56?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .blog-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .breadcrumb {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            margin-top: -50px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Article Styles */
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            padding: 2rem;
+        }
+
+        .article-body h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            background: var(--accent);
+            transform: translateX(5px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-widget h3 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .popular-posts {
+            list-style: none;
+        }
+
+        .popular-posts li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .popular-posts a {
+            color: #333;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .popular-posts a:hover {
+            color: var(--primary);
+        }
+
+        .popular-posts img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .newsletter-form button {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--accent);
+        }
+
+        /* Top 10 List */
+        .top10-list {
+            counter-reset: top10-counter;
+            list-style: none;
+        }
+
+        .top10-list li {
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 2rem;
+            min-height: 50px;
+        }
+
+        .top10-list li::before {
+            counter-increment: top10-counter;
+            content: counter(top10-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .top10-list h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .top10-list p {
+            color: #666;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)), url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 209, 102, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 209, 102, 0.6);
+        }
+
+        /* Footer */
+        .blog-footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--gold);
+        }
+
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .blog-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-header {
+                height: 50vh;
+            }
+            
+            .blog-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .blog-header p {
+                font-size: 1rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-header {
+                height: 40vh;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .article-body {
+                padding: 1.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .top10-list li {
+                padding-left: 2.5rem;
+            }
+            
+            .top10-list li::before {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="breadcrumb">
+            <a href="#"><i class="fas fa-home"></i> Home</a> / 
+            <a href="#">Blog</a> / 
+            <a href="#">India</a>
+        </div>
+        <h1>Top 10 Things to Do in Jaipur</h1>
+        <p>From visiting historic palaces to enjoying traditional Rajasthani cuisine, find out the top 10 things you must do when in Jaipur.</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="blog-content">
+            <!-- Article Content -->
+            <main class="article-content">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jaipur City View">
+                    </div>
+                    <div class="article-body">
+                        <p><strong>Last Updated:</strong> August 11, 2023 | <strong>Author:</strong> TravelTales Team</p>
+                        
+                        <h2>Discover the Pink City's Hidden Gems</h2>
+                        <p>Jaipur, the capital of Rajasthan, is a vibrant city that beautifully blends tradition with modernity. Known as the Pink City for its trademark building color, Jaipur is a treasure trove of history, culture, and unforgettable experiences. Here are our top 10 recommendations for your Jaipur itinerary:</p>
+                        
+                        <ol class="top10-list">
+                            <li>
+                                <h3>Explore the Amber Fort</h3>
+                                <p>This majestic fort-palace complex is Jaipur's crown jewel. Don't miss the Mirror Palace (Sheesh Mahal) and the stunning views from the fort walls.</p>
+                            </li>
+                            <li>
+                                <h3>Visit the Hawa Mahal</h3>
+                                <p>The iconic "Palace of Winds" with its 953 windows was built to allow royal ladies to observe street festivals while remaining unseen.</p>
+                            </li>
+                            <li>
+                                <h3>Wander Through City Palace</h3>
+                                <p>This sprawling complex includes the Chandra Mahal and Mubarak Mahal palaces and a museum with an impressive collection of royal costumes.</p>
+                            </li>
+                            <li>
+                                <h3>Marvel at Jantar Mantar</h3>
+                                <p>This UNESCO World Heritage Site features the world's largest stone sundial among its collection of 19 astronomical instruments.</p>
+                            </li>
+                            <li>
+                                <h3>Shop at Johari Bazaar</h3>
+                                <p>Jaipur's famous jewelry market is perfect for buying traditional Kundan and Meenakari jewelry, gemstones, and handicrafts.</p>
+                            </li>
+                            <li>
+                                <h3>Enjoy a Traditional Thali</h3>
+                                <p>Savor authentic Rajasthani cuisine at places like Laxmi Misthan Bhandar (LMB) or Suvarna Mahal at Rambagh Palace.</p>
+                            </li>
+                            <li>
+                                <h3>Take a Hot Air Balloon Ride</h3>
+                                <p>See Jaipur from above with a sunrise balloon ride offering breathtaking views of the city's landmarks.</p>
+                            </li>
+                            <li>
+                                <h3>Visit Nahargarh Fort at Sunset</h3>
+                                <p>This hilltop fort offers panoramic views of the city, especially magical during sunset hours.</p>
+                            </li>
+                            <li>
+                                <h3>Experience a Bollywood Movie at Raj Mandir</h3>
+                                <p>Watch a film at India's most famous cinema, known for its opulent art deco interiors.</p>
+                            </li>
+                            <li>
+                                <h3>Attend a Cultural Evening at Chokhi Dhani</h3>
+                                <p>This ethnic village resort offers a complete Rajasthani experience with folk dances, camel rides, and traditional food.</p>
+                            </li>
+                        </ol>
+                        
+                        <div class="gallery">
+                            <img src="https://images.unsplash.com/photo-1582972236019-ea9e293d1a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Amber Fort">
+                            <img src="https://images.unsplash.com/photo-1581852017103-68e8113e0dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Hawa Mahal">
+                            <img src="https://images.unsplash.com/photo-1581852057103-68e8113e0dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jaipur Streets">
+                            <img src="https://images.unsplash.com/photo-1582972236019-ea9e293d1a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jaipur Food">
+                            <img src="https://images.unsplash.com/photo-1581852057103-68e8113e0dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jaipur Market">
+                            <img src="https://images.unsplash.com/photo-1582972236019-ea9e293d1a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jaipur Culture">
+                        </div>
+                        
+                        <h2>Planning Your Jaipur Adventure</h2>
+                        <p>Jaipur is a year-round destination, but the best time to visit is between October and March when the weather is pleasant. The city is well-connected by air, rail, and road, making it easily accessible from major Indian cities.</p>
+                        <p>For a truly immersive experience, consider staying in one of Jaipur's heritage hotels that were once palaces or havelis (mansions) of the nobility. Many offer royal treatment at surprisingly affordable prices.</p>
+                        
+                        <div class="cta-section">
+                            <h2>Ready to Explore Jaipur?</h2>
+                            <p>Let TravelTales craft your perfect Jaipur itinerary with our exclusive tours and local experiences. Get 10% off your first booking when you mention this blog!</p>
+                            <a href="#" class="cta-btn">Book Your Jaipur Tour Now</a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>About TravelTales</h3>
+                    <p>TravelTales is a premium travel company specializing in curated experiences across India. Our expert guides and unique itineraries help you discover destinations like a local.</p>
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="TravelTales Team" style="width:100%; border-radius:5px; margin-top:1rem;">
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Popular Posts</h3>
+                    <ul class="popular-posts">
+                        <li>
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Post 1">
+                                <span>5 Hidden Beaches in Goa You Must Visit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1582972236019-ea9e293d1a49?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Post 2">
+                                <span>Ultimate Guide to Rajasthan's Forts and Palaces</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="https://images.unsplash.com/photo-1581852057103-68e8113e0dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=60" alt="Post 3">
+                                <span>Himalayan Trekking: Best Routes for Beginners</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <p>Get travel tips, exclusive offers, and destination inspiration straight to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Email Address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="blog-footer">
+        <h2>TravelTales</h2>
+        <p>Discover India Like Never Before</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <p class="copyright">© 2023 TravelTales. All Rights Reserved.</p>
+    </footer>
+</body>
 </html>
