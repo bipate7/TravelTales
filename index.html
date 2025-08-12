@@ -105,9 +105,8 @@ nav ul li a{
     font-size: 17px;
 }
 
-.title{
+.title {
     text-decoration: none;
-    /* display: inline-block; */
     font-size: 4vh;
     color: rgb(255, 255, 255);
     padding: 14px 17px;
@@ -116,39 +115,71 @@ nav ul li a{
     vertical-align: center;
 }
 
-.title h1{
+.title h1 {
     font-size: 10vh;
     text-shadow: 2px black;
     transition: ease 0.3s;
 }
 
-.title h1:hover{
-    color:transparent;
+.title h1:hover {
+    color: transparent;
     -webkit-text-stroke: 1px white;
-    
 }
 
-.button{
+.button {
     display: inline-block;
-    margin-top:5vh;
+    margin-top: 5vh;
     font-size: 25px;
     padding: 10px 30px;
     color: rgb(21, 74, 74);
-    /* background-color:rgb(164, 44, 44); */
     background-color: white;
     border-radius: 20px;
     text-decoration: none;
     transition: ease 0.30s;
 }
 
-.button:hover{
+.button:hover {
     transform: scale(1.1);
     color: white;
     background-color: rgb(21, 74, 74);
-    /*border: 2px solid rgb(42, 37, 68); */
     box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.4);
-    padding: 10px 30px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3vh;
+        margin-top: 20vh;
+        padding: 10px;
+    }
+
+    .title h1 {
+        font-size: 6vh;
+    }
+
+    .button {
+        font-size: 20px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5vh;
+        margin-top: 15vh;
+        padding: 8px;
+    }
+
+    .title h1 {
+        font-size: 5vh;
+    }
+
+    .button {
+        font-size: 18px;
+        padding: 8px 18px;
+    }
+}
+
 
 .menu-toggle {
     display: none;
