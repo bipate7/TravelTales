@@ -28,44 +28,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
 /* Home page */
 
-.banner {
-    width: 100%;
+.banner{
+    width:101%;
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
-.banner video {
+.banner video{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 120%;
     pointer-events: none;
 }
 
-/* Content overlay */
-.content {
+.content{
     position: relative;
     z-index: 1;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(1, 0, 5, 0.3), rgba(4, 1, 17, 0.3));
-}
+    background-image: linear-gradient(rgba(1, 0, 5, 0.3),rgba(4, 1, 17, 0.3));
 
-/* Mobile fix */
-@media (max-width: 768px) {
-    .banner video {
-        object-fit: contain; /* Keeps video ratio */
-        height: auto;
-        min-height: 100%;
-        background-color: black; /* Fills space if video doesn’t cover fully */
-    }
 }
 
 nav {
@@ -180,11 +168,10 @@ nav ul li a{
 @media (max-width: 480px) {
     .title {
         font-size: 2.5vh;
-        margin-top: 30vh;
+        margin-top: 10vh;
         padding: 8px;
         text-align: center;
     vertical-align: center;
-    top
     }
 
     .title h1 {
